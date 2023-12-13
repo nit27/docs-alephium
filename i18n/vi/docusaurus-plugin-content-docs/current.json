@@ -1,0 +1,54 @@
+{
+  "version.label": {
+    "message": "Next",
+    "description": "The label for version current"
+  },
+  "sidebar.tutorialSidebar.category.dapps": {
+    "message": "dapps",
+    "description": "The label for category dapps in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.explorer-backend": {
+    "message": "explorer-backend",
+    "description": "The label for category explorer-backend in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.full-node": {
+    "message": "full-node",
+    "description": "The label for category full-node in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.integration": {
+    "message": "integration",
+    "description": "The label for category integration in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.mining": {
+    "message": "mining",
+    "description": "The label for category mining in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.misc": {
+    "message": "misc",
+    "description": "The label for category misc in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.network": {
+    "message": "network",
+    "description": "The label for category network in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.ralph": {
+    "message": "ralph",
+    "description": "The label for category ralph in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.tokens": {
+    "message": "tokens",
+    "description": "The label for category tokens in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.wallet": {
+    "message": "wallet",
+    "description": "The label for category wallet in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.desktop-wallet": {
+    "message": "desktop-wallet",
+    "description": "The label for category desktop-wallet in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.extension-wallet": {
+    "message": "extension-wallet",
+    "description": "The label for category extension-wallet in sidebar tutorialSidebar"
+  }
+}
