@@ -1,33 +1,33 @@
 ---
 sidebar_position: 12
-sidebar_label: The Content Repo
-title: The Content Repo
+sidebar_label: Nội dung Repo
+title: Nội dung Repo
 ---
 
 import UntranslatedPageText from "@site/src/components/UntranslatedPageText";
 
 <UntranslatedPageText />
 
-## Table of Contents
-* [Official links & accounts](#official-links--accounts) 
-* [Tech Series](#tech-series)
-* [Explainer Series](#explainer-series)
+## Mục lục
+* [Link chính thức & tài khoản](#official-links--accounts) 
+* [Công nghệ](#tech-series)
+* [Giải thích](#explainer-series)
 * [TechTalks & AMAs](#techtalks--amas)
-* [Milestones](#milestones)
-* [Community & Social](#community--social)
-* [External Podcasts & Publications](#external-podcasts--publications)
-* [Events, presentations & conferences](#events-presentations--conferences)
-* [Partnerships & PRs](#partnerships--prs)
-* [Reading Lists](#reading-lists)
+* [Cột mốc](#milestones)
+* [Cộng đồng](#community--social)
+* [Podcast & bài báo khác](#external-podcasts--publications)
+* [Sự kiện, trình bày & hội thảo](#events-presentations--conferences)
+* [Đối tác & PRs](#partnerships--prs)
+* [Chuỗi bài đọc](#reading-lists)
 * [People to follow](#people-to-follow)
-* [Libraries & Developer Resources](#libraries--developer-resources)
-* [Apply to a grant](#apply-for-grants)
+* [Thư viện & Tài nguyên](#libraries--developer-resources)
+* [Chương trình tặng thưởng](#apply-for-grants)
 
-## Official links & accounts
+## Link chính thức & tài khoản
 
 Website - https://alephium.org/
 
-Documentation - https://docs.alephium.org/
+Tài liệu - https://docs.alephium.org/
 
 Github - https://github.com/alephium
 
@@ -39,7 +39,7 @@ Telegram -  https://t.me/alephiumgroup
 
 Linkedin - https://www.linkedin.com/company/74304166
 
-## Tech Series
+## Công nghệ
 
 ### Stateful UTXO
 
@@ -49,33 +49,33 @@ sUTXO #1 - Merkle Trees - https://twitter.com/alephium/status/159980896003846144
 
 sUTXO #2 - Contract Rent - https://twitter.com/alephium/status/1602684789655420928
 
-sUTXO #3 - General explanation - https://twitter.com/alephium/status/1615389097744568320
+sUTXO #3 - Giải thích khái quát - https://twitter.com/alephium/status/1615389097744568320
 
-UTXO ELI5 Explainer - https://twitter.com/alephium/status/1675111759957327872
+Giải thích UTXO ELI5 - https://twitter.com/alephium/status/1675111759957327872
 
-Mysteries of stateful UTXO: The Ultimate Guide to Alephium’s accounting model — Part 1 - https://medium.com/@alephium/tech-talk-2-mysteries-of-stateful-utxo-the-ultimate-guide-to-alephiums-accounting-model-and-de2cf2063615
+Bí ẩn stateful UTXO: Cách tối ưu nhất để tiếp cận mô hinh kế toán của Alephium — Phần 1 - https://medium.com/@alephium/tech-talk-2-mysteries-of-stateful-utxo-the-ultimate-guide-to-alephiums-accounting-model-and-de2cf2063615
 
-Mysteries of stateful UTXO: The Ultimate Guide to Alephium’s accounting model — Part 2 - https://medium.com/@alephium/tech-talk-2-mysteries-of-stateful-utxo-the-ultimate-guide-to-alephiums-accounting-model-and-f6b6868ef873
+Bí ẩn stateful UTXO: Cách tối ưu nhất để tiếp cận mô hình kế toán của Alephium — Phần 2 - https://medium.com/@alephium/tech-talk-2-mysteries-of-stateful-utxo-the-ultimate-guide-to-alephiums-accounting-model-and-f6b6868ef873
 
-An Introduction to Stateful UTXO - https://twitter.com/alephium/status/1690004285818327040
+Giới thiệu Stateful UTXO - https://twitter.com/alephium/status/1690004285818327040
 
-An Introduction to Stateful UTXO - https://twitter.com/alephium/status/1692177660389314905
+Giới thiệu Stateful UTXO - https://twitter.com/alephium/status/1692177660389314905
 
 ### Proof-of-Less-Work
 Proof-of-Less-Work - https://medium.com/@alephium/tech-talk-1-the-ultimate-guide-to-proof-of-less-work-the-universe-and-everything-ba70644ab301
 
 Proof-of-Less-Work - AMA - https://medium.com/@alephium/tech-talk-1-proof-of-less-work-ama-3d5afbf78c71
 
-Consensus Algorithm - https://twitter.com/alephium/status/1562066898904158208
+Thuật toán đồng thuận - https://twitter.com/alephium/status/1562066898904158208
 
-### Alphred Virtual Machine
-Alphred Virtual Machine - https://medium.com/@alephium/meet-alphred-a-virtual-machine-like-no-others-85ce86540025
+### Máy ảo Alphred 
+Máy ảo Alphred - https://medium.com/@alephium/meet-alphred-a-virtual-machine-like-no-others-85ce86540025
 
-Alphred VM #1 - https://twitter.com/alephium/status/1648310483148218370
+Máy ảo Alphred #1 - https://twitter.com/alephium/status/1648310483148218370
 
-Alphred VM #2 - https://twitter.com/alephium/status/1648310486096809984
+Máy ảo Alphred #2 - https://twitter.com/alephium/status/1648310486096809984
 
-Alphred VM #3 - https://twitter.com/alephium/status/1648310489045405696
+Máy ảo Alphred #3 - https://twitter.com/alephium/status/1648310489045405696
 
 ### Blockflow
 Blockflow - https://twitter.com/alephium/status/1541711510178758658
@@ -86,12 +86,12 @@ Sharding - https://medium.com/@alephium/sharding-d50968b8b229
 
 Sharding - https://twitter.com/alephium/status/1648310491763331078
 
-An Introduction to Blockflow : Alephium’s sharding algorithm - https://medium.com/@alephium/an-introduction-to-blockflow-alephiums-sharding-algorithm-bbbf318c3402
+Giới thiệu Blockflow : Thuật toán sharding của Alephium - https://medium.com/@alephium/an-introduction-to-blockflow-alephiums-sharding-algorithm-bbbf318c3402
 
-### Ralph Programming Language
+### Ngôn ngữ lập trình Ralph 
 Ralph is the domain-specific language (DSL) - https://twitter.com/alephium/status/1675867624184627201
 
-Ralph and Solidity Code Comparison - https://twitter.com/alephium/status/1643961985841905664
+So sánh giữa Code Ralph và Solidity - https://twitter.com/alephium/status/1643961985841905664
 
 ### Asset Permission System
 Asset Permission System - https://medium.com/@alephium/alephiums-aps-eliminating-evm-token-approval-risks-5407e7e70a33
@@ -116,7 +116,7 @@ Alephium Tokenomics - Updated Article - https://medium.com/@alephium/tokenomics-
 
 TxScripts and Smart COntracts - https://twitter.com/alephium/status/1688907382615945218?s=20 
 
-Do you know what "Magic Numbers" are? And which ones Alephium has? : https://twitter.com/alephium/status/1701604666847666397
+Bạn đã biết gì về "Magic Numbers"? Và Alephium có những gì? : https://twitter.com/alephium/status/1701604666847666397
 
 First Developer Workshop — Build a Token Faucet ( Article ) - https://medium.com/@alephium/first-developer-workshop-build-a-token-faucet-a6bb2aa7bf68
 
