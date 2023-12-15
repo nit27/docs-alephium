@@ -1,62 +1,61 @@
 ---
 sidebar_position: 30
-sidebar_label: Glossary
-slug: /glossary
-title: Glossary
+sidebar_label: Chú thích
+slug: /Chú thích
+title: Chú thích
 ---
 
 import UntranslatedPageText from "@site/src/components/UntranslatedPageText";
 
-<UntranslatedPageText />
-
-This is a list of useful concepts for understanding Alephium in particular and Blockchains in general.
+Đây là danh sách tổng hợp các khái niệm, thuật ngữ hữu ích cho việc tìm hiểu Alephium nói riêng và Blockchain nói chung.
 
 ## A
 
 ### Alephium
 
-Alephium is the first operational sharded L1 blockchain scaling and enhancing PoW & UTXO concepts. Decentralization, self-sovereignty and security meet high-performance, accessibility and energy efficiency in a dev-friendly network optimized for DeFi & smart contract applications. 
+Alephium là blockchain L1 đầu tiên giúp mở rộng và nâng tầm các khái niệm PoW & UTXO. 
+Ngoài các tính năng phi tập trung, tự chủ, bảo mật cao, dễ tiếp cận và tiết kiệm năng lượng, Alephium còn là một network thân thiện với lập trình viên, được tối ưu hoá cho các ứng dụng DeFi và hợp đồng thông minh (smart contract). 
 
-From its technical design to its interfaces, Alephium has been created to address the challenges of accessibility, scalability, and security encountered by decentralized applications today.
+Từ thiết kế kỹ thuật đến giao diện, Alephium đã được tạo ra để khắc phục các vấn đề về khả năng truy cập, khả năng mở rộng và bảo mật mà các ứng dụng phi tập trung hiện nay đang gặp phải. 
+
 
 ## B
 
-### Blake 3 Algorithm (Hash Function)
-[Blake 3 Algorithm](https://github.com/BLAKE3-team/BLAKE3) is a cryptographic hash function. A hash function is a mathematical function that takes an input string of any length and converts it to a fixed-length output string. The fixed-length output is known as the hash value.
+### Thuật toán Blake 3 (Hash Function)
+[Thuật toán Blake 3](https://github.com/BLAKE3-team/BLAKE3) là một hash function được mã hoá. Một hash function là một hàm toán học lấy chuỗi đầu vào có độ dài bất kỳ và chuyển đổi nó thành chuỗi đầu ra có độ dài cố định. Chuỗi đầu ra có độ dài cố định đó được gọi là hash value. 
 
-Hash functions have a lot of use cases on a blockchain: in the [Merkle Tree](#merkle-tree), Proof of Work Consensus, Digital Signatures, and on the Blockchain itself (as each block header in a block in the blockchain contains the hash of the previous block header). Bitcoin, for example, uses the [SHA-256.](https://en.wikipedia.org/wiki/SHA-2)
+Hash functions được sử dụng trong nhiều trường hợp trên một blockchain: trong [Merkle Tree](#merkle-tree), Proof of Work Consensus, digital signature, và trên chính Blockchain (vì mỗi block header của một block trong blockchain chứa hash của block header trước đó). Ví dụ như Bitcoin sử dụng [SHA-256.](https://en.wikipedia.org/wiki/SHA-2)
 
-Alephium uses the Blake 3 Algorithm as its cryptographic hash function for mining.
+Alephium sử dụng thuật toán Blake 3 như là hash function được mã hoá cho công việc đào.
 
 ### Block Reward
 
-The block reward is an economic incentive for the miners to do their job of securing the network.
+Block reward là phần thưởng có giá trị kinh tế nhằm tạo động lực cho người đào tiếp tục công việc bảo vệ network. 
 
-It is paid in the blockchain’s native token. It is usually higher when the network is small and new and decreases over time as it matures.
-
-[Block Reward GitHub Implementation](https://github.com/alephium/alephium/blob/master/protocol/src/main/scala/org/alephium/protocol/mining/Emission.scala)
+Người đào sẽ được trả bằng token của blockchain đó. Phần thưởng này thường sẽ nhiều hơn khi network còn nhỏ và mới, khi network đã phát triển thì phần thưởng sẽ ít lại. 
+[Block Reward của Alephium trên GitHub](https://github.com/alephium/alephium/blob/master/protocol/src/main/scala/org/alephium/protocol/mining/Emission.scala)
 
 ### Block Size
 
-Block size is the data limit each block can handle. 
+Block size là giới hạn dữ liệu mà mỗi block có thể xử lý. 
 
-It can be measured in different ways. In some blockchains, it is expressed in how much actual data the block can carry (for example, in Zcash, the block size is 2MB). In other blockchains, the block size is related to the computational processing limit it can consume from the network (usually expressed in gas). Ethereum’s and Alephium’s block sizes are measured this way.
+Nó có thể được ước tính bằng nhiều cách. Trong một số blockchain, nó được biểu thị bằng lượng dữ liệu thực tế mà một block có thể chứa (ví dụ ở Zcash, block size là 2MB). Ở các blockchain khác, block size là giới hạn xử lý của máy tính mà nó có thể chiếm từ network (thường được biểu thị bằng gas). Block size của Etherium và Alephium được tính theo cách này. 
 
 ### Block Time
 
-Block Time is the time needed to compute the transactions inside a block and send it to the network.
+Block Time là thời gian cần thiết để tính toán các giao dịch trong một block và gửi nó lên network. 
 
-Transactions are gathered inside a block and checked by the miners (or validators on PoS blockchains). Usually, the Block Time is impacted by the mining difficulty, as it is adjusted to reflect the network's computational capacity (hashrate) over a given time.
+Các giao dịch được tập hợp trong một block và được kiểm tra bởi các máy đào (hoặc các validators trên PoS blockchains). Thông thường block time bị ảnh hưởng bởi độ khó của việc đào, vì nó được điều chỉnh để phản ánh khả năng tính toán của network (hashrate) trong khoảng thời gian nhât định. 
 
-Alephium network has a difficulty adjustment on every block and has an expected block time of **64 seconds**.
+Alephium network có sự điều chỉnh độ khó trên mỗi block và có block time được ước tính là **64 giây**. 
 
-Additional resources: [Block Time and Block Size Article](https://medium.com/@alephium/block-time-and-block-size-16e37292444f)
+Tài liệu đọc thêm: [Block Time and Block Size Article](https://medium.com/@alephium/block-time-and-block-size-16e37292444f)
 
 ### Bridge
 
-A bridge is a protocol connecting separate blockchains to enable interactions between them. Each blockchain usually has its own technological features and doesn’t have a native way to communicate with other protocols. So the bridge is a set of smart contracts that links these different ecosystems.
+Bridge là một giao thức kết nối các blockchain riêng biệt để tạo ra sự tương tác giữa chúng. Mỗi blockchain thường có các tính năng công nghệ riêng, nhưng lại không có cách riêng để liên lạc với những giao thức khác. Vì thế bridge là một tập hợp các smart contract để liên kết các hệ sinh thái khác nhau này. 
  
-A bridge can be more specialized, only allowing one type of interaction (like token transfers, for instance), or it can be more generalistic, allowing any kind of data transfer between the bridged blockchains.
+Bridge có thể được chuyên biệt hơn bằng cách chỉ cho phép một loại tương tác (chằng hạn như di chuyển token), hoặc khái quát hơn khi cho phép bất kỳ loại truyền dữ liệu nào giữa các blockchain đã được bridged với nhau. 
 
 ## C
 
@@ -68,35 +67,33 @@ A bridge can be more specialized, only allowing one type of interaction (like to
 
 ## G
 
-### Gas Amount Spent
+### Gas spent 
 
-Gas Spent is the amount of computations the miner uses to execute the transactions. The more functions the transaction has, the more complex its execution, and the more gas is spent. 
+Gas Spent là số lượng tính toán mà máy đào dùng để thực hiện các giao dịch. Giao dịch nào càng có nhiều chức năng thì việc thực hiện nó càng phức tạp và càng tốn nhiều gas. 
 
-For now, and as an anti-spam measure, there is a minimum value of 20’000 gas for any transaction on Alephium, meaning that your transaction fee will cost at least 0.002 ALPH. 
+Hiện tại, như một biện pháp anti-spam thì giá trị tối thiểu cho bất kỳ giao dịch nào trên Alephium là 20'000 gas, nghĩa là phí giao dịch của bạn có giá ít nhât là 0,002 ALPH. 
 
-As the network matures, this will be relaxed, and the market will define the price of transaction fees.
+Khi network đã phát triển thì điều này sẽ được nới lỏng và thị trường sẽ xác định phí giao dịch. 
 
 ### Gas Price
 
-This is the monetary value of the gas. Gas is defined as the computational effort to execute a command in a blockchain. The gas price is the monetary counterpart to pay for the work done by the miner. 
-
-The current lowest possible gas price on Alephium is 10^-7 ALPH or 0.0000001 ALPH.
+Đây là giá trị tiền tệ của gas. Gas được định nghĩa là nỗ lực tính toán để thực thi một lệnh trong blockchain. Phí gas là tiền để trả cho công việc được thực hiện bởi người đào. 
 
 ### Genesis Block
 
-A Genesis Block is the name of a blockchain’s first block ever mined. As the blocks get layered one on top of the other, the Genesis Block is the foundation or beginning of it.
+Genesis Block là tên của block đầu tiên được đào trong một blockchain. Khi các block xếp chồng lên nhau thì Genesis Block là nền tảng hoặc là nơi bắt đầu của chúng. 
 
-It is also occasionally referred to as Block 0 or Block 1. When a block is broadcasted to the blockchain, it references the previous block. Because there is no previous block to reference, genesis blocks are generally hardcoded into the software.
+Đôi khi nó còn được gọi là Block 0 hay Block 1. Khi một block mới được thêm vào blockchain thi nó sẽ tham chiếu đến các block trước đó. Nhưng vì không có block nào ở trước, nên Genesis Block thường được hardcode vào phần mềm. 
 
-Alephium’s genesis block was mined on November 8th, 2021
+Genesis Block của Alephium được đào vào ngày 8/11/2021. 
 
 ## H
 
 ### Hard Fork
 
-A hard fork happens when a major upgrade on a network's protocol makes nodes or users running the previous version unable to send or validate transactions on the network after it.
+Hard fork xảy ra khi có một nâng cấp lớn trên network's protocol làm cho các nodes hay người dùng sử dụng phiên bản cũ không thể gửi hoặc xác thực các giao dịch sau đó. 
 
-As the upgrade is optional, sometimes some of the nodes or users decide not to do it, thus creating a different version of the blockchain from that point on. That happened with Ethereum and Ethereum Classic, for example.
+Bởi việc nâng cấp là tuỳ chọn, nên đôi khi một số nodes hay người dùng quyết định không thực hiện, vì thế sẽ tạo ra một phiên bản blockchain khác từ đó, và điều này đã xảy ra với Ethereum và Ethereum Classic. 
 
 ## I
 
@@ -110,36 +107,37 @@ As the upgrade is optional, sometimes some of the nodes or users decide not to d
 
 ### Merkle Tree
 
-A Merkle tree [is a structure](https://en.wikipedia.org/wiki/Merkle_tree) used in a blockchain to compress data more efficiently and securely.
-The blockchain packs the transactions in blocks. Each block has a header, and this header has a hash. This hash is stored on the Merkle Tree. The hash from the Merkle Tree is used to verify that a data set is the same as the original set of transactions without accessing the content inside the block. When visualized, this structure resembles a tree and can also be called a "binary hash tree."
+Merkle tree [là một dạng cấu trúc](https://en.wikipedia.org/wiki/Merkle_tree) được sử dụng để nén dữ liệu một cách hiệu quả và an toàn hơn.
 
-For example, Alephium uses three Merkle trees per group to store assets-UTXOs, contract logic, and contract state. 
+Khi blockchain gom các giao dịch vào các blocks thì mỗi block có một header, và header này có một hash; Hash này được lưu trữ trên Merkle Tree. Hash từ Merkle Tree đuợc dùng để xác minh rằng tệp dữ liệu giống với tập hợp giao dịch ban đầu mà không cần truy cập vào nội dung bên trong block. Khi hình dung, cấu trúc này giống một cái cây và có thể được gọi là một "binary hash tree". 
+
+Ví dụ, Alephium sử dụng ba Merkle trees cho mỗi nhóm để lưu trữ tài sản - UTXOs, contract logic và contract state. 
 
 ### Maximal Extractble Value (MEV)
 
-Miner or [Maximal Extractable Value (MEV)](https://ethereum.org/en/developers/docs/mev/) refers to the value obtained from a block mining in excess of the standard block reward and gas fees by changing, including, or removing transactions in a block.
+Người đào hay [Maximal Extractable Value (MEV)](https://ethereum.org/en/developers/docs/mev/) là giá trị thu được từ việc đào một block mà vượt quá tiêu chuẩn block reward và phí gas bằng cách thay đổi, bao gồm hoặc loại bỏ các giao dịch trong một block. 
 
-This difference is offered by actors referred to as “searchers” that analyze the mempool looking for profit opportunities by replacing the information on a given transaction, like the sender or receive address. To increase the likelihood of their transaction being chosen by the miner to be part of the next block produced, they are willing to pay a much higher gas fee than the average one, giving away or “sharing” part of the profit.
+Sự khác biệt này được đưa ra bởi các tác nhân được gọi là "searchers" nhằm phân tích nhóm tìm kiếm cơ hội lợi nhuận bằng cách thay thế thông tin trên một giao dịch, chẳng hạn như địa chỉ người gửi và người nhận. Để tăng xác suất giao dịch của họ được máy đào chọn trở thành một phần trong block tiếp theo được tạo ra, họ sẵn sàng trả phí gas cao hơn nhiều so với mức trung bình.
 
 ### Mining Reward
 
 ![](media/Block%20reward.png)
 
-The mining reward is the payment to the miner for the computational work needed to validate the transactions and put them into a block. On Alephium, The mining reward has two components: [Transaction Fee](#transaction-fee) and [Block Reward](#block-reward) or new token emissions. The transaction rewarding the miner and issuing the newly minted ALPH is called a coinbase transaction.
+Mining reward là phần thưởng cho người đào cho việc tính toán cần thiết để xác thực các giao dịch và gom chúng vào một block. Trên Alephium, Mining reward có hai phần: [Phí giao dịch](#transaction-fee) và [Block Reward](#block-reward) hoặc new token emissions. Giao dịch trao thưởng cho người đào và phát hành đồng ALPH mới được đào, được gọi là một coinbase transaction. 
 
-The following equation defines it:
+Công thức tính Mining reward:
 
-Total Mining Reward = Block Reward + min(max(Block Reward, 1 ALPH), Transaction Fee / 2)
+Tổng Mining Reward = = Block Reward + min(max(Block Reward, 1 ALPH), transaction fees / 2)
 
 ![image](media/186885966-b8d746fb-612b-433e-8f79-47e5a87ea375.png)
 
-Half of the transaction fees component is burnt to act as a deflationary mechanism.  
+Như một cơ chế giảm phát thì phân nửa phí giao dịch (transaction fees) sẽ được đốt. 
 
-Additional resources: [Alephium Block Rewards](https://medium.com/@alephium/alephium-block-rewards-72d9fb9fde33)
+Đọc thêm: [Alephium Block Rewards](https://medium.com/@alephium/alephium-block-rewards-72d9fb9fde33)
 
 ### Multisig
 
-Multisig or Multisignature is the process of requesting more than one private key to co-sign a transaction for it to be broadcast to the network. It is used as an additional security step.
+Multisig hoặc Multisignature là quá trình yêu cầu hơn một private key để đồng ký tên một giao dịch để nó được đưa lên network. Đây chỉ là một bước bảo mật bổ sung. 
 
 Usually, the multisig setup is done in a way that requires a minimal quorum of signers for a specific transaction to be approved and sent. For instance, a multisig of 5 out of 9 will require a quorum of 5 signers (among nine potential co-signers) to co-sign a transaction before it can be sent.
 
