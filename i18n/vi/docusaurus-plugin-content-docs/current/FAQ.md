@@ -2,181 +2,179 @@
 sidebar_position: 1
 slug: /frequently-asked-questions
 sidebar_label: FAQ
-title: Frequently Asked Questions
+title: Những câu hỏi thường gặp
 ---
 
 import UntranslatedPageText from "@site/src/components/UntranslatedPageText";
 
-<UntranslatedPageText />
-
 :::info
-📚 Learn everything about Alephium in this [5min overview](/).
+📚 Tìm hiểu nhanh tất cả về Alephium tại [5 Phút Tổng Quan](/).
 :::
 
-Before diving in deeper, we recommend that you check the following resources as they provide useful information about Alephium:
+Trước khi bắt đầu, chúng tôi khuyến kích các bạn tham khảo qua những nguồn thông tin dưới đây:
 
-- [Official Website](https://alephium.org)
-- [Official Twitter](https://twitter.com/alephium)
-- [Official Discord](https://alephium.org/discord)
-- [Official Telegram](https://t.me/alephiumgroup)
-- [Official Reddit](https://reddit.com/r/Alephium)
-- [Official Medium](https://medium.com/@alephium), specifically:
-  - [Alephium's Tokenomics](https://medium.com/@alephium/tokenomics-of-alephium-61d59b51029c)
-  - [Alephium's Block Rewards](https://medium.com/@alephium/alephium-block-rewards-72d9fb9fde33)
-  - [Alephium's Community Reward Program](https://medium.com/@alephium/introducing-community-rewards-f4638bbf14bf)
-  - [The Ultimate guide to Proof-of-Less-Work, the universe and everything…](https://medium.com/@alephium/tech-talk-1-the-ultimate-guide-to-proof-of-less-work-the-universe-and-everything-ba70644ab301)
-  - [Introduction to sUTXO](https://medium.com/@alephium/an-introduction-to-the-stateful-utxo-model-8de3b0f76749)
-  - [ALPHred, the Virtual Machine](https://medium.com/@alephium/meet-alphred-a-virtual-machine-like-no-others-85ce86540025)
-  - [The Leman Network Upgrade is Live!](https://medium.com/@alephium/the-leman-network-upgrade-is-live-f52c89b7dd6a)
+- [Website chính thức](https://alephium.org)
+- [X (Twitter) chính thức](https://twitter.com/alephium)
+- [Discord chính thức](https://alephium.org/discord)
+- [Telegram chính thức](https://t.me/alephiumgroup)
+- [Reddit chính thức](https://reddit.com/r/Alephium)
+- [Medium chính thức](https://medium.com/@alephium), nổi bật:
+  - [Tokenomics của Alephium](https://medium.com/@alephium/tokenomics-of-alephium-61d59b51029c)
+  - [Block Rewards của Alephium](https://medium.com/@alephium/alephium-block-rewards-72d9fb9fde33)
+  - [Chương trình phần thưởng cho cộng đồng Alephium](https://medium.com/@alephium/introducing-community-rewards-f4638bbf14bf)
+  - [Siêu hướng dẫn về Proof-of-Less-Work và những điều cần biết](https://medium.com/@alephium/tech-talk-1-the-ultimate-guide-to-proof-of-less-work-the-universe-and-everything-ba70644ab301)
+  - [Giới thiệu về sUTXO](https://medium.com/@alephium/an-introduction-to-the-stateful-utxo-model-8de3b0f76749)
+  - [ALPHred, Virtual Machine](https://medium.com/@alephium/meet-alphred-a-virtual-machine-like-no-others-85ce86540025)
+  - [Cập nhật Leman Network Upgrade!](https://medium.com/@alephium/the-leman-network-upgrade-is-live-f52c89b7dd6a)
 
 ## Chain Data
 
-### How much ALPH are in circulation?
+### Có bao nhiêu ALPH đang lưu thông?
 
-You can find the circulating supply on Alephium [Explorer](https://explorer.alephium.org) or by using the [circulating ALPH endpoint](https://backend.mainnet.alephium.org/infos/supply/circulating-alph).
+Bạn có thể tìm thông tin về cung lưu thông trên Alephium [Explorer](https://explorer.alephium.org) hoặc sử dụng [circulating ALPH endpoint](https://backend.mainnet.alephium.org/infos/supply/circulating-alph).
 
-### How is the circulating supply calculated?
+### Làm thế nào để tính cung lưu thông?
 
-It is calculated according to [CoinMarketCap's methodology](https://support.coinmarketcap.com/hc/en-us/articles/360043396252-Supply-Circulating-Total-Max-).
+Nó được tính dựa trên cách tính của [CoinMarketCap](https://support.coinmarketcap.com/hc/en-us/articles/360043396252-Supply-Circulating-Total-Max-).
 
-The circulating supply is equal to number existing ALPH minus:
+Số cung lưu thông là tổng số ALPH đang hiện hữu trừ cho:
 
-- The full balance (locked & unlocked) of private sale participants, project and team-controlled addresses. According to CMC: _"tokens are generally only counted as circulating after they leave the original reserve wallet (i.e. outbound transfers are more representative of an intent to bring the coin into circulation rather than a mere unlock)"_.
-- All locked ALPH from other addresses.
+- Số lượng token (đã khoá & khả dụng) của các thành viên từ private sale, dự án và những địa chỉ của đội ngũ quản lý. Theo CMC: _"tokens are generally only counted as circulating after they leave the original reserve wallet (i.e. outbound transfers are more representative of an intent to bring the coin into circulation rather than a mere unlock)"_.
+- Tất cả ALPH đã khoá từ khắp các địa chỉ khác.
 
-### How can I check wallets balances and which are the top holding addresses?
+### Tôi có thể kiểm tra số lượng của các địa chỉ ví và những địa chỉ ví nào đang nằm trong top nắm giữ?
 
-To check the balance of a specific wallet, the [Explorer](https://explorer.alephium.org) is your go-to.  
-Community members have created web-apps that lists the top holding addresses:
+Để kiểm tra số lượng của bất kỳ một địa chỉ ví nào, hãy truy cập [Explorer](https://explorer.alephium.org).  
+Ngoài ra, các thành viên trong cộng đồng cũng đã tự tạo ra một trang web có thể giúp bạn kiểm tra top các địa chỉ ví:
 
 - https://alph-richlist.vercel.app/
 - https://alph-top.web.app/
 
-### What is the minimum Transaction Fee?
+### Phí giao dịch tối thiểu là bao nhiêu?
 
-Currently, the minimum transaction fee is set at `0.002` ALPH to prevent network DoS attacks. In the future, this minimum fee can be lowered, with the lowest possible minimum transaction fee being `0.00000000000001` ALPH on Alephium. The exact fee charged depends on the number of inputs (UTXOs) and signers involved in the transaction.
+Hiện tại, phí giao dịch tối thiểu được đặt ở mức is `0.002` ALPH để ngăn chặn tấn công mạng DoS. Trong tương lai, phí giao dịch tối thiểu có thể sẽ thấp hơn, với mức thấp nhất có thể là `0.00000000000001` ALPH trên Alephium. Con số phí giao dịch tối thiểu phụ chính xác sẽ thuộc vào số lượng UTXO được thêm vào và những người tham gia ký xác nhận giao dịch. 
 
-### How many Transactions Per Second (TPS) are possible on Alephium?
+### Tốc độ giao dịch tối đa (TPS) trên Alephium là bao nhiêu?
 
-Alephium Mainnet can currently support over 400 TPS with 16 shards. It can scale up over 10k TPS by increasing the number of shards as necessary.  
-Read more about [the concept of TPS](https://medium.com/@alephium/transactions-per-second-tps-f13217a49e39).
+Tại mạng Mainnet của Alephium hiện tại có thể đặt hơn 400 TPS với 16 shard. Nó hoàn toàn có thể được nâng lên 10k TPS bằng việc gia tăng số shard cần thiết.
+Đọc thêm về [the concept of TPS](https://medium.com/@alephium/transactions-per-second-tps-f13217a49e39).
 
-### What is Alephium's smallest denomination?
+### Con số biểu thị nhỏ nhất (denomination) của Alephium là bao nhiêu?
 
-Alephium allows up to 18 decimals and its smallest denomination is called Phi. Phi is equivalent to `0.000000000000000001` ALPH, or `10^-18` ALPH, while 1 ALPH equals `10^18` Phi.
+Alephium cho phép lên đến 18 chữ số thập phân và con số biểu thị nhỏ nhất đó (denomination) được gọi là Phi. Một Phi tương đương `0.000000000000000001` ALPH, hoặc `10^-18` ALPH, trong khi 1 ALPH bằng `10^18` Phi.
 
 ## dApps
 
-### Is there a DEX on Alephium?
+### Có sàn DEX nào trên Alephium không?
 
-Alephium has a [DEX prototype](https://alephium.github.io/alephium-dex/#/swap) running on Testnet. Learn more about it in [the DEX prototype article](https://medium.com/@alephium/dex-prototype-live-on-testnet-bac5e7d095ce).
+Alephium cung cấp [DEX prototype](https://alephium.github.io/alephium-dex/#/swap) chạy trên Testnet. Tìm hiểu thêm về bài viết [DEX prototype](https://medium.com/@alephium/dex-prototype-live-on-testnet-bac5e7d095ce).
 
-The [DEX contracts](https://github.com/alephium/alephium-dex/tree/master/contracts) have been thoroughly tested by the core developers, making them reliable and efficient. They can easily be forked and used for projects.
+[DEX contracts](https://github.com/alephium/alephium-dex/tree/master/contracts) đã được thông thử nghiệm và kiểm tra độ tin cậy và hiệu quả. Nó dễ dàng có thể được fork và sử dụng cho bất kỳ dự án nào.
 
-### Is there any dApps on Alephium?
+### CÓ dApp nào trên Alephium không?
 
-Most of what has been built on Alephium so far is listed on the [Awesome Alephium repository](https://github.com/alephium/awesome-alephium). To add your contribution, submit a Pull Request!
+Tất cả các ứng dụng được xây dựng trên Alephium đều được liệt kê trên [Awesome Alephium repository](https://github.com/alephium/awesome-alephium). Để tham gia vào đóng góp, hãy gửi Pull Request của bạn đến chúng tôi!
 
-Alephium is still at a very early stage and the infrastructure (including a [bridge](https://github.com/alephium/wormhole-fork)) and documentation to ease the development of dApps is continuously being worked on.
-Alephium has a number of [well-maintained prototypes](https://docs.alephium.org/dapps/ecosystem#prototypes) that can be used as a basis or inspiration for your project.
+Alephium đang trong gia đoạn rất trẻ và những infrastructure của chúng tôi (bao gồm một [bridge](https://github.com/alephium/wormhole-fork)) cùng với những tài liệu có sẳn sẽ góp phần giúp mọi người phát triển các dApp trở nên dễ dàng hơn. Chúng tôi vẫn không ngừng liên tục cập nhật và phát triển.
+Alephium có một số [prototype](https://docs.alephium.org/dapps/ecosystem#prototypes) luôn được duy trì cập nhật tốt nhất. Bạn có thể sử dụng chúng như kim chỉ nam cho dự án của mình.
 
-If you want to build a dApp, check out our [dApps Getting Started guide](https://docs.alephium.org/dapps/getting-started).
+Nếu bạn muốn xây dựng một dApp, hãy đọc qua tài liệu [Hướng Dẫn Bắt Đầu Xây Dựng dApps](https://docs.alephium.org/dapps/getting-started).
 
-### Why can the dApp only connect to one of my addresses?
+### Tại sao dApp chỉ có thể kết nối với một trong số địa chỉ ví?
 
-Alephium operates as a sharded blockchain, where addresses and contract states are organized into several groups. When it comes to dApps, they can be deployed to any of these groups. However, there's a catch — dApps can only be used by addresses in the same group.
+Alephium vận hành như một blockchain với các shard, nơi mà những địa chỉ ví và các công đoạn của contract được tổ chức trong nhiều nhóm (group). Khi nó kết nối đến các dApp, chúng nó có thể được deploy vào bất kỳ nhóm nào. Tuy nhiên, có một nhược điểm — dApp chỉ có thể được sử dụng vào các địa chỉ trên cùng một group.
 
-So, when you connect to a dApp, it will specifically ask to connect with addresses that belong to the same group as the dApp itself. This grouping system ensures everything runs smoothly within Alephium's sharded structure.
+Vì vậy, khi kết nối đến một dApp, ứng dụng sẽ yêu cầu cụ thể được kết nối với những địa chỉ nào thuộc cùng chung một group giống như group của dApp đó.
 
-Note that this is only a problem when using dApps. Normal transfers have similar user experience as non-sharded blockchains. The core team is committed to improve the assets management across different groups to make it more friendly for dApp users.
+Hãy lưu ý rằng đây là nhược điểm duy nhất khi sử dụng dApp. Những giao dịch này sẽ có trải nghiệm giống như một blockchain không có các shard. Đội ngũ phát triển chính cam kết. sẽ cải thiện việc quản lý tài sản đa group nhằm giúp người dùng sử dụng dApp dễ dàng hơn.
 
 ## Development
 
-### Where is the roadmap?
+### Tôi có thể tìm thấy roadmap ở đâu?
 
-You will find the roadmap on the [website](https://alephium.org/#next) and on the [docs](https://docs.alephium.org/#roadmap). You can also follow the weekly development updates on [Discord](https://alephium.org/discord), [Twitter](https://twitter.com/alephium) or [Reddit](https://www.reddit.com/r/Alephium/search?q=flair_name%3A%22Development%22&restrict_sr=1).
+Bạn có xem qua roadmap tại [website](https://alephium.org/#next) và trang tài liệu [docs](https://docs.alephium.org/#roadmap). Đừng quên theo dõi cập nhật hằng tuần của Alephium tại [Discord](https://alephium.org/discord), [Twitter](https://twitter.com/alephium) or [Reddit](https://www.reddit.com/r/Alephium/search?q=flair_name%3A%22Development%22&restrict_sr=1).
 
-### Where can I monitor the status of Alephium maintained public service?
+### Tôi có thể theo dõi trạng thái maintain công khai của Alephium ở đâu?
 
-You can monitor Alephium's public service for:
+Bạn có thể theo dõi tại đây:
 
-- the mainnet on https://status.mainnet.alephium.org
-- the testnet on https://status.testnet.alephium.org
+- Mạng mainnet https://status.mainnet.alephium.org
+- Mạng testnet https://status.testnet.alephium.org
 
-### Where can I query an API?
+### Tôi có thể query một API ở đâu?
 
-In order to query an API you need to be running a full node ([instructions](https://wiki.alephium.org/full-node/Full-Node-Starter-Guide)).  
-Alephium uses OpenAPI to interact with the full node. You can directly open your local Swagger UI through `127.0.0.1:12973/docs` once your full node is running.  
-Alternatively, you can use any OpenAPI client to import the [openapi.json](https://raw.githubusercontent.com/alephium/alephium/master/api/src/main/resources/openapi.json) file from Alephium's repository.
+Để có thể query một API, bạn cần chạy full node ([hướng dẫn tại đây](https://wiki.alephium.org/full-node/Full-Node-Starter-Guide)).  
+Alephium sử dụng OpenAPI để tương tác full node. Bạn có thể trực tiếp khởi chạy local Swagger UI thông qua `127.0.0.1:12973/docs` khi full node của bạn chạy thành công.  
+Hoặc, hoặc bạn có thể sử dụng bất kỳ OpenAPI client nào. để thêm [openapi.json](https://raw.githubusercontent.com/alephium/alephium/master/api/src/main/resources/openapi.json) file từ repository của Alephium.
 
-### Do you have a Grant, Reward or Bountie Program?
+### Tôi muốn tìm hiểu về Chương trình Phần thưởng, Tài trợ và Đóng góp?
 
-Alephium offers a [Grants and Rewards program](https://github.com/alephium/community/blob/master/Grant%26RewardProgram.md) where your contribution, regardless of size, may be eligible for a reward.
+Alephium đang diễn ra các chương trình ấy tại [Grants and Rewards program](https://github.com/alephium/community/blob/master/Grant%26RewardProgram.md). Bạn có thể sẽ nhận được phần thưởng khi tham gia đóng góp ở bấy kỳ khía cạnh nào của chúng tôi.
 
-### What is being built on Alephium?
+### Những dự án nào đang được xây dựng trên Alephium?
 
-Most of what has been built on Alephium so far is listed on the [Awesome Alephium repository](https://github.com/alephium/awesome-alephium). If you'd like to showcase what you've built, submit a Pull Request to add it to the list.
+Hầu hết các dự án đang được xây dựng trên Alephium cho đến nay đã được liệt kê trên [Awesome Alephium repository](https://github.com/alephium/awesome-alephium). Nếu bạn muốn cho chúng tôi biết dự án của mình, hãy tạo một Pull Request để thêm sản phẩm của bạn vào trong danh sách.
 
 ## Full node
 
-### Is there a reward for running a fullnode?
+### Có bất kỳ phần thưởng nào cho việc chạy full-node?
 
-Alephium uses a Proof of (Less) Work consensus mechanism, which means there is no native monetary reward for running a full node, unlike Proof of Stake networks. However, running your own node offers other benefits such as decentralization, independent verification, privacy, and economic self-sovereignty. The phrase _"not your node, not your network"_ highlights the importance of running your own node, as relying on a third party node for blockchain interaction means trusting that third party. While connecting to a third party node is generally safe, some individuals may prefer to maintain their own level of trust and privacy.
+Alephium sử dụng cơ chế đồng thuận Proof of (Less) Work. Điều này có nghĩa là sẽ không có phần thưởng nào cho việc chạy full node, không như các blockchain trên Proof of Stake. Tuy nhiên, việc bạn chạy full node mang lại nhiều lợi ích như đóng góp vào sự phi tập trung, xác nhận các giao dịch một cách độc lập, bảo mật hơn, và tự chủ tài sản của mình. Cụm từ _"not your node, not your network"_ nhấn mạnh tầm quan trọng của việc tự chạy. full node, bởi vì phải đặt niềm tin vào các node do bên thứ ba nào đó để tương tác trong blockchain nghĩa là bạn phải đặt niềm tin vào ai đó. Mặc dù kết nối với các node được vận hành bởi các bên thứ ba nói chung là an toàn, một vài người vẫn thích tự thiết lập và chạy full node của họ nhằm tối ưu mức độ tin cậy và quyền riêng tư.
 
-### What do I need to run a full-node?
+### Tôi cần những gì để chạy full-node?
 
-Alephium's full-node is lightweight and can run on most devices, including Raspberry-Pi or phones. To set-up and run your own node, please follow the [Full-node Getting Started guide](https://docs.alephium.org/full-node/getting-started/).
+Chạy full-node của Alephium rất nhẹ và có thể được chạy trên. hầu hết các thiết bị bao gồm Raspberry-Pi hoặc điện thoại. Để thiết lập và khởi chạy node của bạn, hãy xem qua [Hướng dẫn thiết lập Full-node](https://docs.alephium.org/full-node/getting-started/).
 
-### Is it possible to stake on Alephium?
+### Tôi có thể stake trên Alephium không?
 
-Alephium does not offer native staking on its blockchain, as it does not operate on a PoS consensus mechanism. However, DeFi liquidity pools may offer staking opportunities for users in the future.
+Alephium không cung cấp chương trình staking trên blockchain, bởi vì nó không vận hành trên cơ chế đồng thuận PoS. Tuy nhiên, tham gia vào DeFi thông qua các liquidity pool có thể giúp bạn stake tài sản của mình trong tương lai.
 
-## Listings & Exchanges
+## Niêm yết & Sàn giao dịch
 
-### What is your token ticker?
+### Mã thông báo là gì?
 
-The Alephium token ticker is [ALPH](https://medium.com/@alephium/introducing-alph-8381dbd9f88d).
+Mã thông báo (token ticker) của Alephium là [ALPH](https://medium.com/@alephium/introducing-alph-8381dbd9f88d).
 
-### How long does it take for deposits to show up on exchanges?
+### Mất bao lâu để các sàn giao dịch hiển thị số lượng tôi đã nạp vào?
 
-Exchanges usually require a higher number of confirmation for PoW chains to ensure sufficient security. Currently, most exchanges request between 30 to 60 confirmations for Alephium which is between 30 minutes and an hour.
+Các sàn giao dịch yêu cầu số confirmation cao cho cơ chế PoW để đảm bảo an toàn. Hiện tại, một số sàn giao dịch yêu cầu từ 30 đến 60 confirmation cho giao dịch nạp Alephium, trong khoản 30 phút đến một giờ.
 
-### What exchanges is Alephium currently listed on?
+### Những sàn giao dịch nào đang niêm yết Alephium?
 
-You can find the list of available Alephium markets on [CoinMarketCap](https://coinmarketcap.com/currencies/alephium/markets/) or [CoinGecko](https://www.coingecko.com/en/coins/alephium).
+Bạn có thể tìm danh sách các sàn giao dịch đang niêm yết Alephium trên [CoinMarketCap](https://coinmarketcap.com/currencies/alephium/markets/) hoặc [CoinGecko](https://www.coingecko.com/en/coins/alephium).
 
 ## Mining
 
-### What is the Mining Reward?
+### Phần thưởng khai thái (Mining Reward) là gì?
 
-There is a [detailed article explaining Alephium's block rewards](https://medium.com/@alephium/alephium-block-rewards-72d9fb9fde33).
+Xem qua tài liệu [Giải thích chi tiết về block reward của Alephium](https://medium.com/@alephium/alephium-block-rewards-72d9fb9fde33).
 
-### What is the reason to hold the block reward for 500 minutes, given the block time is only 64 seconds?
+### Tại sao phải giữ block reward trong 500 phút?, có phải block time chỉ có 64 giây?
 
-The 500-minute lock is designed to prevent re-org attacks, much like Bitcoin's ~1000 minute lock for mined rewards.
+Khoá 500-phút được thiết kế để chống lại tấn công re-org (re-org attack), với Bitcoin là khoảng 1000 minute bảo vệ khi một block reward được tìm thấy.
 
-### Why do I have 4 mining addresses?
+### Tại sao tôi phải có 4 địa chỉ ví cho việc khai thác khai thái (mining address)?
 
-Alephium is a sharded blockchain with `G` groups and `G*G` shards. Due to this design, each group requires its own mining address.
+Alephium là một blockchain với các shard cụ thể là với các `G` group và các `G*G` shard. Bởi vì với thiết kế này, mỗi group yêu cầu các địa chỉ ví khai thác của chính nó.
 
-Currently, Alephium has 4 groups and 16 shards on its mainnet. Therefore, 4 mining addresses are needed, one for each group.
+Hiện tại, Alephium có 4 group và 16 shard on trên Mainnet. Vì vậy, cần phải có 4 địa chỉ ví khai thác, mỗi một địa chỉ cho mỗi group.
 
-### How many coins are mined per day?
+### Có bao nhiêu coin được khai thác mỗi ngày?
 
-To know how many coins are mined per day, you can use the formula below. As the block reward change dynamically with each block, the formula will only give you an approximation.
+Để hiểu được có bao nhiêu coin được khai thác trong một ngày, bạn cần sử dụng công thức bên dưới. Bởi vì phần block reward thay đổi linh hoạt theo từng block nên công thức sẽ chỉ cung cấp cho bạn giá trị gần đúng.
 
 ```
-3600 seconds / 64 seconds (Alephium block time) == 56.25 blocks per hour, per shard.
-56.25 x 16 shards == 900 blocks total per hour.
-900 x 24 hours == 21600 blocks per day.
-21600 x  ALPH reward per block ~= number of ALPH mined per day.
+3600 giây / 64 giây (Alephium block time) == 56.25 block trên một giờ, trên một shard.
+56.25 x 16 shard == 900 block tổng công trên một giờ.
+900 x 24 giờ == 21600 block trên một ngày.
+21600 x  ALPH reward trên mỗi block ~= số ALPH được đào ra trong môt ngày.
 ```
 
-At the time this entry was last updated the average block reward was: `2.87` ALPH which results in approximately `61'992` ALPH mined per day.
+Tại thời điểm bài viết này được cập nhật lần cuối, trung bình block reward là: `2.87` ALPH, nghĩa là khoảng `61'992` ALPH được khai thác trong một ngày.
 
-### Which miners can I use to mine ALPH?
+### Những mỏ đào nào tôi có thể sử dụng để khai thác ALPH?
 
-Below is list of known Alephium miners. Please note the list may be incomplete as it is difficult to keep track of new miners coming out, feel free to submit a Pull Request to add to the list.
+Bên dưới là danh sách những mỏ đào được biết đến của Alephium. Xin lưu ý danh sách này có thể sẽ không đầy đủ bởi vì các thợ đào liên tục xuất hiện, hãy gửi Pull Request để được thêm vào danh sách.
 
 - https://www.bzminer.com/guides/how-to-mine-alephium/
 - https://lolminer.site/
@@ -186,233 +184,231 @@ Below is list of known Alephium miners. Please note the list may be incomplete a
 - https://trex-miner.com/
   https://github.com/trexminer/T-Rex
 
-You can also use [Alephium's gpu-miner](https://github.com/alephium/gpu-miner) but it is not as efficient as the others in this list.
+Bạn cũng có thể sử. dụng tài liệu [Alephium's gpu-miner](https://github.com/alephium/gpu-miner) nhưng nó có thể không hiệu quả bằng danh sách bên trên.
 
 ## Tech
 
-### Why another L1 blockchain? Isn't there too many already?
+### Tại sao các bạn lại thiết kế thêm một blockchain L1? Đã có quá nhiều mô hình như vậy rồi?
 
-The blockchain’s narrative evolved from disruptive technology to a possible mainstream solution for several sectors. Due to this paradigm shift, most projects are giving away the core values of decentralization, self-sovereignty, and security in pursuing scalability to meet the performance requirements needed for such applications. Alephium delivers the same result without compromising on those fundamentals, and it is uniquely placed to ignite the industry’s interest in (s)UTXO and Po(L)W and spearhead the movement of UTXO-based DeFi and smart contract applications.
+Lịch sử cho thấy blockchain đã và đang không ngừng phát triển cải tiến để trở thành một giải pháp đủ đạo cho nhiều lĩnh vực. Với sự thay đổi không ngừng nghỉ, hầu hết các dự án đang mang lại những giá trị cốt lõi về sự phi tập trung, tự chủ tài sản, bảo mật và khả năng mở rộng mạng lưới để đáp ứng cho các nhu cầu cần thiết cho các ứng dụng. Alephium mang lại những giá trị tương tự đó, nó được thiết kế để thu hút sự quan tâm trong đa lĩnh vực với nền tảng (s)UTXO và Po(L)W. Chúng tôi dẫn đầu cho xu hướng kết hợp nền tảng DeFi với UTXO và ứng dụng phi tập trung với smart contract.
 
-In addition, there were a few key technological motivations for building Alephium:
+Thêm vào đó, Alephium có những đặc điểm công nghệ để thúc đẩy sự phát triển cho các dự án như:
 
-1. Horinzontal scaling through sharding
-2. Many of the new Layer 1 (L1) blockchains are resource intensive, making it costly to run a full node which in turn can lead to a lack of decentralization and desintermediation in the long term. Alephium's approach is similar to Bitcoin's where anyone can run a full node and verify network. _"Don't trust, verify."_
-3. Many of new L1 blockchains use the account model or are EVM compatible and inherits its weaknesses. Alephium created a new Virtual Machine (VM) built on the Unspent Transaction Output (UTXO) model to provides a new programming paradigm with higher security level for decentralized applications (dApps).
-4. Most new L1s use Proof of Stake (PoS) consensus mechanism. Alephium chose to build on the Proof of Work (PoW) as simpler, more consistent, and more robust consensus mechanism for achieving decentralization.
+1. Khả năng mở rộng lớn thông qua các shard
+2. Có rất nhiều blockchain Layer 1 (L1) với việc sử dụng quá nhiều tài nguyên dẫn đến chi phí vận hành full node tăng cao và gián tiếp làm giảm sự phi tập trung. Cách vận hành của Alephium tương tự như của Bitcoin, người dùng có thể tự chạy full node và xác nhận trên mạng lưới. _"Don't trust, verify."_
+3. Nhiều blockchain L1 sử dụng mô hình account (account model) hoặc là tương thích với EVM và điều này có thể thừa hưởng những yếu điểm. Alephium tạo ra một Virtual Machine (VM) mới với cách. hoạt động dựa trên mô hình Unspent Transaction Output (UTXO) nhằm cung cấp một mô hình lập trình mới với mức độ bảo mật cao cho các ứng dụng phi tập trung (dApps).
+4. Hầu hết các blockchain L1 mới sử dụng cơ chế đồng thuận Proof of Stake (PoS). Alephium đã chọn xây dựng trên Proof of Work (PoW) đơn giản hơn, phù hợp hơn và cơ chế đồng thuận mạnh mẻ hơn để tối ưu tính phi tập trung.
 
-### Does Alephium support smart contracts?
+### Alephium có hỗ trợ smart contract hay không?
 
-Yes, Alephium supports smart contracts. It was specifically designed to be a scalable and secure network for smart contracts and decentralized applications.
+Có, Alephium có hỗ trợ smart contract. Nó được đặc biệt thiết kế cho các dApp với sự mở rộng và an toàn trên mạng lưới.
 
-### Why is the blocktime 64 seconds? Is there a particular reason for that?
+### Tại sao blocktime là 64 giây? Có lý do cụ thể nào cho việc này?
 
-Finality on Proof-of-Work (PoW) blockchains is based on the amount of work accumulated in new blocks, rather than the block time. This means that if a transaction needs N blocks with block time T to be confirmed, then it will need 2N blocks to be confirmed if the block time is halved to T/2, which would result in the same amount of time for confirmation.
+Thực thi trên blockchain Proof-of-Work (PoW) được dựa vào khối lượng công việc được tính trên mỗi block mới thay vì là block time. Nghĩa là nếu một giao dịch cần N block thì sẽ cần được xác nhận với block time là T. Và giao dịch sẽ phải cần 2N block để được xác nhận nếu block time giảm xuống còn một nữa là T/2. Điều này sẽ dẫn đến cùng một khoảng thời gian để xác nhận giao dịch.
 
-While shorter block times provide better user experience, they also come with some drawbacks:
+Trong khi khi block time ngắn hơn có thể mang lại trải nghiệm dùng tốt hơn, nhưng điều này cũng mang lại nhiều bất lợi:
 
-- More orphan blocks are produced. The rate of uncle blocks on PoW Ethereum is 10% or higher, while Bitcoin's orphan rate is less than 1%.
-- Increased overhead in the P2P network. This problem is more severe for PoS blockchains, as reports suggest up to 90% of transactions on Solana are validator messages.
+- Nhiều orphan block được tạo ra. Tỷ lệ uncle block trên PoW của Ethereum là 10% hoặc cao hơn, trong khi tỉ lệ orphan block của Bitcoin là thấp hơn 1%.
+- Tăng chi phí trên P2P network. Vấn đề này nghiêm trọng trong blockchain PoS vì các báo cáo cho thấy có hơn 90% giao dịch trên Solana là các thông báo xác thực của validator.
 
-To ensure a lightweight and efficient chain in the long term, these types of overheads should be avoided. Therefore, Alephium started with a block time of 64 seconds, which strikes a balance between Bitcoin and newer blockchains with shorter block times.
+Để đảm bảo tiết kiệm dung lượng và đảm bảo hiệu quả cho các chain trong dài hạn, những đặc điểm này cần được phòng tránh. Nên vậy, Alephium bắt đầu với mỗi blocktime là 64 giây, nhằm tạo ra sự cân bằng giữ blockchain của Bitcoin với những blockchain mới với thời gian mỗi khối ngắn hơn.
 
-For those who prioritize block times and instant finality, Layer 2 solutions can be built on top of Alephium and block time can be reduced in the future as the blockchain matures or internet speed increases.
-Ultimately, a lightweight, scalable, and efficient Layer 1 is essential for the cryptocurrency space.
+Dành cho những người có sự ưu tiên cho block time và thực thi giao dịch, giải pháp Layer 2 có thể được xây dựng trên Alephium và block time có thể được giảm trong tương lai khi blockchain được tích cực phát triển và tốc độ internet được tăng lên.
+Tối ưu, kích thước nhẹ, khả năng mở rộng, và sự hiểu quả cho Layer 1 là điều thiết yếu cho thế giới tài chính phi tập trung.
 
-### How long does it take for a transaction to go through?
+### Mất bao lâu cho một giao dịch được?
 
-1 second should be enough to see the incoming transaction in the mempool. Alephium's block time is currently 64 seconds. Economic finality depends on the amount and your risk management. For a small transaction, the mempool is probably enough, and 1-4 blocks are enough for most transactions. However, if you are an exchange and dealing with large amounts, you will probably wait for a few dozen to hundreds of blocks.
+1 giây là đủ để thấy cho một giao dịch đang diễn ra ở trong mempool. Block time của Alephium hiện đang là 64 giây. Những quyết định mang tính chất kinh tế phụ thuộc vào số lượng. và khả năng quản lý rủi ro của bạn. Cho một giao dịch nhỏ, mempool có lẽ là vừa đủ, và 1-4 block sẽ đủ cho hầu hết các giao dịch. Tuy nhiên, nếu bạn là một người giao dịch với số lượng lớn, bạn cần phải chờ vài chục đến vài trăm block.
 
-You can read more about the concept of block time and time to finality in these articles:
+Bạn có thể tìm thêm thông tin chi biết về concept của block time và thời gian thực thi tại các bài viết này:
 
 - [Block time & block size](https://medium.com/@alephium/block-time-and-block-size-16e37292444f)
 - [Time to finality](https://medium.com/@alephium/time-to-finality-17d64eeffd25)
 
-### Why did you choose PoLW, not PoS?
+### Tại sao các bạn chọn POLW mà không phải là POS?
 
-Blockchain technology is still in its early stages and a common question is what blockchain infrastructure is needed for the next 10 years to support dApps, including DeFi.
+Công nghệ blockchain đang trong giai đoạn rất sớm và câu hỏi thường gặp là cấu trúc blockchain nào cần thiết cho 10 năm tiếp theo để có thể hỗ trợ tốt cho các dApp và DeFi.
 
-Alephium was built with the belief that a scalable blockchain with high throughput and low transaction fees, along with a high level of programmability like Ethereum and the reliability and security of Bitcoin, is necessary. The goal was to create a "scalable Bitcoin with a reliable smart contract solution".
+Alephium được xây dựng với niềm tin rằng một blockchain có thể mở rộng với tốc độ cao, phí giao dịch thấp, khả năng có thể lập trình được như trên Ethereum và độ tin cậy cộng với bảo mật như Bitcoin. Mục tiêu của chúng tôi là tạo ra một giải pháp "mở rộng Bitcoin với smart contract tinh cậy".
 
-According to the Lindy effect, despite recent successes with PoS, the Bitcoin model and sharding with PoW is still the most robust and decentralized way to build a scalable blockchain. Specifically:
+Theo hiệu ứng Lindy, mặc dù cơ chế PoS đang rất thành công, mô hình của Bitcoin với các shard của PoW vẫn là giải pháp mạnh mẽ và mang lại sự phi tập trung cho việc xây dựng một blockchain có tín mở rộng. Những đặc điểm chính:
 
-- PoW is simple and robust and easier to design sharding algorithms with
-- PoS hasn't been time-tested yet and it remains to be seen how it will evolve after Ethereum's PoS switch
-- PoS tends to be more centralized and vulnerable to censorship
-- PoS tends to reduce trustlessness as the cost of running a node can be significantly higher
-- PoS is more vulnerable to some DeFi attacks like MEV
+- PoW đơn giản, mạnh mẽ và dễ dàng thiết kế các thuật toán sharding
+- PoS vẫn cần thời gian để thử nghiệm lại nhiều và tồn động nhiều vấn đề sau khi Ethereum chuyển sang PoS
+- PoS có thể được cho rằng ít tính phi tập trung và làm giảm tính ẩn danh
+- PoS có thể khiến người dùng phải tự tin tưởng vào những người chạy xác nhận giao dịch (validator) hơn bởi vì giá để chạy một node đang dần tăng lên cao
+- PoS có thể sẽ làm giảm tính bảo mật cho DeFi bởi những cuộc tấn công như MEV
 
-### What are stateful UTXOs and how are they different from the other UTXOs models?
+### Stateful UTXO là gì nó có những đặc điểm gì khác nhau so với những mô hình UTXO khác?
 
-There are two types of states in blockchain technology: mutable state (as seen in Ethereum) and immutable state (such as UTXO or eUTXO). Mutable state is more flexible and expressive, as evidenced by the vibrant ecosystem of Ethereum.However, the UTXO model provides inherent security advantages.
+Có hai loại trạng thái (state) trong công nghệ blockchain: mutable state (như trên Ethereum) và immutable state (như trên UTXO hoặc eUTXO). Mutable state thì linh hoạt và dễ tương tác hơn, điều này được chứng tỏ thông qua sự phát triển tích cực của hệ sinh thái trên Ethereum. Tuy nhiên, UTXO model cung cấp những lợi ích bảo mật vốn có.
 
-[Alephium's stateful UTXO model](https://medium.com/@alephium/an-introduction-to-the-stateful-utxo-model-8de3b0f76749) combines the advantages of both. It supports mutable states, like those found in Ethereum, for smart contracts while leveraging the security benefits of the UTXO model for assets.
+[Stateful UTXO model của](https://medium.com/@alephium/an-introduction-to-the-stateful-utxo-model-8de3b0f76749) kết hợp hai lợi ích bên trên lại. Nó hỗ trợ các mutable state như trên Ethereum và cho smart contract, trong khi vẫn thừa hưởng những lợi ích về bảo mật của UTXO model cho các loại tài sản.
 
-### Is Alephium prone to the same concurrency issue as the classic and extended UTXO model which can result in low TPS?
+### Alephium có gặp phải vấn đề tương tranh tương tự như mô hình UTXO cổ điển và mở rộng có thể dẫn đến TPS thấp không??
 
-No, Alephium does not have this limitation. Alephium's stateful UTXO model combines the classic UTXO model with the account model and supports mutable states. This ensures that dApps can access mutable contract states in parallel, eliminating any possibility of a concurrency issue.
+Không, Alephium không có những giới hạn đó. Stateful UTXO model của Alephium kết hợp UTXO model truyền thống với account model và hỗ trợ các mutable state. Điều này đảm bảo rằng các dApp có thể truy cập các mutable contract state một cách độc lập, loại bỏ mọi khả năng xảy ra sự cố đồng thời.
 
-### Why not have 1M shards?
+### Tại sao không phải là 1 triệu shard?
 
-Networking is the main bottleneck for increasing the number of shards. Each node needs to maintain `2G - 1` other shards for consistency. If the average network bandwidth is sufficient, `G` can be set as high as 32. While there is also some computation overhead, networking is the primary bottleneck.
+Mạng lưới chính có thể bị tắt nghẽn khi gia tăng số shard. Mỗi node cần sử dụng `2G - 1` shard cho sự ổn định. Nếu băng thông trung bình của mạng lưới ổn định, `G` có thể được điều chỉnh ở mức cao như 32. Khi một vài chi phí khác được tính vào, mạng lưới sẽ bị tắt nghẽn nhanh chóng.
 
-### What is the process to increase the number of shards on Alephium?
+### Làm gì để tăng số shard trên Alephium?
 
-An upgrade to the network is required to increase the number of shards. Such upgrade would occur when the existing number of shards is insufficient to handle the network load.
+Một bản nâng cấp mạng lưới sẽ có thể gia tăng số shard. Bản nâng cấp có thể diễn ra nếu số shard đang tồn tại không đủ để duy trình băng thông trên toàn hệ thống.
 
-### Can a sharded network, specifically Alephium, be attacked with less than 51% hashrate? For example by compromising only one group or shard?
+### Có khả năng nào khiến cho một mạng lưới với các shard, như là Alephium, bị tấn công khi hashrate thấp hơn 51%? Ví dụ như bằng cách xâm phạm chỉ một group hoặc một shard?
 
-Security concerns can arise in sharded blockchains if they are not designed properly, as Vitalik explained in his "1% attack" terminology. Ethereum's sharding approach addressed this issue with validator shuffling.
+Những lo ngại về bảo mật có thể nảy sinh trong các sharded blockchain nếu chúng không được thiết kế đúng cách, như Vitalik giải thích về định nghĩa "tấn công 1%" của anh ấy. Giải pháp sharding của Ethereum giải quyết vấn đề này bằng các trộn các xác nhận từ validator.
 
-Alephium, on the other hand, addressed it with its Blockflow algorithm. Mining work across different shards is accumulated due to block dependencies. An attacker trying to reorganize one shard would also need to reogarnize all of its dependencies.
-One intuitive and simplified way to view this is that all of the shards merge-mine with each other.
+Mặc khác, Alephium giải quyết vấn đề này với thuật toán Blockflow. Việc khai thác trên các shard khác nhau được tích luỹ bởi sự độc lập của các block. Khi ai đó muốn tấn công, họ sẽ phải cố tổ chức lại shard đồng nghĩa rằng phải tổ chức lại toàn bộ các block độc lập.
+Một cách trực quan và đơn giản nhất để xem điều này là hợp nhất tất cả các shard lại với nhau.
 
-### Is there cross shard atomicity for tokens and smart contracts on Alephium?
+### Có bất kỳ cross shard atomicity nào cho các token và smart contract trên Alephium không?
 
-On Alephium, tokens are atomically composable across shards, which means that it is possible to transfer tokens from one shard to another shard atomically in one transaction.
-However, while smart contracts have token and state components in Alephium's stateful UTXO model, only tokens have cross-shard atomicity; states are sharded and thus not composable. This design decision reflects Alephium's token-centric approach and allows for a simpler state design resembling a partitioned database. This tradeoff is more favorable than the current Layer 2 trends that lack token atomicity, and there is currently no practical solution for complete state composability.
+Trên Alephium, token có thể kế hợp các across shard ở mức độ rất nhỏ, nghĩa là vẫn có khả năng để di chuyển một cách rất nhỏ các token từ một shard này sang một shard khác.
+Tuy nhiên, trong các smart contract có token và các state component ở trong stateful UTXO model của Alephhium, chỉ có các  token mới có cross-shard atomicity; các state được phân chia và do đó chúng không thể kết hợp lại được. Thiết kế này phản ánh Alephium lấy token làm trung tâm và cho phép thiết kế các state đơn giản hơn giống như một database được phân vùng. Sự cân bằng này thuận lợi hơn so với xu hướng Layer 2 hiện tại các mà thiếu token atomicity và hiện không có giải pháp thực tế nào cho khả năng kết hợp các state hoàn chỉnh.
 
-### Are flash loans possible on Alephium?
+### Có flash loan nào khả dụng trên Alephium không?
 
-No, flash loan are not available by design on [Alephium's virtual machine, Alphred](https://medium.com/@alephium/meet-alphred-a-virtual-machine-like-no-others-85ce86540025).
+Không, flash loan không khả dụng bởi thiết kế trên [Alephium's virtual machine, Alphred](https://medium.com/@alephium/meet-alphred-a-virtual-machine-like-no-others-85ce86540025).
 
-### How are Alephium addresses generated? Is there a way to distinguish between a Bitcoin legacy address and an Alephium address?
+### Địa chỉ ví trên Alephium được tạo ra như thế nào? Có các nào để phân biệt giữa địa chỉ Bitcoin legacy và địa chỉ Alephium?
 
-Alephium uses the same curve as Bitcoin (secp256k1 curve) to generate addresses, but a different hashing algorithm (blake2b). However, Alephium addresses are typically longer than Bitcoin addresses since it uses a 32-byte hash instead of a 20-byte hash.
+Alephium sử dụng curve giống như trên Bitcoin (secp256k1 curve) để tạo ra các địa chỉ, nhưng khác thuật toán hash (blake2b). Tuy nhiên, địa chỉ ví trên Alephium thường sẽ dài hơn địa chỉ ví trên Bitcoin bởi vì nó sử dụng một hash 32-byte nâng cấp từ hash 20-byte.
 
-### Can I use my mainnet address on the testnet?
+### Tôi có thể sử dụng địa chỉ ví trên mainnet cho testnet?
 
-Alephium addresses are self-generated by an algorithm and are network-agnostic (testnet, mainnet, devnet, etc). It is not necessary to be connected to a network node (or even the internet) to create a wallet and addresses. Essentially, every Alephium address exists in all networks, even those that haven't been generated/discovered yet.
+Các địa chỉ ví được tự tạo ra bởi một thuật toàn và là mạng duy nhất (testnet, mainnet, devnet, v.v). Không cần thiết để kết nối đến một mạng lưới node (thậm chí là internet) để tạo ra một địa chỉ ví. Một cách thiết yếu, mỗi địa chỉ ví trên Alephium tồn tại trong tất cả các mạng, thậm khi khi chúng nó chưa được tạo hoặc tìm thấy.
 
-In earlier crypto-networks, transactions didn't contain any network information and could be "replayed" on other networks. Therefore, it was not recommended to use the same addresses on different networks.
-Alephium includes network ID in its transactions, so it is perfectly acceptable to use the same address on various networks.  
-When you link your wallet to a network, such as testnet, you can request a testnet node to check your address balance. If you change your wallet's network settings to connect to mainnet, a mainnet node will display your address balance on the mainnet network. Thus, each address has a balance in every network, and you can view the balance of your address on that specific network by connecting to it.
+Trong các mạng lưới cryoto trước đó, những giao dịch đã không chứa bất kỳ thông tin nào và có thể được "sử dụng lại" vào một mạng khác. Vì vậy, người ta không khuyến khích sử dụng một địa chỉ ví giống nhau cho các mạng khác nhau. Nhưng trong Alephium chứa network ID in trong chính các giao dịch nên có khả năng sử dụng cùng một địa chỉ ví cho nhiều mạng khác nhau.  
+Khi bạn liên kết ví của bạn vào trong một mạng, như testnet, bạn có thể yêu cầu một testnet node để kiểm tra số dư trên địa chỉ ví. Nếu bạn thay đổi kết nối mạng trong phần cài đặt sang mainnet, một mainnet node sẽ hhieenr thị số dư địa chỉ ví trên mạng mainnet. Vì vậy, mỗi địa chỉ ví sẽ có số dư khác nhau trên mỗi mạng khác nhau, và bạn có thể xem số dư của địa chỉ ví trên từng mạng bằng cách kết nối đúng vào mạng đó.
 
-### Why did Alephium chose to build its own virtual machine and smart contract language?
+### Tại sao Alephium chọn tự phát triển một virtual machine và ngôn ngữ lập trình riêng cho smart contract?
 
-The [stateful UTXO model](https://medium.com/@alephium/an-introduction-to-the-stateful-utxo-model-8de3b0f76749) on which Alephium is based is completely novel and is incompatible with existing virtual machine such as EVM which was designed for the account model. This imposed the decision to create a new virtual machine [Alphred](https://medium.com/@alephium/meet-alphred-a-virtual-machine-like-no-others-85ce86540025), specifically designed to take advantage of sUTXO’s strengths.
+[stateful UTXO model](https://medium.com/@alephium/an-introduction-to-the-stateful-utxo-model-8de3b0f76749) nơi mà Alephium đặt nền tảng thì hoàn toàn theo lý thuyết và không. tương thích với những virtual machine đang có như EVM (cái được thiét kế cho account model). Điều này thúc đẩy cho quyết định tự tạo ra một virtual machine mới [Alphred](https://medium.com/@alephium/meet-alphred-a-virtual-machine-like-no-others-85ce86540025) và virtual machhine này mang lại nhiều thế mạnh từ sUTXO.
 
-Similarly to the EVM with Solidity, Alphred has a domain-specific language called Ralph. Ralph was built specifically for Alephium’s blockchain to be extremely expressive and easy to use. It has been specially tailored to be secure by design, leveraging the built-in features of the VM.
+ Giống như trên EVM với ngôn ngữ là Solidity, Alphred có cấu trúc ngôn ngữ chủ đạo là Ralph. Ralph được thiết kế đặc biệt cho blockchain Alephium để cực kỳ tương thích và dễ sử dụng. Nó được tạo để gia tăng khả năng bảo mật và có những tính năng tương tự như của VM.
 
-By creating its own VM and smart contract language, Alephium was able to propose a better alternative and mitigate some of the known security issues of Solidity and EVM. In addition, development experience was prioritized when designing the Alphred and Ralph, ensuring an easy start for developers.
+Bằng việc tự tạo ra VM và ngôn ngữ cho smart contract, Alephium có thể đề xuất một phiên bản thay thế giảm thiểu một vài vấn đề bảo mật được biết đến của Solidity và EVM. Thêm vào đó, trải nghiệm sử dụng cho các lập trình viên là tiêu chí hằng đầu khi thiết kế Alphred và Ralph nhằm hỗ trợ cho các lập trình viên dễ dàng bắt đầu xây dựng các dự án.
 
-### Is Alephium quantum resistant?
+### Alephium có thể chống lại sự tấn công từ các máy tính lượng tử hay không?
 
-Similar to Bitcoin and Ethereum, Alephium does not view quantum computers as an immediate concern. The hashing and signing algorithms, as well as address construction, can be updated. The issue of quantum computing will be addressed when it becomes a more significant threat.
+Giống như Bitcoin và Ethereum, Alephium không cho rằng máy tính lượng tử là một vấn đề quan ngại cấp bách. Các thuật toán hash, sign và cấu trúc địa chỉ có thể được cập nhật. Vấn đề từ máy tính lượng tử có thể được giải quyết khi điều này thực sự diễn ra mà dần trở nên là một vấn đề gây hại đến người dùng.
 
 ## Tokenomics
 
-### What is the lowest possible GAS fee?
+### Giá GAS thấp nhất có thể là bao nhiêu?
 
-The current lowest possible gas fee is `10^-7` ALPH or `0.0000001` ALPH.
+Giá gas thấp nhất có thể hiện tại đang là `10^-7` ALPH hoặc `0.0000001` ALPH.
 
-### What is the emission schedule of Alephium? Does Alephium have halving?
+### Alephium có lịch trình giảm phát hay không? Alephium có halving hay không?
 
-Alephium does not have halving like Bitcoin. Its emission schedule depends on the network hashrate and timestamp. Mining rewards are dynamically adjusted with each block. You can read more about it in these articles:
+Alephium không có halving như Bitcoin. Lịch giảm phát phụ thuộc vào hasrate và timestamp của mạng lưới. Phần thưởng khai thác luôn được thay đổi với mỗi block. Bạn có thể tìm hiểu chi tiết qua bài viết này:
 
 - [Block Reward](https://medium.com/@alephium/alephium-block-rewards-72d9fb9fde33)
 - [Proof of Less Work](https://medium.com/@alephium/tech-talk-1-the-ultimate-guide-to-proof-of-less-work-the-universe-and-everything-ba70644ab301)
 
-### If tokens are burnt, will there be a time in the future where the amount of existing ALPH will be close to zero?
+### Nếu các token được đốt (burn) thì trong tương lai có khi nào số lượng ALPH đang tồn tại sẽ về 0?
 
-In theory, yes. Predicting the future of technologies beyond 10, let alone 80 years is difficult. For blockchains like Alephium, it is not unusual for policies, such as emission schedule, to change as technologies evolve. If the consensus agrees to a change in the emission schedule, the change will be happen.
+Theo lý thuyết là có. Dự đoán trong tương lai 10 năm tiếp theo là khó xãy ra và nếu nói 80 tiếp theo là rất khó. Blockchain như Alephium không có những chính sách thông thường như lịch giảm phát để phục vụ cho việc tiến hoá của công nghệ. Nếu một sự đồng thuận là cần thiết để thay đổi giảm phát, điều này mới có thể khiến cho các quyết định được thực thi.
 
-### How is the maximum supply cap implemented?
+### Giới hạn nguồn cung tối đa được tính như thế nào?
 
-The maximum supply cap of 1 billion ALPH is an estimate. The protocol implements a cap on emissions based on a timestamp of approximately 80 years. This is because computing the sum of emissions for a shared chain within the protocol is computationally expensive. The emission rate is determined by the time and varies depending on the hash rate.  
-It's worth noting that the 1 billion cap was estimated before the implementation of the improved [DAA](https://github.com/alephium/alephium/blob/master/docs/proposals/lemanDAA.md). With the current code, the actual cap on emission and maximum supply of ALPH is expected to be less than 1 billion in 80 years, even without taking into account the POLW mechanism's fee burning.
+Giới hạn nguồn cung tối đa 1 tỷ ALPH là một con số ước tính. Giao thức đã dự tính ra số lượng cung có thể được sinh ra dựa vào timestamp sẽ rơi vào khoảng 80 năm nữa. Điều này do việc tính toán con số tổng cung cho một chuỗi shard trên toàn mạng lưới là rất tốn kém. Tốc độ phát hành cung được xác định theo thời gian và thay đổi tuỳ thuộc theo tốc độ của hash rate.
+Điều đáng chú ý là giới hạn 1 tỷ đã được ước tính trước khi triển khai chính sách cải tiến [DAA](https://github.com/alephium/alephium/blob/master/docs/proposals/lemanDAA.md). Với mã nguồn hiện tại, số cung tối đa có thể dự tính ra được sẽ nhỏ hơn 1 tỷ trong 80 năm, thậm chí chưa đến việc đốt phí giao dịch của cơ chế POLW.
 
-## Wallet
+## Ví
 
-### What type of wallet does Alephium offer?
+### Alephium đã có những loại ví cá nhân nào rồi?
 
-Alephium currently offers:
+Alephium hiện tại đang cung cấp:
 
-- a [desktop wallet](https://github.com/alephium/desktop-wallet/releases/latest)
-- a [web extension wallet](https://github.com/alephium/extension-wallet) available on [Chrome](https://chrome.google.com/webstore/detail/alephium-extension-wallet/gdokollfhmnbfckbobkdbakhilldkhcj) and [Firefox](https://addons.mozilla.org/en-US/firefox/addon/alephiumextensionwallet/)
-- a [mobile wallet](https://github.com/alephium/mobile-wallet) is currently being worked on.
+- một [desktop wallet](https://github.com/alephium/desktop-wallet/releases/latest)
+- một [web extension wallet](https://github.com/alephium/extension-wallet) available on [Chrome](https://chrome.google.com/webstore/detail/alephium-extension-wallet/gdokollfhmnbfckbobkdbakhilldkhcj) and [Firefox](https://addons.mozilla.org/en-US/firefox/addon/alephiumextensionwallet/)
+- một [mobile wallet](https://github.com/alephium/mobile-wallet) hiện đang được phát triển.
 
-In addition to the official wallets, there are a number of third-party wallets available.
+Ngoài những ví chính thức, có một số ví được phát triển thông qua bên thứ ba.
 
-### Is it planned for Alephium to be supported on hardware wallets?
+### Alephium đã có kế hoặch cho việc hỗ trợ hardware wallet chưa?
 
-Offering hardware wallet support is an important priority for Alephium.
-A Ledger integration is currently being worked on and will be available in developer mode with the web extension wallet `v0.7.0`.
-Official publication on Ledger is a lengthy process with multiple stages that will take time to complete.
+Hỗ trợ hardware wallet là ưu tiên của Alephium. Một tích hợp vào Ledger đang được phát triển và khả dụng cho chế độ developer với web extension wallet `v0.7.0`.
+Phiên bản hỗ trợ chính thức cho Ledger đang được triển khai và mất nhiều giai đoạn thử nghiệm nhưng sẽ sớm được ra mắt.
 
-### When importing my seed into the desktop wallet, is there a way to import all generated addresses with it?
+### Khi nhập seed vào trong desktop wallet, có cách nào để tôi nhập lại tất cả những địa chỉ đã tạo trước đó?
 
-After importing your wallet using the recovery phrase, the wallet can now scan the connected network to discover all the active addresses you have used in the past. An active address is one that has at least one transaction. For manual address discovery, go to the Addresses section and click on the wrench icon next to the "+ New address" button. After clicking on the “Search” button in the “Discover active addresses” option the Desktop wallet will shows all active addresses linked to this recovery phrase.
+Khi nhập lại ví thông qua cụm từ khôi phục, ví sẽ ngay lập tức kết nối với mạng để tìm tất cả các ví đã hoạt động trước đó. Ví đã hoạt động trước đó phải có ít nhất một giao dịch. Để thêm thủ công các ví bạn đã từng tạo trước đó, hãy tìm đến chổ Ví và nhấn vào biểu tượng cài đặt kế bên nút "+ Thêm địa chỉ ví mới" trên Desktop wallet, nó sẽ hiển thị lại tất cả địa chỉ ví đã hoạt động trước đó (được lưu trữ cùng với cụm từ khôi phục).
 
-### What analytics does the desktop wallet collect?
+### Desktop wallet thu thập những thông tin nào?
 
-Alephium takes concerns about privacy and user experience seriously. Enabling analytics can actually help improve user experience without compromising your privacy. The information collected by the Desktop wallet is completely anonymous. Upon the first launch of your wallet, a unique ID is generated (for example, `vCJGCsDPrZ8WJaIKZMWjU`) which is the only identification information required. IPs or any other [personal data](https://posthog.com/blog/what-is-personal-data-pii) are not collected. Only button clicks, number of wallets, addresses, contacts, and wallet preferences are recorded. This information helps identify useful features and areas for improvement.
-Alephium's open-source code base allows users to verify which events are captured by [searching for the `posthog?.capture` keyword](https://github.com/search?q=repo%3Aalephium%2Fdesktop-wallet+posthog?.capture&type=code).
+Alephium luôn ưu tiên sự an toàn, bảo mật và trải nghiệm người dùng lên hằng đầu. Kích hoạt phân tích có thể giúp chúng tôi cải thiện trải nghiệm người dùng mà không làm ảnh hưởng đến thông tin cá nhân của bạn. Thông tin được thu thập bởi Desktop wallet là hoàn toàn ẩn danh. Khi lần đầu tiên bạn chạy ví của mình, một ID riêng biệt sẽ được sinh ra (ví dụ như, `vCJGCsDPrZ8WJaIKZMWjU`) là thông tin duy nhất được thu thập. Địa chỉ IP hoặc những thứ khác [thông tin cá nhân](https://posthog.com/blog/what-is-personal-data-pii) sẽ không được thu thập. Chỉ có những lần nhấn vào các nút, số lượng ví, địa chỉ, danh bạ và các thiết lập cho ví sẽ được ghi lại. Những thông tin này giúp chúng tôi cải thiện các tính năng và trải nghiệm người dùng.
+Alephium là dự án có mã nguồn mở, nơi người dùng có thể vào để xem những gì đang diễn ra với các sự kiện được ghi lại bởi [searching for the `posthog?.capture` keyword](https://github.com/search?q=repo%3Aalephium%2Fdesktop-wallet+posthog?.capture&type=code).
 
-### Why is there an additional 0.001 ALPH per token added to my transaction when I try to send tokens?
+### Tại sao có 0.001 ALPH token được thêm vào giao dịch của tôi mỗi khi tôi gửi các token?
 
-The `0.001` ALPH is the minimal requirement per UTXO to avoid UTXO spamming. This amount is not consumed by the network and it will arrive to the destination address, same as the tokens.
+`0.001` ALPH là yêu cầu tối thiểu trên một UTXO để tránh UTXO spamming. Số lượng này sẽ không được sử dụng bởi mạng lưới và nó sẽ xuất hiện cho địa chỉ đích đến, như các token.
 
-### Why is it important to back-up your secret recovery phrase?
+### Tại sao việc sao lưu cụm từ khôi phục bí mật là rất quan trọng?
 
-Backing up your secret recovery phrase is crucial because it acts as the master key to your wallet. If you lose access to your wallet (e.g., due to device loss, malfunction, or app deletion), the secret recovery phrase is the only way to restore and access your funds.  
-Without it, any assets stored in the wallet could be permanently lost. Treat it with utmost care, and store it securely and privately.
+Sao lưu cụm từ khôi phục bí mật là điều cực kỳ cần thiết bởi vì cụm từ này như là chìa khoá cho ví của bạn. Nếu bạn mất khả năng truy cập vào ví (ví dụ như mất máy, có sự cố, hoặc xoá ứng dụng)  
+Nếu không có cụm từ khôi phục, bạn sẽ không có khả năng try cập vào tất cả tài sản đã được lưu trữ trên ví đó vĩnh viễn.
 
-## Miscellaneous
+## Những thứ khác
 
-### How can I find translated content?
+### Tôi có thể tìm thấy những nội dung được dịch sang ngôn ngữ khác ở đâu?
 
-You can find a lot of international and translated content on Medium, Twitter and Youtube.
+Bạn có thể tìm rất nhiều nội dung được dịch sang các ngôn ngữ khác của Medium, X(Twitter) và Youtube.
 
-On Twitter, the following community accounts translate Alephium tweets:
+Trên X (Twitter), đây là những cộng đồng theo các quốc gia:
 
 - [German](https://twitter.com/Alephiumde)
 - [French](https://twitter.com/Alephiumfr)
 - [Bulgarian](https://twitter.com/alephiumbg)
 - [Indonesian](https://twitter.com/Alephium_id)
 
-Translators are encouraged to use the following hashtag structure when they publish translated content: #Alephium\[i18n\]
-You can find translation on Medium, Twitter and other channels with the following hashtags:
+Người biên dịch được khuyến khích sử dụng các cấu trúc hashtag khi xuất bản nội dung của họ: #Alephium\[i18n\]
+Bạn có thể tìm các phiên bản được dịch trên các nên tảng Medium, X (Twitter) và các channel khác với những hashtag:
 
-- Spanish: "#AlephiumES"
-- Portugese: "#AlephiumPT"
-- French: "#AlephiumFR"
-- German: "#AlephiumDE"
+- Tây Ban Nha: "#AlephiumES"
+- Bồ Đào Nha: "#AlephiumPT"
+- Pháp: "#AlephiumFR"
+- Đức: "#AlephiumDE"
 - Bulgarian: "#AlephiumBG"
+- Tiếng Việt: "#AlephiumVN"
 
-On its [Discord server](https://alephium.org/discord), Alephium has dedicated international channels.
+Trên [Discord server](https://alephium.org/discord), Alephium cũng có tạo những ngôn ngữ riêng để thảo luận.
 
-On Telegram, the following community-managed groups are available:
+Trên Telegram, những nhóm được quản lý các thành viên trong cộng đồng:
 
-- [German](https://t.me/alphgermanofficial)
-- [Vietnamese](https://t.me/alephiumvn)
-- [Russian](https://t.me/alephiumgroup_ru)
-- [Portugese](https://t.me/Alephium_pt)
-- [Turkish](https://t.me/alephiumturkiye)
-- [Dutch](https://t.me/AlephiumgroupNL)
-- [Chinese](https://t.me/alephiumCN)
+- [Đức](https://t.me/alphgermanofficial)
+- [Việt Nam](https://t.me/alephiumvn)
+- [Nga](https://t.me/alephiumgroup_ru)
+- [Bồ Đào Nha](https://t.me/Alephium_pt)
+- [Thổ Nhĩ Kỳ](https://t.me/alephiumturkiye)
+- [Hà Lan](https://t.me/AlephiumgroupNL)
+- [Trung Quốc](https://t.me/alephiumCN)
 
-### What's new?
+### Tin tức cập nhật?
 
-Check Alephium's announcement channels on [Discord](https://discord.gg/AFXKJNVFKJ) and [Telegram](https://t.me/Alephium_Announcement).
-We also have developments update every week on [Discord](https://alephium.org/discord), [Reddit](https://www.reddit.com/r/Alephium) & [Twitter](https://twitter.com/alephium).
+Xem những cập nhật mới nhất trên channel [Discord](https://discord.gg/AFXKJNVFKJ) và [Telegram](https://t.me/Alephium_Announcement).
+Những bản tin cập nhật hằng tuần trên [Discord](https://alephium.org/discord), [Reddit](https://www.reddit.com/r/Alephium) & [Twitter](https://twitter.com/alephium).
 
 ### Why is the project named Alephium?
 
-Alephium's name is derived from "Aleph", which is a term defined on Wikipedia as follows: "Aleph numbers are a sequence of numbers used to represent the cardinality of infinite sets that can be well-ordered. They were introduced by the mathematician Georg Cantor and are named after the symbol he used to denote them, the Hebrew letter aleph (ℵ)."
+Tên của Alephium xuất phát từ "Aleph". Theo Wikipedia: *"Aleph numbers are a sequence of numbers used to represent the cardinality of infinite sets that can be well-ordered. They were introduced by the mathematician Georg Cantor and are named after the symbol he used to denote them, the Hebrew letter aleph (ℵ)."*
 
-In fact, the Alephium logo is a stylized version of the Aleph letter.
+Nếu bạn để ý, logo của Alephium được thiết kế dựa trên ký tự Aleph.
 
-As a nod to Ethereum's technical promises, Alephium was named using a similar naming convention.
+Như một sự bắt nhịp với Ethereum, Alephium được đặt để tạo sự thuận tiện cho việc gọi tên.
 
-### What is the Leman Upgrade?
+### Cập nhật Leman là gì?
 
-Activated on March 30th, 2023, the [Leman Upgrade](https://medium.com/@alephium/the-leman-network-upgrade-is-live-f52c89b7dd6a) is the first network upgrade of the Alephium network. It is the culmination of over a year of hard work and dedication from many contributors, and it represents a significant milestone for the project. It is the first step towards the growth of the Alephium ecosystem, with multiple new features offering an enhanced developer experience to build decentralized applications.
+Hoạt động vào ngày 30, tháng 3, năm 2023, [Cập nhật Leman](https://medium.com/@alephium/the-leman-network-upgrade-is-live-f52c89b7dd6a) là bản cập nhật hệ thống đầu tiên của Alephium. Đó là thành quả xứng đáng trong suốt một năm làm việc và đóng góp không ngừng nghỉ của đội ngũ và những tác giả đóng góp, và nó đại diện cho sự tăng trưởng qua các cột mốc của dự án. Đây là bước đi đầu tiên theo sau sự phát triển của hệ sinh thái Alephium, với nhiều tính năng mới, cung cấp trải nghiệm phát triển và sử dụng cho người dùng và lập trình viên để xây dựng những ứng dụng phi tập trung.
 
-### Where can I learn everything about Alephium in 5min?
+### Tôi có thể tìm hiểu mọi thứ về Alephium trong 5 phút hay không?
 
-A good overview is available on the [docs](https://docs.alephium.org/) and additionnal resources are available at the top of this FAQ.
-
+Bạn có thể tìm hiểu tổng quan thông qua tài liệu [docs](https://docs.alephium.org/) và những nguồn tham khảo thêm luôn có sẳn trên FAQ
 ### WHEN MOON?
 
-1ALPH is always worth 1ALPH.
+1ALPH luôn là 1ALPH.
