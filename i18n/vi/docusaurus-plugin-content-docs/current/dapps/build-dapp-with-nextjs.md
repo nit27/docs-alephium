@@ -1,111 +1,95 @@
 ---
 sidebar_position: 10
-title: Build dApp with Nextjs
-sidebar_label: Build dApp with Nextjs
+title: Xây dựng dApp với Nextjs
+sidebar_label: Xây dựng dApp với Nextjs
 ---
 
 import UntranslatedPageText from "@site/src/components/UntranslatedPageText";
 
-<UntranslatedPageText />
+Đây là sự tiếp nối của hướng dẫn [Bắt đầu](/dapps/getting-started.md). Trong hướng dẫn này, bạn sẽ có thể xây dựng một [Nextjs](https://nextjs.org/) dApp đơn giản và có thể tương tác với token faucet smart contract. Xem lại giải thích tại hướng dẫn [Bắt đầu](/dapps/getting-started.md).
 
-This is a continuation of the [getting started](/dapps/getting-started.md)
-guide. By the end of this guide, you should be able to build a simple
-[Nextjs](https://nextjs.org/) dApp that interacts with the token faucet
-smart contracts discussed in the [getting started](/dapps/getting-started.md) guide
+Yêu cầu:
 
-Prerequisites:
+- Kiến thức cơ bản về [Typescript](https://www.typescriptlang.org/)
+  và [Nextjs](https://nextjs.org/)
+- [npm](https://www.npmjs.com/) và
+  [npx](https://www.npmjs.com/package/npx) đã được cài đặt
+- Làm quen với hướng dẫn token faucet tutorial project tại trang [Bắt đầu](/dapps/getting-started.md).
+- Cài đặt [extension wallet](/wallet/extension-wallet/overview)
+- Cài đặt docker và docker-compose
 
-- Basic understanding of [Typescript](https://www.typescriptlang.org/)
-  and [Nextjs](https://nextjs.org/)
-- [npm](https://www.npmjs.com/) and
-  [npx](https://www.npmjs.com/package/npx) installed on your machine
-- Get familiar with the token faucet tutorial project in the [getting
-  started](/dapps/getting-started.md) guide.
-- Install the [extension wallet](/wallet/extension-wallet/overview)
-- Install docker and docker-compose
-
-## Create a dApp project using the Nextjs template
+## Tạo một project dApp sử dụng temple của Nextjs
 
 ```sh
 npx @alephium/cli@latest init alephium-nextjs-tutorial --template nextjs
 ```
 
-This will create a new directory `alephium-nextjs-tutorial` and
-initialize a sample Nextjs project inside that directory.
+Nó sẽ tạo một thư một mới tên là `alephium-nextjs-tutorial` và
+chứa một dự án mẫu Nextjs bên trong thư mục.
 
 
-## Launch a local development network
+## Khởi chạy một mạng local
 
-Go to the `alephium-nextjs-tutorial/docker` directory and run
+Đi vào thư mục `alephium-nextjs-tutorial/docker` và chạy
 
 ```sh
 cd alephium-nextjs-tutorial/docker
 docker-compose up -d
 ```
 
-This will start both the Alephium full node and the [explorer
+Nó sẽ bắt đầu cả Alephium full node và [explorer
 backend](https://github.com/alephium/explorer-backend) on
-`devnet`. Explorer backend is needed for extension wallet to work.
+`devnet`. Explorer backend cần extension wallet để hoạt động.
 
-Now you can [compile](/dapps/getting-started.md#compiling-your-contract),
+Bây giờ bạn có thể [compile](/dapps/getting-started.md#compiling-your-contract),
 [test](/dapps/getting-started.md#testing-your-contract) and
-[deploy](/dapps/getting-started.md#deploying-your-contract) your token
-faucet contracts just as described in the [getting
-started](/dapps/getting-started.md) guide.
+[deploy](/dapps/getting-started.md#deploying-your-contract) token faucet contract như đã giải thích ở trang [Bắt đầu](/dapps/getting-started.md).
 
-Make sure the contract is deployed before proceeding to the next step.
+Hãy chắc chắn rằng contract đã được deploy trước khi thực hiện những bước tiếp theo.
 
 ```sh
 npx @alephium/cli@latest deploy
 ```
 
-## Interact with the token faucet with the Nextjs dApp
+## Tương tác token faucet với the Nextjs dApp
 
-Go to the project root directory and run
+Đi đến thư mục gốc của dự án và chạy
 
 ```sh
 npm install
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser
-to see the token faucet application.
+Mở trang [http://localhost:3000](http://localhost:3000) bằng trình duyệt để thấy ứng dụng token faucet.
 
 <img src={require("./media/nextjs-template-connect.png").default}
 alt="Connect button" width="300"/>
 
-As illustrated above, the token faucet dApp shows a `Connect Alephium`
-button before it is connected with a wallet. Click the button and
-choose the `Extension Wallet` option to open the extension
-wallet. `WalletConnect` will be supported soon.
+Như hình minh hoạ, token facet dApp hiển thị một nút `Connect Alephium` trước khi được kết nối vào ví. Nhấn vào nút đó và chọn `Extension Wallet` để mở extension wallet. `WalletConnect` sẽ sớm được hỗ trợ.
 
 <img src={require("./media/nextjs-template-open-connect.png").default} alt="Landing page" width="250"/>
 &nbsp;&nbsp;&nbsp;&nbsp;
 <img src={require("./media/nextjs-template-connect-click-extensonwallet.png").default} alt="Create wallet" width="250" />
 
-Review the approval screen of the extension wallet and click
-`Connect`, the token faucet dApp will be connected to the extension
+Xem lại màn hình xác nhận trên extension wallet và nhấn vào nút
+`Connect`, token faucet dApp sẽ được kết nối với extension
 wallet. 
 
 <img src={require("./media/nextjs-template-connected.png").default} alt="Landing page" width="520"/>
 
-Input the number of tokens to be withdrawn (maximum 2), and click
-the `Send Me Token` button. Review the transaction details and click
+Điền số token muốn rút ra (tối đa là 2), và nhấn nút `Send Me Token`. Xem lại chi tiết giao dịch và nhấn
 `Confirm`.
 
 <img src={require("./media/nextjs-template-send-token.png").default} alt="Landing page" width="520"/>
 
-Congratulations, you have just transferred some tokens from the token
-faucet to your account!
+Chúc mừng, Bạn vừa mới thành công thực hiện một giao dịch di chuyển một vài token từ token faucet đến tài khoản của mình!
 
-## Implementation
+## Tích hợp
 
-The goal of the [nextjs
-template](https://github.com/alephium/nextjs-template) project is to
-demonstrate how to interact with the Alephium blockchain from a Nextjs
-app.
+Mục tiêu của [nextjs
+template](https://github.com/alephium/nextjs-template) project là để minh hoạ cách tương tác với blockchain trên Alephium bằng Nextjs.
 
-Authentication can be done in a few lines using the
+Xác thực có thể được hoàn thành với một vài dòng lệnh sử dụng
 [@alephium/web3-react](https://github.com/alephium/alephium-web3/tree/master/packages/web3-react)
 component:
 
@@ -116,26 +100,20 @@ component:
 </AlephiumWalletProvider>
 ```
 
-`<AlephiumWalletProvider>` creates a react
-[context](https://reactjs.org/docs/context.html) and passes it through
-the component tree of the application. The context
-contains the
+`<AlephiumWalletProvider>` tạo một react
+[context](https://reactjs.org/docs/context.html) và chuyển nó qua component tree của ứng dụng. Context
+sẽ chứa
 [SignerProvider](https://github.com/alephium/alephium-web3/blob/8cf20fee4c16091cf581518e9f411e31ec37955e/packages/web3-react/src/contexts/alephiumConnect.tsx#L56)
-which is an essential piece of information to interact with the
-Alephium blockchain, such as signing transaction, etc.
+nơi mà chưa các thông tin cần thiết để tương tác với blockchain của Alephium, chẳn hạn như ký vào giao dịch, v.v.
 
-After user is connected to the wallet, we can interact with the
-Alephium blockchain by using a set of react hooks provided by
-[@alephium/web3-react](https://github.com/alephium/alephium-web3/tree/master/packages/web3-react). For
-example, getting the [current
-connected wallet](https://github.com/alephium/alephium-web3/blob/master/packages/web3-react/src/hooks/useWallet.tsx),
-[balance](https://github.com/alephium/alephium-web3/blob/master/packages/web3-react/src/hooks/useBalance.tsx)
-and [transaction
-status](https://github.com/alephium/alephium-web3/blob/master/packages/web3-react/src/hooks/useTxStatus.tsx),
-etc.
+Sau khi user đã được kết nối vào ví, chúng ta có thể tương tác với blockchain của Alephium bằng cách sử dụng dãy react hook được cung cấp bởi
+[@alephium/web3-react](https://github.com/alephium/alephium-web3/tree/master/packages/web3-react). Ví dụ, lấy thông tin [ví đã được kết nối hiện tại](https://github.com/alephium/alephium-web3/blob/master/packages/web3-react/src/hooks/useWallet.tsx),
+[số dư](https://github.com/alephium/alephium-web3/blob/master/packages/web3-react/src/hooks/useBalance.tsx)
+và [trạng thái của giao dịch](https://github.com/alephium/alephium-web3/blob/master/packages/web3-react/src/hooks/useTxStatus.tsx),
+v.v.
 
-When a user makes a transaction, you can update the user's balance using `updateBalanceForTx`.
-Here is a simple example:
+Khi một user thực hiện một giao dịch, bạn có thể cập nhật số dư của user bằng `updateBalanceForTx`.
+Đây là ví dụ:
 
 ```typescript
 // The useBalance hook returns two values:
@@ -149,12 +127,12 @@ const withdrawCallback = useCallback(async () => {
 }, [updateBalanceForTx])
 ```
 
-For more implementation details, please take a look at the
+Thêm thông tin chi tiết về việc tích, xin hãy xem qua
 [code](https://github.com/alephium/nextjs-template). 
 
-## Learn More
+## Tìm hiểu thêm
 
-- Nextjs template is deployed on testnet and available at [https://alephium.github.io/nextjs-template](https://alephium.github.io/nextjs-template/)
-- To learn more about the ecosystem, please visit the [overview of ecosystem](/dapps/ecosystem).
-- To learn more about the web3 SDK, please visit the [guide of web3 SDK](/dapps/alephium-web3).
-- To learn more about Ralph language, please visit the [guide of Ralph](/ralph/getting-started).
+- Nextjs template được deploy trên testnet [https://alephium.github.io/nextjs-template](https://alephium.github.io/nextjs-template/)
+- Tìm hiểu thêm về hệ sinh thái, truy cập [Tổng quan về hệ sinh thái](/dapps/ecosystem).
+- Tìm hiểu thêm về web3 SDK, truy cập [Hướng dẫn web3 SDK](/dapps/alephium-web3).
+- Tìm hiểu thêm về ngôn ngữ Ralph, truy cập [Hướng dẫn ngôn ngữ lập trình Ralph](/ralph/getting-started).
