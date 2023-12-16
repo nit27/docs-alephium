@@ -1,53 +1,51 @@
 ---
 sidebar_position: 5
-title: Getting Started
-sidebar_label: Getting started
+title: Bắt đầu
+sidebar_label: Bắt đầu
 ---
 
 import UntranslatedPageText from "@site/src/components/UntranslatedPageText";
 
-<UntranslatedPageText />
+## Tổng quan
 
-## Overview
+Alephium cung cấp đầy đủ nhiều công cụ và các package để giúp bạn có thể xây dựng các dApp của mình.
 
-Alephium proposes multiple tools and packages to help you build your dApps.
+Hướng dẫn này giúp bạn cài đặt với những setup được khuyến khích bởi chúng tôi.
 
-This guide will help you install our recommended setup.
+Điều kiện cần có:
 
-Prerequisites:
+- Viết code bằng [Typescript](https://www.typescriptlang.org/)
+- Chạy trên [terminal](https://en.wikipedia.org/wiki/Terminal_emulator)
+- [nodejs](https://nodejs.org/en/) phiên bản >= 16
+- `npm` phiên bản >= 8 
 
-- Write code in [Typescript](https://www.typescriptlang.org/)
-- Operate in a [terminal](https://en.wikipedia.org/wiki/Terminal_emulator)
-- [nodejs](https://nodejs.org/en/) version >= 16 installed
-- `npm` version >= 8 installed
+## Tại một project dApp
 
-## Create a new dApp project
-
-To create the tutorial project, open a new terminal and run:
+Để tạo một project hướng dẫn, mở terminal và chạy:
 
 ```
 npx @alephium/cli@latest init alephium-tutorial
 ```
 
-This will create a new directory `alephium-tutorial` and initialize a sample project inside that directory.
+Nó sẽ tạo một directory mới `alephium-tutorial` và đưa những project mẫu vào trong directory.
 
-## Launch the local development network
+## Khởi chạy mạng local
 
-To compile and test your contracts, it's necessary to launch a local development network, and you can follow [this guide](/full-node/devnet) to launch a devnet.
+Để compile và kiểm tra các contract, rất cần thiết để chạy một phiên bản mạng local, bạn có thể tham khảo [hướng dẫn này](/full-node/devnet) để chạy devnet.
 
-Your new network is now launched using [this configuration](https://github.com/alephium/alephium-stack/blob/master/devnet/devnet.conf) and generated addresses in 4 groups with enough ALPHs for testing purposes.
+Mạng mới của bạn sẽ được khởi chạy và sử dụng [tuỳ chỉnh này](https://github.com/alephium/alephium-stack/blob/master/devnet/devnet.conf) và tạo ra các địa chỉ trong 4 group với vừa đủ ALPH cho mục đích thử nghiệm.
 
-The Typescript SDK is then able to interact with the network through REST endpoints.
+Typescript SDK bây giờ sẽ có thể tương tác với mạng thông qua REST endpoints.
 
-## Compile your contract
+## Compile contract của bạn
 
-Next, change the workspace to the tutorial project:
+Tiếp theo, di chuyển vào tutorial project:
 
 ```
 cd alephium-tutorial
 ```
 
-Have a look in the `contracts/` folder, you can find `token.ral`:
+Hãy nhìn vào thư mục `contracts/`, bạn sẽ tìm thấy `token.ral`:
 
 ```rust
 import "std/fungible_token_interface"
@@ -120,7 +118,7 @@ Contract TokenFaucet(
 }
 ```
 
-and `withdraw.ral` :
+và `withdraw.ral` :
 
 ```rust
 // Defines a transaction script.
@@ -133,19 +131,19 @@ TxScript Withdraw(token: TokenFaucet, amount: U256) {
 }
 ```
 
- To compile your contracts, run:
+Để compile các contract của bạn, chạy:
 
 ```
 npx @alephium/cli@latest compile
 ```
 
-The compiled artifacts are in the directory `artifacts`.
+Các artifact đã compile sẽ ở trong thư mục `artifacts`.
 
-This command also generates typescript code based on the compiled artifacts. The generated typescript code are in the directory `artifacts/ts`. You can interact with the alephium blockchain more conveniently by using the generated typescript code.
+Dòng lệnh này cũng sẽ tạo ra một code typescript dự trên các artifact. Typescript code đã được tạo sẽ nằm trong thư mục `artifacts/ts`. Bạn có thể dễ dàng tương tác với blockchain của Alephium và sử dụng thuận tiện hơn với typescript code đã tạo.
 
 ## Test your contract
 
-The sample project comes with tests `test/unit/token.test.ts` for your contract:
+Project mẫu sẽ xuất hiện với các test `test/unit/token.test.ts` cho contract của bạn:
 
 ```typescript
 import { web3, Project, TestContractParams, addressFromContractId, AssetOutput, DUST_AMOUNT } from '@alephium/web3'
@@ -189,21 +187,21 @@ describe('unit tests', () => {
 })
 ```
 
-You can run them with:
+Bạn có thể chạy với câu lệnh:
 
 ```
 npm run test
 ```
 
-or
+hoặc
 
 ```
 npx @alephium/cli@latest test
 ```
 
-## Deploy your contract
+## Deploy contract của bạn
 
-Next, to deploy the contract we will use Alephium CLI and a deployment script `scripts/0_deploy_faucet.ts`:
+Tiếp theo, để deploy contract chúng ta sẽ sử dụng Alephium CLI và một script để deploy `scripts/0_deploy_faucet.ts`:
 
 ```typescript
 import { Deployer, DeployFunction, Network } from '@alephium/cli'
@@ -237,21 +235,21 @@ const deployFaucet: DeployFunction<Settings> = async (
 export default deployFaucet
 ```
 
-You can run it using:
+Bạn có thể khởi chạy nó bằng:
 
 ```
 npx @alephium/cli@latest deploy
 ```
 
-This will deploy the token faucet to group 0 of devnet. To deploy on testnet (or any other network), update your `alephium.config.ts` and use the `--network` option:
+Nó sẽ deploy token faucet vào group 0 của devnet. Để deploy trên testnet (hoặc bất kỳ mạng nào), cập nhật `alephium.config.ts` của bạn và theo sau đó là `--network`:
 
 ```
 npx @alephium/cli@latest deploy --network testnet
 ```
 
-## Interact with the deployed contract
+## Tương tác với contract đã được deploy
 
-Now, you can build the source code `src/token.ts` :
+Bây giờ, bạn có thể build source code `src/token.ts` :
 
 ```typescript
 import { Deployments } from '@alephium/cli'
@@ -303,27 +301,26 @@ withdraw()
 
 ```
 
-Simply run:
+Đơn giản là chạy:
 
 ```
 npm run build
 ```
 
-and interact with the deployed token faucet:
+và tương tác với token faucet đã được deploy:
 
 ```
 node dist/src/token.js
 ```
 
-## Connect to the wallets
+## Kết nối vào ví
 
-dApp requires wallet integration for users of the dApp to authenticate and interact with the Alephium blockchain,
-such as transactions signing. Currently dApps can be integrated with both [Extension Wallet](../wallet/extension-wallet/dapp)
-and [WalletConnect](../wallet/walletconnect). Please refer to the respective pages for more details.
+dApp yêu cầu sự tương tác của ví cho các user của dApp để xác nhận và có thể sử dụng trên blockchain của Alephium, ví dụ như ký (sign) vào các giao dịch. Hiện tại dApps có thể được tương tác với cả hai [Extension Wallet](../wallet/extension-wallet/dapp)
+và [WalletConnect](../wallet/walletconnect). Xin hãy tham khảo các trang hướng dẫn để biết thêm chi tiết.
 
-## Learn more
+## Tìm hiểu thêm
 
-- To learn more about the ecosystem, please visit the [overview of ecosystem](/dapps/ecosystem).
-- To learn more about the web3 SDK, please visit the [guide of web3 SDK](/dapps/alephium-web3).
-- To learn more about Ralph language, please visit the [guide of Ralph](/ralph/getting-started).
-- To learn how to build a Nextjs dApp, please visit [Build dApp with Nextjs](/dapps/build-dapp-with-nextjs.md)
+- Tìm hiểu về hệ sinh thái, truy cập [Tổng quan về hệ sinh thái](/dapps/ecosystem).
+- Tìm hiểu về web3 SDK, truy cập [hướng dẫn web3 SDK](/dapps/alephium-web3).
+- Tìm hiểu về ngôn ngữ Ralph, truy cập [Hướng dẫn ngôn ngữ lập trình Ralph](/ralph/getting-started).
+- Tìm hiểu về cách xây dựng một Nextjs dApp, truy cập [Xây dựng dApp với Nextjs](/dapps/build-dapp-with-nextjs.md)
