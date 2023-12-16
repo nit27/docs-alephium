@@ -1,14 +1,12 @@
 ---
 sidebar_position: 5
 title: Getting Started
-sidebar_label: Getting started
+sidebar_label: Bắt Đầu
 ---
 
 import UntranslatedPageText from "@site/src/components/UntranslatedPageText";
 
-<UntranslatedPageText />
-
-## Overview
+## Tổng quan
 
 Alephium proposes multiple tools and packages to help you build your dApps.
 
