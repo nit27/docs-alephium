@@ -4,18 +4,14 @@ title: Dapp Recipes
 sidebar_label: Dapp Recipes
 ---
 
-import UntranslatedPageText from "@site/src/components/UntranslatedPageText";
-
-<UntranslatedPageText />
-
 ## Contract
 
 ### Fetch contract state
 
-When using the `npx @alephium/cli compile` command to compile a contract, it will generate TypeScript code based on the contract code.
-Taking the [TokenFaucet](https://github.com/alephium/nextjs-template/blob/main/contracts/token.ral) contract as an example,
-[here](https://github.com/alephium/nextjs-template/blob/main/artifacts/ts/TokenFaucet.ts) is the generated TypeScript code.
-We can use the generated TypeScript code to fetch the contract state:
+Khi sử dụng lệnh `npx @alephium/cli compile`  để compile một contract, nó sẽ tạo ra một TypeScript code dự theo code của contract.
+Lấy [TokenFaucet](https://github.com/alephium/nextjs-template/blob/main/contracts/token.ral) contract như ví dụ,
+[này](https://github.com/alephium/nextjs-template/blob/main/artifacts/ts/TokenFaucet.ts) sẽ tạo ra TypeScript code.
+Bạn có thể sử dụng TypeScript code để fetch cho contract state:
 
 ```typescript
 import { TokenFaucet } from 'artifacts/ts' // Note that you may need to change the import path according to your project directory structure
@@ -38,7 +34,7 @@ const { alphAmount, tokens } = contractState.asset
 
 ### Call contract method
 
-You can use the generated TypeScript code to call the contract methods, it is similar to the `eth_call` in Ethereum:
+Bạn có thể sử dụng TypeScript code để call những contract method, nó giống như `eth_call` của Ethereum:
 
 ```typescript
 import { TokenFaucet } from 'artifacts/ts'
@@ -55,10 +51,10 @@ const totalSupply = await tokenFaucet.methods.getTotalSupply()
 
 ### Subscribe to contract events
 
-In the [TokenFaucet](https://github.com/alephium/nextjs-template/blob/main/contracts/token.ral) contract,
-we have defined a [Withdraw](https://github.com/alephium/nextjs-template/blob/c846a675235198045cdf91ba0304aa287f2fc68d/contracts/token.ral#L18) event.
-Every time the `withdraw` function is called, the contract will emit a `Withdraw` event.
-We can subscribe to the withdraw events using the following approach:
+Trong [TokenFaucet](https://github.com/alephium/nextjs-template/blob/main/contracts/token.ral) contract,
+chúng ta đã định lượng [Withdraw](https://github.com/alephium/nextjs-template/blob/c846a675235198045cdf91ba0304aa287f2fc68d/contracts/token.ral#L18) event.
+Mỗi khi chức năng `withdraw` được gọi, contract sẽ sinh ra một `Withdraw` event.
+Chúng ta có thể subscribe vào withdraw event sử dụng phương pháp sau:
 
 ```typescript
 import { TokenFaucet, TokenFaucetTypes } from 'artifacts/ts'
@@ -94,11 +90,11 @@ const subscription = tokenFaucet.subscribeWithdrawEvent(options, fromEventCount)
 subscription.unsubscribe()
 ```
 
-## Transaction
+## Giao dịch
 
 ### Query transaction status
 
-You can query the transaction status using the following approach:
+Bạn có thể query một trạng thái giao dịch bằng cách sử dụng đoạn mã bên dưới:
 
 ```typescript
 import { NodeProvider } from '@alephium/web3'
@@ -110,15 +106,15 @@ const txId = '919d4e4b1080d74beb56a1f78ea7c0569a358e3ea3988058987cc1addf4b93cc'
 const txStatus = await nodeProvider.transactions.getTransactionsStatus({ txId })
 ```
 
-You can differentiate the transaction status using the `txStatus.type`:
+Bạn có thể làm các trạng thái giao dịch khác đi bằng cách sử dụng `txStatus.type`:
 
-1. `MemPooled`: this means the transaction is in the mempool
-2. `Confirmed`: the transaction has been confirmed, and you can get the confirmations using `txStatus.chainConfirmations`
-3. `TxNotFound`: the transaction does not exist
+1. `MemPooled`: có nghĩa là giao dịch đang trong mempool
+2. `Confirmed`: giao dịch đã được xác nhận, và bạn có thể lấy các xác nhận bằng `txStatus.chainConfirmations`
+3. `TxNotFound`: giao dịch không tồn tại
 
 ## Hooks
 
-The `@alephium/web3-react` package provides several hooks to facilitate the development of frontend user interfaces.
+`@alephium/web3-react` package cung cấp một vài hook để tạo điều khiện cho việc phát triển giao diện frontend cho người dùng.
 
 ### useWalletConfig
 
@@ -135,7 +131,7 @@ export function Component() {
 }
 ```
 
-The `useWalletConfig` hook returns the configurations of the connect button and utility functions to update those configurations.
+`useWalletConfig` trả về những thiết lập của nút connect và chức năng tiện ích để cập nhật cho những thiết lập đó.
 
 ### useWallet
 
@@ -153,11 +149,11 @@ function Component() {
 }
 ```
 
-If the return value is `undefined`, it indicates that the wallet is not connected. The returned wallet has the following fields:
+Nếu giá trị kết quả trả về `undefined`, nó cho thấy rằng ví đang chưa được kết nối. Kết quả của ví nên được trả về với những trường thông tin sau:
 
-* `wallet.signer`: you can use the signer to sign transactions
-* `wallet.account`: this is the currently connected account
-* `wallet.nodeProvider`: you can use the node provider to communicate with the full node, note that this value may be `undefined`
+* `wallet.signer`: bạn có thể sử dụng signer để ký cho các giao dịch
+* `wallet.account`: đây là tài khoản hiện tại đang được kết nối
+* `wallet.nodeProvider`: bạn có thể sử dụng node provider để giao tiếp với full node, lưu ý giá trị được trả về có thể là `undefined`
 
 ### useBalance
 
@@ -167,10 +163,10 @@ import { useBalance } from '@alephium/web3-react'
 const { balance, updateBalanceForTx } = useBalance()
 ```
 
-The `useBalance` hook returns two values:
+`useBalance` hook trả về hai giá trị:
 
-1. `balance`: the current balance of the connected account
-2. `updateBalanceForTx`: this is used to update the balance when the user makes a transaction. It takes a transaction id as a parameter, and it will update the balance once this transaction is confirmed.
+1. `balance`: số dư hiện tại của tài khoản đang được kết nối
+2. `updateBalanceForTx`: được dùng để cập nhật số dư khi user thực hiện một giao dịch. Nó sẽ lấy id của giao dịch như là một tham số và nó sẽ cập nhật số dư khi giao dịch được xác nhận.
 
 ### useTxStatus
 
@@ -184,17 +180,17 @@ const confirmed = useMemo(() => {
 }, [txStatus])
 ```
 
-The `useTxStatus` hook also accepts an optional callback parameter of type `(txStatus: node.TxStatus) => Promise<any>`, it will be called after each transaction status query.
+`useTxStatus` hook cũng chấp nhận một tham số optional callback của `(txStatus: node.TxStatus) => Promise<any>`, nó sẽ được call sau mỗi trạng thái giao dịch dc query.
 
-## Utils
+## Tiện ích
 
 ### Rate limit
 
-`NodeProvider` is used to communicate with the full node when developing a dApp,
-and you can use the public [API services](./public-services.md) provided by Alephium. 
-But all APIs are rate limited to prevent spam. So if the client sends too many requests in a given amount of time, it will receive the HTTP 429 error.
+`NodeProvider` được dùng để giao tiếp với full node khi tạo dApp,
+và bạn có thể sử dụng public [API services](./public-services.md) được cung cấp bởi Alephium. 
+Nhưng tất cả các API đều có chỉ số giới hạn để ngăn chặn việc spam. Vì vậy nếu client gửi quá nhiều request cho một số lượng nhất định tại cùng một thời điểm, nó sẽ trả về HTTP 429 error.
 
-You can use the [fetch-retry](https://github.com/jonbern/fetch-retry) to solve this issue:
+Bạn có thể sử dụng [fetch-retry](https://github.com/jonbern/fetch-retry) để giải quyết vấn đề này:
 
 ```typescript
 import * as fetchRetry from 'fetch-retry'
@@ -207,10 +203,10 @@ const retryFetch = fetchRetry.default(fetch, {
 const nodeProvider = new NodeProvider('node-url', undefined, retryFetch)
 ```
 
-### Custom wallet connect button
+### Tuỳ chỉnh nút kết nối của ví
 
-`@alephium/web3-react` provides the `AlephiumConnectButton` component to facilitate the development of user interfaces,
-you can also use the `AlephiumConnectButton.Custom` to customize the style of the connect button:
+`@alephium/web3-react` cung cấp `AlephiumConnectButton` component đê tạo điều kiện cho việc xây dựng giao diện người dùng,
+bạn cũng có thể sử dụng `AlephiumConnectButton.Custom` để tuỳ chỉnh kiểu của nút connect:
 
 ```typescript
 import { AlephiumConnectButton } from '@alephium/web3'
