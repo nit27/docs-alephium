@@ -4,40 +4,36 @@ title: Web3 SDK
 sidebar_label: Web3 SDK
 ---
 
-import UntranslatedPageText from "@site/src/components/UntranslatedPageText";
-
-<UntranslatedPageText />
-
-## Installing
+## Cài đặt
 
 ```
 npm install --save @alephium/web3
 ```
 
-## Connecting to Alephium
+## Kết nối đến Alephium
 
-`NodeProvider` is an abstraction of a connection to the Alephium network, you can get a `NodeProvider` by:
+`NodeProvider` là một abstraction của việc kết nối đến mạng Alephium, bạn có thể lấy một `NodeProvider` bằng:
 
 ```typescript
 const nodeProvider = new NodeProvider('http://localhost:22973')
 ```
 
-Or specify the `API_KEY` if you have `alephium.api.api-key` in your full node configuration file:
+Hoặc chỉ định `API_KEY` nếu bạn có `alephium.api.api-key` trong tệp cài đặt full node:
 
 ```typescript
 const API_KEY = // alephium.api.api-key from your full node config
 const nodeProvider = new NodeProvider('http://localhost:22973', API_KEY)
 ```
 
-Sometimes, it's convenient to setup a global `NodeProvider` for your project:
+Thỉnh thoảng, sẽ thuận tiện hơn khi cài đặt sẳn global `NodeProvider` cho dự án của bạn:
 
 ```typescript
 web3.setCurrentNodeProvider(<nodeURL>)
 ```
 
-## Querying the Blockchain
+## Querying trên Blockchain
 
-Once you have a `NodeProvider`, you have a connection to the blockchain, which you can use to query the current contract state, fetch historic contract events, look up deployed contracts and so on.
+Một khi bạn đã có `NodeProvider`, bạn có thể kết nối đến blockchain để query cho contract state hiện tại, lấy các lịch sử của contract, tìm các deployed contract và hơn thế nữa.
 
 ```typescript
 // Get the blockchain height from the given chain index
@@ -111,23 +107,23 @@ await nodeProvider.addresses.getAddressesAddressBalance('1DrDyTr9RpRsQnDnXo2YRiP
 // }
 ```
 
-## Writing to the blockchain
+## Ghi vào trong blockchain
 
-Transactions are used to change the state of the blockchain. Every transaction needs to be signed with a private key, which can be done through the `SignerProvider`. And there are two `SignerProvider` in `alephium/web3-wallet`.
+Các giao dịch sẽ được dùng để thay đổi trạng thái trên blockchain. Mỗi một giao dịch cần phải được ký xác nhận với private key, nó có thể thực hiện thông qua `SignerProvider`. Và hai `SignerProvider` trong `alephium/web3-wallet`.
 
-### Installing Web3 Wallet
+### Cài đặt Ví Web3
 
 ```
 npm install --save @alephium/web3-wallet
 ```
 
 :::note
-Both wallets are used for contract development and deployment, please don't use them to store large amount of tokens.
+Tất cả các ví được sử dụng cho việc xây dựng và tích hợp vào contract, vui lòng không sử dụng chúng để lưu trữ số lượng lớn các token.
 :::
 
 ### NodeWallet
 
-Please follow the [guide](/wallet/node-wallet-guide) to create a full node wallet.
+Tham khảo thêm tại [hướng dẫn này](/wallet/node-wallet-guide) để tạo một full node wallet.
 
 ```typescript
 // Create a node wallet by wallet name
@@ -201,14 +197,14 @@ await wallet.signAndSubmitTransferTx({
 // }
 ```
 
-## Contracts
+## Contract
 
-Similar to Ethereum, a contract is an abstraction of program code which lives on the Alephium blockchain. Let's use the following example to illustrate how to test, deploy and call a contract, please follow the [guide](/dapps/getting-started) to create a project.
+Giống như Ethereum, một contract là một abstraction của program code, nó chạy ở trong Alephium blockchain. Hãy xem qua ví dụ minh hoạ để tìm hiểu về cách test, deploy và call một contract, hướng dẫn tại [đây](/dapps/getting-started) để tạo một project.
 
-### Test the contract
+### Test một contract
 #### Unit tests
 
-The SDK provides unit testing functionality, which calls the contract like a normal transaction, but instead of changing the blockchain state, it returns the new contract state, transaction outputs, and events.
+SDK cung cấp các chức năng unit test, nó call các contract như một giao dịch bình thường, nhưng thay vì thay đổi các state trên blockchhain, nó trả về một contract state mới, những output của giao dịch, và các event.
 
 ```typescript
 web3.setCurrentNodeProvider('http://localhost:22973')
@@ -250,11 +246,11 @@ const contractState = result.contracts[0] as TokenFaucetTypes.State
 expect(contractState.address).toEqual(testContractAddress)
 ```
 
-A complete example can be found in our [`alephium-nextjs-template`](https://github.com/alephium/nextjs-template/blob/main/test/unit/token.test.ts)
+Bạn nên tham khảo qua ví dụ hoàn chỉnh tại [`alephium-nextjs-template`](https://github.com/alephium/nextjs-template/blob/main/test/unit/token.test.ts)
 
-#### Integration tests
+#### Integration test
 
-Alongside unit tests, you can also run some integration tests, be careful as those one can change the blockchain state.
+Bên cạnh các unit test, bạn có thể chạy vài integration test, hãy cẩn thận vì chúng nó có thể thay đổi blockchain state.
 
 ```typescript
 web3.setCurrentNodeProvider('http://127.0.0.1:22973', undefined, fetch)
@@ -288,9 +284,9 @@ for (let i = 0; i < 10; i++) {
 }
 ```
 
-More details can be found in our [integration test folder](https://github.com/alephium/nextjs-template/blob/integration-test/test/integration)
+Thông tin tham khảo thêm tại [integration test folder](https://github.com/alephium/nextjs-template/blob/integration-test/test/integration)
 
-### Deploy the contract
+### Deploy một contract
 
 ```typescript
 web3.setCurrentNodeProvider('http://localhost:22973')
@@ -384,11 +380,11 @@ console.log(JSON.stringify(contractState, null, 2))
 // }
 ```
 
-From the output we can see that we have successfully deployed the contract, and there are 10 tokens in the contract asset.
+Dựa vào output cho ta thấy bạn đã thành công deploy contract, và có 10 token trong contract asset.
 
-### Call the contract
+### Call một contract
 
-You can use scripts to call contracts on the Alephium blockchain, the script code will be executed when the transaction is submitted to the Alephium network, but the script code will not be stored in the blockchain's state.
+Bạn có thể sử dụng script bên dưới để call các contract trên Alephium blockchain, script code sẽ được thực thi khi giao dịch được gửi vào trong mạng lưới của Alephium, nhưng script code sẽ không được lưu vào trong state của blockchain.
 
 ```typescript
 web3.setCurrentNodeProvider('http://localhost:22973')
@@ -439,9 +435,9 @@ console.log(JSON.stringify(balance, null, 2))
 // }
 ```
 
-### Query historic contract events
+### Query historic contract event
 
-Contract events are indexed by contract address with offsets, and you can query historic events of a contract address by specifying the offset and limit (optional).
+Contract event được index bởi địa chỉ contract với các offset, và bạn có thể query historic event của một địa chỉ contract by bằng cách thêm offset và limit (tuỳ chọn).
 
 ```typescript
 const nodeProvider = new NodeProvider('http://localhost:22973')
@@ -509,7 +505,7 @@ await nodeProvider.events.getEventsTxIdTxid('c29e9cb10b3e0b34979b9daac73151d98ee
 
 ### Listening to events
 
-In addition to querying events one by one, you can also get events by event subscription. It will periodically query and get new events.
+Một cách khác để query event từng cái một, bạn có thể lấy các event bằng event subscription. Nó sẽ query một cách định kỳ và lấy event mới.
 
 ```typescript
 web3.setCurrentNodeProvider('http://localhost:22973')
@@ -555,9 +551,9 @@ console.log(JSON.stringify(events, null, 2))
 subscription.unsubscribe()
 ```
 
-## Utils
+## Tiện tích
 
-### Conversion between contract id and contract address
+### Conversion giữa contract id và contract address
 
 ```typescript
 const contractId = 'bfc891f2f7fbb466bd7808f71cc022debb71fd3c1ceb752b623eb9c48ec4d165'
@@ -566,7 +562,7 @@ console.log(binToHex(contractIdFromAddress(contractAddress)) === contractId)
 // true
 ```
 
-### Get the group of an address
+### Lấy group của một address
 
 ```typescript
 const group = groupOfAddress('1DrDyTr9RpRsQnDnXo2YRiPzPW4ooHX5LLoqXrqfMrpQH')
@@ -574,7 +570,7 @@ console.log(group)
 // 0
 ```
 
-### Get the sub-contract id
+### Lấy sub-contract id
 
 ```typescript
 const contractId = 'bfc891f2f7fbb466bd7808f71cc022debb71fd3c1ceb752b623eb9c48ec4d165'
