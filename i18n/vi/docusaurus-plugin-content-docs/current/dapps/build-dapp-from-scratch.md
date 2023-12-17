@@ -1,44 +1,42 @@
 ---
 sidebar_position: 15
-title: Build dApp from scratch
-sidebar_label: Build dApp from scratch
+title: Tạo dApp đầu tiên
+sidebar_label: Tạo dApp đầu tiên
 ---
 
 import UntranslatedPageText from "@site/src/components/UntranslatedPageText";
 
-<UntranslatedPageText />
+Trong hướng dẫn này sẽ hướng dẫn bạn tạo một project dApp cơ bản.
 
-This guide will explore the basics of creating an Alephium dApp project.
+Yêu cầu:
 
-Prerequisites:
+- Viết code trong [Typescript](https://www.typescriptlang.org/)
+- Sử dụng [terminal](https://en.wikipedia.org/wiki/Terminal_emulator)
+- [nodejs](https://nodejs.org/en/) phiên bản >= 16
+- `npm` phiên bản >= 8 
 
-- Write code in [Typescript](https://www.typescriptlang.org/)
-- Operate in a [terminal](https://en.wikipedia.org/wiki/Terminal_emulator)
-- [nodejs](https://nodejs.org/en/) version >= 16 installed
-- `npm` version >= 8 installed
+## Tạo một dApp project mới: Token Faucet
 
-## Create a new dApp project: Token Faucet
+Trong hướng dẫn này, chúng ta sẽ viết dApp đầu tiên: Token faucet.
 
-In this tutorial we will write our first dApp: A token faucet.
+Code ở bên dưới được lấy từ trang [Bắt đầu](/dapps/getting-started), đừng lo lắng vì chúng tôi sẽ hướng dẫn cụ thể từng bước
 
-The code here is taken from our [getting started page](/dapps/getting-started), but we will see step by step how we build this guide.
-
-Create a new project folder and navigate into it:
+Tạo một thư mục cho project và di chuyển vào nó:
 
 ```sh
 mkdir alephium-faucet-tuto
 cd alephium-faucet-tuto
 ```
 
-Let's now create a `contracts` folder where we'll store all our contracts:
+Bây giờ hãy tạo một thư mục tên là `contracts` chứa tất cả các contract:
 
 ```sh
 mkdir contracts
 ```
 
-Our first contract will be `token.ral` which can be found [here](https://github.com/alephium/nextjs-template/blob/main/contracts/token.ral). You can copy the whole file into your `contracts` folder.
+Contract đầu tiên của chúng ta sẽ là `token.ral` bạn có thể tìm nó ở [đây](https://github.com/alephium/nextjs-template/blob/main/contracts/token.ral). Bạn có thể copy tất cả file vào trong thư mục `contracts` của mình.
 
-Let's inspect it, piece by piece:
+Hãy quan sát kỹ đoạn code dưới đây:
 
 ```rust
 import "std/fungible_token_interface"
@@ -52,14 +50,14 @@ Contract TokenFaucet(
 ) implements IFungibleToken {
 ```
 
-The first four fields will be immutable values that store the data required to serve our [IFungibleToken interface](https://github.com/alephium/alephium-web3/blob/master/packages/web3/std/fungible_token_interface.ral).
-`mut balance` is a mutable value that keeps track of how many tokens are left in this faucet.
+Bốn trường đầu tiên sẽ là các giá trị bất biến lưu trữ dữ liệu cần thiết để phục vụ [IFungibleToken interface](https://github.com/alephium/alephium-web3/blob/master/packages/web3/std/fungible_token_interface.ral).
+`mut balance` là giá trị biến, có thể thay đổi để theo dõi số lượng các token còn lại trong faucet.
 
-You can see that our contract emits an `event` and defines an `error` code. Read the following for more info on [events](https://wiki.alephium.org/ralph/getting-started#events) and [error handling](https://wiki.alephium.org/ralph/getting-started#error-handling).
+Bạn có thể thấy contract tạo ra một `event` là đưa ra thông báo `error`. Tìm hiểu thêm thông tin về [events](https://wiki.alephium.org/ralph/getting-started#events) và [error handling](https://wiki.alephium.org/ralph/getting-started#error-handling).
 
-This is followed by 5 access methods for the different contract's arguments.
+Dưới đây là 5 cách truy cập vào các contract argument.
 
-The last method is where the magic happens:
+Bạn sẽ thấy điều kỳ diệu ở cách cuối cùng:
 
 ```rust
 @using(assetsInContract = true, updateFields = true, checkExternalCaller = false)
@@ -79,15 +77,16 @@ pub fn withdraw(amount: U256) -> () {
 }
 ```
 
-With the `assert!` we make sure no one takes more than 2 tokens at the same time.  
-`transferTokenFromSelf` will actually perform the transfer of the tokens.  
-We update the `mut balance` field with the new balance. In the case of underflow, an error will be raised and the transaction won't be performed.
-`callerAddress!()` and `selfTokenId!()` are built-in functions, you can read more about them in our [built-in functions page](/ralph/built-in-functions).
-## Compile your contract
+Với `assert!` chúng ta hãy chắc chắn rằng ko có cái nào chiếm hơn 2 token tại cùng một thời điểm.  
+Tại trường `transferTokenFromSelf` sẽ thực hiện việc di chuyển các token.  
+Chúng ta cập nhật trường `mut balance` với một số dư mới. Trong trường hợp của bước underflow, một lỗi có thể sẽ xuất hiện và giao dịch sẽ không được thực thi.
+`callerAddress!()` và `selfTokenId!()` là những chức năng được xây dựng sẳn, tìm hiểu thêm tại trang [built-in functions](/ralph/built-in-functions).
 
-The compiler needs to contact the full node in order to compile the contract, you'll need to use the right information defined while [creating your devnet](/full-node/devnet). If you haven't start it, now it's the time.
-We define the node URL using the following config file: `alephium.config.ts`. 
-Create this file in the root directory of your project and paste the following code:
+## Compile contract của bạn
+
+Bạn cần phải tương tác với full node để có thể compile contract, và cần sử dụng thông tin đã định nghĩa chính xác khi [tạo devnet của bạn](/full-node/devnet). Nếu bạn chưa bắt đầu nó, hãy khởi tạo.
+Chúng tôi định nghĩa node URL bằng cách sử dụng file đã config: `alephium.config.ts`. 
+Tạo file này tại thư mục project và dán đoạn code bên dưới vào:
 
 ```typescript
 import { Configuration } from '@alephium/cli'
@@ -107,38 +106,38 @@ const configuration: Configuration<Settings> = {
 export default configuration
 ```
 
-Now, let's compile:
+Bây giờ hãy compile:
 
 ```sh
 npx @alephium/cli@latest compile
 ```
 
-It may ask you for some confirmation to install the latest `@alephium/cli` package. Select yes to proceed.
+Nó có thể yêu cầu bạn xác nhận vài thứ để bản package mới nhất `@alephium/cli`. Chọn yes để thực thi.
 
-Once the above command succeeds, you will notice that a new folder called `artifacts` was created. It contains several files related to your contract. For example, `artifacts/ts/TokenFaucet.ts` produces lots of helper functions like `at`, `fetchState`, `call*`, etc, as well as many test functions.
+Khi câu lệnh bên trên chạy xong, bạn sẽ thấy một thư mục mới được tạo có tên là `artifacts`. Nó chứa nhiều file liên quan đến contract của bạn. Ví dụ như, `artifacts/ts/TokenFaucet.ts` tạo ra rất nhiều chức năng helper như `at`, `fetchState`, `call*`, v.v, và rất nhiều chức năng test.
 
-## Test your contract
-The SDK provides unit test functionalities, which call the contract by sending a transaction, but instead of changing the blockchain state, it returns the new contract state, transaction outputs, and events.
+## Test contract của bạn
+SDK cung cấp các chức năng kiểm tra các unit. Nó sẽ call contract bằng cách gửi một giao dịch, nhưng thay vì thay đổi trạng thái của blockchain, nó sẽ trả về một trạng thái contract, các output của giao dịch, và các event.
 
-Install the test framework:
+Cài đặt test framework:
 
 ```sh
 npm install ts-jest @types/jest
 ```
 
-You'll also need our `@alephium/web3` package:
+Bạn cũng cần package của chúng tôi `@alephium/web3`:
 
 ```sh
 npm install @alephium/web3 @alephium/web3-test
 ```
 
-Create a `test` folder:
+Tạo một `test` folder:
 
 ```sh
 mkdir test
 ```
 
-and create the `test/token.test.ts` minimalistic test file with the following contents:
+và tạo file `test/token.test.ts` đơn giản chứa nội dung bên dưới:
 
 ```typescript
 import { web3, Project, addressFromContractId } from '@alephium/web3'
@@ -178,9 +177,9 @@ describe('unit tests', () => {
 })
 ```
 
-A more complex test can be found in our [template](https://github.com/alephium/nextjs-template/blob/main/test/unit/token.test.ts) project.
+Nếu bạn muốn một bài test phức tạp hơn, hãy tham khảo qua [template](https://github.com/alephium/nextjs-template/blob/main/test/unit/token.test.ts) này.
 
-Without entering too much into details, TypeScript needs some configuration to run the test so just create a file called `tsconfig.json` in the root directory of your project and paste the following code:
+Không cần phải nhận quá nhiều thứ, hãy tạo một file TypeScript với một vài tuỳ chỉnh, đặt nó tên là `tsconfig.json` và lưu ở thư mục gốc của project:
 
 ```json
 {
@@ -196,28 +195,28 @@ Without entering too much into details, TypeScript needs some configuration to r
 }
 ```
 
-You can now run the test:
+Bây giờ bạn có thể chạy để test:
 
 ```sh
 npx @alephium/cli@latest test
 ```
 
-You should be able to see on your terminal the output of calling the withdraw method.
+Bạn sẽ thấy cửa sổ terminal cho ra output của việc call withdraw method.
 
-🎉 Congratulations! Have created your first contract and written a test to call it and test it locally! It's time to deploy your contract.
+🎉 Xin chúc mừng! Bạn đã vừa mới tạo thành công contract đầu tiên và viết ra một test để call nó và test nó trên local! Bây giờ hãy tiếp tục deploy contract của bạn.
 
 ## Deploy your contract
 
-Now things are getting serious, we will deploy our contract on our `devnet` :rocket:
+Bây giờ mọi thứ sẽ thú vị hơn , chúng ta sẽ deploy contract trên `devnet` :rocket:
 
-The `deploy` command will execute all deployment scripts it finds inside the `scripts` folder. Create the `scripts` folder in the root folder of the project:
+Câu lệnh `deploy` sẽ thực thi tất cả các script mà nó tìm thấy trong thư mục `scripts`. Hãy tạo thư mục `scripts` ngay trong thư mục gốc của dự án:
 
 ```sh
 mkdir scripts
 ```
 
-Let's create a deployment script file called `0_deploy_faucet.ts` into the `scripts` folder and paste the following code.  
-Note that deployment scripts should always be prefixed with numbers (starting from `0`).
+Tạo một deployment script tên là `0_deploy_faucet.ts` trong thư mục `scripts` và dán những dòng code bên dưới vào.  
+Lưu ý: deployment script phải luôn có tiền tố với một con số (bắt đầu từ `0`).
 
 ```typescript
 import { Deployer, DeployFunction, Network } from '@alephium/cli'
@@ -249,30 +248,30 @@ const deployFaucet: DeployFunction<Settings> = async (
 export default deployFaucet
 ```
 
-The [deployContract](https://github.com/alephium/alephium-web3/blob/d2b5b63cae015e843aa77b4cf484bc62a070f1d5/packages/cli/src/types.ts#L133-L137) of the `Deployer` takes our contract and deploys it with the correct arguments. You can also add a `taskTag` argument to tag your deployment with a specific name. By default, it will use the contract name, but if you deploy the same contract multiple times with different initial fields, your `.deployment` file will get overridden. Using a specific `taskTag` solves this issue.
+[deployContract](https://github.com/alephium/alephium-web3/blob/d2b5b63cae015e843aa77b4cf484bc62a070f1d5/packages/cli/src/types.ts#L133-L137) của `Deployer` sẽ lấy contract và deploy nó với một argument chính xác. Bạn có thêm một argument `taskTag` để tag deployment của bạn với một tên cho trước. Mặc định, nó sẽ sử dụng tên contract, nhưng nếu bạn deploy cùng một contract nhiều lần với các trường ban đầu khác nhau, tệp tin `.deployment`  sẽ bị ghi đè. Sử. dụng một `taskTag` để giải quyết vấn đề này.
 
-From the [DeployContractParams](https://github.com/alephium/alephium-web3/blob/d2b5b63cae015e843aa77b4cf484bc62a070f1d5/packages/web3/src/contract/contract.ts#L1286-L1293) interface, we can see that `initialFields` is mandatory as it contains the arguments for our `TokenFaucet` contract.
+Từ giao diện [DeployContractParams](https://github.com/alephium/alephium-web3/blob/d2b5b63cae015e843aa77b4cf484bc62a070f1d5/packages/web3/src/contract/contract.ts#L1286-L1293), Chúng ta thấy `initialFields` là trường bắt buộc bởi vì nó chứa các argument cho `TokenFaucet` contract.
 
-With `issueTokenAmount` you can define how many tokens you want to issue, this is required if you want to create a token, otherwise no token-id will be created.
+Với `issueTokenAmount` bạn có thể chỉnh bao nhiêu token mà bạn muốn phát hành, điều này là bắt buộc nếu bạn muốn tạo một token. Nếu không ghi số lượng token muốn phát hành, sẽ không có token-id nào được tạo ra.
 
-Now, let's deploy!
+Bây giờ hãy deploy!
 
 ```sh
 npx @alephium/cli@latest deploy
 ```
 
-...OOPS... It doesn't work???
+...UH-OH... Nó không chạy???
 
-If you got the error `The node chain id x is different from configured chain id y`, go check your `networkId` in the devnet configuration and the `alephium.config.ts` file.
+Nếu xuất hiện lỗi `The node chain id x is different from configured chain id y`, hãy kiểm tra `networkId` ở trong devnet configuration và file `alephium.config.ts`.
 
 `No UTXO found` ???
 
-Of course we didn't provide the `how-to-use-my-utxos`, we need to define our [privateKeys](https://github.com/alephium/alephium-web3/blob/d2b5b63cae015e843aa77b4cf484bc62a070f1d5/packages/cli/src/types.ts#L39-L46).
+Tất nhiên rồi, chúng ta chưa tạo ra `how-to-use-my-utxos`, nên cần phải tạo ra [privateKeys](https://github.com/alephium/alephium-web3/blob/d2b5b63cae015e843aa77b4cf484bc62a070f1d5/packages/cli/src/types.ts#L39-L46).
 
-You'll need to export the private keys from our wallet extension (might do it from our other wallets later), make sure to use a wallet with funds, like the one from the genesis allocation of your devnet. 
-If you used the docker way to launch your devnet, it might have work as we are defining [a default private key in our cli package](https://github.com/alephium/alephium-web3/blob/d2b5b63cae015e843aa77b4cf484bc62a070f1d5/packages/cli/src/types.ts#L75) based on the genesis allocation.
+Bạn cần phải xuất private key từ wallet extension (có thể làm sau), hãy chắc chắn rằng ví của bạn có đủ fund, như là một trong những genesis allocation ở trên devnet. 
+Nếu bạn sử dụng docker để khởi chạy devnet, nó cũng có thể sẽ chạy thành công bởi vì chúng đã được làm ra [a default private key in our cli package](https://github.com/alephium/alephium-web3/blob/d2b5b63cae015e843aa77b4cf484bc62a070f1d5/packages/cli/src/types.ts#L75) dựa trên genesis allocation.
 
-Let's update our `alephium.config.ts`
+Hãy cập nhật `alephium.config.ts`
 
 ```typescript
 const configuration: Configuration<void> = {
@@ -292,7 +291,7 @@ Real applications should use environment variables or similiar techniques for se
 Do not commit your private keys to source control.
 :::
 
-and retry to deploy:
+và thử lại để deploy:
 
 ```sh
 npx @alephium/cli@latest deploy
@@ -307,13 +306,13 @@ Token faucet contract address: 28h7qSmkAAeNyoBuQKGyp1WG8VfdKPePCCFGKwp2Y8yyA
 ✅ Deployment scripts executed!
 ```
 
-Congratulations! Your contract is deployed. We can check the balance of the contract. Use `curl` and change the contract address based on your deployment result:
+Chúc mừng! Contract của bạn đã được deploy. Chúng ta có thể kiểm tra số dư của contract. Sử dụng `curl` và thay đổi contract address tuỳ theo kết quả đã deploy:
 
 ```sh
 curl 'http://localhost:22973/addresses/28h7qSmkAAeNyoBuQKGyp1WG8VfdKPePCCFGKwp2Y8yyA/balance'
 ```
 
-The response should look like this:
+Kết quả trả về nên giống như sau:
 
 ```json
 {
@@ -331,9 +330,9 @@ The response should look like this:
 }
 ```
 
-We can see our token id, with the 100 tokens we decided to issue.
+Chúng ta có thể thấy token id, với 100 token chúng ta đã phát hành trước đó.
 
-Let's check the contract state by first getting the group of our address: 
+Hãy kiểm tra contract state bằng cách lấy group của địa chỉ: 
 
 ```sh
 curl 'http://localhost:22973/addresses/28h7qSmkAAeNyoBuQKGyp1WG8VfdKPePCCFGKwp2Y8yyA/group'
@@ -341,7 +340,7 @@ curl 'http://localhost:22973/contracts/28h7qSmkAAeNyoBuQKGyp1WG8VfdKPePCCFGKwp2Y
 ```
 
 
-Contract state response:
+Contract state phản hồi:
 ```json
 {
   "address": "28h7qSmkAAeNyoBuQKGyp1WG8VfdKPePCCFGKwp2Y8yyA",
@@ -384,25 +383,25 @@ Contract state response:
 }
 ```
 
-In the `immFields` we can see our initial `TokenFaucet` arguments (`symbol`, `name`, `decimals`, `supply`). We can also see that `mutFields` contains the current token balance. We'll check that field later after calling the faucet.
+Ở trong `immFields` ta có thể thấy argument của `TokenFaucet` là (`symbol`, `name`, `decimals`, `supply`). Cũng như trường `mutFields` chứa số dư hiện tại. Chúng ta sẽ kiểm tra trường này sau khi call faucet.
 
-The `deploy` command also created a `.deployments.devnet.json` file, with the deployment result. It's important to keep that file to easily interact with the contract, even though all information can be found on the blockchain.
+Câu lệnh `deploy` cũng tạo một tệp `.deployments.devnet.json`, thông qua kết quả của việc deploy. Rất cần thiết để lưu giữ tệp này để sau này dễ dàng tương tác với contract hơn mặc dù tất cả các thông tin có thể được tìm thấy trên blockchain.
 
-# Interact with the deployed contract
+# Tương tác với deployed contract
 
-Having a token faucet is nice, getting tokens from it is even better.
+Có được token faucet là rất tốt, thậm chí lấy dc các token từ nó thì càng tuyệt vời hơn.
 
-We can now write some code to interact with the faucet contract.
+Bây giờ chúng ta sẽ viết vài dòng code để tương tác với faucet contract.
 
-We'll need to install our `cli` package and the `typescript` dependency if it's not yet the case:
+Ta cần cài đặt một gói cài đặt `cli` và `typescript` dependency nếu chưa cài:
 
 ```
 npm install @alephium/cli typescript
 ```
 
-We will now see a different option to interact with the blockchain. Previously we were using the `DeployFunction` with our `scripts/<number>_*` files which are automatically deployed with the CLI tool.
+Bạn sẽ thấy các tuỳ chọn khác nhau để tương tác với blockchain. Trước đó ta đã sử dụng `DeployFunction` với tệp `scripts/<number>_*` nên nó sẽ tự động deploy với công cụ CLI.
 
-Another way is to create a skeleton web application project using TypeScript. Create a `src` folder in the root folder of the project and a file called `tokens.ts` in it with the following contents.
+Một cách khác để tạo một project cơ bản là sử dụng TypeScript. Tạo một thư mục và một tệp tên là `src` trong folder gốc của dự dán và đặt tên nó là `tokens.ts`, sau đó dán đoạn mã bên dưới vào trong tệp `src`:
 
 ```typescript
 import { Deployments } from '@alephium/cli'
@@ -465,7 +464,7 @@ async function withdraw() {
 withdraw()
 ```
 
-For the attentive people, you'll see something new coming from our `artifacts`: [`Withdraw`](https://github.com/alephium/nextjs-template/blob/main/contracts/withdraw.ral) which is a [`TxScript`](https://wiki.alephium.org/ralph/getting-started#txscript) required to interact with the `TokenFaucet` contract. Its code is quite simple. Create a file called `withdraw.ral` in the `contracts` folder and paste the following code:
+Nếu để ý kỹ, bạn sẽ thấy một vài thứ đang xuất hiện trong `artifacts`: [`Withdraw`](https://github.com/alephium/nextjs-template/blob/main/contracts/withdraw.ral) là một [`TxScript`](https://wiki.alephium.org/ralph/getting-started#txscript), nó yêu cầu để tương tác với `TokenFaucet` contract. Code của nó rất đơn giản. Tạo một tệp tên là `withdraw.ral` nằm trong thư mục `contracts` và dán đoạn code bên dưới:
 
 ```rust
 TxScript Withdraw(token: TokenFaucet, amount: U256) {
@@ -473,19 +472,19 @@ TxScript Withdraw(token: TokenFaucet, amount: U256) {
 }
 ```
 
-We now need to recompile our contracts to get the artifact for `Withdraw`:
+Bây giờ bạn cần compile lại contract để lấy artifact cho `Withdraw`:
 
 ```sh
 npx @alephium/cli@latest compile
 ```
 
-You can now compile the TypeScript code to JavaScript with:
+Tiếp theo, compile đoạn mã TypeScript đến JavaScript:
 
 ```sh
 npx tsc --build .
 ```
 
-OOPS, you should get an error coming from the `alephium.config.ts`, until now the config was used as a simple JSON, but now `TypeScript` want it to respect its [interface](https://github.com/alephium/alephium-web3/blob/d2b5b63cae015e843aa77b4cf484bc62a070f1d5/packages/cli/src/types.ts#L48-L62). Especially the `networks` is a record that need to contain the 3 `NetworkType`. You can try to fix it by yourself or update your `alephium.config.ts` file with:
+Ồh, bạn có thể thấy lỗi từ `alephium.config.ts`, bởi vì những thiết đang sử dụng một JSON đơn giản, nhưng bây giờ `TypeScript` muốn nó tương tác với chính [interface](https://github.com/alephium/alephium-web3/blob/d2b5b63cae015e843aa77b4cf484bc62a070f1d5/packages/cli/src/types.ts#L48-L62). Đặc biệt là `networks` là một bản ghi cần chứa 3 loại `NetworkType`. Bạn cần fix nó hoặc cập nhật tệp `alephium.config.ts` với:
 
 ```typescript
 import { Configuration } from '@alephium/cli'
@@ -517,34 +516,34 @@ const configuration: Configuration<Settings> = {
 export default configuration
 ```
 
-Now recompile
+Bây giờ compile lại
 
 ```
 npx tsc --build .
 ```
 
-A `dist` folder should have been created, go ahead and interact with the deployed token faucet:
+Một thư mục `dist` sẽ được tạo ra, tiếp tục bằng cách tương tác với deployed token faucet:
 
 ```
 node dist/src/token.js
 ```
 
-You should now be a proud owner of the token you created.
+Bây giờ bạn sẽ tự hào vì là chủ của token vừa được tạo ra.
 
 
-## What's next?
+## Tiếp theo là gì?
 
-You can find a more complex example of the token faucet tutorial [in the alephium/nextjs-template](https://github.com/alephium/nextjs-template) project.
+Bạn nên tham khảo thêm ví dụ phức tạp hơn về token faucet ở hướng dẫn dự án [alephium/nextjs-template](https://github.com/alephium/nextjs-template).
 
-## Connect to the wallets
+## Kết nối đến các ví
 
-dApp requires wallet integration for users of the dApp to authenticate and interact with the Alephium blockchain,
-such as transactions signing. Currently dApps can be integrated with both [Extension Wallet](../wallet/extension-wallet/dapp)
-and [WalletConnect](../wallet/walletconnect). Please refer to the respective pages for more details.
+dApp sẽ yêu cầu sự tích hợp từ ví cho các user để xác thực và tương tác với Alephium blockchain,
+như là ký vào giao dịch. Hiện tại, các dApp có thể được tích hợp với cả [Extension Wallet](../wallet/extension-wallet/dapp)
+và [WalletConnect](../wallet/walletconnect). Vui lòng tham khảo qua để thêm thông tin chi tiết.
 
-## Learn more
+## Tìm hiểu thêm
 
-- To learn more about the ecosystem, please visit the [overview of ecosystem](/dapps/ecosystem).
-- To learn more about the web3 SDK, please visit the [guide of web3 SDK](/dapps/alephium-web3).
-- To learn more about Ralph language, please visit the [guide of Ralph](/ralph/getting-started).
-- To learn how to build a Nextjs dApp, please visit [Build dApp with Nextjs](/dapps/build-dapp-with-nextjs.md)
+- Tìm hiểu về hệ sinh thái, vui lòng truy cập [tổng quan về hệ sinh thái](/dapps/ecosystem).
+- Tìm hiểu thêm về web3 SDK, vui lòng truy cập [hướng dẫn web3 SDK](/dapps/alephium-web3).
+- Tìm hiểu thêm về ngôn ngữ Ralph, vui lòng truy cập [hướng dẫn về ngôn ngữ lập trình Ralph](/ralph/getting-started).
+- Tìm hiểu thêm về cách tạo dApp trên Nextjs, vui lòng truy cập [Xây dựng dApp với Nextjs](/dapps/build-dapp-with-nextjs.md)
