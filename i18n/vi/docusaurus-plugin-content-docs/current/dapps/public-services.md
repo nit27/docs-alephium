@@ -4,37 +4,33 @@ title: Public Services
 sidebar_label: Public services
 ---
 
-import UntranslatedPageText from "@site/src/components/UntranslatedPageText";
-
-<UntranslatedPageText />
-
 ## Testnet Faucet
 
-The Testnet Faucet is a way to receive testnet-v1 tokens into a given wallet.
+Testnet Faucet là cách để nhận token từ testnet-v1 vào trong ví đã được kết nối.
 
-### Via HTTP API
+### Thông qua HTTP API
 
-Another way to receive testnet-v16 tokens is via an HTTP call, giving your wallet address in the request body, simply as follows:
+Một cách khác để được nhận testnet-v16 token là thông qua việc call HTTP, đơn giản hãy để địa chỉ ví của bạn vào phần body của câu lệnh bên dưới:
 
 ```
 curl -X POST -d '1H1GPLkoMGVUfxQcJgtjWTrKV1KJCQooEV5WxPMhP4Zjy' https://faucet.testnet.alephium.org/send
 ```
 
-Mind that the faucet is throttling requests for few minutes.
+Lưu ý rằng faucet sẽ được điều tiết và cần vài phút để thực. hiện.
 
-## Node and Explorer APIs
+## Node và các Explorer API
 
-Currently, the following API services are maintained. Note that all APIs are rate limited to prevent spam.
-* `https://wallet-v20.mainnet.alephium.org` for mainnet with node v2.X ([Doc](https://wallet-v20.mainnet.alephium.org/docs))
-* `https://wallet-v20.testnet.alephium.org` for testnet with node v2.X ([Doc](https://wallet-v20.testnet.alephium.org/docs))
-* `https://backend-v113.mainnet.alephium.org` for mainnet with explorer backend v1.13.X ([Doc](https://backend-v113.mainnet.alephium.org/docs))
-* `https://backend-v113.testnet.alephium.org` for testnet with explorer backend v1.13.X ([Doc](https://backend-v113.testnet.alephium.org/docs))
+Hiện tại, các API service bên dưới đang được maintain. Lưu ý rằng tất cả các API là rate limited để tránh việc spam.
+* `https://wallet-v20.mainnet.alephium.org` cho mainnet với node v2.X ([Tài liệu](https://wallet-v20.mainnet.alephium.org/docs))
+* `https://wallet-v20.testnet.alephium.org` cho testnet với node v2.X ([Tài liệu](https://wallet-v20.testnet.alephium.org/docs))
+* `https://backend-v113.mainnet.alephium.org` Cho mainnet với explorer backend v1.13.X ([Tài liệu](https://backend-v113.mainnet.alephium.org/docs))
+* `https://backend-v113.testnet.alephium.org` cho testnet với explorer backend v1.13.X ([Tài liệu](https://backend-v113.testnet.alephium.org/docs))
 
-As the project is still under active development, all APIs are versioned. Typically, only the latest versions are maintained, but any API upgrades will be announced to the community in advance.
+Bởi vì project vẫn đang trong quá trình phát triển, tất cả các API sẽ cần luôn được cập nhật theo các phiên bản. Thông thường, chỉ có những phiên bản mới nhất mới được maintain, nhưng bất kỳ cập nhật của các API sẽ được thông báo một cách chi tiết.
 
 ## API Aliases
 
-We maintain the following API aliases to give users time to migrate from the old API.
+Chúng tôi maintain các API aliases bên dưới để giúp user có thời gian trong việc di chuyển từ API cũ.
 
 import aliases from "./api-aliases.json";
 
@@ -55,8 +51,8 @@ export const Aliases = ({aliases, type}) => (
 
 ## API rate limiting
 
-To ensure the best performance and security, all of our public APIs have implemented rate limiting. This means that there is a limit on the number of requests you can make within a certain time period. As our services evolve and grow, the rate limit may be adjusted based on the actual usage of the service.
+Để chắn chắn trong việc có hiệu suất và bảo mật tốt, tất cả các public API của chúng tôi đều được tích hợp rate limiting. Điều này có nghĩa là sẽ có một giới hạn các con số được request mà bạn thực hiện trong một khoản thời gian nhất định. Bởi vì các service của chúng tôi liên tục được phát triển, nên rate limit có thể được điều chỉnh theo lưu lượng sử dụng.
 
-To ensure a smooth experience while working within the rate limit, we highly recommend implementing cache and retry mechanisms when making requests to our API services. Caching responses can help reduce the number of API calls, while retrying failed requests can handle temporary issues or errors.
+Để đảm bảo cho trải nghiệm sử dụng được diễn ra trơn tru khi đạt đến rate limit, chúng tôi rất khuyến khích các bạn tích trữ cache và thử lại các công cụ khi thực hiện các yêu cầu đến dịch vụ API của chúng tôi. Phản hồi của cache có thể làm giảm số lượng call đến API. Cho nên rất có thể cố thử lại những yêu cầu bị lỗi sẽ dẫn đến các lỗi khác.
 
-If your application is built with the React framework, you can leverage the ["SWR"](https://www.npmjs.com/package/swr) package available on npm. SWR provides convenient hooks for data fetching and caching, making it easier to work with APIs. Specifically, you can use the `useSWR` hook for handling mutable data and the `useSWRImmutable` hook for handling immutable data such as token metadata.
+Nếu ứng dụng của bạn được tạo với framework của React, bạn có thể mượn chức năng ["SWR"](https://www.npmjs.com/package/swr) với package có sẳn trên npm. SWR cung cấp các hook tiện lợi cho việc fetch data và cache và giúp dễ dang hơn để làm việc với API. Đặc biệt, bạn có thể sử dụng hook `useSWR`  để xử lý các biến dữ liệu và hook `useSWRImmutable` cho các bất biến dữ liệu như là metadata của token. 
