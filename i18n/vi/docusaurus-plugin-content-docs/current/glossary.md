@@ -5,9 +5,7 @@ slug: /Chú thích
 title: Chú thích
 ---
 
-import UntranslatedPageText from "@site/src/components/UntranslatedPageText";
-
-Đây là danh sách tổng hợp các khái niệm, thuật ngữ hữu ích cho việc tìm hiểu Alephium nói riêng và Blockchain nói chung.
+Đây là danh sách tổng hợp các khái niệm, thuật ngữ có thể hữu ích cho việc tìm hiểu về Blockchain nói chung và Alephium nói riêng.
 
 ## A
 
@@ -133,15 +131,15 @@ Tổng Mining Reward = = Block Reward + min(max(Block Reward, 1 ALPH), transacti
 
 Như một cơ chế giảm phát thì phân nửa phí giao dịch (transaction fees) sẽ được đốt. 
 
-Đọc thêm: [Alephium Block Rewards](https://medium.com/@alephium/alephium-block-rewards-72d9fb9fde33)
+Tài liệu ọc thêm: [Alephium Block Rewards](https://medium.com/@alephium/alephium-block-rewards-72d9fb9fde33)
 
 ### Multisig
 
 Multisig hoặc Multisignature là quá trình yêu cầu hơn một private key để đồng ký tên một giao dịch để nó được đưa lên network. Đây chỉ là một bước bảo mật bổ sung. 
 
-Usually, the multisig setup is done in a way that requires a minimal quorum of signers for a specific transaction to be approved and sent. For instance, a multisig of 5 out of 9 will require a quorum of 5 signers (among nine potential co-signers) to co-sign a transaction before it can be sent.
+Thông thường, việc thiết lập multisig sẽ yêu cầu số lượng người ký tối thiểu để một giao dịch được phê duyệt và gửi đi. Ví dụ, một multisig của 5 trên 9 người sẽ yêu cầu tối thiểu 5 người đồng ký tên giao dịch trước khi nó được gửi đi. 
 
-Alephium’s [Full Node Wallet](/wallet/node-wallet-guide) supports multisig addresses
+[Ví Full Node](/wallet/node-wallet-guide) của Alephium hỗ trợ các địa chỉ ví có multisig. 
 
 ## N
 
@@ -149,13 +147,13 @@ Alephium’s [Full Node Wallet](/wallet/node-wallet-guide) supports multisig add
 
 ## P
 
-### Proof of Less Work (or PoLW)
+### Proof of Less Work (hay PoLW)
 
-Similar to Proof-of-Work for Bitcoin, or Proof-of-Stake for Ethereum (post-merge), PoLW is Alephium’s consensus algorithm. It optimizes the network's energy consumption without compromising its security & decentralisation. It is activated when the network surpasses 1 Eh/s of accumulated hashrate. 
+Tương tự như Proof-of-Work của Bitcoin, hay Proof-of-Stake của Ethereum (sau khi được merge), PoLW là cơ chế đồng thuận của Alephium. Nó tối ưu hoá mức tiêu thụ năng lượng của mạng lưới mà không làm ảnh hưởng đến khả năng bảo mật hay tính phi tập trung. Nó được kích hoạt khi mạng lưới vượt quá 1 Eh/s tốc độ hashrate. 
 
-After that, it partially internalizes the cost to mine a new block, by adding a coin-burning mechanism into the block validation process, incentivizing a cap on the processing power needed overall. Given the same network conditions, Alephium would only use ⅛ of the energy consumed by Bitcoin mining.
+Sau đó, nó tiêu thụ một phần phí để đào ra một block mới bằng cách đưa cơ chế coin-burning (đốt coin) vào trong quá trình xác thực block mới. Điều này mang lại lợi ích cho tổng cung lưu thông trong quá trình tạo ra các token. Trong cùng một điều kiện, Alephium chỉ sử dụng ⅛ năng lượng tiêu thụ so với việc khai thác Bitcoin.
 
-Additional resources: [TECH TALK #1 — The Ultimate guide to Proof-of-Less-Work, the universe and everything…](https://medium.com/@alephium/tech-talk-1-the-ultimate-guide-to-proof-of-less-work-the-universe-and-everything-ba70644ab301)
+Đọc thêm về PoLW: [TECH TALK #1 — The Ultimate guide to Proof-of-Less-Work, the universe and everything…](https://medium.com/@alephium/tech-talk-1-the-ultimate-guide-to-proof-of-less-work-the-universe-and-everything-ba70644ab301)
 
 ## Q
 
@@ -165,89 +163,90 @@ Additional resources: [TECH TALK #1 — The Ultimate guide to Proof-of-Less-Work
 
 ### Sharding 
 
-Sharding is a strategy of database management that splits large databases into smaller, faster, more easily managed sections. 
+Sharding là một cách quản lý database bằng cách chia database lớn thành các phần nhỏ hơn, nhanh hơn và dễ quản lý hơn. 
 
-These smaller parts are called [“shards”](https://en.wikipedia.org/wiki/Shard_(database_architecture)), which means "a small part of a whole." Sharding is used when the power needed to run the database exceeds the processing capacity of a single computer. Sharding becomes necessary when the size of the blockchain exceeds the processing power of the Virtual Machine and the network. Sharding breaks up the main blockchain into separate segments, and the nodes verify only a subset of transactions, allowing parallel transaction validation. This increases the network throughput. 
+Những phần nhỏ hơn này được gọi là [“shards”](https://en.wikipedia.org/wiki/Shard_(database_architecture)), có nghĩa là "một phần nhỏ của tổng thể." Sharding được sử dụng khi máy tính không đủ khả năng để xử lý database, nó cần thiết khi kích thước của blockchain vượt quá khả năng xử lý của Virtual Machine và network. Sharding chia blockchain chính thành các phần riêng biệt, và các nodes chỉ xác minh một tập hợp con giao dịch, điều này cho phép xác minh giao dịch song song. Nhờ vậy mà thông lượng network sẽ tăng. 
 
-Alephium’s blockchain is sharded, and the Blockflow algorithm manages this. Currently, we have four groups with four shards in each one.
+Blockchain của Alephium được phân chia (sharded) và thuật toán Blockflow đang quản lý việc này. Hiện tại chúng tôi có bốn nhóm với bốn shards trong mỗi nhóm. 
 
 ### Smart Contract 
 
-[Smart Contract (SC)](https://en.wikipedia.org/wiki/Smart_contract) is a computer program that enables transactions to be executed by rules predefined, without needing to rely on a third party, central authority or external mechanisms. In the blockchain context, a smart contract is written using the native Programing Language or is compiled (translated) to it and usually runs on the blockchain’s [Virtual Machine.](#virtual-machine)
+[Smart Contract (SC)](https://en.wikipedia.org/wiki/Smart_contract) là một chương trình máy tính cho phép các giao dịch được thực hiện bằng các quy tắc đã được xác định trước mà không cần dựa vào bên thứ ba, cơ quan trung ương hay cơ chế bên ngoài. Trong blockchain, một smart contract được viết bằng ngôn ngữ lập trình gốc hoặc được biên dịch sang và usually thường chạy trên [Virtual Machine.](#virtual-machine) của blockchain. 
 
-SCs on a blockchain can store arbitrary [state](#state) and execute arbitrary transactions. End clients also use transactions to interact with it. And the SC transactions can also invoke other SCs. These transactions might result in changing the state and sending coins from one smart contract to another or from one account to another.
+Các SC trên blockchain có thể lưu trữ [state](#state) tuỳ ý và thực hiện các giao dịch tuỳ ý. Khách hàng đầu cuối cũng sử dụng các giao dịch để tương tác với SC. Và các giao dịch SC cũng có thể tham khảo từ các SC khác. Các giao dịch này có thể dẫn đến việc thay đổi state và gửi coins từ SC này sang SC khác hoặc từ tài khoản này sang tài khoản khác. 
 
-In Alephium, the smart contracts are written using the Ralph language and run on Alphred Virtual Machine.
+Trong Alephium, các smart contracts được viết dưới ngôn ngữ Ralph và chạy trên Alphred Virtual Machine.
 
 ### State
 
-The state is a [computer science concept](https://en.wikipedia.org/wiki/State_(computer_science)) where a machine can have multiple states, but only one at any given time.
+State (trạng thái) là một [khái niệm khoa học máy tính](https://en.wikipedia.org/wiki/State_(computer_science)), trong đó máy tính có thể có nhiều states, nhưng chỉ có một state tại thời điểm bất kỳ. 
 
-A blockchain is considered to be a state machine. The state describes the system's current situation, and the transactions (inputs and outputs) trigger state transitions. As the transactions are bundled in blocks to make the process more efficient, the addition of a block is what changes the actual blockchain state.
+Một blockchain được xem là một máy tính có state. State miêu tả trạng thái hiện tại của hệ thống, và các giao dịch (nhận và gửi) kích hoạt sự chuyển đổi state. Vì các giao dịch được nhóm lại thành các blocks để làm cho quy trình hiệu quả hơn, nên việc bổ sung một block sẽ thay đổi state thưc tế của blockchain. 
 
-Alephium uses the stateful UTXO model, which, compared to other UTXO accounting models, allows it to benefit from a full-featured state. 
+Alephium sử dụng mô hình stateful UTXO để có một state đầy đủ tính năng hơn so với các mô hình UTXO khác. 
+
 
 ## T
 
 ### Time to Finality
 
-Time to Finality is the time between when a transaction is submitted to the network and when it’s considered final (and immutable). There are two main categories of finality: probabilistic finality and deterministic finality.
+Time to Finality là khoảng thời gian từ khi giao dịch được gửi lên network cho đến khi nó được xem là cuối cùng (và không thể thay đổi). Có hai dạng finality: finality xác suất và finality xác định.
 
-Most blockchain systems offer probabilistic transaction finality — this means that the probability that a transaction is valid and cannot be reversed increases with adding more blocks on the chain, but it’s never absolutely final. The network agrees that the transaction is final with enough time and blocks. This is how Bitcoin achieves finality, for example, a transaction is considered final after 6 blocks.
+Hầu hết các hệ thống blockchain đều cung cấp các giao dịch có finality xác suất — nghĩa là xác suất của một giao dịch hợp lệ và không thể thu hồi được sẽ tăng lên khi có nhiều block được thêm vào chain, nhưng nó sẽ không bao giờ hoàn toàn là cuối cùng. Network sẽ xác nhận giao dịch cuối cùng khi có đủ thời gian và blocks. Đây là cách Bitcoin đạt được finality, ví dụ: một giao dịch được xem là cuối cùng sau 6 blocks. 
 
-Other blockchains use a deterministic transaction finality (sometimes called absolute finality) — this means that the transaction is considered final when it is added to the blockchain. Fantom is one example of it.
+Các blockchains sử dụng giao dịch có finality xác định (đôi khi được gọi là finality tuyệt đối) — nghĩa là giao dịch được xem là cuối cùng khi nó được thêm vào blockchain. Fantom là một ví dụ về điều này.
 
-Additional resource: [Time to Finality Article](https://medium.com/@alephium/time-to-finality-17d64eeffd25)
+Tài liệu đọc thêm: [Bài viết về Time to Finality](https://medium.com/@alephium/time-to-finality-17d64eeffd25)
 
 ### Token
 
-A token is a registry entry in a blockchain that follows a set of rules encoded by the smart contract issuing it. This definition makes it different from a cryptocurrency as the latter is the native asset of a blockchain like BTC or ETH, whereas tokens are built on an existing blockchain using smart contracts.
+Một token là một registry entry trong blockchain that tuân theo bộ quy tắc đuợc mã hoá bởi smart contract. Định nghĩa này làm rõ sự khác biệt giữa token và tiền điện tử khi mà tiền điện tử là tài sản gốc của một blockchain như là BTC và ETH, còn tokens được built trên blockchain có sẵn và đang sử dụng smart contracts.
 
-Tokens can be categorized as fungible or non-fungible. Fungible tokens are identical and can seamlessly replace one another. On the other hand, non-fungible tokens (NFTs) are unique and provably scarce, meaning their histories can be traced down to the individual level.
+Tokens có thể được phân loại là fungible (có thể thay thế) hoặc non-fungible (không thể thay thế). Fungible tokens giống hệt nhau và có thể thay thế được cho nhau. Ngược lại, non-fungible tokens (NFTs) là độc nhất và được chứng minh là khan hiếm, nghĩa là lịch sử của chúng có thể được truy tìm độc lập.
 
-Tokens can also be categorized by their intended function: Utility, Security, or Currency Tokens. Currency tokens are created to be traded, like MakerDAO’s DAI or USDC. Utility tokens are focused on practical use, representing access to a given product or service. Security tokens are a digital representation of an underlying asset, such as a share in a company, voting right in a company or other centralized organization, or some tangible or digital article of value.
+Tokens cũng có thể được phân loại theo chức năng của chúng: tiện ích (utility), bảo mật (security) hoặc tiền tệ (currency). Currency tokens được tạo ra để giao dịch, như DAI hoặc USDC của MakerDAO. Utility tokens tập trung vào việc sử dụng thực tế, thể hiện quyền truy cập vào một sản phẩm hay dịch vụ nhất định. Security tokens là tượng trưng của một loại tài sản, ví dụ như cổ phiếu, quyền biểu quyết trong công ty, hay các tổ chức tập trung khác, hoặc một số vật phẩm hữu hình hay kỹ thuật số có giá trị. 
 
 ### Transaction Fee 
 
 ![image](media/186886291-79745fc1-25dc-4307-a752-400ce1ff2d31.png)
 
-When someone does a transaction in Alephium, there’s a price to be paid to the miners for including it in a block. 
+Khi một người thực hiện giao dịch trên Alephium, người đó phải trả phí cho những người đào để đưa giao dịch này vào một block. 
 
-This price is composed of two elements: the [Gas Price](#gas-price) in the network’s native token and the [Gas Amount Spent](#gas-amount-spent) on this transaction processing and can be defined by this equation:
+Transaction fee (Phí giao dịch) bao gồm 2 phần: [Gas Price](#gas-price) trong token gốc của network và [Gas Amount Spent](#gas-amount-spent) trong quá trình xử lý giao dịch, và có thể được xác định theo công thức sau:
 
 Transaction fee = Gas Price * Gas Amount Spent
 
-Additional resources: [Transaction fee GitHub Implementation](https://github.com/alephium/alephium/blob/v1.4.2/protocol/src/main/scala/org/alephium/protocol/model/Transaction.scala#L230-L239)
+Tài liệu đọc thêm: [Áp dụng Transaction fee trên GitHub](https://github.com/alephium/alephium/blob/v1.4.2/protocol/src/main/scala/org/alephium/protocol/model/Transaction.scala#L230-L239)
 
 ### Transactions Per Second (TPS)
 
-Transactions Per Second (TPS) is a measure that comes from the [database systems](https://en.wikipedia.org/wiki/Transactions_per_second) environment, and it means how many transactions theoretically can happen in one second in a given system.
+Transactions Per Second (TPS) - số lượng giao dịch trên mỗi giây là đơn vị đo số lượng giao dịch, trên lý thuyết có thể xảy ra trong một giây trong một hệ thống nhất định. 
 
-In the blockchain context, it is used as a synonym for speed: how fast a transaction can be broadcasted to the network. The following equation calculates it:
+Trong blockchain, nó còn được hiểu như tốc độ (tốc độ của một giao dịch có được gửi lên network) và được tính theo công thức sau:
  
 TPS = (Block Size / Transaction Size ) /Block Time
 
-Additional resources:[Transactions Per Second Article](https://medium.com/@alephium/transactions-per-second-tps-f13217a49e39)
+Tài liệu đọc thêm:[Bài viết về Transactions Per Second](https://medium.com/@alephium/transactions-per-second-tps-f13217a49e39)
 
 ## U
 
 ### UTXO
 
-[UTXO](https://en.wikipedia.org/wiki/Unspent_transaction_output) (Unspent Transaction Output) is the term for the amount of a specific currency that remains unspent after a cryptocurrency transaction.
+[UTXO](https://en.wikipedia.org/wiki/Unspent_transaction_output) (Unspent Transaction Output) là một thuật ngữ đùng để chỉ số lượng tiền cụ thể vẫn chưa được dùng sau một phiên giao dịch tiền điện tử. 
 
-On a UTXO account model blockchain, the portion of what was sent and not spent in a transaction is used as an accounting method. Like double-entry accounting, each transaction has an input and output.
+Trên một blockchain có mô hình tài khoản UTXO, phần tiền được gửi đi và chưa được dùng trong một giao dịch sẽ được sử dụng như một phương thức kế toán. Giống như kế toán kép, mỗi giao dịch đều có đầu vào và đầu ra.
 
-Improved versions were built over it, like eUTXO, Cell System, or Alephium’s sUTXO.
+Các phiên bản cải tiến đã được xây dựng trên UTXO, như là eUTXO, Cell System, hoặc sUTXO của Alephium. 
 
 ## V
 
 ### Virtual Machine
 
-A Virtual Machine (VM) is a software emulation of a physical computer to run programs and deploy apps.
+A Virtual Machine (VM) là một phần mềm mô phỏng máy tính vật lý để chạy các chương trình và triển khai cái ứng dụng. 
 
-A virtual machine runs its own operating system and functions. Each node runs a copy of the VM to run the programs (smart contracts) and allow them to interact with each other and the blockchain itself. 
+Một virtual machine chạy hệ điều hành và chức năng riêng của nó. Mỗi node chạy một bản copy của VM để chạy các chương trình (smart contracts) và cho phép chúng tương tác với nhau và với chính blockchain. 
 
-Alephium’s Virtual machine is called Alphred and has a lot of very [interesting properties.](https://www.youtube.com/watch?v=VVYH9rBJAdA&list=PLqL60kqgLPBBrc64K-1Gs771FBTiLtYZE&index=29)
+Virtual machine của Alephium là Alphred và nó có rất nhiều [điều thú vị.](https://www.youtube.com/watch?v=VVYH9rBJAdA&list=PLqL60kqgLPBBrc64K-1Gs771FBTiLtYZE&index=29)
 
 
 ## W
