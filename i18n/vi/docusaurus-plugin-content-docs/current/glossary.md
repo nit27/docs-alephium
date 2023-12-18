@@ -1,7 +1,7 @@
 ---
 sidebar_position: 30
 sidebar_label: Chú thích
-slug: /Chú thích
+slug: /glossary-vi
 title: Chú thích
 ---
 
@@ -11,24 +11,24 @@ title: Chú thích
 
 ### Alephium
 
-Alephium là blockchain L1 đầu tiên giúp mở rộng và nâng tầm các khái niệm PoW & UTXO. 
-Ngoài các tính năng phi tập trung, tự chủ, bảo mật cao, dễ tiếp cận và tiết kiệm năng lượng, Alephium còn là một network thân thiện với lập trình viên, được tối ưu hoá cho các ứng dụng DeFi và hợp đồng thông minh (smart contract). 
+Alephium là blockchain L1 đầu tiên giúp mở rộng và nâng cấp các thuật toán PoW & UTXO. 
+Ngoài các tính năng phi tập trung, tự chủ tài sản, bảo mật cao, dễ tiếp cận và tiết kiệm năng lượng, Alephium còn là một network thân thiện cho lập trình viên bởi được tối ưu hoá cho các ứng dụng DeFi và hợp đồng thông minh (smart contract). 
 
-Từ thiết kế kỹ thuật đến giao diện, Alephium đã được tạo ra để khắc phục các vấn đề về khả năng truy cập, khả năng mở rộng và bảo mật mà các ứng dụng phi tập trung hiện nay đang gặp phải. 
+Từ các thiết kế kỹ thuật đến giao diện, Alephium đã được tạo ra nhằm khắc phục các vấn đề của khả năng truy cập, khả năng mở rộng và bảo mật mà các ứng dụng phi tập trung hiện nay đang gặp phải. 
 
 
 ## B
 
-### Thuật toán Blake 3 (Hash Function)
-[Thuật toán Blake 3](https://github.com/BLAKE3-team/BLAKE3) là một hash function được mã hoá. Một hash function là một hàm toán học lấy chuỗi đầu vào có độ dài bất kỳ và chuyển đổi nó thành chuỗi đầu ra có độ dài cố định. Chuỗi đầu ra có độ dài cố định đó được gọi là hash value. 
+### Blake 3 Algorithm (Hash Function)
+[Thuật toán Blake 3](https://github.com/BLAKE3-team/BLAKE3) là một chức năng mã hoá các chuỗi hash. Một hash function là một hàm toán học lấy chuỗi đầu vào có độ dài bất kỳ và chuyển đổi nó thành chuỗi đầu ra có độ dài cố định. Chuỗi đầu ra có độ dài cố định đó được gọi là giá trị của chuỗi (hash value). 
 
-Hash functions được sử dụng trong nhiều trường hợp trên một blockchain: trong [Merkle Tree](#merkle-tree), Proof of Work Consensus, digital signature, và trên chính Blockchain (vì mỗi block header của một block trong blockchain chứa hash của block header trước đó). Ví dụ như Bitcoin sử dụng [SHA-256.](https://en.wikipedia.org/wiki/SHA-2)
+Hash function được sử dụng trong nhiều trường hợp trên một blockchain: trong [Merkle Tree](#merkle-tree), Cơ chế đồng thuận Proof of Work, chữ ký điện tử, và trên chính Blockchain (vì mỗi block header của một block trong blockchain chứa hash của block header trước đó). Ví dụ như Bitcoin sử dụng [SHA-256.](https://en.wikipedia.org/wiki/SHA-2)
 
-Alephium sử dụng thuật toán Blake 3 như là hash function được mã hoá cho công việc đào.
+Alephium sử dụng thuật toán Blake 3 như là một hash function được mã hoá cho việc khai thác (mining).
 
 ### Block Reward
 
-Block reward là phần thưởng có giá trị kinh tế nhằm tạo động lực cho người đào tiếp tục công việc bảo vệ network. 
+Block reward là phần thưởng có giá trị nhằm tạo động lực cho các thợ đào (miner) tiếp tục công việc bảo vệ network. 
 
 Người đào sẽ được trả bằng token của blockchain đó. Phần thưởng này thường sẽ nhiều hơn khi network còn nhỏ và mới, khi network đã phát triển thì phần thưởng sẽ ít lại. 
 [Block Reward của Alephium trên GitHub](https://github.com/alephium/alephium/blob/master/protocol/src/main/scala/org/alephium/protocol/mining/Emission.scala)
@@ -43,17 +43,17 @@ Nó có thể được ước tính bằng nhiều cách. Trong một số block
 
 Block Time là thời gian cần thiết để tính toán các giao dịch trong một block và gửi nó lên network. 
 
-Các giao dịch được tập hợp trong một block và được kiểm tra bởi các máy đào (hoặc các validators trên PoS blockchains). Thông thường block time bị ảnh hưởng bởi độ khó của việc đào, vì nó được điều chỉnh để phản ánh khả năng tính toán của network (hashrate) trong khoảng thời gian nhât định. 
+Các giao dịch được tập hợp trong một block và được kiểm tra bởi các thợ đào (hoặc các validator (người xác nhận trên mạng lưới) trên PoS blockchains). Thông thường block time bị ảnh hưởng bởi độ khó của việc khai thác, vì nó được điều chỉnh để phản ánh khả năng tính toán của network (hashrate) trong khoảng thời gian nhất định. 
 
-Alephium network có sự điều chỉnh độ khó trên mỗi block và có block time được ước tính là **64 giây**. 
+Alephium network có sự điều chỉnh độ khó trên mỗi block và có block time với ước tính là **64 giây**. 
 
-Tài liệu đọc thêm: [Block Time and Block Size Article](https://medium.com/@alephium/block-time-and-block-size-16e37292444f)
+Tài liệu đọc thêm: [Block Time và Block Size](https://medium.com/@alephium/block-time-and-block-size-16e37292444f)
 
 ### Bridge
 
-Bridge là một giao thức kết nối các blockchain riêng biệt để tạo ra sự tương tác giữa chúng. Mỗi blockchain thường có các tính năng công nghệ riêng, nhưng lại không có cách riêng để liên lạc với những giao thức khác. Vì thế bridge là một tập hợp các smart contract để liên kết các hệ sinh thái khác nhau này. 
+Bridge là một giao thức kết nối các blockchain riêng biệt để tạo ra sự tương tác giữa chúng. Mỗi blockchain thường có các tính năng công nghệ riêng, nhưng lại không có cách riêng để liên lạc với nhau. Vì thế bridge là một tập hợp các smart contract để liên kết các hệ sinh thái lại với nhau.
  
-Bridge có thể được chuyên biệt hơn bằng cách chỉ cho phép một loại tương tác (chằng hạn như di chuyển token), hoặc khái quát hơn khi cho phép bất kỳ loại truyền dữ liệu nào giữa các blockchain đã được bridged với nhau. 
+Bridge có thể được sử dụng một cách đặc biệt để chỉ cho phép một kiểu tương tác (chằng hạn như di chuyển token), hoặc khái quát hơn khi cho phép bất kỳ kiểu dữ liệu nào giữa các blockchain đã được di chuyển với nhau. 
 
 ## C
 
@@ -65,33 +65,33 @@ Bridge có thể được chuyên biệt hơn bằng cách chỉ cho phép một
 
 ## G
 
-### Gas spent 
+### Gas Amount Spent (số lượng gas đã tiêu thụ)
 
-Gas Spent là số lượng tính toán mà máy đào dùng để thực hiện các giao dịch. Giao dịch nào càng có nhiều chức năng thì việc thực hiện nó càng phức tạp và càng tốn nhiều gas. 
+Gas Spent là số lượng tính toán mà thợ đào dùng để thực hiện các giao dịch. Giao dịch nào càng có nhiều chức năng thì việc thực hiện nó càng phức tạp và càng tốn nhiều gas. 
 
-Hiện tại, như một biện pháp anti-spam thì giá trị tối thiểu cho bất kỳ giao dịch nào trên Alephium là 20'000 gas, nghĩa là phí giao dịch của bạn có giá ít nhât là 0,002 ALPH. 
+Hiện tại, nó như một biện pháp để chống lại việc spam. Giá trị tối thiểu cho bất kỳ giao dịch nào trên Alephium là 20'000 gas, nghĩa là phí giao dịch của bạn có giá ít nhât là 0,002 ALPH. 
 
 Khi network đã phát triển thì điều này sẽ được nới lỏng và thị trường sẽ xác định phí giao dịch. 
 
 ### Gas Price
 
-Đây là giá trị tiền tệ của gas. Gas được định nghĩa là nỗ lực tính toán để thực thi một lệnh trong blockchain. Phí gas là tiền để trả cho công việc được thực hiện bởi người đào. 
+Đây là giá trị tiền tệ của gas. Gas được định nghĩa là nỗ lực tính toán để thực thi một lệnh trong blockchain. Phí gas là tiền để trả cho công việc được thực hiện bởi các thợ đào. 
 
 ### Genesis Block
 
 Genesis Block là tên của block đầu tiên được đào trong một blockchain. Khi các block xếp chồng lên nhau thì Genesis Block là nền tảng hoặc là nơi bắt đầu của chúng. 
 
-Đôi khi nó còn được gọi là Block 0 hay Block 1. Khi một block mới được thêm vào blockchain thi nó sẽ tham chiếu đến các block trước đó. Nhưng vì không có block nào ở trước, nên Genesis Block thường được hardcode vào phần mềm. 
+Đôi khi nó còn được gọi là Block 0 hay Block 1. Khi một block mới được thêm vào blockchain thì nó sẽ tham chiếu đến các block trước đó. Nhưng vì không có block nào ở trước, nên Genesis Block thường được hardcode vào phần mềm. 
 
-Genesis Block của Alephium được đào vào ngày 8/11/2021. 
+Genesis Block của Alephium được đào vào ngày 08/11/2021. 
 
 ## H
 
 ### Hard Fork
 
-Hard fork xảy ra khi có một nâng cấp lớn trên network's protocol làm cho các nodes hay người dùng sử dụng phiên bản cũ không thể gửi hoặc xác thực các giao dịch sau đó. 
+Hard fork xảy ra khi có một nâng cấp lớn trên giao thức của mạng lưới, nó làm cho các node hay người dùng sử dụng phiên bản cũ không thể gửi hoặc xác thực các giao dịch sau đó. 
 
-Bởi việc nâng cấp là tuỳ chọn, nên đôi khi một số nodes hay người dùng quyết định không thực hiện, vì thế sẽ tạo ra một phiên bản blockchain khác từ đó, và điều này đã xảy ra với Ethereum và Ethereum Classic. 
+Bởi việc nâng cấp là sự đồng thuận tuỳ chọn, nên đôi khi một số node hay người dùng quyết định không thực hiện. Vì thế sẽ tạo ra một phiên bản blockchain khác từ đó, và điều này đã xảy ra với Ethereum và Ethereum Classic. 
 
 ## I
 
@@ -107,37 +107,37 @@ Bởi việc nâng cấp là tuỳ chọn, nên đôi khi một số nodes hay n
 
 Merkle tree [là một dạng cấu trúc](https://en.wikipedia.org/wiki/Merkle_tree) được sử dụng để nén dữ liệu một cách hiệu quả và an toàn hơn.
 
-Khi blockchain gom các giao dịch vào các blocks thì mỗi block có một header, và header này có một hash; Hash này được lưu trữ trên Merkle Tree. Hash từ Merkle Tree đuợc dùng để xác minh rằng tệp dữ liệu giống với tập hợp giao dịch ban đầu mà không cần truy cập vào nội dung bên trong block. Khi hình dung, cấu trúc này giống một cái cây và có thể được gọi là một "binary hash tree". 
+Khi blockchain gom các giao dịch vào các block thì mỗi block có một header, và header này có một hash; Hash này được lưu trữ trên Merkle Tree. Hash từ Merkle Tree được dùng để xác minh rằng tệp dữ liệu giống với tập hợp giao dịch ban đầu mà không cần truy cập vào nội dung bên trong block. Khi hình dung, cấu trúc này giống một cái cây và có thể được gọi là một "binary hash tree". 
 
-Ví dụ, Alephium sử dụng ba Merkle trees cho mỗi nhóm để lưu trữ tài sản - UTXOs, contract logic và contract state. 
+Ví dụ, Alephium sử dụng ba Merkle tree cho mỗi nhóm để lưu trữ tài sản - UTXOs, contract logic và contract state. 
 
 ### Maximal Extractble Value (MEV)
 
-Người đào hay [Maximal Extractable Value (MEV)](https://ethereum.org/en/developers/docs/mev/) là giá trị thu được từ việc đào một block mà vượt quá tiêu chuẩn block reward và phí gas bằng cách thay đổi, bao gồm hoặc loại bỏ các giao dịch trong một block. 
+Thợ đào hay [Maximal Extractable Value (MEV)](https://ethereum.org/en/developers/docs/mev/) là giá trị thu được từ việc đào một block mà vượt quá tiêu chuẩn block reward và phí gas bằng cách thay đổi, bao gồm hoặc loại bỏ các giao dịch trong một block. 
 
-Sự khác biệt này được đưa ra bởi các tác nhân được gọi là "searchers" nhằm phân tích nhóm tìm kiếm cơ hội lợi nhuận bằng cách thay thế thông tin trên một giao dịch, chẳng hạn như địa chỉ người gửi và người nhận. Để tăng xác suất giao dịch của họ được máy đào chọn trở thành một phần trong block tiếp theo được tạo ra, họ sẵn sàng trả phí gas cao hơn nhiều so với mức trung bình.
+Sự khác biệt này được đưa ra bởi các tác nhân được gọi là các "searcher" nhằm phân tích nhóm tìm kiếm cơ hội lợi nhuận bằng cách thay thế thông tin trên một giao dịch, chẳng hạn như địa chỉ người gửi và người nhận. Để tăng xác suất giao dịch của họ được máy đào chọn trở thành một phần trong block tiếp theo được tạo ra, họ sẵn sàng trả phí gas cao hơn nhiều so với mức trung bình.
 
 ### Mining Reward
 
 ![](media/Block%20reward.png)
 
-Mining reward là phần thưởng cho người đào cho việc tính toán cần thiết để xác thực các giao dịch và gom chúng vào một block. Trên Alephium, Mining reward có hai phần: [Phí giao dịch](#transaction-fee) và [Block Reward](#block-reward) hoặc new token emissions. Giao dịch trao thưởng cho người đào và phát hành đồng ALPH mới được đào, được gọi là một coinbase transaction. 
+Mining reward là phần thưởng cho thợ đào của việc tính toán cần thiết để xác thực các giao dịch và gom chúng vào một block. Trên Alephium, Mining reward có hai phần: [Phí giao dịch](#transaction-fee) và [Block Reward](#block-reward) hoặc token mới được sinh ra. Giao dịch trao thưởng cho người đào và phát hành đồng ALPH mới được đào, được gọi là một coinbase transaction. 
 
 Công thức tính Mining reward:
 
-Tổng Mining Reward = = Block Reward + min(max(Block Reward, 1 ALPH), transaction fees / 2)
+Tổng Mining Reward = = Block Reward + min(max(Block Reward, 1 ALPH), phí giao dịch / 2)
 
 ![image](media/186885966-b8d746fb-612b-433e-8f79-47e5a87ea375.png)
 
-Như một cơ chế giảm phát thì phân nửa phí giao dịch (transaction fees) sẽ được đốt. 
+Như một cơ chế giảm phát thì phân nửa phí giao dịch sẽ được đốt. 
 
-Tài liệu ọc thêm: [Alephium Block Rewards](https://medium.com/@alephium/alephium-block-rewards-72d9fb9fde33)
+Tài liệu đọc thêm: [Alephium Block Rewards](https://medium.com/@alephium/alephium-block-rewards-72d9fb9fde33)
 
 ### Multisig
 
 Multisig hoặc Multisignature là quá trình yêu cầu hơn một private key để đồng ký tên một giao dịch để nó được đưa lên network. Đây chỉ là một bước bảo mật bổ sung. 
 
-Thông thường, việc thiết lập multisig sẽ yêu cầu số lượng người ký tối thiểu để một giao dịch được phê duyệt và gửi đi. Ví dụ, một multisig của 5 trên 9 người sẽ yêu cầu tối thiểu 5 người đồng ký tên giao dịch trước khi nó được gửi đi. 
+Thông thường, việc thiết lập multisig sẽ yêu cầu một số lượng người ký tối thiểu để một giao dịch được phê duyệt và gửi đi. Ví dụ, một multisig của 5 trên 9 người sẽ yêu cầu tối thiểu 5 người đồng ký tên giao dịch trước khi nó được gửi đi. 
 
 [Ví Full Node](/wallet/node-wallet-guide) của Alephium hỗ trợ các địa chỉ ví có multisig. 
 
@@ -165,23 +165,23 @@ Sau đó, nó tiêu thụ một phần phí để đào ra một block mới b�
 
 Sharding là một cách quản lý database bằng cách chia database lớn thành các phần nhỏ hơn, nhanh hơn và dễ quản lý hơn. 
 
-Những phần nhỏ hơn này được gọi là [“shards”](https://en.wikipedia.org/wiki/Shard_(database_architecture)), có nghĩa là "một phần nhỏ của tổng thể." Sharding được sử dụng khi máy tính không đủ khả năng để xử lý database, nó cần thiết khi kích thước của blockchain vượt quá khả năng xử lý của Virtual Machine và network. Sharding chia blockchain chính thành các phần riêng biệt, và các nodes chỉ xác minh một tập hợp con giao dịch, điều này cho phép xác minh giao dịch song song. Nhờ vậy mà thông lượng network sẽ tăng. 
+Những phần nhỏ hơn này được gọi là [“shards”](https://en.wikipedia.org/wiki/Shard_(database_architecture)), có nghĩa là "một phần nhỏ của tổng thể." Sharding được sử dụng khi máy tính không đủ khả năng để xử lý database, nó cần thiết khi kích thước của blockchain vượt quá khả năng xử lý của Virtual Machine và network. Sharding chia blockchain chính thành các phần riêng biệt và các node, chỉ xác minh một tập hợp con giao dịch, điều này cho phép xác minh giao dịch song song. Nhờ vậy mà băng thông của network sẽ tăng. 
 
-Blockchain của Alephium được phân chia (sharded) và thuật toán Blockflow đang quản lý việc này. Hiện tại chúng tôi có bốn nhóm với bốn shards trong mỗi nhóm. 
+Blockchain của Alephium được phân chia (sharded) và thuật toán Blockflow đang quản lý việc này. Hiện tại chúng tôi có bốn nhóm (group) với bốn shard trong mỗi group. 
 
 ### Smart Contract 
 
-[Smart Contract (SC)](https://en.wikipedia.org/wiki/Smart_contract) là một chương trình máy tính cho phép các giao dịch được thực hiện bằng các quy tắc đã được xác định trước mà không cần dựa vào bên thứ ba, cơ quan trung ương hay cơ chế bên ngoài. Trong blockchain, một smart contract được viết bằng ngôn ngữ lập trình gốc hoặc được biên dịch sang và usually thường chạy trên [Virtual Machine.](#virtual-machine) của blockchain. 
+[Smart Contract (SC)](https://en.wikipedia.org/wiki/Smart_contract) là một chương trình máy tính cho phép các giao dịch được thực hiện bằng các quy tắc đã được xác định trước mà không cần dựa vào bên thứ ba, cơ quan trung ương hay cơ chế bên ngoài. Trong blockchain, một smart contract được viết bằng ngôn ngữ lập trình gốc hoặc được biên dịch sang và thường chạy trên [Virtual Machine.](#virtual-machine) của blockchain. 
 
-Các SC trên blockchain có thể lưu trữ [state](#state) tuỳ ý và thực hiện các giao dịch tuỳ ý. Khách hàng đầu cuối cũng sử dụng các giao dịch để tương tác với SC. Và các giao dịch SC cũng có thể tham khảo từ các SC khác. Các giao dịch này có thể dẫn đến việc thay đổi state và gửi coins từ SC này sang SC khác hoặc từ tài khoản này sang tài khoản khác. 
+Các SC trên blockchain có thể lưu trữ [state](#state) tuỳ ý và thực hiện các giao dịch tuỳ ý. Người dùng cuối cũng sử dụng các giao dịch để tương tác với SC. Và các giao dịch SC cũng có thể tham khảo từ các SC khác. Các giao dịch này có thể dẫn đến việc thay đổi state và gửi các coin từ SC này sang SC khác hoặc từ tài khoản này sang tài khoản khác. 
 
-Trong Alephium, các smart contracts được viết dưới ngôn ngữ Ralph và chạy trên Alphred Virtual Machine.
+Trong Alephium, các smart contract được viết dưới ngôn ngữ lập trình Ralph và chạy trên Alphred Virtual Machine.
 
 ### State
 
-State (trạng thái) là một [khái niệm khoa học máy tính](https://en.wikipedia.org/wiki/State_(computer_science)), trong đó máy tính có thể có nhiều states, nhưng chỉ có một state tại thời điểm bất kỳ. 
+State (trạng thái) là một [khái niệm khoa học máy tính](https://en.wikipedia.org/wiki/State_(computer_science)), trong đó máy tính có thể có nhiều state, nhưng chỉ có một state tại thời điểm bất kỳ. 
 
-Một blockchain được xem là một máy tính có state. State miêu tả trạng thái hiện tại của hệ thống, và các giao dịch (nhận và gửi) kích hoạt sự chuyển đổi state. Vì các giao dịch được nhóm lại thành các blocks để làm cho quy trình hiệu quả hơn, nên việc bổ sung một block sẽ thay đổi state thưc tế của blockchain. 
+Một blockchain được xem là một máy tính có state. State miêu tả trạng thái hiện tại của hệ thống và các giao dịch (nhận và gửi) kích hoạt sự chuyển đổi state. Vì các giao dịch được nhóm lại thành các block để làm cho quy trình hiệu quả hơn, nên việc bổ sung một block sẽ thay đổi state thực tế của blockchain. 
 
 Alephium sử dụng mô hình stateful UTXO để có một state đầy đủ tính năng hơn so với các mô hình UTXO khác. 
 
@@ -190,21 +190,21 @@ Alephium sử dụng mô hình stateful UTXO để có một state đầy đủ 
 
 ### Time to Finality
 
-Time to Finality là khoảng thời gian từ khi giao dịch được gửi lên network cho đến khi nó được xem là cuối cùng (và không thể thay đổi). Có hai dạng finality: finality xác suất và finality xác định.
+Time to Finality là khoảng thời gian từ khi giao dịch được gửi lên network cho đến khi nó được xem là hoàn thành (và không thể thay đổi). Có hai dạng finality: finality xác suất và finality xác định.
 
-Hầu hết các hệ thống blockchain đều cung cấp các giao dịch có finality xác suất — nghĩa là xác suất của một giao dịch hợp lệ và không thể thu hồi được sẽ tăng lên khi có nhiều block được thêm vào chain, nhưng nó sẽ không bao giờ hoàn toàn là cuối cùng. Network sẽ xác nhận giao dịch cuối cùng khi có đủ thời gian và blocks. Đây là cách Bitcoin đạt được finality, ví dụ: một giao dịch được xem là cuối cùng sau 6 blocks. 
+Hầu hết các hệ thống blockchain đều cung cấp các giao dịch có finality xác suất — nghĩa là xác suất của một giao dịch hợp lệ và không thể thu hồi được sẽ tăng lên khi có nhiều block được thêm vào chain, nhưng nó sẽ không bao giờ hoàn toàn là cuối cùng. Network sẽ xác nhận giao dịch cuối cùng khi có đủ thời gian và đủ các block. Đây là cách Bitcoin đạt được finality, ví dụ trong Bitcoin: một giao dịch được xem là cuối cùng sau 6 block. 
 
-Các blockchains sử dụng giao dịch có finality xác định (đôi khi được gọi là finality tuyệt đối) — nghĩa là giao dịch được xem là cuối cùng khi nó được thêm vào blockchain. Fantom là một ví dụ về điều này.
+Các blockchain khác sử dụng giao dịch có finality xác định (đôi khi được gọi là finality tuyệt đối) — nghĩa là giao dịch được xem là cuối cùng khi nó được thêm vào blockchain. Fantom là một ví dụ về điều này.
 
 Tài liệu đọc thêm: [Bài viết về Time to Finality](https://medium.com/@alephium/time-to-finality-17d64eeffd25)
 
 ### Token
 
-Một token là một registry entry trong blockchain that tuân theo bộ quy tắc đuợc mã hoá bởi smart contract. Định nghĩa này làm rõ sự khác biệt giữa token và tiền điện tử khi mà tiền điện tử là tài sản gốc của một blockchain như là BTC và ETH, còn tokens được built trên blockchain có sẵn và đang sử dụng smart contracts.
+Một token là một registry entry trong blockchain nó tuân theo bộ quy tắc được mã hoá bởi smart contract. Định nghĩa này làm rõ sự khác biệt giữa token và tiền điện tử khi mà tiền điện tử là tài sản gốc của một blockchain như là BTC và ETH, còn token được tạo ra trên blockchain có sẵn và đang sử dụng smart contracts.
 
-Tokens có thể được phân loại là fungible (có thể thay thế) hoặc non-fungible (không thể thay thế). Fungible tokens giống hệt nhau và có thể thay thế được cho nhau. Ngược lại, non-fungible tokens (NFTs) là độc nhất và được chứng minh là khan hiếm, nghĩa là lịch sử của chúng có thể được truy tìm độc lập.
+Các token có thể được phân loại là fungible (có thể thay thế) hoặc non-fungible (không thể thay thế). Các fungible token giống hệt nhau và có thể thay thế được cho nhau. Ngược lại, non-fungible token (NFT) là độc nhất và được chứng minh là khan hiếm, nghĩa là lịch sử của chúng có thể được truy tìm độc lập.
 
-Tokens cũng có thể được phân loại theo chức năng của chúng: tiện ích (utility), bảo mật (security) hoặc tiền tệ (currency). Currency tokens được tạo ra để giao dịch, như DAI hoặc USDC của MakerDAO. Utility tokens tập trung vào việc sử dụng thực tế, thể hiện quyền truy cập vào một sản phẩm hay dịch vụ nhất định. Security tokens là tượng trưng của một loại tài sản, ví dụ như cổ phiếu, quyền biểu quyết trong công ty, hay các tổ chức tập trung khác, hoặc một số vật phẩm hữu hình hay kỹ thuật số có giá trị. 
+Các token cũng có thể được phân loại theo chức năng của chúng: tiện ích (utility), bảo mật (security) hoặc tiền tệ (currency). Currency token được tạo ra để giao dịch, như DAI hoặc USDC của MakerDAO. Utility token tập trung vào việc sử dụng thực tế, thể hiện quyền truy cập vào một sản phẩm hay dịch vụ nhất định. Security token là tượng trưng của một loại tài sản, ví dụ như cổ phiếu, quyền biểu quyết trong công ty, hay các tổ chức tập trung khác, hoặc một số vật phẩm hữu hình hay kỹ thuật số có giá trị. 
 
 ### Transaction Fee 
 
@@ -212,15 +212,15 @@ Tokens cũng có thể được phân loại theo chức năng của chúng: ti�
 
 Khi một người thực hiện giao dịch trên Alephium, người đó phải trả phí cho những người đào để đưa giao dịch này vào một block. 
 
-Transaction fee (Phí giao dịch) bao gồm 2 phần: [Gas Price](#gas-price) trong token gốc của network và [Gas Amount Spent](#gas-amount-spent) trong quá trình xử lý giao dịch, và có thể được xác định theo công thức sau:
+Transaction fee (Phí giao dịch) bao gồm 2 phần: [Giá Gas](#gas-price) trong token gốc của network và [Số lượng Gas đã sử dụng](#gas-amount-spent) trong quá trình xử lý giao dịch, và có thể được xác định theo công thức sau:
 
-Transaction fee = Gas Price * Gas Amount Spent
+Phí giao dịch = Giá Gas * Số lượng Gas đã tiêu thụ
 
-Tài liệu đọc thêm: [Áp dụng Transaction fee trên GitHub](https://github.com/alephium/alephium/blob/v1.4.2/protocol/src/main/scala/org/alephium/protocol/model/Transaction.scala#L230-L239)
+Tài liệu đọc thêm: [Transaction fee trên GitHub](https://github.com/alephium/alephium/blob/v1.4.2/protocol/src/main/scala/org/alephium/protocol/model/Transaction.scala#L230-L239)
 
 ### Transactions Per Second (TPS)
 
-Transactions Per Second (TPS) - số lượng giao dịch trên mỗi giây là đơn vị đo số lượng giao dịch, trên lý thuyết có thể xảy ra trong một giây trong một hệ thống nhất định. 
+Transactions Per Second (TPS) - số lượng giao dịch trên mỗi giây là đơn vị đo số lượng giao dịch, trên lý thuyết có thể xảy ra trong một giây trên một hệ thống nhất định. 
 
 Trong blockchain, nó còn được hiểu như tốc độ (tốc độ của một giao dịch có được gửi lên network) và được tính theo công thức sau:
  
