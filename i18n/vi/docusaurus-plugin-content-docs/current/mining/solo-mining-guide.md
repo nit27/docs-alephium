@@ -1,52 +1,52 @@
 ---
 sidebar_position: 10
-title: Solo Mining Guide
-sidebar_label: Solo mining guide
+title: Hướng dẫn đào Solo
+sidebar_label: Hướng dẫn đào Solo 
 ---
 
 import UntranslatedPageText from "@site/src/components/UntranslatedPageText";
 
 <UntranslatedPageText />
 
-# Solo Mining Guide
+# Hướng dẫn đào Solo 
 
-You must first follow the steps in the [Full Node Starter Guide](full-node/getting-started.md) in order to download, start your node and use Swagger [http://127.0.0.1:12973/docs](http://127.0.0.1:12973/docs).
+Đầu tiên bạn phải làm theo các bước ở [Hướng dẫn bắt đầu Full node](full-node/getting-started.md) để tải về, khởi động node của bạn và sử dụng Swagger [http://127.0.0.1:12973/docs](http://127.0.0.1:12973/docs).
 
-## Mining information
+## Thông tin về việc đào 
 
-- 4 address groups and 16 chains in total
-- the target block time is 64 seconds
-- everyday, `24 * 60 * 60 / 64 * 16 = 21600` blocks are mined on average
-- the block rewards are 3 ALPH right now
-- all of the mined coins are locked for 500 minutes
+- có 4 nhóm địa chỉ và 16 chains tổng cộng
+- dự tính block time là 64 giây
+- mỗi ngày có trung bình `24 * 60 * 60 / 64 * 16 = 21600` blocks được đào
+- block rewards đang là 3 ALPH ở thời điểm hiện tại 
+- Tất cả các coins được đào sẽ bị khoá trong 500 phút 
 
-For more information about mining rewards, please read this article [Block Rewards](https://medium.com/@alephium/alephium-block-rewards-72d9fb9fde33).
+Để biết thêm thông tin về mining rewards, hãy đọc [Block Rewards](https://medium.com/@alephium/alephium-block-rewards-72d9fb9fde33).
 
-You could get the estimated network hashrate from the log of your full node, or from the Grafana dashboard of the full node if you run it with [docker-compose](full-node/docker-guide.md).
+Bạn có thể biết được hashrate được ước tính từ nhật ký full node của bạn, hoặc từ bảng điều khiển Grafana của full node nếu bạn chạy nó bằng [docker-compose](full-node/docker-guide.md).
 
-## Miner wallet
+## Ví dành cho người đào 
 
-First, you must create a dedicated wallet for mining. As opposed to a _traditional wallet_, a _miner wallet_ has multiple addresses which are used to collect mining rewards for each address group.
+Đầu tiên, bạn phải tạo một ví chuyên dụng cho việc đào. Trái ngược với _ví truyền thống_, một _ví dành cho người đào_ có nhiều địa chỉ được sử dụng để thu thập mining rewards cho mỗi nhóm địa chỉ.
 
-#### Create your miner wallet
+#### Tạo ví cho người đào 
 
 ![miner-wallet-create-query](media/miner-wallet-create-query.png)
 
-The server will return you the new wallet mnemonic. Please backup and store it securely.
+Server sẽ gửi bạn bản ghi nhớ ví mới, hãy sao lưu và lưu trữ nó an toàn. 
 
 ![miner-wallet-create-response](media/miner-wallet-create-response.png)
 
-#### List your miner addresses
+#### Ghi lại các địa chỉ ví dành-cho-người-đào của bạn 
 
 ![miner-wallet-list-addresses-query](media/miner-wallet-list-addresses-query.png)
 
-The server will return you 4 addresses for the next step:
+Server sẽ gửi bạn 4 địa chỉ ví cho bước tiếp theo:
 
 ![miner-wallet-list-addresses-response](media/miner-wallet-list-addresses-response.png)
 
 ## Configure miner addresses
 
-Now that you have gotten your 4 miner addresses, you must assign it to your node so you can earn rewards when it starts mining. This can be done by adding the following content in the file `.alephium/user.conf` under your home folder[^1]:
+Hiện tại bạn đã có 4 địa chỉ ví dành-cho-người-đào, bạn phải gán chúng cho node của bạn để có được rewards khi nó bắt đầu đào. Việc này có thể được thực hiện bằng cách thêm vào nội dung sau đây `.alephium/user.conf` trong home folder của bạn [^1]:
 
     alephium.network.external-address = "x.x.x.x:9973" // put your public IP here; otherwise remove this line
     alephium.mining.miner-addresses = [
@@ -56,11 +56,11 @@ Now that you have gotten your 4 miner addresses, you must assign it to your node
       "19vvD3QbfEYbJexk6yCtnDNpRrfr3xQv2Pzc6x265MRhD"
     ]
 
-Please restart your node to make these new configs take effect. Please be sure to add them in the same order they were returned by the endpoint, as they are sorted according to their group.
+Vui lòng khởi động lại node của bạn để các cấu hình mới này có hiệu lực. Hãy đảm bảo rằng bạn thêm chúng vào theo đúng thứ tự mà they were returned by the endpoint, vì chúng được sắp xếp theo nhóm của chúng.
 
-## Security
+## Bảo mật
 
-By default, the API interface of Alephium is bound to localhost, your API endpoints are secure. However, if you configured `alephium.api.network-interface`, your endpoints might be exposed to public network. This can be dangerous as anyone would be able to access your miner wallet. Please consider to configure API Key following this guide: [API Key](full-node/full-node-more.md#api-key).
+Theo mặc định, the API interface of Alephium is bound to localhost, your API endpoints are secure. However, if you configured `alephium.api.network-interface`, your endpoints might be exposed to public network. This can be dangerous as anyone would be able to access your miner wallet. Please consider to configure API Key following this guide: [API Key](full-node/full-node-more.md#api-key).
 
 Please also consider to create another secure wallet and move your funds to that wallet using `sweep-all-addresses` endpoint regularly.
 
