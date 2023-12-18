@@ -5,8 +5,6 @@ slug: /
 title: Tổng quan về Alephium
 ---
 
-import UntranslatedPageText from "@site/src/components/UntranslatedPageText";
-
 ## Alephium là gì?
 
 **Là một blockchain có khả năng mở rộng cho lập trình viên. Bảo mật cho người dùng. Và phi tập trung cho mọi người.**
