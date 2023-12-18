@@ -4,13 +4,9 @@ sidebar_label: Nội dung Repo
 title: Nội dung Repo
 ---
 
-import UntranslatedPageText from "@site/src/components/UntranslatedPageText";
-
-<UntranslatedPageText />
-
 ## Mục lục
 * [Link chính thức & tài khoản](#official-links--accounts) 
-* [Công nghệ](#tech-series)
+* [Tech Series](#tech-series)
 * [Giải thích](#explainer-series)
 * [TechTalks & AMAs](#techtalks--amas)
 * [Cột mốc](#milestones)
@@ -18,10 +14,10 @@ import UntranslatedPageText from "@site/src/components/UntranslatedPageText";
 * [Podcast & bài báo khác](#external-podcasts--publications)
 * [Sự kiện, trình bày & hội thảo](#events-presentations--conferences)
 * [Đối tác & PRs](#partnerships--prs)
-* [Chuỗi bài đọc](#reading-lists)
+* [Chuỗi các bài đọc](#reading-lists)
 * [People to follow](#people-to-follow)
 * [Thư viện & Tài nguyên](#libraries--developer-resources)
-* [Chương trình tặng thưởng](#apply-for-grants)
+* [Chương trình phần thưởng](#apply-for-grants)
 
 ## Link chính thức & tài khoản
 
@@ -39,7 +35,7 @@ Telegram -  https://t.me/alephiumgroup
 
 Linkedin - https://www.linkedin.com/company/74304166
 
-## Công nghệ
+## Tech Series
 
 ### Stateful UTXO
 
@@ -91,14 +87,14 @@ Giới thiệu Blockflow : Thuật toán sharding của Alephium - https://mediu
 ### Ngôn ngữ lập trình Ralph 
 Ralph is the domain-specific language (DSL) - https://twitter.com/alephium/status/1675867624184627201
 
-So sánh giữa Code Ralph và Solidity - https://twitter.com/alephium/status/1643961985841905664
+So sánh code giữa Ralph và Solidity - https://twitter.com/alephium/status/1643961985841905664
 
 ### Asset Permission System
 Asset Permission System - https://medium.com/@alephium/alephiums-aps-eliminating-evm-token-approval-risks-5407e7e70a33
 
 Asset Permission System - https://twitter.com/alephium/status/1673354565801091074
 
-## Explainer Series
+## Giải thích
 
 Bridge Thread #6 - https://vxtwitter.com/alephium/status/1729149731761537296
 
@@ -114,15 +110,15 @@ Bridge Thread #1 - https://twitter.com/alephium/status/1721940517657952450
 
 Alephium Tokenomics - Updated Article - https://medium.com/@alephium/tokenomics-of-alephium-61d59b51029c
 
-TxScripts and Smart COntracts - https://twitter.com/alephium/status/1688907382615945218?s=20 
+TxScripts và Smart COntracts - https://twitter.com/alephium/status/1688907382615945218?s=20 
 
 Bạn đã biết gì về "Magic Numbers"? Và Alephium có những gì? : https://twitter.com/alephium/status/1701604666847666397
 
-First Developer Workshop — Build a Token Faucet ( Article ) - https://medium.com/@alephium/first-developer-workshop-build-a-token-faucet-a6bb2aa7bf68
+First Developer Workshop — Tạo một Token Faucet ( Article ) - https://medium.com/@alephium/first-developer-workshop-build-a-token-faucet-a6bb2aa7bf68
 
-Block Time and Block Size - https://medium.com/@alephium/block-time-and-block-size-16e37292444f
+Block Time và Block Size - https://medium.com/@alephium/block-time-and-block-size-16e37292444f
 
-Back to Basics: What is block time? Why is it 64s on Alephium? - https://twitter.com/alephium/status/1676257717303005185
+Back to Basics: Block time là gì? Tại sao nó là 64s trên Alephium? - https://twitter.com/alephium/status/1676257717303005185
 
 Transactions Per Second (TPS) - https://medium.com/@alephium/transactions-per-second-tps-f13217a49e39
 
@@ -140,7 +136,7 @@ New SDK - https://twitter.com/alephium/status/1574389337612947456
 
 Birthday Paradox - https://twitter.com/alephium/status/1559155971284275200
 
-BIP39 Passphrase Implementation - https://medium.com/@alephium/bip39-passphrase-implementation-f87adecd6f59
+Tích hợp BIP39 Passphrase - https://medium.com/@alephium/bip39-passphrase-implementation-f87adecd6f59
 
 BIP39 Thread - https://twitter.com/alephium/status/1557019434979512327
 
@@ -150,17 +146,17 @@ Self-custody - https://twitter.com/alephium/status/1557763279123992577
 
 Naming Alephium - https://twitter.com/alephium/status/1554467104858210305
 
-How many ALPH are mined per day? - https://twitter.com/alephium/status/1551905461103775745
+Có bao nhiêu ALPH được đào ra mỗi ngày? - https://twitter.com/alephium/status/1551905461103775745
 
 Leman Upgrade schnorr signatures : https://twitter.com/alephium/status/1648310494661595137
 
 Full Nodes - https://twitter.com/alephium/status/1592536671177699328
 
-NFTs on Alephium #1 - https://twitter.com/alephium/status/1648310497756999680
+NFTs trên Alephium #1 - https://twitter.com/alephium/status/1648310497756999680
 
-NFTs on Alephium #2 - https://twitter.com/alephium/status/1673657929831190528
+NFTs trên Alephium #2 - https://twitter.com/alephium/status/1673657929831190528
 
-You can access the whole list of Twitter Threads here: https://twitter.com/alephium/status/1648310455725883393
+Tất cả danhh sách bài đăng trên Twitter: https://twitter.com/alephium/status/1648310455725883393
 
 ## Monthly Retrospective
 
@@ -201,15 +197,15 @@ Nov/21 - First Live AMA - https://medium.com/@alephium/alephiums-first-live-ama-
 
 ## Milestones 
 
-Nov/23 iOS app is live in the App Store! - https://vxtwitter.com/alephium/status/1724452430262534311 
+Nov/23 iOS app phát hành chính thức trên App Store! - https://vxtwitter.com/alephium/status/1724452430262534311 
 
-Nov/23 The Bridge is Live! - https://vxtwitter.com/alephium/status/1722661768131178556
+Nov/23 The Bridge đã khởi chạy! - https://vxtwitter.com/alephium/status/1722661768131178556
 
-Oct/23 Android Mobile App is out of Beta! - https://x.com/alephium/status/1719739251368325612?s=20
+Oct/23 Android Mobile App Phát Hành Chính Thức! - https://x.com/alephium/status/1719739251368325612?s=20
 
 Oct/23 Get Ready for Bridging! - https://twitter.com/alephium/status/1719398464449335561
 
-Oct/23 Meet the Guardians! - https://twitter.com/alephium/status/1716858711493493013
+Oct/23 Gặp gỡ các Guardians! - https://twitter.com/alephium/status/1716858711493493013
 
 Oct/23 Android Mobile wallet app is ready for beta testing! - https://medium.com/@alephium/ios-mobile-wallet-beta-testing-feedback-wanted-cdf162a49a79
 
@@ -258,7 +254,7 @@ Aug/21 Introducing ALPH Q3 2021 - https://medium.com/@alephium/introducing-alph-
 
 May/19 Initial description - First article -  https://medium.com/@alephium/alephium-pushes-the-boundaries-of-blockchain-performance-scalability-1ab619038daa
 
-## Community & Social 
+## Cộng đồng 
 
 Builders Highlight 5 - Deadrare
 https://medium.com/@alephium/builders-highlight-5-deadrare-d5ff90d6161e
@@ -353,7 +349,7 @@ Introducing Community Rewards - https://medium.com/@alephium/introducing-communi
 
 DJ Fetamin Mix at Chainflip Party during Ethcc - https://www.youtube.com/watch?v=0heJBclJwEA&t=113s
 
-## Tutorials & Workshops
+## Hướng dẫn & Workshops
 
 🎦Bridge Tutorial!📺 - https://www.youtube.com/watch?v=xoYVzbwBAjg
 
@@ -378,7 +374,7 @@ How to use the Alephium Bridge (testnet) - part 1 - https://www.youtube.com/watc
 How to use the Alephium Bridge (testnet) - part 2 - https://www.youtube.com/watch?v=TziFpCgM3-0&t
 
 
-## External Podcasts & Publications
+## Podcast & Các xuất bản
 
 Nym Project's blog post about the Alephium wallet built by @Mika and @nop33! - https://twitter.com/alephium/status/1710291031759982803
 
@@ -412,9 +408,9 @@ Heidi News - https://www.heidi.news/cyber/alephium-une-blockchain-3-0-developpee
 
 Token Insights - https://tokeninsight.medium.com/project-research-paper-of-alephium-8001323353e7
 
-## Events, presentations & conferences 
+## Sự kiện, thuyết trình & hội nghị 
 
-What is Alephium? - https://www.youtube.com/watch?v=v2L4jEvoSIU
+Alephium là gì? - https://www.youtube.com/watch?v=v2L4jEvoSIU
 
 Cheng Wang at Crypto Talk Series in Neuchâtel - Stateful UTXO - https://www.youtube.com/watch?v=r_5U7ZgByt4
 
@@ -446,7 +442,7 @@ Aloïs Cochard - Edcon 2019 - https://youtu.be/-tCB9sOT_UI
 
 Aloïs Cochard - Bitcoin 2019 - https://youtu.be/0WnmzgKTClU
 
-## Partnerships & PRs
+## Đối tác & PRs
 
 DappNode - Announcement - https://medium.com/@alephium/pushing-for-decentralization-alephium-and-dappnode-join-forces-c98845d9a9da
 
@@ -470,7 +466,7 @@ Bitcoin Association Switzerland - https://medium.com/@alephium/alephium-becomes-
 
 UTXO alliance - https://medium.com/@alephium/alephium-joins-the-utxo-alliance-6476b479dd84
 
-## Reading Lists
+## Danh sách đọc
 
 1. https://twitter.com/alephium/status/1548224145703313408
 2. https://twitter.com/alephium/status/1553395039778119682
@@ -521,12 +517,12 @@ Wow visual - https://twitter.com/gemforgem/status/1441427580578455554
 
 Hongchao: https://twitter.com/hongchao
 
-## Libraries & Developer Resources
+## Thư viện & Tài nguyên
 
 Docs - https://docs.alephium.org/
 
 Github - https://github.com/alephium
 
-## Apply for Grants
+## Chương trình phần thưởng
 
-Apply for grants - https://github.com/alephium/community/blob/master/Grant%26RewardProgram.md
+Đăng ký Chương trình phần thưởng và hỗ trợ - https://github.com/alephium/community/blob/master/Grant%26RewardProgram.md
