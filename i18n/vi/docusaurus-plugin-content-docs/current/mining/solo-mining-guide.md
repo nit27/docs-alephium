@@ -4,15 +4,11 @@ title: Hướng dẫn đào Solo
 sidebar_label: Hướng dẫn đào Solo 
 ---
 
-import UntranslatedPageText from "@site/src/components/UntranslatedPageText";
-
-<UntranslatedPageText />
-
 # Hướng dẫn đào Solo 
 
 Đầu tiên bạn phải làm theo các bước ở [Hướng dẫn bắt đầu Full node](full-node/getting-started.md) để tải về, khởi động node của bạn và sử dụng Swagger [http://127.0.0.1:12973/docs](http://127.0.0.1:12973/docs).
 
-## Thông tin về việc đào 
+## Thông tin về việc khai thác 
 
 - có 4 nhóm địa chỉ và 16 chains tổng cộng
 - dự tính block time là 64 giây
@@ -20,15 +16,15 @@ import UntranslatedPageText from "@site/src/components/UntranslatedPageText";
 - block rewards đang là 3 ALPH ở thời điểm hiện tại 
 - Tất cả các coins được đào sẽ bị khoá trong 500 phút 
 
-Để biết thêm thông tin về mining rewards, hãy đọc [Block Rewards](https://medium.com/@alephium/alephium-block-rewards-72d9fb9fde33).
+Để biết thêm thông tin về phần thưởng khai thác, hãy đọc [Block Rewards](https://medium.com/@alephium/alephium-block-rewards-72d9fb9fde33).
 
 Bạn có thể biết được hashrate được ước tính từ nhật ký full node của bạn, hoặc từ bảng điều khiển Grafana của full node nếu bạn chạy nó bằng [docker-compose](full-node/docker-guide.md).
 
-## Ví dành cho người đào 
+## Ví khai thác 
 
-Đầu tiên, bạn phải tạo một ví chuyên dụng cho việc đào. Trái ngược với _ví truyền thống_, một _ví dành cho người đào_ có nhiều địa chỉ được sử dụng để thu thập mining rewards cho mỗi nhóm địa chỉ.
+Đầu tiên, bạn phải tạo một ví chuyên dụng cho việc khai thác. Trái ngược với _ví truyền thống_, một _ví khai thác_ có nhiều địa chỉ được sử dụng để thu thập phần thưởng khai thác cho mỗi nhóm địa chỉ.
 
-#### Tạo ví cho người đào 
+#### Tạo ví khai thác 
 
 ![miner-wallet-create-query](media/miner-wallet-create-query.png)
 
@@ -36,7 +32,7 @@ Server sẽ gửi bạn bản ghi nhớ ví mới, hãy sao lưu và lưu trữ 
 
 ![miner-wallet-create-response](media/miner-wallet-create-response.png)
 
-#### Ghi lại các địa chỉ ví dành-cho-người-đào của bạn 
+#### Ghi lại các địa chỉ ví khai thác của bạn 
 
 ![miner-wallet-list-addresses-query](media/miner-wallet-list-addresses-query.png)
 
@@ -44,9 +40,9 @@ Server sẽ gửi bạn 4 địa chỉ ví cho bước tiếp theo:
 
 ![miner-wallet-list-addresses-response](media/miner-wallet-list-addresses-response.png)
 
-## Configure miner addresses
+## Cấu hình các địa chỉ ví khai thác
 
-Hiện tại bạn đã có 4 địa chỉ ví dành-cho-người-đào, bạn phải gán chúng cho node của bạn để có được rewards khi nó bắt đầu đào. Việc này có thể được thực hiện bằng cách thêm vào nội dung sau đây `.alephium/user.conf` trong home folder của bạn [^1]:
+Hiện tại bạn đã có 4 địa chỉ ví khai thác, bạn phải gán chúng cho node của bạn để có được phần thưởng khi nó bắt đầu khai thác. Việc này có thể được thực hiện bằng cách thêm vào nội dung sau đây `.alephium/user.conf` trong thư mục chính (home folder) của bạn [^1]:
 
     alephium.network.external-address = "x.x.x.x:9973" // put your public IP here; otherwise remove this line
     alephium.mining.miner-addresses = [
@@ -56,58 +52,58 @@ Hiện tại bạn đã có 4 địa chỉ ví dành-cho-người-đào, bạn p
       "19vvD3QbfEYbJexk6yCtnDNpRrfr3xQv2Pzc6x265MRhD"
     ]
 
-Vui lòng khởi động lại node của bạn để các cấu hình mới này có hiệu lực. Hãy đảm bảo rằng bạn thêm chúng vào theo đúng thứ tự mà they were returned by the endpoint, vì chúng được sắp xếp theo nhóm của chúng.
+Vui lòng khởi động lại node của bạn để các cấu hình mới này có hiệu lực. Hãy đảm bảo rằng bạn thêm nó vào theo đúng thứ tự mà nó đã được trả về bởi endpoint, vì chúng được sắp xếp theo nhóm của chúng. 
 
 ## Bảo mật
 
-Theo mặc định, the API interface of Alephium is bound to localhost, your API endpoints are secure. However, if you configured `alephium.api.network-interface`, your endpoints might be exposed to public network. This can be dangerous as anyone would be able to access your miner wallet. Please consider to configure API Key following this guide: [API Key](full-node/full-node-more.md#api-key).
+Theo mặc định, giao diện API của Alephium được liên kết với localhost, API endpoints của bạn được bảo mật. Tuy nhiên, nếu bạn configured `alephium.api.network-interface`, endpoints của bạn có thể bị bại lộ trên mạng lưới công chúng (public network). Việc này rất nguy hiểm vì bất cứ ai cũng có thể truy cập vào ví của bạn. Hãy cân nhắc cấu hình khoá API theo hướng dẫn sau: [API Key](full-node/full-node-more.md#api-key).
 
-Please also consider to create another secure wallet and move your funds to that wallet using `sweep-all-addresses` endpoint regularly.
+Ngoài ra, vui lòng cân nhắc việc tạo ra một ví bảo mật khác và chuyển số dư của bạn sang ví đó bằng cách sử dụng endpoint `sweep-all-addresses` thường xuyên.
 
-## Start mining
+## Bắt đầu khai thác
 
-### Make sure your full node is synced
+### Đảm bảo full node của bạn được đồng bộ hoá 
 
-You could verify that by executing this endpoint:
+Bạn có thể xác minh bằng cách thực hiện endpoint này:
 
 ![full-node-synced-query](media/full-node-synced-query.png)
 
-If you see `"synced": true` in the response, then you are ready to go.
+Nếu bạn được phản hồi `"synced": true`, bạn đã sẵn sàng để bắt đầu.
 
 ### Nvidia GPU
 
-Please follow the instructions on [https://github.com/alephium/gpu-miner](https://github.com/alephium/gpu-miner#readme) to run the gpu miner for Nvidia GPUs.
+Vui lòng làm theo hướng dẫn tại [https://github.com/alephium/gpu-miner](https://github.com/alephium/gpu-miner#readme) để chạy gpu máy đào cho Nvidia GPUs.
 
-Alternatively, you could run the gpu-miner with docker by following the documents here [https://github.com/alephium/alephium/tree/master/docker#gpu-miner-optional](https://github.com/alephium/alephium/tree/master/docker#gpu-miner-optional)
+Hoặc, bạn có thể chạy gpu máy đào với docker bằng cách làm theo các tài liệu sau đây [https://github.com/alephium/alephium/tree/master/docker#gpu-miner-optional](https://github.com/alephium/alephium/tree/master/docker#gpu-miner-optional)
 
 ### AMD GPU
 
-Please follow the instructions on [https://github.com/alephium/amd-miner](https://github.com/alephium/amd-miner#readme) to run the gpu miner for AMD GPUs. Note that the performance of AMD miner is not in par with Nvidia miner.
+Vui lòng làm theo hướng dẫn tại [https://github.com/alephium/amd-miner](https://github.com/alephium/amd-miner#readme) để chạy gpu máy đào cho AMD GPUs. Lưu ý rằng hiệu suất máy đào AMD không ngang bằng máy đào Nvidia. 
 
-If you have any questions, feel free to reach out to the developers on [Discord](https://alephium.org/discord).
+Nếu bạn có bất kỳ câu hỏi nào, xin liên hệ các lập trình viên tại [Discord](https://alephium.org/discord).
 
-## More info on miner wallet
+## Thông tin thêm về ví 
 
-Here are more endpoints that are useful for miners.
+Dưới đây là nhiều endpoints hơn cho các thợ đào. 
 
-#### Get your balance
+#### Kiểm tra số dư ví khai thác
 
 ![miner-wallet-balance-query](media/miner-wallet-balance-query.png)
 
-#### Change your active address
+#### Thay đổi địa chỉ hiện tại (active address)
 
 ![miner-wallet-change-active-address](media/miner-wallet-change-active-address.png)
 
-#### Transfer all your funds on the active address to another address
+#### Chuyển tất cả số dư trên địa chỉ hiện tại sang địa chỉ khác 
 
 ![miner-wallet-sweep-all-query](media/miner-wallet-sweep-all-query.png)
 
-#### Unlock your wallet
+#### Mở khoá ví của bạn
 
 ![miner-wallet-unlock-query](media/miner-wallet-unlock-query.png)
 
-#### Restore your miner wallet
+#### Khôi phục ví khai thác của bạn 
 
 ![miner-wallet-restore-query](media/miner-wallet-restore-query.png)
 
-[^1]: The home folder depends on your system: `C:\Users\<your-username>` in Windows, `/Users/<your-username>` in macOS, `/home/<your-username>` in Linux.
+[^1]: Thư mục chính (home folder) tuỳ thuộc vào hệ thống của bạn: `C:\Users\<your-username>` trên Windows, `/Users/<your-username>` trên macOS, `/home/<your-username>` trên Linux.
