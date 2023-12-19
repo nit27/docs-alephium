@@ -4,24 +4,15 @@ title: Loading from a snapshot
 sidebar_label: Loading from snapshot
 ---
 
-import UntranslatedPageText from "@site/src/components/UntranslatedPageText";
-
-<UntranslatedPageText />
-
 # Full node
 
-The very first run of a full node, as described in the [getting started](./getting-started) takes few hours until 
-it is fully in sync with the other nodes in the network, or said differently, until it downloaded a copy of the entire blockchain.
+Một trong những điều đầu tiên của việc chạy full node, như đã mô tả ở [Bắt đầu](./getting-started) sẽ mất một khoảng thời gian để hoàn tất quá trình đồng bộ với các node khác trên network. Nói một cách khác, bạn cần phải đợi đến khi quá trình tải xuống một bản sao của toàn bộ blockchain.
 
-In order to speed up this initial sync process, snapshots are available in the
-[dedicated Alephium Archives repository](https://archives.alephium.org). An automated process upload snapshots
-for both [testnet](https://archives.alephium.org/#testnet/) and [mainnet](https://archives.alephium.org/#mainnet/) networks.
+Để có thể rút ngắn giai đoạn của quá trình đầu tiên này, những phiên bản snapshot [đã được đóng góp trên Alephium Archives repository](https://archives.alephium.org). Một quá trình tự động tải lên các bản snapshot cho cả [testnet](https://archives.alephium.org/#testnet/) và [mainnet](https://archives.alephium.org/#mainnet/).
 
-## Downloading a snapshot
+## Tải về một snapshot
 
-When preparing the full node for its first run, just before launching it, you can download the latest snapshot and
-extract (it's a `tar` file) it at the right location. The snippet below even does this inline, i.e. without doubling the
-required disk space to download and to extract the snapshot:
+Trước khi khởi chạy full node ở lần đầu tiên, bạn có thể tải về một bản snapshot gần nhất và giải nén nó (một tệp `tar`) vào thư mục của bạn. Đoạn mã dưới đây sẽ hỗ trợ bạn làm việc đó mà không yêu cầu bộ nhớ còn trống quá nhiều để có thể tải về và giải nén snapshot:
 
 ```shell
 ALEPHIUM_HOME=~/.alephium
@@ -29,12 +20,11 @@ ALEPHIUM_NETWORK=mainnet
 curl -L "$(curl -s https://archives.alephium.org/archives/$ALEPHIUM_NETWORK/full-node-data/_latest.txt)" | tar xf - -C "$ALEPHIUM_HOME/"
 ```
 
-A specific file `_latest.txt` is updated for your convenience, always pointing to the latest snapshot available.
+Một tệp tên là `_latest.txt` được cập nhật để bạn tiện theo dõi hơn. Nó luôn cho bạn biết phiên bản snapshot được cập nhật mới nhất.
 
-## Using a ready-made script
+## Sử dụng một bản script có sẳn
 
-While the command given above works, it does not cover all the edge failure cases that can happen and can lead the full node
-database in an inconsistent state. Luckily a ready-to-use script will help you with this task.
+Mặc dù các câu lệnh bên trên có thể chạy ổn, nhưng đôi khi nó có thể xãy ra lỗi không mong muốn ví dụ như làm cho database của full node không được trong trạng thái cập nhật mới nhất. Cho nên bạn có thể sử dụng đoạn script sẳn bên dưới để hạn chế xãy ra lỗi.
 
 ```shell
 ALEPHIUM_HOME=/tmp
@@ -42,13 +32,11 @@ ALEPHIUM_NETWORK=mainnet
 curl -L https://github.com/touilleio/alephium-standalone/raw/main/snapshot-loader.sh | env ALEPHIUM_HOME=${ALEPHIUM_HOME} ALEPHIUM_NETWORK=${ALEPHIUM_NETWORK} sh
 ```
 
-## Launching a standalone container
+## Khởi chạy một container độc lập
 
-And finally if you want to try this setup quickly, an OCI image, simply extending the official `alephium/alephium` image, is doing all the steps
-describe above automagically: `touilleio/alephium-standalone`. [Its source code](https://github.com/touilleio/alephium-standalone)
-provides all the required details around its usage.
+Và nếu bạn muốn thử những cài đặt này một cách nhanhh chóng, một bản OCI image (đơn giản nó là bản image mở rộng của `alephium/alephium`), sẽ tự động cài đặt những thứ cần thiết: `touilleio/alephium-standalone`. [Source code của nó](https://github.com/touilleio/alephium-standalone) sẽ cung cấp những hướng dẫn sử dụng chi tiết cần thiết .
 
-A quick reference command to run the standalone container is given below for convenience:
+Đoạn mã bên dưới là một ví dụ tham khảo để chạy một standalone container:
 
 ```
 ALEPHIUM_HOME=/tmp
@@ -60,8 +48,7 @@ docker run -p 39973:39973 -p 127.0.0.1:12973:12973 \
 
 # Explorer database
 
-[Alephium Archives repository](https://archives.alephium.org) is also populated with explorer database snapshots. The snapshot
-can be loaded in the postgresql database of the explorer backend at the first run, using the command below:
+[Alephium Archives repository](https://archives.alephium.org) là repo được biết đến rộng rãi với trong việc sử dụng explorer database snapshot. Các snapshot có thể được tải về trong postgresql database của explorer backend ở lần chạy đầu tiên, bạn có thể chạy lệnh bên dưới:
 
 ```shell
 ALEPHIUM_NETWORK=mainnet
