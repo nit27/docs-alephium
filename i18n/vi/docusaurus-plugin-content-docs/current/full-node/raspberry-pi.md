@@ -1,33 +1,28 @@
 ---
 sidebar_position: 30
-title: Full Node on Raspberry Pi
-sidebar_label: Full node on Raspberry Pi
+title: Full Node trên Raspberry Pi
+sidebar_label: Full node trên Raspberry Pi
 ---
 
-import UntranslatedPageText from "@site/src/components/UntranslatedPageText";
+Trong hướng dẫn này, bạn sẽ tìm hiểu về:
 
-<UntranslatedPageText />
+- Cài đặt một Raspberry Pi 4
+- Cách chạy full node docker'ized trên Alephium 
 
-In this guide we'll learn:
+## Hướng dẫn cài đặt Raspberry Pi 4
 
-- How to install a Raspberry Pi 4
-- How to run a docker'ized instance of Alephium full node
-
-## How to install a Raspberry Pi 4
-
-This first section will detail my personal way of installing Ubuntu 20.04 server on a Raspberry Pi 4.
-It requires to have a Raspberry Pi 4 (obviously), a SD Card (8 GB is the minimum) and an SD Card reader to flash the SD Card.
-It will be illustrated using shell command from macOS, but you'll find the equivalent in Windows.
+Phần đầu tiên này chúng tôi hướng dẫn cho bạn cách cài đặt Ubuntu 20.04 server trên một Raspberry Pi 4.
+Yêu cần cần một chiếc Raspberry Pi 4, một SD Card (tối thiểu 8 GB) và một đầu đọc thẻ nhớ (SD Card reader) để đọc SD card. Chúng tôi sử dụng shell command trên MacOS nhưng  bạn có thể thực hiện nó tương tự trên Windows.
 
 ![Getting ready for the hard work](media/flashing.jpeg)
 
-First of all we will configure the installation Ubuntu. We're using cloud-init for that since it is built in Ubuntu 20.04 and above.
-This configuration creates a user (different from the `ubuntu` default) and installs a few packages.
+Đầu tiên, chúng ta cần phải tùy chỉnh cài đặt Ubuntu bằng  cloud-init vì nó có sẳn trên Ubuntu 20.04 hoặc cao hơn.
+Tùy chỉnh này sẽ tạo một user (khác với user mặc định của `ubuntu`) và sẽ cài một vài package.
 
-### Configure the boot
+### Cài đặt boot
 
-Put the snippet below in a file named `user-data.yml` and save it. This one creates a user `alephium` with the password `installfest2021`.
-You can customize the content of this file if you know what you're doing.
+Cho đoạn code bên dưới vào trong tệp tên là `user-data.yml` và lưu nó lại. Nó sẽ tạo một user tên là `alephium` với mật khẩu là `installfest2021`.
+Bạn có thể tùy chỉnh lại theo ý muốn nếu bạn hiểu về nó.
 
 ```yaml
 #cloud-config
@@ -70,11 +65,11 @@ power_state:
   mode: reboot
 ```
 
-### Flash the SD Card
+### Ghi vào SD Card
 
-Now, we'll flash the SD Card including this file `user-data.yml`.
+Bây giờ, chúng ta sẽ ghi dữ liệu vào SD Card có chứ tệp này `user-data.yml`.
 
-I'm using the tool [flash](https://github.com/hypriot/flash/) for this, which does most of the hard work for you.
+Chúng tôi sử dụng tool [flash](https://github.com/hypriot/flash/) để ghi, nó sẽ giúp bạn trong phần khó nhằn này.
 
 ```shell
 curl -LO https://github.com/hypriot/flash/releases/download/2.7.2/flash
@@ -83,61 +78,57 @@ chmod +x flash
 ./flash --userdata user-data.yml https://cdimage.ubuntu.com/releases/20.04/release/ubuntu-20.04.4-preinstalled-server-arm64+raspi.img.xz
 ```
 
-The command above will ask for confirmation that `/dev/disk2` is the SD Card and not your harddrive, and will ask your password
-because flashing a SD Card requires admin privileges.
+Câu lệnh bên trên sẽ yêu cầu xác thự rằng `/dev/disk2` là một SD card chứ không phải ổ cứng của bạn và bạn sẽ phải gõ mật khẩu vào bởi vì ghi dữ liệu vào SD card sẽ cần quyền admin.
 
-Once the command above completes, you can insert the SD Card in your Raspberry Pi and turn it on.
-It takes a handful of minutes for the first boot to execute fully, and your Raspberry Pi is ready to be used.
-Once the node is ready, you can ssh into it using `alephium` as username, and `installfest2021` as password!
+Một khi câu lệnh được hoàn thành, bạn có thể gắn SD card vào trong Raspberry Pi và bật nó lênh.
+Sẽ mất một chút thời gian cho lần boot đầu tiên.
+Khi node đã sẳn sàn, bạn có thể ssh vào nó với username là `alephium` và `installfest2021` và mật khẩu!
 
 ```shell
 ssh alephium@alephium
 ```
 
-If `alephium` host is unknown, you'll have to search for the IP address of the node, most likely on your router configuration app/page.
+Nếu `alephium` host thông báo unknown, bạn sẽ phải tìm địa chỉ IP của node. Hầu hết nó sẽ nằm trong phần cài đặt trong trang router.
 
-And that's it, your Raspberry Pi is running Ubuntu 20.04 with Docker, and is ready to run an Alephium full node.
+Giờ đây, Raspberry Pi của bạn đang chạy Ubuntu 20.04 với Docker và nó đã sẳn sàn để chạy Alephium full node.
 
 🚀
 
 ![Raspberry pi 4](media/pies.jpeg)
 
-## How to run a docker'ized instance of Alephium full node
+## Cách chạy full node với docker'ized của Alephium 
 
-This second section is not specific to a Raspberry Pi, but can be generalized to any server/vm/computer with SSH access.
-We will run the most basic version of a Alephium full node using docker, and then iterate to make our setup more
-convenient to work with.
+Phần hướng dẫn thứ hai này sẽ không chi tiết hướng dẫn dùng Raspberry Pi, nhưng bạn có thể truy cập vào trong bất kỳ server/vm/máy tính nào với SSH. Chúng ta sẽ chạy phiên bản cơ bản nhất của full node trên Alephium, sau đó lặp lại quá trình này để thuận tiện sử dụng nó hơn.
 
-As a pre-requisite of this section, we must have a server with SSH access, and more precisely running Ubuntu 20.04 or more recent.
-The previous section explains how to do that with a Raspberry Pi, but an AWS EC2 instance would also do the job.
+Có một điều bắt buộc ở quá trình này là bạn phải có quyền  truy cập SSH vào server và phiên bản Ubuntu phải là 20.04 trở lên. Ở phần hướng dẫn bên trên, chúng tôi đã giải thích về nó, nhưng một AWS EC2 cũng có thể chạy được nếu bạn muốn thử.
 
-### Connect to the server
+### Kết nối vào server
 
-This should be an easy step, using the `ssh` command. Run:
+Rất đơn giản, bạn chỉ việc dùng câu lệnh `ssh`. Gõ:
 
 ```shell
 ssh alephium@alephium
 ```
 
-### Installing docker and docker-compose
+### Cài đặt docker và docker-compose
 
-Let's install docker and docker-compose quickly, so that we'll be all set to run the Alephium full node.
+Hãy cài đặt nhanh docker và docker-compose. Nó là bộ đôi để chạy full node trên Alephium.
 
-Once ssh'ed, run the following commands:
+Một khi đã ssh vào, chạy câu lệnh bên dưới:
 
 ```shell
 sudo apt install -y docker.io docker-compose
 ```
 
-Great, docker should be running:
+Tuyệt vời, docker đã sẳn sàn:
 
 ```shell
 docker ps
 ```
 
-### Run the full node
+### Khởi chạy full node
 
-Now we can run the full node, in a single line, as follow:
+Bây giờ chúng ta có thể chạy full node, với một câu lệnh bên dưới:
 
 ```shell
 docker run -it --rm -p 12973:12973 --name alephium alephium/alephium:latest
@@ -145,11 +136,9 @@ docker run -it --rm -p 12973:12973 --name alephium alephium/alephium:latest
 
 ### Docker-compose
 
-Docker-compose is a bit more convenient way of running a container, especially if the command starts to contain
-volumes, more ports, environment variables, etc...
+Docker-compose là một cách thuận tiện để chạy một container, đặc biệt là nếu câu lệnh khởi động và chứa các volume, nhiều port, environment variable, v.v.
 
-So, below is the service definition you can put in a `docker-compose.yml` file, and simply call `docker-compose up -d` to
-start your full node from this definition.
+Bây giờ, bạn có thể cho tệp `docker-compose.yml` vào trong service definition và đơn giản call `docker-compose up -d` để chạy full node của bạn từ definition này.
 
 ```yaml
 version: "3"
