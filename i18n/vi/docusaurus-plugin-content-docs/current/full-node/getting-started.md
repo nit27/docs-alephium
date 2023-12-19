@@ -1,56 +1,51 @@
 ---
 sidebar_position: 10
-title: Getting Started
-sidebar_label: Getting started
+title: Bắt đầu
+sidebar_label: Bắt đầu
 ---
 
-import UntranslatedPageText from "@site/src/components/UntranslatedPageText";
+## Yêu cầu
 
-<UntranslatedPageText />
+Java (11 hoặc 17) được cài đặt trên máy tính:
 
-## Requirements
+- Windows hoặc macOS: [https://adoptopenjdk.net/](https://adoptopenjdk.net/)
+- Ubuntu: chạy `sudo apt install default-jdk` trong Terminal
 
-Ensure that Java (11 or 17 is recommended) is installed on your computer:
+## Tải về các tệp ứng dụng
 
-- Windows or macOS: [https://adoptopenjdk.net/](https://adoptopenjdk.net/)
-- Ubuntu: run `sudo apt install default-jdk` in Terminal
+Tải về `alephium-x.x.x.jar` từ [Github](https://github.com/alephium/alephium/releases/latest) (Đừng khích chuột 2 lần để mở nó vì nó sẽ không thể mở bằng cách này).
 
-## Download Application File
+## Khởi chạy node của bạn
 
-Download file `alephium-x.x.x.jar` from [Github release](https://github.com/alephium/alephium/releases/latest) (do not double click on it, it can not be launched this way).
-
-## Start your node
-
-1. Open the search and type in `Terminal` (for Mac and Ubuntu) or `Command Prompt` (for Windows).
-2. In the Terminal/Command Prompt program, type `cd your-jar-file-path` to enter the folder in which the **alephium-x.x.x.jar** file is saved.
-3. Type the following command and press Enter to launch the full node:
+1. Mở khung search và gõ `Terminal` (trên Mac và Ubuntu) hoặc `Command Prompt` (trên Windows).
+2. Trong Terminal/Command Prompt program, gõ `cd your-jar-file-path` để di chuyển vào trong thư mục chứa tệp **alephium-x.x.x.jar** đã tải về trước đó.
+3. Gõ đoạn code bên dưới và nhấn Enter để khởi chạy full node:
    ```shell
    java -jar alephium-x.x.x.jar
    ```
 
-🎉 _**Tada, your node is running**_
+🎉 _**Tada, node của bạn đã khởi chạy thành công**_
 
-- Your node will start to sync with the network. It might take long the first time. Your node has been fully synced once the block height in the terminal logs is equal to the one found in the latest blocks of the [explorer].
-- If you close the terminal the node will be turned off.
-- All of the blockchain data is stored in `.alephium` under your home folder[^1].
+- Node của bạn sẽ đồng bộ với network. Sẽ mất chút thời gian cho lần đầu khởi chạy và nó sẽ hoàn toàn được đồng bộ khi block height trong terminal log giống với các log được tìm thấy trong các block cuối cùng trên [explorer].
+- Nếu bạn đóng cửa sổ terminal, node của bạn sẽ tắt.
+- Tất cả dữ liệu blockchain được lưu trữ trên `.alephium` trong home folder[^1].
 
 ### Swagger
 
-We use OpenAPI to interact with the full node. You can directly open Swagger UI through [http://127.0.0.1:12973/docs](http://127.0.0.1:12973/docs).
+Chúng tôi sử dụng OpenAPI để tương tác với full node. Bạn có thể mở trực tiếp Swagger UI thông qua [http://127.0.0.1:12973/docs](http://127.0.0.1:12973/docs).
 
-Alternatively, you can use any OpenAPI client to
-import the `openapi.json` file from our repository ([download](https://github.com/alephium/alephium/raw/master/api/src/main/resources/openapi.json)).
+Hoặc, bạn có thể sử dụng bất kỳ OpenAPI client nào để thêm tệp `openapi.json` từ repo của chúng tôi. ([tải về](https://github.com/alephium/alephium/raw/master/api/src/main/resources/openapi.json))
 
 ### Mining
 
-For mining tutorial, you can follow our [Solo Mining Guide](mining/solo-mining-guide.md) or [Pool Mining Guide](mining/pool-mining-guide.md).
+Về hướng dẫn khai thác, bạn nên tham khảo qua [Hướng dẫn Solo Mining](mining/solo-mining-guide.md) hoặc [Hướng dẫn Pool Mining](mining/pool-mining-guide.md).
 
-### Wallet
+### Ví
 
-You could download the desktop wallet from here [GitHub](https://github.com/alephium/desktop-wallet/releases/latest).
+Tải về Desktop Wallet tại [GitHub](https://github.com/alephium/desktop-wallet/releases/latest).
 
-Alternatively, our full node has a builtin wallet with advanced features, you can follow our [Wallet Guide](wallet/node-wallet-guide.md) to learn how to use it.
+Hoặc, full node của bạn đã có sẳn ví với các tính năng nâng cao, tham khảo qua [Hướng dẫn sử dụng node wallet](wallet/node-wallet-guide.md) để biết cách sử dụng.
 
-[^1]: The home folder depends on your system: `C:\Users\<your-username>` in Windows, `/Users/<your-username>` in macOS, `/home/<your-username>` in Linux.
+[^1]:home folder sẽ theo vào hệ thống của bạn: `C:\Users\<your-username>` trong Windows, `/Users/<your-username>` trong macOS và `/home/<your-username>` trong Linux.
 
 [explorer]: https://explorer.alephium.org
