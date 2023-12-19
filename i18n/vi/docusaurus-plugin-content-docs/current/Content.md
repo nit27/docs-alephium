@@ -4,24 +4,20 @@ sidebar_label: Nội dung Repo
 title: Nội dung Repo
 ---
 
-import UntranslatedPageText from "@site/src/components/UntranslatedPageText";
-
-<UntranslatedPageText />
-
 ## Mục lục
 * [Link chính thức & tài khoản](#official-links--accounts) 
 * [Công nghệ](#tech-series)
-* [Giải thích](#explainer-series)
-* [TechTalks & AMAs](#techtalks--amas)
-* [Cột mốc](#milestones)
+* [Chuỗi các bài giải thích](#explainer-series)
+* [Những buổi chia sẻ & phát trực tiếp](#techtalks--amas)
+* [Các cột mốc](#milestones)
 * [Cộng đồng](#community--social)
 * [Podcast & bài báo khác](#external-podcasts--publications)
-* [Sự kiện, trình bày & hội thảo](#events-presentations--conferences)
+* [Sự kiện, thuyết trình & hội nghị](#events-presentations--conferences)
 * [Đối tác & PRs](#partnerships--prs)
 * [Chuỗi bài đọc](#reading-lists)
 * [People to follow](#people-to-follow)
-* [Thư viện & Tài nguyên](#libraries--developer-resources)
-* [Chương trình tặng thưởng](#apply-for-grants)
+* [Thư viện & Tài liệu cho lập trình viên](#libraries--developer-resources)
+* [Chương trình tặng thưởng Alephium](#apply-for-grants)
 
 ## Link chính thức & tài khoản
 
@@ -53,9 +49,9 @@ sUTXO #3 - Giải thích khái quát - https://twitter.com/alephium/status/16153
 
 Giải thích UTXO ELI5 - https://twitter.com/alephium/status/1675111759957327872
 
-Bí ẩn stateful UTXO: Cách tối ưu nhất để tiếp cận mô hinh kế toán của Alephium — Phần 1 - https://medium.com/@alephium/tech-talk-2-mysteries-of-stateful-utxo-the-ultimate-guide-to-alephiums-accounting-model-and-de2cf2063615
+Bí ẩn về stateful UTXO: Cách tối ưu nhất để tiếp cận mô hinh kế toán của Alephium — Phần 1 - https://medium.com/@alephium/tech-talk-2-mysteries-of-stateful-utxo-the-ultimate-guide-to-alephiums-accounting-model-and-de2cf2063615
 
-Bí ẩn stateful UTXO: Cách tối ưu nhất để tiếp cận mô hình kế toán của Alephium — Phần 2 - https://medium.com/@alephium/tech-talk-2-mysteries-of-stateful-utxo-the-ultimate-guide-to-alephiums-accounting-model-and-f6b6868ef873
+Bí ẩn về stateful UTXO: Cách tối ưu nhất để tiếp cận mô hình kế toán của Alephium — Phần 2 - https://medium.com/@alephium/tech-talk-2-mysteries-of-stateful-utxo-the-ultimate-guide-to-alephiums-accounting-model-and-f6b6868ef873
 
 Giới thiệu Stateful UTXO - https://twitter.com/alephium/status/1690004285818327040
 
@@ -66,7 +62,7 @@ Proof-of-Less-Work - https://medium.com/@alephium/tech-talk-1-the-ultimate-guide
 
 Proof-of-Less-Work - AMA - https://medium.com/@alephium/tech-talk-1-proof-of-less-work-ama-3d5afbf78c71
 
-Thuật toán đồng thuận - https://twitter.com/alephium/status/1562066898904158208
+Cơ chế đồng thuận - https://twitter.com/alephium/status/1562066898904158208
 
 ### Máy ảo Alphred 
 Máy ảo Alphred - https://medium.com/@alephium/meet-alphred-a-virtual-machine-like-no-others-85ce86540025
@@ -98,7 +94,7 @@ Asset Permission System - https://medium.com/@alephium/alephiums-aps-eliminating
 
 Asset Permission System - https://twitter.com/alephium/status/1673354565801091074
 
-## Explainer Series
+## Chuỗi các bài giải thích 
 
 Bridge Thread #6 - https://vxtwitter.com/alephium/status/1729149731761537296
 
@@ -112,17 +108,17 @@ Bridge Thread #2 - https://twitter.com/alephium/status/1722339218104754555
 
 Bridge Thread #1 - https://twitter.com/alephium/status/1721940517657952450
 
-Alephium Tokenomics - Updated Article - https://medium.com/@alephium/tokenomics-of-alephium-61d59b51029c
+Alephium Tokenomics - Bài viết đã được cập nhật - https://medium.com/@alephium/tokenomics-of-alephium-61d59b51029c
 
-TxScripts and Smart COntracts - https://twitter.com/alephium/status/1688907382615945218?s=20 
+TxScripts và Smart COntracts - https://twitter.com/alephium/status/1688907382615945218?s=20 
 
 Bạn đã biết gì về "Magic Numbers"? Và Alephium có những gì? : https://twitter.com/alephium/status/1701604666847666397
 
 First Developer Workshop — Build a Token Faucet ( Article ) - https://medium.com/@alephium/first-developer-workshop-build-a-token-faucet-a6bb2aa7bf68
 
-Block Time and Block Size - https://medium.com/@alephium/block-time-and-block-size-16e37292444f
+Block Time và Block Size - https://medium.com/@alephium/block-time-and-block-size-16e37292444f
 
-Back to Basics: What is block time? Why is it 64s on Alephium? - https://twitter.com/alephium/status/1676257717303005185
+Back to Basics: Block time là gì? Vì sao chỉ mất 64 giây trên Alephium? - https://twitter.com/alephium/status/1676257717303005185
 
 Transactions Per Second (TPS) - https://medium.com/@alephium/transactions-per-second-tps-f13217a49e39
 
@@ -150,29 +146,29 @@ Self-custody - https://twitter.com/alephium/status/1557763279123992577
 
 Naming Alephium - https://twitter.com/alephium/status/1554467104858210305
 
-How many ALPH are mined per day? - https://twitter.com/alephium/status/1551905461103775745
+Có bao nhiêu ALPH được khai thác một ngày? - https://twitter.com/alephium/status/1551905461103775745
 
 Leman Upgrade schnorr signatures : https://twitter.com/alephium/status/1648310494661595137
 
 Full Nodes - https://twitter.com/alephium/status/1592536671177699328
 
-NFTs on Alephium #1 - https://twitter.com/alephium/status/1648310497756999680
+NFT trên Alephium #1 - https://twitter.com/alephium/status/1648310497756999680
 
-NFTs on Alephium #2 - https://twitter.com/alephium/status/1673657929831190528
+NFT trên Alephium #2 - https://twitter.com/alephium/status/1673657929831190528
 
-You can access the whole list of Twitter Threads here: https://twitter.com/alephium/status/1648310455725883393
+Bạn có thể đọc thêm nhiều Twitter Threads tại đây: https://twitter.com/alephium/status/1648310455725883393
 
-## Monthly Retrospective
+## Tổng kết tháng 
 
-Jun/23 "June was a Busy Month!" Let's look at what happened on alephium! - https://twitter.com/alephium/status/1674785579123507202?s=20
+Jun/23 "Tháng 6 nhộn nhịp!" Hãy điểm lại những gì đã diễn ra trên lephium! - https://twitter.com/alephium/status/1674785579123507202?s=20
 
-Jul/23 "Today is Swiss National Day" See What Happened in July! - https://twitter.com/alephium/status/1686349117499604992?s=20
+Jul/23 "Ngày Quốc khánh Thuỵ Sỹ" nhìn lại những gì đã diễn ra ở tháng 7! - https://twitter.com/alephium/status/1686349117499604992?s=20
 
-## TechTalks & AMAs
+## Những buổi chia sẻ & phát trực tiếp 
 
-Aug/23 - UI/UX to onboard the next billion people - https://www.youtube.com/watch?v=VK4QtY_q1ek
+Aug/23 - UI/UX sẽ tiếp cận hàng tỷ người - https://www.youtube.com/watch?v=VK4QtY_q1ek
 
-Jul/23 - Mikaël Vaivre - How to onboard the next billion people to crypto? - https://www.youtube.com/watch?v=QHmb87sT9nI
+Jul/23 - Mikaël Vaivre - Làm thế nào để đưa hàng tỷ người đến lĩnh vực tiền điện tử? - https://www.youtube.com/watch?v=QHmb87sT9nI
 
 May/23 - NYM - https://www.youtube.com/watch?v=pImANSvO6WQ&t
 
@@ -192,199 +188,200 @@ Sep/22 - Ergo - https://www.youtube.com/watch?v=GCDo3V7HTb0
 
 Aug/22 - AMA POLW - https://www.youtube.com/watch?v=Oi4AsqVY0YA
 
-Jul/22 - Polto (the road to self custody) - https://www.youtube.com/watch?v=McHNeE2ciFk
+Jul/22 - Polto (tiến tới quyền tự chủ) - https://www.youtube.com/watch?v=McHNeE2ciFk
 
-Jul/22 - Tech Talk #1 The Ultimate guide to Proof of Less Work
+Jul/22 - Tech Talk #1 Siêu hướng dẫn về Proof of Less Work
 https://medium.com/@alephium/tech-talk-1-the-ultimate-guide-to-proof-of-less-work-the-universe-and-everything-ba70644ab301
 
-Nov/21 - First Live AMA - https://medium.com/@alephium/alephiums-first-live-ama-761a90d3f672
+Nov/21 - Buổi phát trực tiếp đầu tiên AMA - https://medium.com/@alephium/alephiums-first-live-ama-761a90d3f672
 
-## Milestones 
+## Các cột mốc  
 
-Nov/23 iOS app is live in the App Store! - https://vxtwitter.com/alephium/status/1724452430262534311 
+Nov/23 ứng dụng ví điện thoại trên iOS đã có mặt ở App Store! - https://vxtwitter.com/alephium/status/1724452430262534311 
 
-Nov/23 The Bridge is Live! - https://vxtwitter.com/alephium/status/1722661768131178556
+Nov/23 Bridge đã sẵn sàng! - https://vxtwitter.com/alephium/status/1722661768131178556
 
-Oct/23 Android Mobile App is out of Beta! - https://x.com/alephium/status/1719739251368325612?s=20
+Oct/23 Ứng dụng ví điện thoại trên Android đã chính thức! - https://x.com/alephium/status/1719739251368325612?s=20
 
-Oct/23 Get Ready for Bridging! - https://twitter.com/alephium/status/1719398464449335561
+Oct/23 Hãy sẵn sàng cho Bridging! - https://twitter.com/alephium/status/1719398464449335561
 
-Oct/23 Meet the Guardians! - https://twitter.com/alephium/status/1716858711493493013
+Oct/23 Gặp gỡ những vệ binh! - https://twitter.com/alephium/status/1716858711493493013
 
-Oct/23 Android Mobile wallet app is ready for beta testing! - https://medium.com/@alephium/ios-mobile-wallet-beta-testing-feedback-wanted-cdf162a49a79
+Oct/23 Ứng dụng ví điện thoại trên Android đã sẵn sàng cho thử nghiệm beta! - https://medium.com/@alephium/ios-mobile-wallet-beta-testing-feedback-wanted-cdf162a49a79
 
-Oct/23 The mobile wallet for iOS is ready for beta testing - https://medium.com/@alephium/ios-mobile-wallet-beta-testing-feedback-wanted-cdf162a49a79 
+Oct/23 Ứng dụng ví điện thoại trên iOS đã sẵn sàng cho thử nghiệm beta - https://medium.com/@alephium/ios-mobile-wallet-beta-testing-feedback-wanted-cdf162a49a79 
 
 Oct/23 The Blockflow Alliance DAO got its first grant. - https://twitter.com/alephium/status/1711405133165453683?s=20
 
-Sep/23 NFT Marketplace v3 is here! - https://twitter.com/alephium/status/1704167584017588419
+Sep/23 NFT Marketplace v3 đã ra mắt! - https://twitter.com/alephium/status/1704167584017588419
 
-Sep/23 Alephium Bridge Update - https://twitter.com/alephium/status/1700164822619582535
+Sep/23 Cập nhật Alephium Bridge - https://twitter.com/alephium/status/1700164822619582535
 
-Sep/23 Zealy quests are now available! - https://t.co/49nM9If9p1
+Sep/23 Zealy quests đã sẵn sàng! - https://t.co/49nM9If9p1
 
-Sep/23 Multisig GUI is officially launched! - https://twitter.com/alephium/status/1697611394471121118
+Sep/23 Multisig GUI đã chính thức trình làng! - https://twitter.com/alephium/status/1697611394471121118
 
-Jun/23 Alephium NFT Marketplace Poc On Testnet - https://twitter.com/alephium/status/1674397139835973633
+Jun/23 Alephium NFT Marketplace Poc trên Testnet - https://twitter.com/alephium/status/1674397139835973633
 
-May/23 Alephium Bridge on Testnet - https://medium.com/@alephium/the-alephium-bridge-is-live-on-testnet-e13454677fb8
+May/23 Alephium Bridge trên Testnet - https://medium.com/@alephium/the-alephium-bridge-is-live-on-testnet-e13454677fb8
 
-Mar/23 Alephium DEX PoC on Testnet - https://medium.com/@alephium/dex-prototype-live-on-testnet-bac5e7d095ce
+Mar/23 Alephium DEX PoC trên Testnet - https://medium.com/@alephium/dex-prototype-live-on-testnet-bac5e7d095ce
 
-Mar/23 Leman Network Upgrade - https://medium.com/@alephium/announcing-the-leman-network-upgrade-c01a81e65f0e
+Mar/23 Cập nhật mạng lưới Leman - https://medium.com/@alephium/announcing-the-leman-network-upgrade-c01a81e65f0e
 
-Nov/22 1 year of Mainnet - https://medium.com/@alephium/one-year-of-mainnet-b7ed5d3024ee
+Nov/22 1 năm ra mắt Mainnet - https://medium.com/@alephium/one-year-of-mainnet-b7ed5d3024ee
 
-Oct/22 Security assessment by Inference - https://medium.com/@alephium/security-assessment-by-inference-afa2f62957ad
+Oct/22 Đánh giá tính bảo mật bởi Inference - https://medium.com/@alephium/security-assessment-by-inference-afa2f62957ad
 
-Jul/22 Website update - https://twitter.com/alephium/status/1546841030020009984
+Jul/22 Cập nhật Website - https://twitter.com/alephium/status/1546841030020009984
 
-May/22 Q2 2022 Update - https://medium.com/@alephium/alephium-h1-project-update-1f2076978f00
+May/22 Cập nhật Q2 2022 - https://medium.com/@alephium/alephium-h1-project-update-1f2076978f00
 https://twitter.com/alephium/status/1530174260114776071
 
-Jan/22 Q1 2022 Update - https://medium.com/@alephium/alephium-q1-project-update-50f4a7b354b0
+Jan/22 Cập nhật Q1 2022 - https://medium.com/@alephium/alephium-q1-project-update-50f4a7b354b0
 
-Dec/21 Q3 2021 Update - https://medium.com/@alephium/time-for-an-alephium-development-recap-cdaa47ee95a
+Dec/21 Cập nhật Q3 2021 - https://medium.com/@alephium/time-for-an-alephium-development-recap-cdaa47ee95a
 
-Nov/21 Mainnet Launch - https://medium.com/@alephium/alephium-mainnet-brings-sharding-smart-contracts-and-energy-efficiency-to-bitcoin-tech-stack-a255183aa50b
+Nov/21 Ra mắt Mainnet - https://medium.com/@alephium/alephium-mainnet-brings-sharding-smart-contracts-and-energy-efficiency-to-bitcoin-tech-stack-a255183aa50b
 
-Nov/21 Alephium Block Rewards - https://medium.com/@alephium/alephium-block-rewards-72d9fb9fde33
+Nov/21 Block Rewards của Alephium - https://medium.com/@alephium/alephium-block-rewards-72d9fb9fde33
 
-Oct/21 Tokenomics of Alephium - https://medium.com/@alephium/tokenomics-of-alephium-61d59b51029c
+Oct/21 Tokenomics của Alephium - https://medium.com/@alephium/tokenomics-of-alephium-61d59b51029c
 
 Sep/21 Pre-sale Q3 2021 - https://medium.com/@alephium/alephium-closes-3-6m-pre-sale-from-80-contributors-to-expand-sharded-utxo-blockchain-platform-84f80492e28d
 
-Aug/21 Introducing ALPH Q3 2021 - https://medium.com/@alephium/introducing-alph-8381dbd9f88d
+Aug/21 Giới thiệu ALPH Q3 2021 - https://medium.com/@alephium/introducing-alph-8381dbd9f88d
 
-May/19 Initial description - First article -  https://medium.com/@alephium/alephium-pushes-the-boundaries-of-blockchain-performance-scalability-1ab619038daa
+May/19 Miêu tả ban đầu - Bài viết đầu tiên -  https://medium.com/@alephium/alephium-pushes-the-boundaries-of-blockchain-performance-scalability-1ab619038daa
 
-## Community & Social 
+## Cộng đồng 
 
-Builders Highlight 5 - Deadrare
+Tiêu điểm lập trình viên 5 - Deadrare
 https://medium.com/@alephium/builders-highlight-5-deadrare-d5ff90d6161e
 
-Builders Highlight 4 - No Trust Verify
+Tiêu điểm lập trình viên 4 - No Trust Verify
 https://medium.com/@alephium/builders-highlight-4-no-trust-verify-9ea495ca826f
 
-Builders Highlight 3 - Ayin
+Tiêu điểm lập trình viên 3 - Ayin
 https://medium.com/@alephium/builders-highlight-3-ayin-6be4a6bd4ec2
 
-Builders Highlight 2 - Alphpaca NFTs
+Tiêu điểm lập trình viên 2 - Alphpaca NFTs
 https://medium.com/@alephium/builders-highlight-alphpaca-nfts-99c69775f04c
 
-Builders Highlight 1 - Sezame Wallet
+Tiêu điểm lập trình viên 1 - Sezame Wallet
 https://medium.com/@alephium/builders-highlight-sezame-wallet-ddb4aeb61881
 
-Builders Highlight 0 - Sahhar
+Tiêu điểm lập trình viên 0 - Sahhar
 https://medium.com/@alephium/builders-highlight-sahhar-10f4cc8746
 
-Community Highlight #14 - AnimalManJan
+Tiêu điểm cộng đồng #14 - AnimalManJan
 https://medium.com/@alephium/community-highlight-14-animalmanjan-da8fd051bc38
 
-Community Highlight #13 - Ryann
+Tiêu điểm cộng đông #13 - Ryann
 https://medium.com/@alephium/community-highlight-13-ryan-5dbbeaf859e4
 
-Community Highlight #12 - energy45
+Tiêu điểm cộng đồng #12 - energy45
 https://medium.com/@alephium/community-highlight-12-sam-a-k-a-energy45-610005a9219b
 
-Community Highlight #11 - Dr. Jekyll
+Tiêu điểm cộng đồng #11 - Dr. Jekyll
 https://medium.com/@alephium/community-highlight-11-dr-jekyll-165ab9a51880
 
-Community Highlight 10 - Lx, aka Lix
+Tiêu điểm cộng đồng 10 - Lx, aka Lix
 https://medium.com/@alephium/community-highlight-10-lx-aka-lix-fde724cf8d81
 
-Community Highlight 9 - dZHEMSH
+Tiêu điểm cộng đồng 9 - dZHEMSH
 https://medium.com/@alephium/community-highlight-9-dzhemsh-a0a4a98a8489
 
-Community Highlight 8 - Jorge
+Tiêu điểm cộng đồng 8 - Jorge
 https://medium.com/@alephium/community-highlight-8-jorge-438510785041
 
-Community Highlight 7 - Oheka
+Tiêu điểm cộng đồng 7 - Oheka
 https://medium.com/@alephium/community-highlight-7-oheka-13d8b4ae025e
 
-Community Highlight 6 - Waldi — Zkit/beats
+Tiêu điểm cộng đồng 6 - Waldi — Zkit/beats
 https://medium.com/@alephium/community-highlight-6-waldi-zkit-beats-37af1f6df3b8
 
-Community Highlight 5 - TxN
+Tiêu điểm cộng đồng 5 - TxN
 https://medium.com/@alephium/community-highlight-5-txn-71c4fd76ffe8
 
-Community Highlight 4 - Montail
+Tiêu điểm cộng đồng 4 - Montail
 https://medium.com/@alephium/community-highlight-4-montail-e24fd88882a0
 
-Community Highlight 3 - DigDug
+Tiêu điểm cộng đồng 3 - DigDug
 https://medium.com/@alephium/community-highlight-3-digdug-48a7ec868504
 
-Community Highlight 2 - cgi-bin - https://medium.com/@alephium/community-highlight-cgi-bin-c102cc106f19
+Tiêu điểm cộng đông 2 - cgi-bin - 
+https://medium.com/@alephium/community-highlight-cgi-bin-c102cc106f19
 
-Community Highlight 1 - Wilhelm Källström aka “Oracleuggla” - 
+Tiêu điểm cộng đồng 1 - Wilhelm Källström aka “Oracleuggla” - 
 https://medium.com/@alephium/community-highlight-wilhelm-k%C3%A4llstr%C3%B6m-aka-oracleuggla-81d3938c5692
 
-Welcome to DeFi Llama! - https://vxtwitter.com/DefiLlama/status/1726667056781881648?s=20
+Chào mừng đến với DeFi Llama! - https://vxtwitter.com/DefiLlama/status/1726667056781881648?s=20
 
 Onboarding Thread on Alephium - https://vxtwitter.com/alephium/status/1726249933374959943?s=20
 
-Verification of bridge contracts, tokens & token lists - https://medium.com/@alephium/verification-of-bridge-contracts-tokens-token-lists-76e5c237bf52
+Xác minh của bridge contracts, tokens và token lists - https://medium.com/@alephium/verification-of-bridge-contracts-tokens-token-lists-76e5c237bf52
 
-Core Alephium Contibutors Update - https://medium.com/@alephium/alephium-contributors-f35eeaeaf0a0
+Cập nhật từ team chủ lực của Alephium - https://medium.com/@alephium/alephium-contributors-f35eeaeaf0a0
 
-Core team interview series. Episode 4 - https://medium.com/@alephium/core-team-interview-series-episode-4-3886003b8fef
+Chuỗi bài phỏng vấn team chủ lực. Phần 4 - https://medium.com/@alephium/core-team-interview-series-episode-4-3886003b8fef
 
-Core team interview series. Episode 3 - https://medium.com/@alephium/core-team-interview-series-episode-3-64b6dacc1459
+Chuỗi bài phỏng vấn team chủ lực. Phần 3 - https://medium.com/@alephium/core-team-interview-series-episode-3-64b6dacc1459
 
-Core team interview series. Episode 2 - https://medium.com/@alephium/core-team-interview-series-episode-2-bec6e6908d2f
+Chuỗi bài phỏng vấn team chủ lực. Phần 2 - https://medium.com/@alephium/core-team-interview-series-episode-2-bec6e6908d2f
 
-Core team interview series. Episode 1 - https://medium.com/@alephium/core-team-interview-series-episode-1-3472f8295af6
+Chuỗi bài phỏng vấn team chủ lực. Phần 1 - https://medium.com/@alephium/core-team-interview-series-episode-1-3472f8295af6
 
-Welcome to the Blockflow Alliance DAO! - https://medium.com/@alephium/welcome-blockflow-alliance-dao-cd74a949f98b
+Chào mừng đến với Blockflow Alliance DAO! - https://medium.com/@alephium/welcome-blockflow-alliance-dao-cd74a949f98b
 
-Alpehium's community creativity is fantastic! Toolkit Design Contest Winners - https://medium.com/@alephium/toolkit-design-contest-winners-announced-6cc5e304cd8b
+Sự sáng tạo của cộng đồng Alpehium thật tuyệt vời! Công bố người chiến thắng cuộc thi thiết kế Toolkit - https://medium.com/@alephium/toolkit-design-contest-winners-announced-6cc5e304cd8b
 
-UI & UX wizardry from our latest techtalk! - https://medium.com/@alephium/techtalk-11-how-to-onboard-the-next-billion-people-to-crypto-d1f4904b3eea
+'Ma thuật UI & UX' từ buổi chia sẻ gần đây nhất! - https://medium.com/@alephium/techtalk-11-how-to-onboard-the-next-billion-people-to-crypto-d1f4904b3eea
 
-Alephium Toolkit GUI design contest! - https://medium.com/@alephium/design-contest-a-logo-for-the-toolkit-website-f7bf7801b03c
+Cuộc thi thiết kế Alephium Toolkit GUI! - https://medium.com/@alephium/design-contest-a-logo-for-the-toolkit-website-f7bf7801b03c
 
-Alephium Send your best Alephium Memes! - https://twitter.com/alephium/status/1686420533510832128
+Hãy chia sẻ Alephium Memes của bạn! - https://twitter.com/alephium/status/1686420533510832128
 
-Video Creation contest - https://medium.com/@alephium/contest-for-all-video-creators-e777f2619596
+Cuộc thi sáng tạo Video - https://medium.com/@alephium/contest-for-all-video-creators-e777f2619596
 
-Naming Competition - https://medium.com/@alephium/alephium-naming-competition-c1b736797461
+Cuộc thi Naming - https://medium.com/@alephium/alephium-naming-competition-c1b736797461
 
-Introducing Community Rewards - https://medium.com/@alephium/introducing-community-rewards-f4638bbf14bf
+Giới thiệu phần thưởng cộng đồng - https://medium.com/@alephium/introducing-community-rewards-f4638bbf14bf
 
 DJ Fetamin Mix at Chainflip Party during Ethcc - https://www.youtube.com/watch?v=0heJBclJwEA&t=113s
 
-## Tutorials & Workshops
+## Các bài hướng dẫn & Hội thảo 
 
-🎦Bridge Tutorial!📺 - https://www.youtube.com/watch?v=xoYVzbwBAjg
+🎦Hướng dẫn sử dụng Bridge!📺 - https://www.youtube.com/watch?v=xoYVzbwBAjg
 
-Deep Dive into Ralph with the Dev Workshop! 🛠 - https://www.youtube.com/watch?v=gi2sxvB9Np8
+Đi sâu vào Ralph tại buổi hội thảo của lập trình viên! 🛠 - https://www.youtube.com/watch?v=gi2sxvB9Np8
 
-Deep Dive into Ralph with the Dev Workshop - Part 2! 🛠 - https://vxtwitter.com/alephium/status/1729530234649866529
+Đi sâu vào Ralph tại buổi hội thảo của lập trình viên - Phần 2! 🛠 - https://vxtwitter.com/alephium/status/1729530234649866529
 
-Video tutorial on how to create a Multisig Wallet using Alephium Toolkit GUI: https://twitter.com/alephium/status/1701211477577785724
+Video hướng dẫn cách tạo ví Multisig với Alephium Toolkit GUI: https://twitter.com/alephium/status/1701211477577785724
 
-How to use the Alephium Desktop Wallet privately through the NYM Mixnet - https://www.youtube.com/watch?v=VbhQEhtX-rI
+Hướng dẫn sử dụng ví Alephium trên Desktop một cách riêng tư thông qua NYM Mixnet - https://www.youtube.com/watch?v=VbhQEhtX-rI
 
-Second Developer Workshop - Friendtech smart contract - https://medium.com/@alephium/second-online-dev-workshop-6ebc5fb0b0da
+Hội thảo của lập trình viên lần 2 - Friendtech smart contract - https://medium.com/@alephium/second-online-dev-workshop-6ebc5fb0b0da
 
-Second Developer Workshop - Re-implementing Friend.Tech’s Smart Contract in Ralph - https://www.youtube.com/watch?v=gi2sxvB9Np8
+Hội thảo của lập trình viên lần 2 - Triển khai lại Friend.Tech’s Smart Contract bằng Ralph - https://www.youtube.com/watch?v=gi2sxvB9Np8
 
-First Developer Workshop — Build a Token Faucet ( Video ) - https://www.youtube.com/watch?v=YblUxEcXQuY
+Hội thảo của lập trình viên lần 1 — Phát triển một Token Faucet ( Video ) - https://www.youtube.com/watch?v=YblUxEcXQuY
 
-How to use Alephium's app on Ledger? A Tutorial - https://www.youtube.com/watch?v=YBQy_siZh6w&t
+Hướng dẫn sử dụng ứng dụng Alephium trên Ledger - https://www.youtube.com/watch?v=YBQy_siZh6w&t
 
-How to use the Alephium Bridge (testnet) - part 1 - https://www.youtube.com/watch?v=cwv28divQrA&t
+Hướng dẫn sử dụng Alephium Bridge (testnet) - phần 1 - https://www.youtube.com/watch?v=cwv28divQrA&t
 
-How to use the Alephium Bridge (testnet) - part 2 - https://www.youtube.com/watch?v=TziFpCgM3-0&t
+Hướng dẫn sử dụng Alephium Bridge (testnet) - phần 2 - https://www.youtube.com/watch?v=TziFpCgM3-0&t
 
 
-## External Podcasts & Publications
+## Các Podcast & bài báo khác
 
-Nym Project's blog post about the Alephium wallet built by @Mika and @nop33! - https://twitter.com/alephium/status/1710291031759982803
+Các bài đăng của Nym Project về ví Alephium được phát triển bởi @Mika and @nop33! - https://twitter.com/alephium/status/1710291031759982803
 
-UTXO Alliance Roundtable - https://www.youtube.com/watch?v=1XcBWJRRp-E&list=PL8q8n0BHJS1MWfqe1OIz4EWz9RKNrCiu6&index=1&pp=iAQB
+Hội nghị bàn tròn của Liên minh UTX - https://www.youtube.com/watch?v=1XcBWJRRp-E&list=PL8q8n0BHJS1MWfqe1OIz4EWz9RKNrCiu6&index=1&pp=iAQB
 
-Cheng Wang: Founder of Alephium, Distributed Consensus, Proof of Less Work | Wolfram Blockchain Labs - https://youtu.be/8XYa288lIg0
+Cheng Wang: Nhà sáng lập của Alephium, Đồng thuận phân bổ, Proof of Less Work | Wolfram Blockchain Labs - https://youtu.be/8XYa288lIg0
 
 Didier Borel - SwissRoadCrypto - https://www.buzzsprout.com/2058047/11607475
 
@@ -394,9 +391,9 @@ Uncovering the Secrets of the Next Generation Blockchain Network Alephium - http
 
 Sigma Prism - Meet Alephium | A New Scalable UTXO Paradigm | episode #19 - https://youtu.be/vBVbKIuHbLc (Notes)
 
-Alephium | A New Era of Possibilities - https://youtu.be/0jmo-WYhwWc
+Alephium | Kỷ nguyên mới của những cơ hội - https://youtu.be/0jmo-WYhwWc
 
-Maud Bannwart: Chief Operating Officer of Alephium | Operations of Blockchain Development - https://youtu.be/3CYsjwIkI_c
+Maud Bannwart: CEO của Alephium | Các hoạt động về phát triển Blockchain - https://youtu.be/3CYsjwIkI_c
 
 NiceHash - NiceTalk - https://www.youtube.com/watch?v=JFTxolwLduc
 
@@ -410,15 +407,15 @@ Heidi News - https://www.heidi.news/cyber/les-entreprises-crypto-en-suisse-roman
 
 Heidi News - https://www.heidi.news/cyber/alephium-une-blockchain-3-0-developpee-a-lausanne
 
-Token Insights - https://tokeninsight.medium.com/project-research-paper-of-alephium-8001323353e7
+Kiến thức về Token - https://tokeninsight.medium.com/project-research-paper-of-alephium-8001323353e7
 
-## Events, presentations & conferences 
+## Sự kiện, thuyết trình & hội nghị 
 
-What is Alephium? - https://www.youtube.com/watch?v=v2L4jEvoSIU
+Alephium là gì? - https://www.youtube.com/watch?v=v2L4jEvoSIU
 
-Cheng Wang at Crypto Talk Series in Neuchâtel - Stateful UTXO - https://www.youtube.com/watch?v=r_5U7ZgByt4
+Các buổi chia sẻ về Crypto của Cheng Wang ở Neuchâtel - Stateful UTXO - https://www.youtube.com/watch?v=r_5U7ZgByt4
 
-Cheng Wang at EthCC 2022 - Account Model meets UTXO: a new paradigm for secure dApps & DeFi -  https://www.youtube.com/watch?v=VVYH9rBJAdA
+Cheng Wang at EthCC 2022 - Khi mô hình kế toán kết hợp với UTXO: một hướng đi mới cho dApps và DeFi bảo mật -  https://www.youtube.com/watch?v=VVYH9rBJAdA
 
 Cheng Wang - Blockchain sharding at CDC 36th C3 - https://youtu.be/_SjtXp6F43k
 
@@ -432,7 +429,7 @@ PBWS Paris - 2022 - https://twitter.com/alephium/status/1530174317576716290 / ht
 
 DevCon Osaka 2019 - https://twitter.com/alephium/status/1181943096600223746
 
-Web3 summit 2019 - https://twitter.com/alephium/status/1163721918765129728
+Hội nghị thượng đỉnh Web3 2019 - https://twitter.com/alephium/status/1163721918765129728
 
 Bitcoin COnf 2019 - https://twitter.com/alephium/status/1143767445657665537
 
@@ -446,31 +443,31 @@ Aloïs Cochard - Edcon 2019 - https://youtu.be/-tCB9sOT_UI
 
 Aloïs Cochard - Bitcoin 2019 - https://youtu.be/0WnmzgKTClU
 
-## Partnerships & PRs
+## Đối tác & Truyền thông
 
-DappNode - Announcement - https://medium.com/@alephium/pushing-for-decentralization-alephium-and-dappnode-join-forces-c98845d9a9da
+DappNode - Thông báo - https://medium.com/@alephium/pushing-for-decentralization-alephium-and-dappnode-join-forces-c98845d9a9da
 
-DappNode - Tutorial -  https://medium.com/@alephium/alephium-dappnode-collab-tech-talk-and-ama-80b34dfd1e9f
+DappNode - Hướng dẫn -  https://medium.com/@alephium/alephium-dappnode-collab-tech-talk-and-ama-80b34dfd1e9f
 
-Ergo - Announcement - https://medium.com/@alephium/ergohack-v-alephium-sponsors-ergos-hackathon-with-flux-djed-alliance-to-foster-innovation-in-eae9c8bd7e97
+Ergo - Thông báo - https://medium.com/@alephium/ergohack-v-alephium-sponsors-ergos-hackathon-with-flux-djed-alliance-to-foster-innovation-in-eae9c8bd7e97
 
-FLUX - Announcement - https://medium.com/@alephium/alephium-continues-its-engagement-for-decentralization-and-partners-with-the-cloud-based-f9c5baebe5b2
+FLUX - Thông báo - https://medium.com/@alephium/alephium-continues-its-engagement-for-decentralization-and-partners-with-the-cloud-based-f9c5baebe5b2
 
-FLUX - Tutorial - https://medium.com/@alephium/host-your-alephium-node-via-the-flux-marketplace-2f3a5ab85263
+FLUX - Hướng dẫn - https://medium.com/@alephium/host-your-alephium-node-via-the-flux-marketplace-2f3a5ab85263
 
-FLUX - Contest -  https://medium.com/@alephium/alephium-flux-tutorial-contest-81054caf926
+FLUX - Cuộc thi -  https://medium.com/@alephium/alephium-flux-tutorial-contest-81054caf926
 
 Cetacean Capital - https://medium.com/@alephium/alephium-partners-with-cetacean-capital-83cf2fbea8a1
 
-Gate.io - Announcement - https://medium.com/@alephium/gate-io-first-to-list-alephium-alph-a7e5fe56cd45
+Gate.io - Thông báo - https://medium.com/@alephium/gate-io-first-to-list-alephium-alph-a7e5fe56cd45
 
 Gate.io - AMA - https://medium.com/@alephium/gate-io-ama-with-alephium-67b50d179d72
 
-Bitcoin Association Switzerland - https://medium.com/@alephium/alephium-becomes-a-member-of-bitcoin-association-switzerland-2293fec16fc9
+Hiệp hội Bitcoin ở Thuỵ Sỹ - https://medium.com/@alephium/alephium-becomes-a-member-of-bitcoin-association-switzerland-2293fec16fc9
 
-UTXO alliance - https://medium.com/@alephium/alephium-joins-the-utxo-alliance-6476b479dd84
+Đồng minh UTXO - https://medium.com/@alephium/alephium-joins-the-utxo-alliance-6476b479dd84
 
-## Reading Lists
+## Chuỗi bài đọc
 
 1. https://twitter.com/alephium/status/1548224145703313408
 2. https://twitter.com/alephium/status/1553395039778119682
@@ -521,12 +518,12 @@ Wow visual - https://twitter.com/gemforgem/status/1441427580578455554
 
 Hongchao: https://twitter.com/hongchao
 
-## Libraries & Developer Resources
+## Thư viện & Tài liệu cho lập trình viên 
 
 Docs - https://docs.alephium.org/
 
 Github - https://github.com/alephium
 
-## Apply for Grants
+## Chương trình tặng thưởng Alephium 
 
-Apply for grants - https://github.com/alephium/community/blob/master/Grant%26RewardProgram.md
+Xem thêm chi tiết - https://github.com/alephium/community/blob/master/Grant%26RewardProgram.md
