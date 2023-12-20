@@ -1,96 +1,91 @@
 ---
 sidebar_position: 40
-title: More and Troubleshooting
-sidebar_label: More and troubleshooting
+title: Có thể hữu ích và khắc phục sự cố
+sidebar_label: Có thể hữu ích và khắc phục sự cố
 ---
-
-import UntranslatedPageText from "@site/src/components/UntranslatedPageText";
-
-<UntranslatedPageText />
 
 ## API Key
 
-It's a good practice to use API key to limit the access to your full node's rest endpoints.
+Bạn nên thực hành sử dụng API key để giới hạn quyền truy cập vào các endpoint của full node.
 
-### API Key Setup
+### Cài đặt API Key
 
-Please add the following to your `user.conf` by replacing the zeros with your own key (>= 32 characters).
+Hãy thêm đoạn mã sau vào `user.conf` và thay thế con số bên dưới bằng key của bạn (>= 32 characters).
 
 ```
 alephium.api.api-key = "--- your own key with >= 32 characters"
 ```
 
-Restart your full node to make this take effect.
+Khởi động lại full node để có hiệu lực.
 
-#### API Key Generation
+#### Tạo API Key
 
-On GNU/ Linux: `cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 48 | head -n 1`
+Trên GNU/ Linux: `cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 48 | head -n 1`
 
-### Use API Key
+### Sử dụng API Key
 
-1. Click on the `Authorize` button on the top right of your Swagger UI:
+1. Nhấn vào nút `Authorize` ở góc trên bên trái của giao diện Swagger:
    ![full-node-api-key-auth0](media/full-node-api-key-auth0.png)
 
-2. Fill in the value box with your key and click the authorize button:
+2. Điền key của bạn vào ô Value và nhấn nút Authorize:
    ![full-node-api-key-auth1](media/full-node-api-key-auth1.png)
 
-Now you could use Swagger UI as if there is no API key.
+Bây giờ bạn có thể sử dụng giao diện Swagger như thể không  có API key nào cả.
 
-## How to make the full node API publicly accessible ?
+## Làm thế nào để truy cập full node API publicly?
 
-1. Set up your API key properly following the guide above.
+1. Cài đặt API key một cách chính xác bằng hướng dẫn bên trên.
 
-2. Add the following to your `user.conf` and restart your full node.
-
-```
-alephium.api.network-interface = "0.0.0.0"
-```
-
-## How to access the Swagger UI of my full node on another computer in the same subnet ?
-
-1. Add the following to your `user.conf` and restart your full node.
+2. Thêm đoạn mã dưới đây vào `user.conf` và khởi động lại full node.
 
 ```
 alephium.api.network-interface = "0.0.0.0"
 ```
 
-2. Change the `host` of Swagger UI to be the subnet IP of your full node.
+## Làm sao để truy cập vào Swagger UI của full node trên máy tính khác dù khác subnet?
 
-## Error "java.lang.AssertionError: assumption failed"
+1. Thêm đoạn mã sau vào `user.conf` và khởi động lại full node.
 
-This error often occurs due to connection loss during node synchronization and means that some of the files are corrupted.
-To fix the problem:
+```
+alephium.api.network-interface = "0.0.0.0"
+```
 
-1. Delete the folder .alephium `rm .alephium`
+2. Thay đổi `host` của Swagger UI để nó trở thành subnet IP cho full node của bạn.
 
-2. Restart the node and wait for synchronization `java -jar alephium-x.x.x.jar`
+## Lỗi "java.lang.AssertionError: assumption failed"
 
-## Moving the Alephium data folder
+Lỗi này thường xãy ra bởi vì mất kết nối trong khi quá trình đồng bộ node đang diễn ra và nó có nghĩa là một vài tệp tin có thể đã bị gián đoạn. Để giải quyết vấn đề này:
 
-Many users prefer to keep the Alephium data folder on a different disk than the primary boot disk. To do so with the Alephium full node jar, you can use the `ALEPHIUM_HOME` environment variable:
+1. Xóa thư mục .alephium bằng `rm .alephium`
 
-1. Stop the Alephium full node jar
-2. Move the Alephium data folder (normally at `%userprofile%\.alephium` for Windows or `~/.alephium` for Linux and macOS) to the new location
-3. Add an environment variable `ALEPHIUM_HOME` to the system pointing to the new location. You can either do this at the system level or simply create a batch file that sets the variable prior to starting the Alephium jar.
-4. Restart the Alephium node
+2. Khởi động lại node và đợi quá trình đồng bộ hóa `java -jar alephium-x.x.x.jar` hoàn thành.
 
-If using the docker full node, then simply change the mounted folder definitions in the docker file to point to the new home then restart.
+## Di chuyển dữ liệu trong thư mục Alephium
 
-## Customize Logging
+Có rất nhiều người thích giữ data của thử mục Alephium trong một ổ cứng khác hơn là primary boot disk. Để làm điều tương tự với dữ liệu Alephium full node, bạn có thể sử dụng biến `ALEPHIUM_HOME`:
 
-There are several environment variables used for logging:
+1. Dừng việc sử dụng Alephium full node jar
+2. Di chuyển dữ liệu thưc mục của Alephium (thông thường nó sẽ ở `%userprofile%\.alephium` trên Windows hoặc `~/.alephium` trên Linux và macOS) đến một vị trí mới
+3. Thêm một environment variable `ALEPHIUM_HOME` vào sau một nơi mới. Bạn có thể không cần làm điều này ở system level hoặc đơn giản là tạo một tệp batch chứa biến trước để chạy Alephium jar.
+4. Khởi động lại Alephium node
 
-- `ALEPHIUM_LOG_LEVEL` could change the console log level.
-- `ALEPHIUM_ENABLE_DEBUG_LOGGING` could enable debug logging.
-- `ALEPHIUM_HOME` could change the home folder of the full node, therefore the folder of logs
+Nếu bạn sử dụng docker full node, chỉ đơn giản là thay đổi tùy chỉnh thư mục cần được mount ở trong tệp docker để trỏ vào trong một thư mục mới và sau đó khởi động lại.
 
-Below is an example with all of the possible logging options:
+## Tùy chỉnh Logging
+
+Có rất nhiều các environment variable được sử dụng cho logging:
+
+- `ALEPHIUM_LOG_LEVEL` có thể thay đổi console log level.
+- `ALEPHIUM_ENABLE_DEBUG_LOGGING` có thể kích hoạt debug logging.
+- `ALEPHIUM_HOME` có thể thay đổi home folder của full node, và cả thư mục chứa các log
+
+Bên dưới là ví dụ với tất cả các tùy chọn log khả dụng:
 
 ```
 ALEPHIUM_HOM=<folder> ALEPHIUM_LOG_LEVEL=<DEBUG | INFO | WARN | ERROR> ALEPHIUM_ENABLE_DEBUG_LOGGING=<true | false> java -jar alephium-x.x.x.jar
 ```
 
-It's also possible to override the [logging configuration file](https://github.com/alephium/alephium/blob/master/flow/src/main/resources/logback.xml) of Alephium.
+Nó cũng có thể được ghi đè lên [logging configuration file](https://github.com/alephium/alephium/blob/master/flow/src/main/resources/logback.xml) của Alephium.
 
 ```
 java -Dlogback.configurationFile=/path/to/config.xml alephium-x.x.x.jar
