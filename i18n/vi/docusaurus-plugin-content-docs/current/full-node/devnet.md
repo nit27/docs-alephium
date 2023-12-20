@@ -4,23 +4,19 @@ title: Devnet
 sidebar_label: Devnet
 ---
 
-import UntranslatedPageText from "@site/src/components/UntranslatedPageText";
+# Tạo một local Devnet
 
-<UntranslatedPageText />
+## Sử dụng Docker
 
-# Create a local Devnet
+Nếu bạn muốn tạo một local development network với explorer, hãy dùng `docker-compose` và xem qua hướng dẫn [alphium-stack](https://github.com/alephium/alephium-stack#devnet).
 
-## Using Docker
-
-If you want to create a local development network with explorer support, please use `docker-compose` and follow the instructions in [alphium-stack](https://github.com/alephium/alephium-stack#devnet).
-
-## Manually using jar files
+## Sử dụng jar file
 
 ### Full node
 
-Download file `alephium-x.x.x.jar` from [Github release](https://github.com/alephium/alephium/releases/latest) (do not double click on it, it can not be launched this way).
+Tải về `alephium-x.x.x.jar` từ [Github release](https://github.com/alephium/alephium/releases/latest) (đừng kích đúp chuột vào nó vì nó không thể chạy bằng cách này).
 
-Write a configuration file at `~/.alephium/user.conf`, the one below is taken from our [alephium-stack repo](https://github.com/alephium/alephium-stack/blob/master/devnet/devnet.conf)
+Tạo một configuration file tại `~/.alephium/user.conf`, đoạn mã phía dưới được trích ra từ [alephium-stack repo](https://github.com/alephium/alephium-stack/blob/master/devnet/devnet.conf)
 
 ```conf
 # Import this mnemonic to have 4'000'000 token allocated for your addresses
@@ -81,31 +77,29 @@ alephium.mining.miner-addresses = [
 ]
 ```
 
-Note: The mnemonic (24 words) and the corresponding addresses were created for development purposes, you can use it or create your own, but never use it on `mainnet`.
-      You can also add more addresses if you want. If you want change the addresses afterward, you'll need to erase and restart your devnet.
+Lưu ý: Dãy mnemonic (24 từ) và the những địa chỉ tương ứng sẽ được tạo nhằm phục vụ cho việc khởi tạo ban đầu. Bạn có thể sử dụng chúng hoặc tự tạo những địa chỉ khác theo ý của mình, nhưng đừng bao giờ sử dụng nó trên `mainnet`. Bạn cũng có thể thêm nhiều địa chỉ nếu muốn. Nếu bạn muốn thay đổi các địa chỉ đó sau này, bạn sẽ cần phải xóa và khởi tạo lại devnet của mình.
 
-
-You can now start your `devnet`:
+Bạn có thể bắt đầu `devnet` với:
 
 ```sh
 java -jar alephium-x.x.x.jar
 ```
 
-You can now access the full node's API at: `http://localhost:22973/docs`
+Giờ đây bạn đã có thể truy cập vào API của full node tại: `http://localhost:22973/docs`
 
 ### Explorer-backend
 
-Requirement: https://www.postgresql.org/
+Yêu cầu: https://www.postgresql.org/
 
-Download file `explorer-backend-x.x.x.jar` from [Github release](https://github.com/alephium/explorer-backend/releases/latest)
+Tải về `explorer-backend-x.x.x.jar` từ [Github release](https://github.com/alephium/explorer-backend/releases/latest)
 
-Connect to PostgreSQL and create a database for your devnet
+Kết nối đến PostgreSQL và tạo một database cho devnet
 
 ```sql
 CREATE DATABASE devnet;
 ```
 
-You can check [the configuration file](https://github.com/alephium/explorer-backend/blob/feature/contract-subcontract/app/src/main/resources/application.conf) to see what settings can be override. You can then configure and launch your `explorer-backend` with:
+Bạn có thể kiểm tra [configuration file](https://github.com/alephium/explorer-backend/blob/feature/contract-subcontract/app/src/main/resources/application.conf) để thấy những cài đặt nào có thể ghi đè lên. Vây lúc này bạn có thể tùy chỉnh và khởi chạy `explorer-backend` của bạn với:
 
 ```sh
 export BLOCKFLOW_NETWORK_ID=2
