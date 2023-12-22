@@ -1,28 +1,24 @@
 ---
 sidebar_position: 30
-title: Multisig Guide
-sidebar_label: Multisig guide
+title: Hướng dẫn Multisig 
+sidebar_label: Hướng dẫn Multisig 
 ---
 
-import UntranslatedPageText from "@site/src/components/UntranslatedPageText";
+Alephium hỗ trợ `m-of-n` các địa chỉ multi-signature.
 
-<UntranslatedPageText />
+Bạn có thể tìm thấy lệnh liên quan dành cho multisig tại [http://127.0.0.1:12973/docs](http://127.0.0.1:12973/docs) trong mục `Multi-signature`. Hãy đảm bảo rằng full node của bạn đang chạy để bạn có thể truy cập Swagger UI. 
 
-Alephium is supporting `m-of-n` multi-signature addresses.
+## Cách tạo địa chỉ Multisig
 
-You can find the related command for multisig at [http://127.0.0.1:12973/docs](http://127.0.0.1:12973/docs) under the `Multi-signature` section. Make sure that your full node is running so that you can access the Swagger UI.
+1. Thu thập các public key của các tài khoản cho multisig đó.
 
-## Create a multisig address
-
-1. Get all the public keys of the accounts for that multisig.
-
-   Public key can be retrieve with the wallet by calling:
+   Public key có thể được lấy từ ví bằng lệnh:
 
    ```
    GET /wallets/{wallet_name}/addresses/{address}
    ```
 
-   response:
+   Phản hồi:
 
    ```json
    {
@@ -31,7 +27,7 @@ You can find the related command for multisig at [http://127.0.0.1:12973/docs](h
    }
    ```
 
-2. For example, if you want to create a multisig address with 3 accounts that needs 2 signatures to unlock (2-of-3), you can do:
+2. Ví dụ, nếu bạn muốn tạo một tài khoản multisig với 3 tài khoản cần 2 chữ ký để mở khoá (2 trên 3), bạn có thể làm như sau:
 
    ```
    POST /multisig/address
@@ -45,7 +41,7 @@ You can find the related command for multisig at [http://127.0.0.1:12973/docs](h
    }
    ```
 
-   response:
+   Phản hồi:
 
    ```json
    {
@@ -53,13 +49,13 @@ You can find the related command for multisig at [http://127.0.0.1:12973/docs](h
    }
    ```
 
-   > ⚠️ WARNING: Make sure to remember the order of the public keys, you'll need to provide the same order later.
+   > ⚠️ CẢNH BÁO: Hãy chắc chắn rằng bạn đã ghi nhớ thứ tự của các public key, sau này bạn sẽ phải cung cấp thứ tự y như vậy. 
+   Số dư hiện tại có thể được gửi đến địa chỉ đó.
 
-   Funds can now be send to that address.
-
-3. To use the funds, you need to build a multisig transaction.  
-   Pass the public keys that will sign the transaction, 2 in our example.  
-   Make sure to have the same order as during the address creation:
+3. Để sử dụng số dư, bạn cần thiết lập một giao dịch
+multisig.   
+   Chuyển các public key sẽ ký giao dịch, 2 trong các ví dụ của chúng tôi.  
+   Hãy đảm bảo rằng chúng có thứ tự giống trong quá trình tạo địa chỉ:
 
    ```
    POST /multisig/build
@@ -78,7 +74,7 @@ You can find the related command for multisig at [http://127.0.0.1:12973/docs](h
    }
    ```
 
-   response:
+   Phản hồi:
 
    ```json
    {
@@ -89,7 +85,7 @@ You can find the related command for multisig at [http://127.0.0.1:12973/docs](h
    }
    ```
 
-4. You can now send the `txId` to the people that need to sign the transaction. Everyone can sign it using their wallet:
+4. Hiện tại bạn có thể gửi `txId` cho những người cần ký giao dịch. Mọi người có thể ký bằng ví của mình:
 
    ```
    POST /wallets/{wallet_name}/sign
@@ -98,7 +94,7 @@ You can find the related command for multisig at [http://127.0.0.1:12973/docs](h
    }
    ```
 
-   response:
+   Phản hồi:
 
    ```json
    {
@@ -106,10 +102,9 @@ You can find the related command for multisig at [http://127.0.0.1:12973/docs](h
    }
    ```
 
-5. Collect the signatures, 2 in our example (because `m=2`) and finally send the transaction:
+5. Thu thập các chữ ký, ví dụ như 2 (vì `m=2`) và cuối cùng gửi đi giao địch:
 
-   > NOTE: The signatures order needs to be the same as the public keys.
-
+   > LƯU Ý: Thứ tự của các chữ ký cần phải giống với thứ tự của các public key.
    ```
    POST /multisig/submit
    {
@@ -122,7 +117,7 @@ You can find the related command for multisig at [http://127.0.0.1:12973/docs](h
 
    ```
 
-   response:
+   Phản hồi:
 
    ```json
    {
