@@ -1,24 +1,20 @@
 ---
 sidebar_position: 20
-title: Pool Mining Guide
-sidebar_label: Pool mining guide
+title: Hướng dẫn Pool mining
+sidebar_label: Hướng dẫn Pool mining 
 ---
 
-import UntranslatedPageText from "@site/src/components/UntranslatedPageText";
+# Hướng dẫn Pool Mining 
 
-<UntranslatedPageText />
+Bạn sẽ tìm thấy một danh sách hoàn chỉnh của các nhóm thợ đào (mining pools) có tiếng [tại đây](#community-pools)
 
-# Pool Mining Guide
+### Tạo nhóm riêng của bạn 
 
-You will find a complete list of known mining pools [on this link.](#community-pools)
+Nếu bạn muốn tổ chức nhóm các thợ đào của riêng bạn, vui lòng tham khảo [repo tại đây](https://github.com/alephium/mining-pool/). Nếu bạn tạo một nhóm mới, vui lòng gửi Pull Request để thêm nhóm của bạn vào [danh sách](#community-pools).
 
-### Build your own Pool
+### Mẫu cấu hình node cho nhóm thợ đào:
 
-If you want to host your own mining pool, please checkout [the repo here](https://github.com/alephium/mining-pool/). If you create a pool, feel free to send a Pull Request to add your pool the [list](#community-pools).
-
-### Example node configuration for mining pool:
-
-> This section is for pool operators, not for miners.
+> Phần này dành cho người quản lý nhóm, không dành cho thợ đào.
 
 ```
 // more connections for better block propagation
@@ -33,25 +29,24 @@ alephium.api.network-interface = "0.0.0.0"
 alephium.api.api-key = "<api key>"
 ```
 
-## Community Pools
+## Các nhóm của cộng đồng 
 
-### ⚠️ Disclaimer
+### ⚠️ Cảnh báo
+Đây là danh sách không đầy đủ các nhóm khai thác được quản lý bởi cộng đồng. Những nhóm này không được kiểm định bởi Alephium và Âlephium không chịu trách nhiệm về sự lựa chọn nhóm của bạn. Mặc dù các nhóm được liệt kê ở đây cho đến nay vẫn hoạt động tốt như mong đợi, nhưng hãy lưu ý rằng việc lựa chọn nhóm yêu cầu bạn phải thực hiện một số nghiên cứu về tính bảo mật, danh tiếng và sự an toàn chung của nhóm. Bạn nên bắt đầu từ việc [tham khảo cộng đồng trên Discord](https://alephium.org/discord)
 
-This is a non-exhaustive list of mining-pools that are driven by the community. These pools are in no way endorsed by Alephium and Alephium cannot be held responsible for your choice of Pool. While the pools listed here have behaved as expected so far, keep in mind that choosing a pool requires you to do some research regarding the security, reputation and general safety of the pool. A good place to start is to [ask the community on the Discord](https://alephium.org/discord)
+### Sử dụng nhóm và cách để nhận hỗ trợ 
 
-### Using pools and how to get support
+Chúng tôi rất vui khi thấy danh sách nhóm ngày càng phát triển và đa dạng hoá. Hãy tham gia và thử trải nghiệm! Nếu nhóm đã quá đông thành viên, hãy cân nhắc chuyển sang một khác để gia tăng tính phi tập trung. 
 
-We’re happy to see this list of pools grow and diversify. Please give them a try. If one pool grows too big, consider switching to a different pool to enhance decentralization.
+Alephium vẫn còn rất mới và điều quan trọng là bạn phải theo dõi các cập nhật từ Alephium, cũng như các phần mềm cần thiết để tham gia các nhóm khai thác. Hãy nhớ rằng mỗi một nhóm đều có một cộng đồng phát triển trên các nền tảng khác nhau luôn sẵn sàng tiếp nhận các yêu cầu và câu hỏi của bạn. Thế nên, tốt nhất bạn nên đặt các câu hỏi liên quan đến nhóm của mình trong nhóm có liên quan. Và bạn cũng có thể tìm thấy hướng dẫn bằng ngôn ngữ của bạn tại một trong những [playlist cộng đồng](https://www.youtube.com/channel/UCIX9Eww2Kch7sc0E6gCmEdg/playlists) của chúng tôi. 
 
-Alephium is still very new and it is important that you keep an eye on updates. This is also valid for the software needed to join the mining pools. Remember that each pool has a thriving community with channels welcoming your support requests and questions. Therefore it is always best to ask your pool-related questions in the concerned pool’s group. You may also find instructions in your own language in one of our [community playlists available here.](https://www.youtube.com/channel/UCIX9Eww2Kch7sc0E6gCmEdg/playlists)
+### Các nhóm hiện đang hoạt động và được biết đến
 
-### Currently known and active pools
+Dưới đây là danh dách các nhóm thợ đào được sắp xếp theo bảng chữ cái. Chúng tôi khuyến khích bạn [gửi pull request](https://github.com/alephium/wiki/tree/master/docs/mining/pool-mining-guide.md) để thêm các nhóm sắp ra mắt vào wiki này và/hoặc để báo cáo sự biến mất của chúng, cũng như các hành vi có nguy cơ sai phạm quy định. 
 
-Below is a list of mining pools in alphabetic order. We encourage you to [send a pull request](https://github.com/alephium/wiki/tree/master/docs/mining/pool-mining-guide.md) to add up-and-coming pools to this wiki and/or to report their disappearance as well as potential misbehavior.
+Bạn cũng có thể tham khảo [https://miningpoolstats.stream/alephium](https://miningpoolstats.stream/alephium).
 
-You can also check [https://miningpoolstats.stream/alephium](https://miningpoolstats.stream/alephium).
-
-#### Alephium-pool (Community pool)
+#### Alephium-pool (Nhóm cộng đồng)
 
 - Website: https://alephium-pool.com/
 - Telegram: https://t.me/alephium_pool
@@ -136,7 +131,7 @@ You can also check [https://miningpoolstats.stream/alephium](https://miningpools
 - Discord: https://woolypooly.com/discord
 - Telegram: https://woolypooly.com/telegram
 
-⚠️ **Make sure you use the latest version of the mining software**
+⚠️ **Hãy đảm bảo rằng bạn cập nhật phiên bản mới nhất của phần mềm khai thác**
 
 ### Alephium GPU-Miner
 
@@ -160,7 +155,7 @@ You can also check [https://miningpoolstats.stream/alephium](https://miningpools
 
 - Download: [https://www.srbminer.com/download.html](https://www.srbminer.com/download.html)
 
-## If you have HiveOS or RaveOS related questions, these resources will help you
+## Nếu bạn có những câu hỏi liên quan đến HiveOS or RaveOS, những thông tin sau sẽ giúp bạn
 
 ### Hive OS
 
