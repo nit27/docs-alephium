@@ -1,42 +1,38 @@
 ---
 sidebar_position: 30
-title: CPU Miner Guide
-sidebar_label: CPU miner guide
+title: Hướng Dẫn Đào Bằng CPU
+sidebar_label: Hướng dẫn đào bằng CPU
 ---
-
-import UntranslatedPageText from "@site/src/components/UntranslatedPageText";
-
-<UntranslatedPageText />
 
 :::info
 
-CPU mining is only for testing purpose. To use the testnet please visit [Testnet Guide](network/testnet-guide.md).
+Việc khai thác bằng CPU chỉ nhằm mục đích thử nghiệm. Để sử dụng testnet, hãy tham khảo qua [Hướng Dẫn Testnet](network/testnet-guide.md).
 
-For mining in production please visit [Solo Mining Guide](mining/solo-mining-guide.md) or [Pool Mining Guide](mining/pool-mining-guide.md).
+Nếu bạn thật sự muốn khai thác, hãy xem qua [Hướng Dẫn Solo Mining](mining/solo-mining-guide.md) hoặc [Hướng Dẫn Pool Mining](mining/pool-mining-guide.md).
 
 :::
 
-You must first follow the steps in the [Full-node Guide](full-node/getting-started.md), in order to download, configure, start your node and use Swagger (or any other OpenAPI clients).
+Trước tiên bạn nên tham khảo qua [Hướng Dẫn Khởi Chạy Full-node](full-node/getting-started.md) để tải về, thiết lập và bắt đầu node của bạn và sử dụng Swagger (hoặc bất kỳ các OpenAPI client).
 
-Please note that the default address and port for the REST API is [http://127.0.0.1:12973/docs](http://127.0.0.1:12973/docs).
+Lưu ý: địa chỉ mặc định và port cho REST API là [http://127.0.0.1:12973/docs](http://127.0.0.1:12973/docs).
 
-## Start mining
+## Bắt đầu khai thác
 
-Please make sure that your local node is fully synced before mining. We will add validation for this in our next major release.
+Hãy chắc chắn rằng local node của bạn đã được đồng bộ hoàn toàn trước khi tiến hành việc khai thác. Chúng tôi sẽ thêm chức năng xác thực cho việc nào ở các bản release kế tiếp.
 
-You can **start** mining on your local node by doing a POST on `/miners/cpu-mining?action=start-mining`.
+Bạn có thể **bắt đầu** đào trên local node bằng một POST trên `/miners/cpu-mining?action=start-mining`.
 
-The server should answer simply with `true` to confirm that the mining process has now started.
+Server sẽ đơn giản trả lời với trạng thái `true` để xác nhận tiến trình khai thác đã chắn chắn bắt đầu.
 
-Please note that you will need first to configure your miner's addresses as explain the [Create a new miner wallet](mining/solo-mining-guide.md#create-a-new-miner-wallet) section of the GPU Miner Guide.
+Lưu ý rằng bạn sẽ cần phải tùy chỉnh các địa chỉ ví đào như đã giải thích ở [Tạo ví dành cho thợ đào](mining/solo-mining-guide.md#create-a-new-miner-wallet) trong phần Hướng Dẫn Khai Thác Bằng GPU.
 
-## Stop mining
+## Dừng khai thác
 
-Similarly, you can **stop** mining on your local node by doing a POST on `/miners/cpu-mining?action=stop-mining`.
+Một cách đơn giản, bạn có thể **dừng** đào trên local node bằng một POST trên `/miners/cpu-mining?action=stop-mining`.
 
-## CPU Usage
+## Điều chỉnh CPU
 
-You could tune how much CPU resources for mining by using the following two configs:
+Bạn có thể điều chỉnh dành bao nhiêu tài nguyên của CPU cho việc khai thác bằng 2 mã bên dưới:
 
     akka.actor.mining-dispatcher.fork-join-executor.parallelism-min = 1 // the minimal number of threads for mining
     akka.actor.mining-dispatcher.fork-join-executor.parallelism-max = 4 // the maximal number of threads for mining

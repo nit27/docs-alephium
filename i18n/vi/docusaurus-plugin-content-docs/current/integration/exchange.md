@@ -1,18 +1,18 @@
 ---
 sidebar_position: 40
-title: Exchange
-sidebar_label: Exchange
+title: Sàn giao dịch
+sidebar_label: Sàn giao dịch
 ---
 
-This guide explains the basic APIs and information required for integrating Alephium with a cryptocurrency exchange.
+Hướng dẫn này sẽ giải thích cơ bản các API và thông tin cần thiết để tích hợp Alephium với một sàn giao dịch điện tử.
 
-## Getting started
+## Bắt đầu
 
 ### Local development network
 
-To integrate Alephium, an exchange must run a full node. Additionally, the explorer-backend can be run for debugging and additional indexing. 
+Để tích hợp Alephium, một exchange (sàn giao dịch) phải chạy full node. Hơn nữa, explorer-backend có thể chạy để debug và index
 
-To create a local development network with explorer support, follow the instructions in the [alephium-stack](https://github.com/alephium/alephium-stack#devnet) repository. Once launched, Swagger UI can be accessed for the API interface of the full node and the explorer backend.
+Để tạo một local development network với explorer, tham khảo qua hướng dẫn trong [alephium-stack](https://github.com/alephium/alephium-stack#devnet) repository. Khi đã chạy, Swagger UI có thể truy cập vào API interface của full node và explorer backend.
 
 * Full node Swagger UI: [http://127.0.0.1:22973/docs](http://127.0.0.1:22973/docs)
 * Explorer backend Swagger UI: [http://127.0.0.1:9090/docs](http://127.0.0.1:9090/docs)
@@ -20,13 +20,13 @@ To create a local development network with explorer support, follow the instruct
 
 ### APIs
 
-To keep the guide concise, relevant API queries will be provided in the doc instead of Swagger UI screenshots.
+Để hướng dẫn được ngắn gọn, các relevant API queries sẽ được cung cấp ở trong tài liệu hướng dẫn thay vì các ảnh chụp màn hình của Swagger UI.
 
-The [web3 SDK](https://github.com/alephium/alephium-web3#packages) contains generated Typescript APIs for both the [full node](https://github.com/alephium/alephium-web3/blob/master/packages/web3/src/api/api-alephium.ts) and [explorer backend](https://github.com/alephium/alephium-web3/blob/master/packages/web3/src/api/api-explorer.ts).
+[web3 SDK](https://github.com/alephium/alephium-web3#packages) chứa các Typescript APIs đã tạo cho cả [full node](https://github.com/alephium/alephium-web3/blob/master/packages/web3/src/api/api-alephium.ts) và [explorer backend](https://github.com/alephium/alephium-web3/blob/master/packages/web3/src/api/api-explorer.ts).
 
 ### Test wallet
 
-Let's recover the test wallet by executing the following API. The test wallet has 1million ALPH for the address `1DrDyTr9RpRsQnDnXo2YRiPzPW4ooHX5LLoqXrqfMrpQH`.
+Hãy khôi phục test wallet bằng cách thi hành API bên dưới. Test wallet có 1 triệu ALPH cho địa chỉ `1DrDyTr9RpRsQnDnXo2YRiPzPW4ooHX5LLoqXrqfMrpQH`.
 
 ```shell
 curl -X 'PUT' \
@@ -45,7 +45,7 @@ curl -X 'PUT' \
 # }
 ```
 
-Get the public key of the address by querying:
+Lấy public key cho địa chỉ bằng:
 
 ```shell
 curl -X 'GET' \
@@ -63,9 +63,9 @@ curl -X 'GET' \
 
 ## Transaction APIs
 
-### Create a transaction
+### Tạo một giao dịch
 
-Let's build a transaction to send `1.23 ALPH` to address `1C2RAVWSuaXw8xtUxqVERR7ChKBE1XgscNFw73NSHE1v3`.
+Hãy tạo một giao dịch và gửi `1.23 ALPH` vào địa chỉ `1C2RAVWSuaXw8xtUxqVERR7ChKBE1XgscNFw73NSHE1v3`.
 
 ```shell
 # `fromPublicKey` is the public key of the wallet address
@@ -97,7 +97,7 @@ curl -X 'POST' \
 
 ### Sign a transaction
 
-Let's sign the transaction id:
+Bây giờ hãy ký (sign) vào transaction id:
 
 ```shell
 curl -X 'POST' \
@@ -116,7 +116,7 @@ curl -X 'POST' \
 
 ### Submit a transaction
 
-Let's submit the transaction to the network:
+Hãy gửi (submit) giao dịch vào network:
 
 ```shell
 # `unsignedTx` is from the response of transaction building
@@ -141,9 +141,9 @@ curl -X 'POST' \
 
 ## Block APIs
 
-### Get block hash with transaction ID
+### Lấy block hash với transaction ID
 
-To get the block hash of a confirmed transaction, you can use the full node API:
+Để lấy block hash của một giao dịch đã xác nhận, bạn có thể sử dụng full node API:
 
 ```shell
 curl -X 'GET' \
@@ -161,7 +161,7 @@ curl -X 'GET' \
 # }
 ```
 
-### Get block with block hash
+### Lấy block với block hash
 
 ```shell
 curl -X 'GET' \
@@ -184,7 +184,7 @@ curl -X 'GET' \
 
 ### Polling for blocks
 
-In Alephium, you can fetch all the blocks from all the chains for a given time interval because it is a sharded blockchain with multiple chains operating at different heights simultaneously.
+Trong Alephium, bạn có thể fetch tất cả các block từ tất cả các chain trong một khoảng thời gian nhất định bởi vì nó là một sharded blockchain với các multiple chains và vận hành đồng thời ở các height khác nhau.
 
 ```shell
 curl -X 'GET' \
@@ -201,7 +201,7 @@ curl -X 'GET' \
 # }
 ```
 
-You can retrieve blocks for each chain individually using this endpoint:
+Bạn có thể khôi phục các block ở mỗi chain:
 ```shell
 curl -X 'GET' \
   'http://127.0.0.1:22973/blockflow/chain-info?fromGroup=2&toGroup=3' \
@@ -226,13 +226,13 @@ curl -X 'GET' \
 
 ## UTXO Management
 
-### Why UTXO management?
+### Tại sao phải quản lý UTXO?
 
-In practice, some miners tend to send mining rewards directly to exchange addresses, resulting in a large number of small-valued UTXOs in the exchange's hot wallets. However, due to the limited number of inputs that can be included in each transaction, withdrawals may fail if the hot wallet is filled with these small UTXOs.
+Trong thực tế, một vài thợ đào có khuynh hướng gửi các mining reward trực tiếp vào trong địa chỉ ví trên sàn giao dịch, điều này vô tình tạo ra nhiều các small-valued UTXO vào trong hot wallet của địa ví sàn. Tuy nhiên, vì có một con số giới hạn các input để nó có thể được đi chung với mỗi giao dịch nên việc rút về có thể sẽ thất bại nếu hot wallet nhận các phần nhỏ UTXO đó.
 
-### How to consolidate small-valued UTXOs?
+### Làm sao để hợp nhất các small-valued UTXO?
 
-If your exchange already has a proper UTXO management framework in place, you are in good shape. However, if you don't, there is a simple solution available. You can utilize the sweep endpoint to consolidate the small-valued UTXOs of a specific address. Please note that this feature is only accessible starting from full node `2.3.0`.
+Nếu sàn giao dịch bạn đang sử dụng đã có sẳn UTXO management framework, điều này rất tốt. Nhưng nếu chưa, bạn vẫn có giải pháp đơn giản để khắc phục nó. Bạn có thể sử dụng chức năng sweep để hợp nhất các small-valued UTXO của một địa chỉ nhất định. Lưu ý chức năng này chỉ khả dụng từ bản full node `2.3.0`.
 
 ```shell
 # `maxAttoAlphPerUTXO` refers to the maximum amount of ALPH in the UTXOs to be consolidated.
@@ -248,9 +248,9 @@ curl -X 'POST' \
 }'
 ```
 
-### How to work with designated UTXOs?
+### Làm sao để sử dụng designated UTXOs?
 
-To create transactions more efficiently, an exchange is recommended to store the set of UTXOs of their hot wallets and then provide specific UTXOs through the API.
+Để các giao dịch trở nên hiệu quả hơn, chúng tôi khuyến khích các bạn lưu trữ dãy các UTXO của hot wallets và đưa ra các UTXO cụ thể thông qua API.
 
 ```shell
 curl -X 'POST' \
@@ -274,7 +274,7 @@ curl -X 'POST' \
 }'
 ```
 
-`hint` and `key` for the UTXO are fetched from the first output of the first transaction we made. `key` is unique and can be used to index the UTXO.
+`hint` và `key` cho UTXO được fetch từ output đầu tiên trên giao dịch đầu tiên chúng ta đã thực hiện. `key` là độc nhất và có thể được sử dụng để index cho UTXO.
 
 ```shell
 curl -X 'GET' \
@@ -307,25 +307,24 @@ curl -X 'GET' \
 # }
 ```
 
-## More Information
+## Các thông tin khác
 
-### Wallet generation
+### Tạo Ví
 
-To generate multiple addresses for users, you can use the [HD-wallet in the web3 SDK](https://github.com/alephium/alephium-web3/blob/master/packages/web3-wallet/src/hd-wallet.ts#L112-L185).
+Để tạo nhiều địa chỉ ví cho các user, bạn có thể sử dụng [HD-wallet trong web3 SDK](https://github.com/alephium/alephium-web3/blob/master/packages/web3-wallet/src/hd-wallet.ts#L112-L185).
 
 ### Sharding
 
-Alephium is a sharded blockchain and its addresses are split into 4 groups on the mainnet. However, one can: 
-- Send ALPH to multiple addresses that belong to the same address group in a single transaction. All the destination addresses must belong to the same group.
-- Send ALPH from multiple addresses that belong to the same address group in a single transaction. All the sending addresses must belong to the same group.
-- Send ALPH from multiple addresses that belong to the same group to multiple addresses that belong to another group. All the sending addresses must belong to the same group, and all the destination addresses must belong to the same group too.
+Alephium là một sharded blockchain các địa chỉ ví trên nó được chia thành 4 group trên mainnet. Tuy nhiên, bạn có thể: 
+- Gửi ALPH đến nhiều các địa chỉ ví mà chúng nó ở trong cùng một địa chỉ group trong một giao dịch đơn. Tất cả các địa chỉ đích đến phải nằm trong cùng một group.
+- Gửi ALPH từ nhiều địa chỉ ví mà nó nằm trong cùng một địa chỉ group trong một giao dịch đơn. Tất cả các địa chỉ dùng để gửi phải nằm trong cùng một group.
+- Gửi ALPH từ nhiều các địa chỉ mà nó nằm trong cùng một group đến nhiều địa chỉ ví khác mà nó nằm trong một group khác. Tất cả các địa chỉ dùng để gửi đi phải nằm trong cùng một group và tất cả các địa chỉ đích đến cũng phải nằm trong cùng một group.
 
-To get the group of an address, you can refer to the web3 SDK function [groupOfAddress(address)](https://github.com/alephium/alephium-web3/blob/master/packages/web3/src/utils/utils.ts#L85-L103).
+Để lấy group của một địa chỉ, bạn có thể tham khảo chức năng của web3 SDK [groupOfAddress(address)](https://github.com/alephium/alephium-web3/blob/master/packages/web3/src/utils/utils.ts#L85-L103).
 
 ### Gas computation
 
-Alephium's transaction fees are determined by the amount of gas allocated and the gas price. A maximum gas amount of 625,000 can be assigned to each transaction.
-The default gas price is set at `1e11` attoALPH per gas unit. When conducting a simple transfer transaction, the gas amount can be computed using the following pseudo code:
+Phí giao dịch trên Alephium được xác định bằng số lượng gas đã phân bổ và giá gas. Số gas tố đa là 625,000 và nó có thể được phân bổ cho mỗi giao dịch. Giá gas mặc định được đặt tại `1e11` attoALPH trên một đơn vị gas. Khi tiến hành một giao dịch di chuyển tài sản, lượng gas có thể  được tính toán bằng cách sử dụng đoạn code bên dưới:
 
 ```Typescript
 txInputBaseGas = 2000
