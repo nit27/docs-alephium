@@ -1,33 +1,29 @@
 ---
 sidebar_position: 20
-title: Internationalization and Localization
-sidebar_label: Internationalization and localization
+title: Quốc tế hoá và Địa phương hoá
+sidebar_label: Quốc tế hoá và Địa phương hoá
 ---
 
-import UntranslatedPageText from "@site/src/components/UntranslatedPageText";
-
-<UntranslatedPageText />
-
-# Internationalization and Localization (i18n)
+# Quốc tế hoá và Địa phương hoá (i18n)
 
 ## Discord
 
-Find the following languages in [the official Discord](https://alephium.org/discord)
+Những ngôn ngữ sau đây có trong [Discord chính thức ](https://alephium.org/discord)
 
-- AR 🌙العربية
-- CN 🐼 中文
-- CZ 🏒czech-slovakia
-- DE 🌭deutsch
-- FR 🥖français
-- RU 🐻русский
-- SP 🌮español
-- TR 🐺türkçe
+- AR 🌙العربية - tiếng Ả Rập
+- CN 🐼 中文 - tiếng Trung Quốc
+- CZ 🏒czech-slovakia - tiếng CH Czech, Slovakia
+- DE 🌭deutsch - tiếng Đức
+- FR 🥖français - tiếng Pháp
+- RU 🐻русский - tiếng Nga
+- SP 🌮español - tiếng Tây Ban Nha
+- TR 🐺türkçe - tiếng Thổ Nhĩ Kỳ
 
-## Known localized community driven user-groups
+## Các nhóm người dùng do cộng đồng sở tại quản lý 
 
-### Telegram groups
+### Các nhóm Telegram 
 
-Localized groups (these are non-official groups, created and modded by independant third-parties Alephium has no control on)
+Các nhóm sở tại (đây là các nhóm không chính thức, được tạo ra và sửa đổi bởi các bên thứ ba độc lập mà Alephium không có quyền kiểm soát)
 
 Russian 🇷🇺 - https://t.me/alephiumgroup_ru
 
