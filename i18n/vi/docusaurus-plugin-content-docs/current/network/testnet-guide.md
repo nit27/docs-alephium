@@ -1,22 +1,18 @@
 ---
 sidebar_position: 10
-title: Testnet Guide
-sidebar_label: Testnet guide
+title: Hướng Dẫn Testnet
+sidebar_label: Hướng dẫn testnet
 ---
 
-import UntranslatedPageText from "@site/src/components/UntranslatedPageText";
+Cách cài đặt full node trên testnet sẽ giống với cách cài trên mainnet: [Hướng Dẫn Bắt Đầu Full Node](full-node/getting-started.md)
 
-<UntranslatedPageText />
+**Tệp tin `user.conf` phải được tùy tinh chỉnh trước khi khởi chạy full node**.
 
-The installation of full node for testnet is the same as the mainnet: [Full Node Starter Guide](full-node/getting-started.md)
+Lưu ý: Địa chỉ mặc địnhh và port cho REST API là [http://127.0.0.1:12973/docs](http://127.0.0.1:12973/docs).
 
-**The `user.conf` must be modified before starting the full node**.
+## Thiết lập
 
-Please note that the default address and port for the REST API is [http://127.0.0.1:12973/docs](http://127.0.0.1:12973/docs).
-
-## Configuration
-
-In the `$HOME/.alephium/user.conf` (`user.conf` if docker is used) file you have to add:
+Tại `$HOME/.alephium/user.conf` (`user.conf` nếu sử dụng docker) bạn sẽ cần phải thêm:
 
 ```
 alephium.network.network-id = 1
@@ -25,9 +21,9 @@ alephium.discovery.bootstrap = ["testnet-bootstrap0.alephium.org:9973","testnet-
 
 ## Mining
 
-In the testnet you can use the [CPU Miner Guide](cpu-miner-guide.md) to get some ALPH
+Trên testnet bạn có thể sử dụng [CPU Miner Guide](cpu-miner-guide.md) để khai thác vài ALPH
 
-Append your miner addresses in `$HOME/.alephium/user.conf` like:
+Thêm vào địa chỉ ví đào (mining address) tại `$HOME/.alephium/user.conf`:
 
 ```
 alephium.mining.miner-addresses = [
@@ -40,11 +36,11 @@ alephium.mining.miner-addresses = [
 
 :::info 
 
-You can easily generate mining addresses by installing the [desktop wallet](../wallet/desktop-wallet/configure-mining-wallet), and creating a wallet with 4 addresses. You can then copy the addresses and paste them in your `user.conf` file mentioned above.
+Bạn có thể dễ dàng tạo ra các địa chỉ ví đào bằng cách cài đặt [desktop wallet](../wallet/desktop-wallet/configure-mining-wallet) và tạo một ví với 4 địa chỉ. Bây giờ bạn có thể sao chép và dán chúng vào trong tệp `user.conf` như đã đề cập bên trên.
 
 :::
 
-## Configuration example
+## Ví dụ về thiết lập
 
 ```
 alephium.api.network-interface = "0.0.0.0"
