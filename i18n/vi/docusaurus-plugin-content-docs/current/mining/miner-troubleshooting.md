@@ -1,57 +1,53 @@
 ---
 sidebar_position: 30
-title: Troubleshooting
+title: Khắc phục lỗi 
 ---
 
-import UntranslatedPageText from "@site/src/components/UntranslatedPageText";
+# Khắc phục lỗi  
 
-<UntranslatedPageText />
+#### Tại sao tôi chỉ có thể khôi phục 1 trong 4 địa chỉ ví khai thác của tôi?
 
-# Troubleshooting
+Bạn phải chỉ định `isMiner = true` khi khôi phục địa chỉ ví khai thác. Vui lòng xem ví dụ tại đây: [Khôi phục ví khai thác](solo-mining-guide.md#restore-your-miner-wallet)
 
-#### Why I can only restore 1 of my 4 miner addresses ?
+#### Làm sao để kết nối máy đào với full node trên một máy tính khác trong cùng một subnet?
 
-You have to specify `isMiner = true` when restoring your miner address. Please checkout the example here: [Restore-Miner-Wallet](solo-mining-guide.md#restore-your-miner-wallet)
-
-#### How to connect my miner to my full node on another computer in the same subnet ?
-
-1. Add the following to your `user.conf` and restart your full node.
+1. Thêm thông tin sau vào `user.conf` của bạn và khởi động lại full node.
 
 ```
 alephium.mining.api-interface = "0.0.0.0"
 ```
 
-2. Run your miner with `-a IP`, where the IP is your full node's IP in the subnet.
+2. Chạy máy đào của bạn với `-a IP`, trong đó IP là IP của full node trong subnet.
 
-#### How to use the Swagger UI of my VPS hosted full node ?
+#### Cách sử dụng Swagger UI của VPS chạy bằng full node
 
-SSH port forwarding is recommended:
+Chuyển tiếp cổng SSH được khuyến nghị:
 
 ```
 ssh user@server  -L 12973:127.0.0.1:12973
 ```
 
-#### How to access the Swagger UI of my full node on another computer in the same subnet ?
+#### Cách để truy cập Swagger UI của full node trên một máy tính khác trong subnet ?
 
-1. Add the following to your `user.conf` and restart your full node.
+1. Thêm thông tin sau vào `user.conf` của bạn và khởi động lại full node.
 
 ```
 alephium.api.network-interface = "0.0.0.0"
 ```
 
-2. Change the `host` of Swagger UI to be the IP of your full node.
+2. Thay đổi `host` của Swagger UI thành IP của full node.
 
-#### My miner (via run-miner.sh) cannot connect to my full node on another computer
+#### Máy đào của tôi (thông qua run-miner.sh) không thể kết nối với full node trên một máy tính khác 
 
-The script `run-miner.sh` connects to `127.0.0.1` by default. You will need to add `-a IP` into `run-miner.sh`.
+Lệnh `run-miner.sh` kết nối với `127.0.0.1` theo mặc định. Bạn cần phải thêm `-a IP` vào `run-miner.sh`.
 
-#### Why the miner uses huge amount of memory on HiveOS?
+#### Tại sao máy đào của tôi lại chiếm lượng bộ nhớ lớn trên HiveOS?
 
-You should deactivate the `log to write in RAM` with command `logs-on`.
+Bạn nên tắt `log to write in RAM` bằng lệnh `logs-on`.
 
-#### How to customize the auto-lock timeout for wallets?
+#### Làm sao để tuỳ chỉnh thời gian chờ tự động khoá (auto-lock timeout) cho ví?
 
-You could change the auto-lock timeout of wallet with the following configuration:
+Bạn có thể tahy đổi auto-lock timeout của ví với cấu hình sau:
 
 ```
 alephium.wallet.locking-timeout = 10 minutes
