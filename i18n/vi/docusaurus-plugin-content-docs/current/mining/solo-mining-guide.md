@@ -1,7 +1,7 @@
 ---
 sidebar_position: 10
-title: Hướng dẫn đào Solo
-sidebar_label: Hướng dẫn đào Solo 
+title: Hướng dẫn khai thác Solo
+sidebar_label: Hướng dẫn khai thác Solo 
 ---
 
 # Hướng dẫn đào Solo 
