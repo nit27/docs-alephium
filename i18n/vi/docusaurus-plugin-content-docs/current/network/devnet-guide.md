@@ -1,24 +1,20 @@
 ---
 sidebar_position: 20
-title: Devnet Guide
-sidebar_label: Devnet guide
+title: Hướng Dẫn Devnet
+sidebar_label: Hướng dẫn Devnet
 ---
 
-import UntranslatedPageText from "@site/src/components/UntranslatedPageText";
+Để bắt đầu với devnet, chúng tôi đã xây dựng một môi trường rất thân thiện cho lập trình viên với empty block history với bất kỳ số lượng coin nào bạn muốn.
 
-<UntranslatedPageText />
+Hướng dẫn cài đặt full node trên devnet sẽ giống với cách cài đặt trên mainnet: [Hướng Dẫn Bắt Đầu Full Node](full-node/getting-started.md)
 
-It's dev-friendly to start a local devnet with empty block history and arbitrary amount of coins.
+**Tệp tin `user.conf` phải được tinh chỉnh trước khi khởi chạy full node**.
 
-The installation of full node for devnet is the same as the mainnet: [Full Node Starter Guide](full-node/getting-started.md)
+Lưu ý: địa chỉ mặc định và port cho REST API là [http://127.0.0.1:12973/docs](http://127.0.0.1:12973/docs).
 
-**The `user.conf` must be modified before starting the full node**.
+## Thiết lập
 
-Please note that the default address and port for the REST API is [http://127.0.0.1:12973/docs](http://127.0.0.1:12973/docs).
-
-## Configuration
-
-In the `$HOME/.alephium/user.conf` (`user.conf` if docker is used) file you have to add:
+Tại tệp `$HOME/.alephium/user.conf` (`user.conf` nếu sử dụng docker) bạn sẽ cần phải thêm vào:
 
 ```
 // in most cases, modify the following two lines
@@ -39,17 +35,17 @@ alephium.mining.miner-addresses = [
 ]
 ```
 
-Please put your own addresses for genesis allocations. You could also reduce `num-zeros-at-least-in-hash` to make mining faster.
+Hãy điền địa chỉ ví của bạn cho các genesis allocation. Bạn cũng có thể giảm `num-zeros-at-least-in-hash` để việc khai thác được diễn ra nhanh hơn.
 
-More configurations can be found in `$HOME/.alephium/network-4/`, and logs can be found in `$HOME/.alephium/logs/`.
+Những thiết lập khác có thể được tìm thấy tại `$HOME/.alephium/network-4/` và các log tại `$HOME/.alephium/logs/`.
 
-If you modify `user.conf`, then better to wipe out `$HOME/.alephium/network-4/` before restarting the full node.
+Nếu bạn tùy chỉnh tệp `user.conf` thì tốt hơn hết hãy xóa `$HOME/.alephium/network-4/` trước khi khởi chạy full node.
 
 ## Mining
 
-Devnet with the sample configuration file is able to automatically mine new blocks for all new transactions. There is no need to use CPU for mining.
+Devnet với những tệp tùy chỉnh đơn giản có thể tự động đào các block mới cho tất cả các giao dịch. Không cần thiết phải sử dụng CPU cho việc khai thác.
 
-If you want to use devnet for mining tests, please set a relative high difficulty as follows:
+Nếu bạn muốn sử dụng devnet cho việc thử nghiệm khai thác, hãy tăng độ khó lên như sau:
 
 ```
 alephium.consensus.num-zeros-at-least-in-hash = 24
