@@ -1,10 +1,10 @@
 ---
 sidebar_position: 20
-title: Hướng dẫn Pool mining
-sidebar_label: Hướng dẫn Pool mining 
+title: Hướng dẫn khai thác theo nhóm
+sidebar_label: Hướng dẫn khai thác theo nhóm  
 ---
 
-# Hướng dẫn Pool Mining 
+# Hướng dẫn khai thác theo nhóm (Pool Mining) 
 
 Bạn sẽ tìm thấy một danh sách hoàn chỉnh của các nhóm thợ đào (mining pools) có tiếng [tại đây](#community-pools)
 
