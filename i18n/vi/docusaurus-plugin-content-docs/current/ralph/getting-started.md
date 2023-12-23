@@ -1,25 +1,21 @@
 ---
 sidebar_position: 10
-title: Getting Started
-sidebar_label: Getting started
+title: Bắt đầu
+sidebar_label: Bắt đầu
 ---
 
-import UntranslatedPageText from "@site/src/components/UntranslatedPageText";
+## Giới thiệu
 
-<UntranslatedPageText />
+Ralph là một ngôn ngữ lập trình cho smart contract trên blockchain của Alephium và tập trung vào ba tiêu chí: bảo mật, đơn giản và hiểu quả. Hướng dẫn sau đây sẽ cung cấp các thủ thuật để viết rõ ràng, đúng cú pháp và bảo mật cho smart contract. Chúng tôi luôn bám sát các tiêu chí này khi thiết kế Ralph:
+1. Giữ cho smart contract DSL đơn giản nhất có thể.
+2. Luôn chỉ có một cách trực quan để sử dụng nó.
+3. Tích hợp các chức năng thực tiễn.
 
-## Introduction
+## Biên soạn
 
-Ralph is the smart contract programming language for the Alephium blockchain, which focuses on three goals: security, simplicity and efficiency. This tutorial provides tips for writing clean, idiomatic, and secure Ralph smart contracts. We follow the following principles when designing Ralph:
-1. Make the smart contract DSL as simple as possible.
-2. There should be one-- and preferably only one --obvious way to do it.
-3. Make good practices built-in.
-
-## Types
-
-Ralph is a statically typed language, but you don't need to specify the type for local variables and constants thanks to type inference.
-All types of Ralph are value types, i.e. they are always copied when they are used as function arguments or assigned.
-Currently, Ralph only supports the following data types:
+Ralph là một ngôn ngữ gõ tĩnh, nhưng bạn không cần phải gõ cụ thể chi tiết cho các biến cụ bộ (local variable) và các  hằng số (constant) nhờ vào chức năng type inference.
+Tất cả các type của Ralph đều là các valua type, ví dụ nó luôn luôn được sao chép khi nó được sử dụng như là các function argument hoặc được assign.
+Hiện tại, Ralph chỉ hỗ trợ các kiểu dữ liệu sau đây:
 
 ### Primitive Types
 
@@ -71,7 +67,7 @@ let a = @1DrDyTr9RpRsQnDnXo2YRiPzPW4ooHX5LLoqXrqfMrpQH
 
 ### Fixed Size Array
 
-The syntax for fixed-size arrays is influenced by Rust.
+Cú pháp cho các dãy fixed-size được lấy ý tưởng từ Rust.
 
 ```rust
 // The type of `a0` is [U256; 4]
@@ -89,17 +85,17 @@ let a3 = [#00, #11, #22, #33]
 
 ### Mapping
 
-Ralph uses [subcontract](/ralph/getting-started#subcontract) instead of map-like data structure to provide map-like functionality and mitigate the state bloat issue.
+Ralph sử dụng [subcontract](/ralph/getting-started#subcontract) thay vì cấu trúc map-like data để đưa ra chức năng map-like và làm giảm bớt các lỗi state bloat.
 
 ### Struct
 
-Currently, Ralph does not support user-defined data types, but it will be supported in the future.
+Hiện tại, Ralph chưa hỗ trợ kiểu dữ liệu user-defined, nhưng chúng tôi sẽ cải thiện trong tương lai.
 
-## Functions
+## Function
 
-Functions are the executable units of code, you can also define functions inside a contract.
+ Các function là những unit có thể được thực thi của code, bạn có thể định nghĩa các function bên trong một contract.
 
-### Function Signatures
+### Function Signature
 
 ```rust
 // Public function, which can be called by anyone
@@ -118,9 +114,9 @@ fn foo(a: U256, b: Boolean) -> U256
 fn foo(a: U256, b: Boolean) -> (U256, ByteVec, Address)
 ```
 
-### Local Variables
+### Local Variable
 
-A function cannot have duplicate variable definitions, and the variable name in the function cannot be the same as the contract field name.
+Một function không thể chứa các định nghĩa duplocate variable và variable name trong function không thể giống các trường tên như contract.
 
 ```rust
 fn foo() -> () {
@@ -147,9 +143,9 @@ fn baz() -> () {
 }
 ```
 
-### Control Structures
+### Control Structure
 
-#### Return statements
+#### Return statement
 
 ```rust
 fn foo() -> (U256, Boolean, ByteVec) {
@@ -157,7 +153,7 @@ fn foo() -> (U256, Boolean, ByteVec) {
 }
 ```
 
-#### If-else statements/expressions
+#### If-else statement/expression
 
 ```rust
 fn foo() -> ByteVec {
@@ -205,7 +201,7 @@ fn foo() -> () {
 :::
 
 :::note
-In Ralph, each function has only one scope, so you can not define duplicated variables in the `while` or `for` block:
+Ở trong Ralph, mỗi một function chỉ có một scope, vì thế bạn không thể define các duplicated variable trong `while` hoặc `for` block:
 
 ```rust
 let value = 0
@@ -214,12 +210,12 @@ while (true) {
   // ...
 }
 ```
-This is an on-purpose design since variable shadowing is generally not a good practice.
+Đây là một chức năng được thiết kế có mục đích vì variable shadowing thì không thực tế được sử dụng phổ biến.
 :::
 
 ### Error Handling
 
-Ralph provides two builtin assertion functions for error handling: [assert!](/ralph/built-in-functions#assert) and [panic!](/ralph/built-in-functions#panic). Assertion failure will revert all changes made to the world state by the transaction and stop the execution of the transaction immediately.
+Ralph cung cấp hai assertion function tích hợp sẳn cho error handling: [assert!](/ralph/built-in-functions#assert) và [panic!](/ralph/built-in-functions#panic). Assertion failure sẽ hoàn nguyên các thay đổi đã được tạo với world state bởi các giao dịch và dừng các giao dịch ngay lập tức.
 
 ```rust
 enum ErrorCodes {
@@ -241,9 +237,9 @@ fn bar(cond: Boolean) -> U256 {
 }
 ```
 
-### Function Calls
+### Function Call
 
-Functions of the current contract can be called directly ('internally') or recursively:
+Các function contract một contract hiện tại chỉ có thể được call trực tiếp ('bên trong') hoặc một cách đệ quy:
 
 ```rust
 Contract Foo() {
@@ -263,7 +259,7 @@ Contract Foo() {
 }
 ```
 
-Functions can also be called externally using the `bar.func()` notation, where `bar` is a contract instance and `func` is a function belonging to `bar`:
+Các function cũng có thể được call bên ngoài bằng cách sử dụng `bar.func()` notation, nơi mà `bar` là một contract instance và `func` là một function của `bar`:
 
 ```rust
 Contract Bar() {
@@ -283,24 +279,24 @@ Contract Foo() {
 }
 ```
 
-### Builtin Functions
+### Các function được tích hợp sẳn
 
-Ralph provides lots of builtin functions, you can refer to [here](/ralph/built-in-functions).
+Ralph cung cấp rất nhiều chức năng được tích hợp sẳn. Bạn có thể tham khảo tại [đây](/ralph/built-in-functions).
 
-### Annotations
+### Annotation
 
-The Ralph function also supports annotations, currently the only valid annotation is the `@using` annotation, and user-defined annotations will be supported in the future if necessary.
+Trong Ralph cũng có hỗ trợ các annotation, hiện tại annotation khả dụng là `@using` annotation, và user-defined annotations sẽ được hỗ trợ trong tương lai.
 
-The `@using` annotation has four optional fields:
+`@using` annotation có bốn trường tùy chọn:
 
-* `preapprovedAssets = true/false`: whether the function uses user-approved assets. The default value is `false` for contracts, `true` for scripts.
-* `assetsInContract = true/false`: whether the function uses contract assets. The default value is `false` for contracts
-* `checkExternalCaller = true/false`: whether the function checks the caller. The default value is `true` for contracts
-* `updateFields = true/false`: whether the function changes contract fields. The default value is `false` for contracts
+* `preapprovedAssets = true/false`: nếu function sử dụng user-approved assets. Giá trị mặc định là `false` cho các contract và `true` cho các script.
+* `assetsInContract = true/false`: nếu function sử dụng contract assets. Giá trị mặc định sẽ là `false` cho các contract
+* `checkExternalCaller = true/false`: nếu function kiểm tra các caller. Giá trị mặc định là `true` cho các contract
+* `updateFields = true/false`: nếu function thay đổi các trường của contract. Giá trị mặc định là `false` cho các contract
 
-#### Using Approved Assets
+#### Sử dụng Approved Assets
 
-In Ralph, if a function uses assets, then the caller needs to explicitly approve assets. And all functions in the call stack must be annotated with `@using(preapprovedAssets = true)`.
+Trong Ralph, nếu một function sử dụng các asset, khi đó caller sẽ cần approve một cách rõ ràng các asset. và tất cả các function ở trong call stack phải được annotate với `@using(preapprovedAssets = true)`.
 
 ```rust
 Contract Foo() {
@@ -320,12 +316,12 @@ Contract Foo() {
 }
 ```
 
-For the `preapprovedAssets` annotation, the compiler will do the following checks:
+Về `preapprovedAssets` annotation, bạn sẽ cần kiểm tra như sau:
 
-1. If a function is annotated `preapprovedAssets = true` but don't use the braces syntax, the compiler will report an error
-2. If a function call uses the braces syntax but the function is not annotated `preapprovedAssets = true`, the compiler will report an error
+1. Nếu một function đã annotate `preapprovedAssets = true` nhưng không sử dụng các brace syntax, trình biên soan sẽ thông báo lỗi
+2. Nếu một function call sử dụng các brace syntax nhưng function không được annotate `preapprovedAssets = true`, trình biên soạn sẽ thông báo lỗi
 
-#### Using Contract Assets
+#### Sử dụng Contract Assets
 
 ```rust
 Contract Foo() {
@@ -344,15 +340,15 @@ Contract Foo() {
 }
 ```
 
-For the `assetsInContract` annotation, the compiler will do the following checks:
+Về `assetsInContract` annotation, trình biên soạn sẽ kiểm tra như sau:
 
-1. If a function is annotated `assetsInContract = true` but does not use contract assets, the compiler will report an error
+1. Nếu function đã annotate `assetsInContract = true` nhưng không sử dụng contract assets, trình biên soạn sẽ thông báo lỗi
 
-You can find more information about asset permission at [here](/ralph/asset-permission-system).
+Bạn có thể tìm hiểu thêm về asset permission tại [đây](/ralph/asset-permission-system).
 
-#### Update Fields
+#### Update Field
 
-Functions that update fields will change the current contract fields. If a function changes the contract fields but without the `@using(updateFields = true)` annotation, the compiler will report a warning; if a function does not change the contract fields but annotated with `@using(updateFields = true)`, the compiler will report a warning as well.
+Các function đã cập nhật các trường thông tin sẽ thay đổi các trường của contract. Nếu một function thay đổi các trường của contract mà không có `@using(updateFields = true)` annotation, trình biên soạn sẽ phát một cảnh báo; nếu một function không thay đổi các trường của contract nhưng đã annotate với `@using(updateFields = true)`, trình biên soạn cũng sẽ phát một cảnh báo.
 
 ```rust
 Contract Foo(a: U256, mut b: Boolean) {
@@ -376,17 +372,17 @@ Contract Foo(a: U256, mut b: Boolean) {
 }
 ```
 
-#### Check External Caller
+#### Kiểm tra External Caller
 
-In smart contracts, we often need to check whether the caller of the contract function is authorized. To avoid bugs caused by unauthorized callers, the compiler will report warnings for all public functions that do not check for external callers. The warning can be suppressed with annotation `@using(checkExternalCaller = false)`.
+Trong smart contract, chúng ta cần thường xuyên kiểm tra các caller của contract function đã được xác thực hay chưa. Để tránh các bug được gây ra bởi các caller chưa được xác  nhận, trình biên dịch sẽ xuất hiện một cảnh báo cho tất cả các public function là không được kiểm tra cho các external caller. Cảnh báo có thể được loại bỏ với annotation `@using(checkExternalCaller = false)`.
 
-The compiler will skip the checking for simple view functions. A simple view function must satisfy all of the following conditions:
+Trình biên soạn sẽ bỏ qua việc kiểm tra cho các simple view function. Một simple view function phải thõa mãn các điều kiện sau:
 
-1. It cannot change the contract fields.
-2. It cannot use any assets.
-3. All sub-function calls must also be simple view functions.
+1. Nó không thể thay đổi các contract field.
+2. Nó không thể sử dụng bất kỳ asset nào.
+3. Tất cả các sub-function call cũng phải là các simple view function.
 
-To check the caller of a function, the built-in function [checkCaller!](/ralph/built-in-functions#checkcaller) has to be used.
+Để kiểm tra caller của một function, built-in function [checkCaller!](/ralph/built-in-functions#checkcaller) phải được sử dụng.
 
 ```rust
 Contract Foo(barId: ByteVec, mut b: Boolean) {
@@ -428,7 +424,7 @@ Contract Foo(barId: ByteVec, mut b: Boolean) {
 }
 ```
 
-There is another scenario where the compiler will report warnings if a contract calls a function through an interface, this is because we do not know if the implementation of the function needs to check the external caller:
+Có một trường hợp khác, trình biên soạn xuất hiện một cảnh báo khi một contract call một function thông qua một giao  diện. Điều này bởi vì chúng ta không biết liệu function đã tích hợp trước đó có cần kiểm tra external caller:
 
 ```rust
 Interface Bar() {
@@ -443,18 +439,18 @@ Contract Foo() {
 }
 ```
 
-## Contracts
+## Contract
 
 :::info
-Each Alephium's contract has 3 forms of unique identification:
-1. **Address**: each contract has a unique address
-2. **Contract ID**: each contract has a unique contract ID
-3. **Token ID**: each contract can issue a token with the same ID as its own contract ID
+Mỗi một contract trên Alephium có 3 form định danh riêng biệt:
+1. **Address**: mỗi contract có một địa chỉ duy nhất
+2. **Contract ID**: mỗi contract có một contract ID duy nhất
+3. **Token ID**: mỗi contract có thể phát hành một token với một ID giống như của contract ID
 
-In Ralph, the contract ID is used more frequently. Contract ids can be converted from/to other forms with Ralph's built-in functions or web3 SDK.
+Trong Ralph, contract ID được sử dụng thường xuyên hơn. Các contract ID có thể được chuyển đổi từ/đến các form khác với chứng năng được tích hợp sẳn trong Ralph hoặc web3 SDK.
 :::
 
-Contracts in Ralph are similar to classes in object-oriented languages. Each contract can contain declarations of contract fields, events, constants, enums, and functions. All these declarations must be inside a contract. Furthermore, contracts can inherit from other contracts.
+Các contract trong Ralph thì giống với các class trong các ngôn ngữ hướng đối tượng. Mỗi một contract có thể chứa các thông tin khai báo của contract field, event, constant, enum và function. Tất cả thông tin khai báo phải được chứa bên trong một contract. Ngoài ra, các contract có thể được sử dụng lại các thông tin khai báo của những contract khác.
 
 ```rust
 // This is a comment, and currently Ralph only supports line comments.
@@ -484,9 +480,9 @@ Contract MyToken(supply: U256, name: ByteVec) {
 }
 ```
 
-### Fields
+### Field
 
-Contract fields are permanently stored in the contract storage, and the fields can be changed by the contract code. Applications can get the contract fields through the REST API of an Alephium client.
+Contract field được lưu trữ vĩnh viễn trong contract storage và các field có thể được thay đổ bởi contract code. Các app có thể lấy các contract field thông qua REST API từ một Alephium client.
 
 ```rust
 // Contract `Foo` has two fields:
@@ -507,13 +503,13 @@ Contract Bar() {
 }
 ```
 
-### Contract Built-In Functions
+### Các function được tích hợp sẳn trong contract
 
-Sometimes we need to create a contract within a contract, and in such cases, we need to encode the contract fields into `ByteVec`. Ralph provides a built-in function called `encodeFields` that can be used to encode the contract fields into `ByteVec`.
+Thỉnh thoãng, chúng ta cần tạo một contract ở trong một contract và trong trường hợp này chúng ta cần encode các contract field vào `ByteVec`. Ralph được tích hợp sẳn một chức năng được gọi là `encodeFields` rằng nó có thể để encode cho các contract field vào `ByteVec`.
 
-The parameter type of the `encodeFields` function is a list of the types of the contract fields, arranged in the order of their definitions. And the function returns two `ByteVec` values, where the first one is the encoded immutable fields, and the second one is the encoded mutable fields.
+Tham số của `encodeFields` function là một danh sách các kiểu của các contract field và được sắp xếp theo thứ tự đã được định nghĩa của nó. Function sẽ trả về hai giá trị `ByteVec`, giá trị đầu tiên là các encoded immutable field, và giá trị thứ hai là encoded mutable field.
 
-There is an example:
+Ví dụ:
 
 ```rust
 Contract Foo(a: U256, mut b: I256, c: ByteVec, mut d: Bool) {
@@ -529,9 +525,9 @@ Contract Bar() {
 }
 ```
 
-### Events
+### Event
 
-Events are dispatched signals that contracts can fire. Applications can listen to these events through the REST API of an Alephium client.
+Event là các tín hiệu được gửi đi mà các contracts có được kích hoạt. Các app có thể listen các event thông qua REST API của một Alephium client.
 
 ```rust
 Contract Token() {
@@ -549,7 +545,7 @@ Contract Token() {
 
 ### SubContract
 
-Alephium's virtual machine supports subcontract. Subcontracts can be used as map-like data structure but they are less prone to the state bloat issue. A subcontract can be created by a parent contract with a unique subcontract path.
+Máy ảo của Alephium (Alephium's virtual machine) hỗ trợ subcontract. Các subcontract có thể được sử dụng như là một map-like data structure nhưng chúng nó ít xãy ra trong các vấn đề về state bloat. Một subcontract có thể được tạo ra bởi một parent contract với một subcontract path duy nhất.
 
 ```rust
 Contract Bar(value: U256) {
@@ -586,11 +582,11 @@ Contract Foo(barTemplateId: ByteVec) {
 }
 ```
 
-### Contract Creation inside a Contract
+### Contract được tạo ra trong một contract
 
-Ralph supports creating contracts programmatically within contracts, Ralph provides some builtin functions to create contracts, you can find more information at [here](/ralph/built-in-functions#contract-functions).
+Ralph hỗ trợ việc tạo các contract có tính lập trình trong những contract khác. Nó cung cấp một vài function đã được tích hợp để tạo ra các contract, bạn có thể tìm hiểu thêm tại [đây](/ralph/built-in-functions#contract-functions).
 
-If you want to create multiple instances of a contract, then you should use the `copyCreateContract!` builtin functions, which will reduce a lot of on-chain storage and transaction gas fee.
+Nếu bạn muốn tạo ra nhiều phiên bản của một contract, bạn nên sử dụng chức năng được tích hợp sẳn của `copyCreateContract!`, nó sẽ giảm rất nhiều dung lượng lưu trữ trên on-chain và phí gas của giao dịch.
 
 ```rust
 Contract Foo(a: ByteVec, b: Address, mut c: U256) {
@@ -608,7 +604,7 @@ TxScript CreateFoo(fooTemplateId: ByteVec, a: ByteVec, b: Address, c: U256) {
 
 ### Migration
 
-Alephium's contracts can be upgraded with two migration functions: [migrate!](/ralph/built-in-functions#migrate) and [migrateWithFields!](/ralph/built-in-functions#migratewithfields). Here are the three typical ways to use them:
+Các contract trên Alephium có thể được nâng cấo với hai chức năng migration: [migrate!](/ralph/built-in-functions#migrate) và [migrateWithFields!](/ralph/built-in-functions#migratewithfields). Đây là ba cách phổ biến để sử dụng chúng:
 
 ```Rust
 fn upgrade(newCode: ByteVec) -> () {
@@ -630,7 +626,7 @@ fn upgrade(newCode: ByteVec) -> () {
 
 ## Inheritance
 
-Ralph also supports multiple inheritance, when a contract inherits from other contracts, only a single contract is created on the blockchain, and the code from all the parent contracts is compiled into the created contract.
+Ralph cũng hỗ trợ multiple inheritance, khi một contract muốn inherit từ các contract khác, chỉ có một contract được tạo trên blockchain và code từ các parent contract sẽ được compile vào trong contract đã tạo.
 
 ```rust
 Abstract Contract Foo(a: U256) {
@@ -655,7 +651,7 @@ Contract Baz(a: U256, b: ByteVec) extends Foo(a), Bar(b) {
 ```
 
 :::note
-In Ralph, abstract contracts are not instantiable, which means the following code is invalid:
+Trong Ralph, các abstract contract là không thể thực hiện được. Điều này có nghĩa là đoạn code bên dưới sẽ không khả dụng:
 
 ```rust
 let bazId = // The contract id of `Baz`
@@ -665,12 +661,12 @@ Foo(bazId).foo() // ERROR
 
 ## Interface
 
-Interfaces are similar to abstract contracts with the following restrictions:
+Các interface sẽ giống với các abstract contract với những điều kiện bên dưới:
 
-* They cannot have any functions implemented.
-* They cannot inherit from other contracts, but they can inherit from other interfaces.
-* They cannot declare contract fields.
-* Contracts can only implements one interface.
+* Nó không thể có bất cứ function nào đã được tích hợp.
+* Nó không thể được thừa hưởng từ các contract khác, nhưng nó có thể thừa hưởng từ các interface khác.
+* Nó không thể khai bác các contract field.
+* Các contract chỉ có thể tích hợp trên một interface.
 
 ```rust
 Interface Foo {
@@ -699,7 +695,7 @@ Contract Baz() implements Bar {
 }
 ```
 
-And you can instantiate a contract with interface:
+Và bạn có thể khởi tạo một contract với interface:
 
 ```rust
 let bazId = // The contract id of `Baz`
@@ -708,12 +704,12 @@ let _ = Bar(bazId).bar()
 ```
 
 :::note
-Deploying a contract requires depositing a certain amount of ALPH in the contract(currently 1 alph), so creating a large number of sub-contracts is not practical.
+Khi deploy một contract bạn cần phải nạp vào một lượng đủ ALPH trong một contract (hiện tại là 1 alph). Vì vật tạo ra nhiều sub-contract là không thực tiễn.
 :::
 
 ## TxScript
 
-A transaction script is a piece of code to interact with contracts on the blockchain. Transaction scripts can use the input assets of transactions in general. A script is disposable and will only be executed once along with the holder transaction.
+Một transaction script là những đoạn code để tương tác với các contract trên blockchain. Các transaction script có thể sử dụng các input asset từ một giao dịch. Một script chỉ có thể được sử dụng một lần và chỉ có thể được thực thi một lần cùng với giao dịch sở hữu.
 
 ```rust
 Contract Foo() {
