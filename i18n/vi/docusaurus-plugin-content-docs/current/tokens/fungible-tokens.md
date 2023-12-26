@@ -1,27 +1,16 @@
 ---
 sidebar_position: 20
-title: Fungible Tokens
-sidebar_label: Fungible Tokens
+title: Fungible Tokens - Token có thể thay thế
+sidebar_label: Fungible Tokens - Token có thể thay thế
 ---
 
-### Fungible Token Standard
+### Tiêu chuẩn của Fungible Token 
 
-In Alephium, new tokens can be issued when deploying new
-contracts. The id of the newly issued token is the same as the id of
-the contract that issues it. You can refer to this
-[guide](/dapps/build-dapp-from-scratch) for details about how to issue
-tokens on Alephium from scratch.
+Trên Alephium, các token mới có thể được phát hành khi triển khai các contract mới. Id của token mới được phát hành giống với Id của contract phát hành nó. Bạn có thể tham khảo hướng dần [tại đây](/dapps/build-dapp-from-scratch) để biết thêm chi tiết về cách phát hành token trên Alephium từ đầu.
 
-Tokens are usually associated with information such as
-`name`, `decimals`, `totalSupply`, etc. The goal of the token standard is
-to put constraints on token-issuing contract so it becomes easier for
-dApps and wallets to infer token types and fetch token information.
+Các token thường được liên kết với các thông tin như `tên`, `số thập phân`, `tổng cung`, etc. Mục đích của việc đưa ra tiêu chuẩn cho token là thiết lập các ràng buộc đối với hợp đồng phát hành token, để dApps và ví lưu trữ dễ dàng truy cứu các loại token và lấy thông tin từ đó.
 
-The standard [fungible token
-interface](https://github.com/alephium/alephium-web3/blob/master/packages/web3/std/fungible_token_interface.ral)
-defines methods to get the `name`, `symbol`, `decimals` as well as the
-`totalSupply` of the token. It is also annotated with the `@std`
-annotation with the id `#0001`:
+Tiêu chuẩn [giao diện fungible token](https://github.com/alephium/alephium-web3/blob/master/packages/web3/std/fungible_token_interface.ral) xác định phương thức để thu thập `tên`, `ký tự`, `số thập phân`, cũng như là `tổng cung` của token. Nó cũng được ghi chú bằng chú thích `@std` với id `#0001`:
 
 ```rust
 // Standard interface for fungible tokens
@@ -58,10 +47,7 @@ Contract TokenFaucet(
 }
 ```
 
-Once a token contract implements
-[IFungibleToken](https://github.com/alephium/alephium-web3/blob/master/packages/web3/std/fungible_token_interface.ral)
-interface, like the `TokenFaucet` contract shown above, it enables SDK
-to get information in a standard way:
+Sau khi một token contract triển khai giao diện [IFungibleToken](https://github.com/alephium/alephium-web3/blob/master/packages/web3/std/fungible_token_interface.ral), nó sẽ cho phép SDK lấy thông tin theo cách tiêu chuẩn, giống như hợp đồng `TokenFaucet` được đề cập ở trên:
 
 ```typescript
 // Use SDK to call methods individually
@@ -79,7 +65,7 @@ const multicallResult = await tokenFaucet.multicall({
 console.log("TokenFaucet name, decimals, totalSupply", multicallResult.getName.returns, multicallResult.getDecimal.returns, multicallResult.getTotalSupply.returns)
 ```
 
-In fact, SDK provides a canonical way to fetch all metadata for a fungible token.
+Trên thực tế, SDK đưa ra một phương pháp chuẩn để tìm nạp tất cả siêu dữ liệu cho fungible token.
 
 ```typescript
 const metadata = await web3.getCurrentNodeProvider().fetchFungibleTokenMetaData(tokenFaucet.contractId)
@@ -87,8 +73,7 @@ console.log("TokenFaucet name, decimals, totalSupply", metadata.name, metadata.d
 ```
 
 [IFungibleToken](https://github.com/alephium/alephium-web3/blob/master/packages/web3/std/fungible_token_interface.ral)
-also enables SDK to guess the type of a token, so that dApps and
-wallets can handle them respectively:
+cũng cho phép SDK đoán được loại token, nên dApps và ví lưu trữ có thể xử lý chúng một cách phù hợp:
 
 ```typescript
 // Guess token type
@@ -100,17 +85,13 @@ const tokenInterfaceId = await web3.getCurrentNodeProvider().guessStdInterfaceId
 expect(tokenInterfaceId).toEqual('0001')
 ```
 
-For a working and more complete example, please take a look at the
-[nextjs-template](https://github.com/alephium/nextjs-template) repository.
+Để có ví dụ đầy đủ hơn, vui lòng tham khảo repository [nextjs-template](https://github.com/alephium/nextjs-template).
 
-### Wallet Support
+### Hỗ trợ ví
 
-Both [Desktop Wallet](/wallet/desktop-wallet/overview) and [Extension
-Wallet](/wallet/extension-wallet/overview) have native support for
-fungible tokens.
+Cả [Ví Desktop](/wallet/desktop-wallet/overview) và [Ví Mở rộng](/wallet/extension-wallet/overview) có hỗ trợ riêng cho fungible token.
 
-Following is an example of displaying and transfering the `PACA` token
-using extesion wallet:
+Sau đây là ví dụ về cách hiển thị và di chuyển token `PACA` bằng ví mở rộng:
 
 <img src={require("./media/transfer-alphpaca-1.png").default} alt="Token Overview" width="250"/>
 &nbsp;&nbsp;&nbsp;&nbsp;
@@ -118,22 +99,14 @@ using extesion wallet:
 &nbsp;&nbsp;&nbsp;&nbsp;
 <img src={require("./media/transfer-alphpaca-3.png").default} alt="Sign Tx" width="250" />
 
-### Token List
+### Danh sách Token
 
-Other than the basic information such as `name`, `symbol` and
-`decimals`, etc. Fungible tokens usually contain other metadata such
-as `description` and `logoURI` so that dApps and wallets can properly
-display them.
+Ngoài những thông tin cơ bản như `tên`, `ký tự` và `số thập phân`, v,v. Fungible token thường chứa siêu dữ liệu khác như `mô tả` và `logoURI` để dApp và ví có thể hiển thị chúng một cách chính xác. 
 
-The goal of the [token list](https://github.com/alephium/token-list)
-is to be a source of trust for token id and metadata of the well known
-tokens in the Alephium ecosystem, so wallets and dApps can warn users
-for the unverified tokens. Here is how extension wallet displays a
-token before and after it is added into the token list.
+Mục đích của [danh sách token](https://github.com/alephium/token-list) là trở thành nguồn tin cậy cho token id và siêu dữ liệu của những token có tiếng trong hệ sinh thái Alephium, vì thế ví và dApp có thể cảnh báo người dùng với những token chưa được xác minh. Dưới đây là cách ví mở rộng hiển thị token trước và sau khi được thêm vào danh sách token. 
 
 <img src={require("./media/unverified-token.png").default} alt="Unverified" width="250"/>
 &nbsp;&nbsp;&nbsp;&nbsp;
 <img src={require("./media/verified-token.png").default} alt="Verified" width="250"/>
 
-Currently, a pull request is needed to add the token metadata to token
-list.
+Hiện tại, cần có pull request để thêm siêu dữ liệu của token vào danh sách token. 

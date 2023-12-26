@@ -1,51 +1,26 @@
 ---
 sidebar_position: 10
-title: Overview
-sidebar_label: Overview
+title: Tổng quan
+sidebar_label: Tổng quan
 ---
 
-Tokens are first class citizens in Alephium. Just like the native
-token ALPH, all tokens on Alephium are managed by UTXOs, which are
-owned directly by addresses.
+Các token là những 'công dân hạng nhất' trên Alephium khi có được những tính năng và hỗ trợ tối ưu nhất. Giống như token ALPH, tất cả token trên Alephium được quản lý bởi UTXOs, và được sở hữu trực tiếp bởi các địa chỉ ví.
 
-This design has a few advantages compared to other blockchains:
+Thiết kế này có một số ưu điểm vượt trội hơn các blockchain khác:
 
-- Token transfers among users only require UTXOs, which is battle
-  tested for its security in managing assets.
-- Easier for wallets and dApps to discover users' tokens, including
-  both fungible and non-fungible tokens.
-- When smart contracts need to transfer tokens, no extra approval
-  transactions are required since the approval is implicit in the
-  UTXO model. Alephium leverages its unique [Asset Permission
-  System](/ralph/asset-permission-system) to ensure that tokens
-   are handled securely by the smart contracts.
-- Token transfer is very scalable because they can take full
-  advantage of Alephium's [Sharding](/glossary.md#sharding) design. 
+- Việc di chuyển token giữa những người dùng chỉ yêu cầu UTXO, và UTXO đã được thử nghiệm trong 'cuộc chiến' về tính bảo mật trong việc quản lý tài sản. 
+- Dễ dàng hơn cho các ví lưu trữ và dApp khám phá token của người dùng, bao gồm các token có thể thay thế (fungible) và không thể thay thế (non-fungible).
+- Khi smart contract cần di chuyển các token, nó không yêu cầu thêm giao dịch phê duyệt vì việc phê duyệt đã được thiết lập sẵn trong mô hình UTXO. Alephium tận dụng [Asset Permission System](/ralph/asset-permission-system) của nó để đảm bảo rằng các token được xử lý an toàn bởi các smart contract.  
+- Việc di chuyển token có khả năng mở rộng rất cao vì chúng có thể tận dụng tối đa thiết kế [Sharding](/glossary.md#sharding) của Alephium. 
 
-To make it easier to work with tokens in the Alephium ecosystem:
+Những thông tin sau đây sẽ giúp bạn làm việc dễ dàng với token trên hệ sinh thái của Alephium: 
 
-- [Token
-  standards](https://github.com/alephium/alephium-web3/tree/master/packages/web3/std)
-  are introduced in the SDK to define standard interfaces for both
-  fungible and non-fungible tokens
-- Utilities functions are defined in the SDK to ease common tasks
-  for dApps and wallets when interacting with the tokens, such as
-  guessing token types and the extraction of token metadata.
-- [Token list](https://github.com/alephium/token-list) is used
-  establish a source of trust for well known fungible tokens and NFT
-  collections.
-- Native support for both fungible and non-fungible tokens in wallets
-  and explorer.
-- Tools to help launch [Opensea
-  Drop](https://docs.opensea.io/docs/drops-on-opensea) style NFT
-  public sale, called `Flow`.
+- [Các tiêu chuẩn Token](https://github.com/alephium/alephium-web3/tree/master/packages/web3/std) được giới thiệu trong SDK để thiết lập giao diện tiêu chuẩn cho cả fungible và non-fungible tokens. 
+- Các chức năng tiện ích được cài đặt trong SDK để giảm bớt các tác vụ thông thường cho các dApp và ví lưu trữ khi tương tác với token, chẳng hạn như đoán các loại token và trích xuất siêu dữ liệu token. 
+- [Danh sách Token](https://github.com/alephium/token-list) được sử dụng để cung cấp danh sách đáng tin cậy cho các fungible token và các bộ sưu tập NFT có tiếng. 
+- Hỗ trợ riêng cho cả fungible và non-fungible token được lưu trữ trong ví và trên trình duyệt web. 
+- Công cụ giúp triển khai đợt public sale của NFT theo phong cách [Opensea Drop](https://docs.opensea.io/docs/drops-on-opensea) và nó được gọi `Flow`.
 
-In the [Fungible Tokens](/tokens/fungible-tokens) page, you will learn
-about the fungible token standard, how to issue fungible tokens, how
-to fetch token metadata and how to transfer fungible tokens in
-wallets, etc.
+Trên trang [Fungible Tokens](/tokens/fungible-tokens), bạn sẽ tìm hiểu về tiêu chuẩn của fungible token, cách phát hành fungible token, cách tìm kiếm siêu dữ liệu token và cách để di chuyển các fungible token trong ví, v.v...
 
-In the [Non-fungible Tokens](/tokens/non-fungible-tokens) page, you will learn about
-the non-fungible token standard, how to create your own NFT
-collections and launch your first NFT public sale campaign called
-`Flows` in the [NFT marketplace](https://testnet.nft.alephium.org/).
+Trên trang [Non-fungible Tokens](/tokens/non-fungible-tokens), bạn sẽ tìm hiểu về tiêu chuẩn của non-fungible token, cách để tạo bộ sưu tập NFT của riêng bạn và triển khai đợt public sale NFT đầu tiên của bạn có tên là `Flows` trên [NFT marketplace](https://testnet.nft.alephium.org/).
