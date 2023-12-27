@@ -1,21 +1,21 @@
 ---
 sidebar_position: 20
-title: Getting Started
-sidebar_label: Getting Started
+title: Bắt đầu
+sidebar_label: Bắt đầu
 ---
 
-# Getting Started
+# Bắt đầu
 
-## 1. Installation
+## 1. Cài đặt
 
-1. Download the executable file in line with your set-up (macOS, Windows, Linux) from the [latest release](https://github.com/alephium/desktop-wallet/releases/latest) and double click on it to install the application.
-2. On Linux and Windows, double click on the application to launch the desktop wallet. On macOS, you'll need to go to the Application folder, click right on the Alephium app and then click on _Open_ (don't double click, it won't work unless you allow it from the System Preferences).
+1. Download file phù hợp với hệ điều hành của bạn (macOS, Windows, Linux) với [bản cập nhật mới nhất](https://github.com/alephium/desktop-wallet/releases/latest) và double click để cài đặt ứng dụng.
+2. Trên Linux và Windows, double click ứng dụng để mở ví desktop. Trên macOS, bạn cần phải đi tới Application folder, nhấp chuột phải ứng dụng Alephium rồi nhấp vào _Open_ (đừng double click, bạn sẽ không mở được trừ khi bạn cài đặt như vậy từ System Preferences).
 
-## 2. Create Wallet
+## 2. Tạo ví 
 
 :::info
 
-By default, the wallet will be connected to the Alephium public node. Should you want to use your personal node or generate the wallet offline, you can do so by clicking the setting wheel on the top right of the app and changing the Node Host to your localhost or simply leaving it blank to create the wallet offline.
+Theo mặc định, ví sẽ được kết nối với public node của Alephium. Nếu bạn muốn sử dụng node cá nhân hoặc tạo ví offline, bạn có thể tạo bằng cách nhấp vào bánh răng cài đặt ở trên cùng góc phải của ứng dụng và thay đổi node host thành localhost của bạn hoặc chỉ cần để trống để tạo ví offline. 
 
 :::
 
@@ -25,10 +25,9 @@ By default, the wallet will be connected to the Alephium public node. Should you
 
 <img src={require("./media/gs3.png").default} alt="Prompt to chose a name and set a password" width="auto" style={{ height: '200px' }} />
 
-1. Click on `Create/Import a new wallet`, then click `New wallet`.
+1. Nhấp chuột vào `Create/Import a new wallet`, rồi chọn `New wallet`.
 
-2. Choose a wallet name and pick a password to protect your wallet on your computer. This password does not replace your wallet's 24-word Secret Recovery Phrase. It is only used to lock and unlock the newly created wallet.
-   Click `Continue`.
+2. Chọn tên ví và mật khẩu để bảo vệ ví của bạn trên máy tính. Mật khẩu này không thay thế cho Cụm từ khôi phục bí mật (Secret Recovery Phrase) gồm 24 từ cho ví của bạn. Nó chỉ được dùng để khoá và mở khoá ví mới được tạo. Nhấp vào `Continue`.
 
 <img src={require("./media/gs4.png").default} alt="Display of the 24 secret words" width="auto" style={{ height: '200px' }} />
 
@@ -36,13 +35,13 @@ By default, the wallet will be connected to the Alephium public node. Should you
 
 <img src={require("./media/gs6.png").default} alt="Landing page of a brand new wallet" width="auto" style={{ height: '200px' }} />
 
-3. In the highlighted box, you will see 24 words. These are your wallet's 24-word Secret Recovery Phrase. This is your most precious piece of information, and you must store it wisely, safely, and carefully.
+3. Trong khung được highlight, bạn sẽ thấy 24 từ. Đây là Cụm từ khôi phục bí mật gồm 24 từ cho ví của bạn. Đây là thông tin cực kì quan trọng và quý giá nhất của bạn, bạn phải lưu trữ nó một cách khôn ngoan, an toàn và cẩn thận. 
 
-4. You will now be asked to verify that you got the 24-word Secret Recovery Phrase right. Click `Ready` and select the words in the right order. If the process was done correctly, the words turn green. If a mistake was made, they turn red: don't worry, you can reorder the words until you get the Phrase right.
+4. Tiếp tục, bạn sẽ được yêu cầu xác minh rằng bạn đã hiểu đúng Cụm từ khôi phục bí mật gồm 24 từ. Nhấp vào `Ready` và chọn các từ theo đúng thứ tự. Nếu bạn chọn chính xác, các từ sẽ chuyển sang màu xanh. Ngược lại, nó sẽ chuyển sang màu đỏ: nhưng không sao, bạn có thể sắp xếp lại các từ cho đến khi bạn chọn đúng. 
 
-5. Everything is now ready! Welcome to your new wallet.
+5. Mọi thứ đẫ sẵn sàng! chào mừng đến ví lưu trữ mới của bạn.
 
-## 3. Transfer ALPH
+## 3. Di chuyển ALPH
 
 <img src={require("./media/gs7.png").default} alt="Landing page of Desktop Wallet" width="auto" style={{ height: '200px' }} />
 
@@ -50,34 +49,34 @@ By default, the wallet will be connected to the Alephium public node. Should you
 
 <img src={require("./media/gs9.png").default} alt="Prompt to enter destination address and amount of transaction" width="auto" style={{ height: '200px' }} />
 
-1. To send ALPH, simply click on the `Send` button in the left menu.
+1. Để gửi ALPH, đơn giản chỉ cần nhấp nút `Send` trong danh mục bên trái. 
 
-2. Enter the amount of ALPH (e.g. 100) and recipient's address.
+2. Nhập vào số luợng ALPH (vd: 100) và địa chỉ nguời nhận.
 
-3. (Optional) You can set a lock time by ticking the corresponding box. In that case, the ALPH will be sent to the recipient address but subject to an on-chain lock until the date you have indicated. Please note that it is not possible to change the lock-time once the transaction has been submitted.
+3. (Không bắt buộc) Bạn có thể đặt thời gian khoá (lock time) bằng cách tick vào ô tương ứng. Trong trường hợp đó, ALPH sẽ được gửi đến địa chỉ người nhận nhưng sẽ bị khoá on-chain cho đến ngày bạn đã chỉ định. Lưu ý rằng, bạn không thể thay đổi thời gian khoá sau khi giao dịch đã được gửi. 
 
-4. Click `Check` and carefully review your transaction details. Once you click on `Send` the ALPH will be transferred to the recipient.
+4. Chọn `Check` và kiểm tra cẩn thận chi tiết giao dịch của bạn. Khi bạn nhấp vào `Send`, ALPH sẽ được chuyển đến người nhận. 
 
 :::info
 
-The transaction can be seen in both the `Overview` tab as well as the `Addresses` tab when clicking on the specific address.
+Giao dịch có thể được tìm thấy trong mục `Overview`, cũng như mục `Addresses` khi nhấp vào địa chỉ cụ thể.
 
 :::
 
-## 4. Manage Addresses
+## 4. Quản lý các địa chỉ
 
-You can see all the existing addresses displayed in a list in the `Addresses` tab, with information such as their label, respective balances, group number, etc.
+Bạn có thể xem tất cả các địa chỉ hiện có được hiển thị trong danh sách ở mục `Addresses` với các thông tin như nhãn mác, số dư, số nhóm, v.v.
 
 <img src={require("./media/gs10.png").default} alt="Address page" width="auto" style={{ height: '200px' }} />
 
-Clicking on one of the `+ New address` buttons brings you to the `New address` page where you'll be able to create and label the new address. By default, addresses are generated in a random group. You can manually choose a specific group under the `Advanced options` section.
+Chọn một trong các nút `+ New address` sẽ chuyển hướng bạn đến trang `New address`, nơi mà bạn có thể tạo và gắn nhãn địa chỉ mởi. Theo mặc định, địa chỉ được tạo theo nhóm ngẫu nhiên. Bạn có thể chọn một nhóm cụ thể theo cách thủ công trong phần `Advanced options`.
 
 <img src={require("./media/gs11.png").default} alt="Prompt to create a new address" width="auto" style={{ height: '200px' }} />
 
-By clicking on a specific address, you'll see the address details including its transaction history.
+Khi nhấo vào một địa chỉ cụ thể, bạn sẽ thấy chi tiết địa chỉ bao gồm lịch sử giao dịch của địa chỉ đó. 
 
 <img src={require("./media/gs12.png").default} alt="View of a singel address" width="auto" style={{ height: '200px' }} />
 
-Using the Settings wheel at the top of the application, you will be able to edit the Address label, choose it as your default address or sweep all its unlocked funds to an address of your choice.
+Bạn có thể chỉnh sửa nhãn địa chỉ, chọn địa chỉ đó làm địa chỉ mặc định, hoặc chuyển hết tất cả số dư không bị khoá đến địa chỉ bạn chọn trong phần Cài đặt ở đầu ứng dụng. 
 
 <img src={require("./media/gs13.png").default} alt="Prompt to configure address options" width="auto" style={{ height: '200px' }} />
