@@ -1,16 +1,16 @@
 ---
 sidebar_position: 10
-title: Overview
-sidebar_label: Overview
+title: Tổng quan
+sidebar_label: Tổng quan
 ---
 
-# Overview
+# Tổng quan
 
-The desktop wallet is the most user-friendly Alephium wallet available today. It allows users to store and manage their assets on the Alephium blockchain.
+Ví desktop là ví Alephium thân thiện với người dùng nhất hiện nay. Nó cho phép người dùng lưu trữ và quản lý tài sản của họ trên blockchain của Alephium. 
 
 <img src={require("./media/overview1.png").default} alt="Desktop Wallet in dark mode" width="50%"/>
 
 <img src={require("./media/overview2.png").default} alt="Desktop Wallet in light mode" width="50%"/>
 
-In the Getting Started page, you can find out the installation guide as well as some common use cases for the desktop wallet such as managing accounts, transferring assets, etc. For more information on advanced features, please check out the dedicated pages.
-Some could consider the desktop wallet slightly less privacy-preserving and secure than the node wallet as it requires you to trust the application’s security and is by default connected to a public node. However, you can build the wallet directly from our GitHub repository and use a local node, or even create your wallet completely offline to mitigate some of these risks.
+Trong trang Bắt đầu (Getting started), bạn có thể tìm thấy hướng dẫn cài đặt, cũng như một số trường hợp sử dụng phổ biến cho ví desktop như quản lý tài sản, di chuyển tài sản, v.v. Để biết thêm thông tin về các tính năng nâng cao, vui lòng xem các trang liên quan. 
+Một số người dùng cho rằng ví desktop kém bảo mật và an toàn hơn một chút so với ví node vì nó yêu cầu người dùng tin tưởng bảo mật của ứng dụng và được kết nối với public node theo mặc định. Tuy nhiên, người dùng có thể tạo ví trực tiếp từ GitHub repository của chúng tôi và sử dụng local node, hoặc thậm chí tạo ví offline để giảm thiểu rủi ro. 
