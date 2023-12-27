@@ -1,36 +1,28 @@
 ---
 sidebar_position: 30
-title: Non-fungible Tokens (NFTs)
-sidebar_label: Non-fungible Tokens
+title: Non-fungible Tokens (NFTs) - Token không thể thay thế
+sidebar_label: Non-fungible Tokens (NFTs) - Token không thể thay thế
 ---
 
-Non-fungible tokens (NFTs) on Alephium have several unique characteristics
-compared to NFTs on other blockchains:
+Non-fungible tokens (NFTs) trên Alephium có một số tính năng độc đáo hơn so với NFT trên các blockchain khác:
 
-- True ownership based on the UTXO model: Like other types of tokens on Alephium, NFTs are securely managed by UTXOs, which are directly owned by addresses. Since UTXOs are protected by users' private keys, even if there are bugs in the NFT contract, users' assets remain safe.
+- Quyền sở hữu thực sự dựa trên mô hình UTXO: giống như các token các trên Alephium, NFT được sở hữu trực tiếp bởi các địa chỉ. Vì UTXO được bảo vệ bằng private keys của người dùng nên ngay cả khi có lỗi trong NFT contract, tài sản của người dùng vẫn được an toàn. 
 
-- First-class support for NFTs: Tokens are native assets on Alephium. As a result, users’ NFTs can be easily discovered and displayed by wallets, explorers, and dApps without relying on third-party services.
+- Hỗ trợ bậc nhất cho NFT: token là tài sản gốc trên Alephium. Nhờ vậy mà NFT của nguời dùng có thể dễ dàng được tìm kiếm và hiển thị trên ví, trình duyệt, và dApp mà không cần dựa vào các tiện ích của bên thứ ba. 
 
-- Higher security thanks to Alephium’s VM and contract language: Alephium's virtual machine (VM) and contract language eliminate the need for a separate approval transaction during NFT trading, reducing associated risks. This simplifies the process of writing secure NFT contracts for developers with the help of tools such as the [Asset
-  Permission System](/ralph/asset-permission-system).
+- Bảo mật cao hơn nhờ VM và ngôn ngữ hợp đồng của Alephium: virtual machine (VM) và ngôn ngữ hợp đồng của Alephium loại bỏ giao dịch phê duyệt riêng cho quá trình giao dịch NFT, từ đó hạn chế những rủi ro liên quan. Điều này giúp đơn giản hoá việc viết hợp đồng NFT bảo mật cho các lập trình viên với sự hỗ trợ của các công cụ như [Asset Permission System](/ralph/asset-permission-system).
 
-- Sub-contract system: In Alephium, there is no [mapping](https://docs.soliditylang.org/en/v0.8.7/types.html#mapping-types) data structure. Collections are created with a parent contract (the collection) and [sub-contracts](http://localhost:3000/ralph/built-in-functions#subcontract-functions) (the items). Each sub-contract represents an NFT in this collection, and all metadata is tied to it. This is a native feature of the Alephium Blockchain that allows Alephium’s NFTs to be unique (one token per sub-contract) or semi-fungible, as the same minting contract can create more than one token.
+- Hệ thống Hợp đồng phụ: Trên Alephium, không có cấu trúc dữ liệu [mapping](https://docs.soliditylang.org/en/v0.8.7/types.html#mapping-types). Bộ sưu tập được tạo bằng hợp đồng gốc (bộ sưu tập) và [hợp đồng phụ](http://localhost:3000/ralph/built-in-functions#subcontract-functions) (the items). Mỗi hợp đồng phụ đại diện cho một NFT trong bộ sưu tập này, và tất cả siêu dữ liệu được gắn với nó. Đây là tính năng riêng trên Blockchain của Alephium, nhờ vậy mà NFT của Alephium là độc nhất (một token cho mỗi hợp đồng phụ) hoặc semi-fungible (bán độc-nhất), vì cùng một hợp đồng phát hành có thể tạo ra nhiều token.
 
-- Efficient transaction batching: Multiple NFTs and users can be involved in a single transaction.
+- Phân nhóm giao dịch hiệu quả: nhiều NFT và người dùng có thể tham gia vào một giao dịch.
 
-- Cheaper transaction fees and higher throughput: NFT transactions will benefit from Alephium's sharding algorithm.
+- Phí giao dịch rẻ hơn và băng thông cao hơn: các giao dịch NFT được hưởng lợi từ thuật toán sharding của Alephium.
 
-- NFT scarcity: The supply of NFTs on Alephium is finite, as each NFT necessitates the deployment of its own individual sub-contract, which in turn requires a deposit of ALPH - currently set at 1 `ALPH`. This unique structure inherently imposes a limit on the production of NFTs on the platform, reinforcing the scarcity of NFTs on Alephium.
+- Sự khan hiếm NFT: nguồn cung NFT trên Alephium là hữu hạn, vì mỗi NFT yêu cầu triển khai hợp đồng phụ riêng, do đó sẽ yêu cầu đặt cọc ALPH - hiện tại là 1 `ALPH`. Cách vận hành độc nhất này đã đặt ra giới hạn trong việc tạo ra NFT trên platform, do đó gia tăng sự khan hiếm của NFT trên Alephium. 
   
-### Non-fungible Token Standard
+### Tiêu chuẩn của Non-fungible token
 
-Both NFT collections and individual NFTs have metadata associated with
-them, such as `collectionUri`, `totalSupply` and `tokenUri`, etc. The
-[INFTCollection](https://github.com/alephium/alephium-web3/blob/master/packages/web3/std/nft_collection_interface.ral)
-and
-[INFT](https://github.com/alephium/alephium-web3/blob/master/packages/web3/std/nft_interface.ral)
-interfaces standardize the methods to fetch these metadata.
-
+ Bộ sưu tập NFT và các NFT riêng lẻ đều có siêu dữ liệu được gắn vói chúng, chẳng hạn như `collectionUri`, `totalSupply` và `tokenUri`, v.v. Giao diện [INFTCollection](https://github.com/alephium/alephium-web3/blob/master/packages/web3/std/nft_collection_interface.ral) và [INFT](https://github.com/alephium/alephium-web3/blob/master/packages/web3/std/nft_interface.ral) chuẩn hoá phương pháp tìm nạp siêu dữ các liệu này. 
 ```rust
 // Standard interface for NFT collection
 @std(id = #0002)
@@ -49,8 +41,7 @@ Interface INFT {
 }
 ```
 
-They are also annotated with the `@std` annotations to facilitate
-dApps and wallets to infer their contract/token types.
+Chúng cũng được ghi chú bằng chú thích `@std` để tạo điều kiện cho dApp và ví truy xuất loại hợp đồng/token của chúng.
 
 ```typescript
 // Guess NFT token type
@@ -62,11 +53,7 @@ const isNFTCollection = await web3.getCurrentNodeProvider().guessFollowsNFTColle
 console.log("Is NFT collection", isNFTCollection)
 ```
 
-For contracts that implement
-[INFTCollection](https://github.com/alephium/alephium-web3/blob/master/packages/web3/std/nft_collection_interface.ral)
-and
-[INFT](https://github.com/alephium/alephium-web3/blob/master/packages/web3/std/nft_interface.ral),
-SDK offers a canonical way to fetch their respective metadata:
+Đối với các hợp đồng triển khai [INFTCollection](https://github.com/alephium/alephium-web3/blob/master/packages/web3/std/nft_collection_interface.ral) và [INFT](https://github.com/alephium/alephium-web3/blob/master/packages/web3/std/nft_interface.ral), SDK cung cấp phương pháp chuẩn để tìm nạp siêu dữ liệu tương ứng của chúng:
 
 ```typescript
 // NFT Collection Metadata
@@ -78,8 +65,7 @@ const nftMetadata = await web3.getCurrentNodeProvider().fetchNFTMetadata(nft.con
 console.log("NFT Token URI, collection address", nftMetadata.tokenUri, nftMetadata.collectionAddress)
 ```
 
-For NFT collection, one of the metadata is `collectionUri`, which is
-an URI that points to an JSON document with the following schema:
+Đối với các bộ sưu tập NFT, một trong các siêu dữ liệu là `collectionUri`, đây là URI dẫn đến tài liệu JSON theo cơ chế sau
 
 ```typescript
 interface NFTCollectionUriMetaData {
@@ -89,8 +75,7 @@ interface NFTCollectionUriMetaData {
 }
 ```
 
-For individual NFT, one of the metadata is `tokenUri`, which is an URI
-that points to an JSON document with the following schema:
+Đối với NFT riêng lẻ, một trong những siêu dữ liệu là `tokenUri`, đây là URI dẫn đến tài liệu JSON document với cơ chế sau:
 
 ```typescript
 interface NFTTokenUriMetaData {
@@ -106,45 +91,25 @@ interface NFTTokenUriMetaData {
 }
 ```
 
-### AlephiumNFT Marketplace
+### Sàn giao dịch AlephiumNFT 
 
-[AlephiumNFT](https://github.com/alephium/alephium-nft) marketplace is
-a proof-of-concept NFT marketplace to show case the capabilities of
-NFTs on Alephium. Here you can create NFT collections, discovery, mint
-and trade NFTs. You can also launch [Opensea
-Drop](https://docs.opensea.io/docs/drops-on-opensea) style public sale
-campaigns for your NFT collections. These campaigns are called `Flows`
-on `AlephiumNFT` marketplace.
+Sàn giao dịch [AlephiumNFT](https://github.com/alephium/alephium-nft) là một sàn giao dịch NFT theo proof-of-concept để thể hiện năng lực của NFT trên Alephium. Tại đây, bạn có thể tạo các bộ sưu tập NFT, khám phá, phát hành và giao dịch NFT. Bạn cũng có thể triển khai chiến dịch public sale theo [Opensea Drop](https://docs.opensea.io/docs/drops-on-opensea) cho bộ sưu tập NFT của bạn. Những chiến dịch này được gọi là `Flows` trên sàn giao dịch `AlephiumNFT`.
 
-Create your own NFT collections should be pretty
-straightforward. Follow this [Twitter
-thread](https://twitter.com/alephium/status/1674397159947649030) for
-more details. If you want to create a `Flow` on `AlephiumNFT`
-marketplace,
-[@alephium/cli](https://www.npmjs.com/package/@alephium/cli) has a
-`nft` subcommand that can help with that.
+Việc tạo bộ sưu tập NFT của riêng bạn khá đơn giản. Theo dõi [Twitter thread](https://twitter.com/alephium/status/1674397159947649030) để biết thêm chi tiết. Nếu bạn muốn tạo `Flow` trên sàn `AlephiumNFT`, [@alephium/cli](https://www.npmjs.com/package/@alephium/cli) có một sub-command `nft` có thể hỗ trợ bạn.
 
-#### Create Flows
+#### Cách tạo Flow
 
-Let's say you want to launch a public sale for your NFT collection
-that has `5` individual NFTs. Before you create a `Flow` for it, you
-should have `5` images ready first. If not, `@alephium/cli` offers a
-command for you to generate images using OpenAI's
-[DALL.E](https://openai.com/research/dall-e) models:
+Giả sử bạn muốn mở một đợt public sale cho bộ sưu tập NFT của bạn, trong đó có `5` NFT riêng lẻ. Trước khi bạn tạo `Flow` cho nó, bạn nên chuẩn bị sẵn `5` hình ảnh. Nếu không, `@alephium/cli` sẽ đưa ra lệnh để bạn tạo hình ảnh bằng OpenAI's [DALL.E](https://openai.com/research/dall-e):
 
 ```bash
 export OPENAI_API_KEY=xxxx-xxxx-xxxx-xxxx
 npx @alephium/cli@latest nft generate-images-with-openai --number 5 -d /tmp/imagine "imagine all the people, living life in peace"
 ```
 
-This will create `5` images with the prompt `imagine all the
-people, living life in peace` and store them under the `/tmp/imagine`
-directory. Please skip this step if you have designed the images for
-your collection already.
+Việc này sẽ tạo ra `5` hình ảnh với chú thích `imagine all the
+people, living life in peace` và lưu trữ chúng trong thư mục `/tmp/imagine`. Vui lòng bỏ qua bước này nếu bạn đã thiết kế hình ảnh cho bộ sưu tập của mình rồi. 
 
-Assuming that the images are ready under the `/tmp/imagine`
-directory. Next step is to create a metadata file in YAML format for
-your collection. Here is an example of an YAML file called `imagine.yaml`:
+Giả sử hình ảnh đã sẵn sàng trong thư mục `/tmp/imagine`. Bước tiếp theo là tạo tệp siêu dữ liệu ở định dạng YAML cho bộ sưu tập của bạn. Đây là một ví dụ về tệp YAML có tên `imagine.yaml`:
 
 ```bash
 > ls /tmp/imagine
@@ -166,8 +131,7 @@ your collection. Here is an example of an YAML file called `imagine.yaml`:
 4.jpg:
 ```
 
-When you are happy about the images and metadata of your collection,
-run the following command to upload the images and metadata to IPFS:
+Nếu bạn đã hài lòng về hình ảnh và siêu dữ liệu của bộ sưu tập của mình, hãy chạy lệnh sau để gửi hình ảnh và siêu dữ liệu lên IPFS:
 
 ```bash
 > export IPFS_INFURA_PROJECT_ID=xxxx-xxxx-xxxx-xxxx
@@ -177,15 +141,11 @@ NFTBaseUri:
 https://ipfs.io/ipfs/QmaTXEGJQe5ZLg9TVEBJEpz3dwbzG9m7b6NWVogxnYgnbJ/
 ```
 
-The `NFTBaseUri` points to an IPFS directory where `5` documents are
-named and stored based on their sequence in the `imagine.yaml` file:
+`NFTBaseUri` dẫn đến thư mục IPFS trong đó `5` tài liệu được đặt tên và lưu trữ theo trình tự của chúng trong file `imagine.yaml`:
 
 <img src={require("./media/ipfs-imagine-directory.png").default} alt="IPFS Imagine Directory"/>
 
-Each of the document points to the metadata of an NFT and can be
-referenced by their
-indexes. E.g. `https://ipfs.io/ipfs/QmaTXEGJQe5ZLg9TVEBJEpz3dwbzG9m7b6NWVogxnYgnbJ/2`
-points to the metadata of the 3rd NFT:
+Mỗi tài liệu đều dẫn đến siêu dữ liệu của NFT và có thể được tham chiếu theo index của chúng. Ví dụ, `https://ipfs.io/ipfs/QmaTXEGJQe5ZLg9TVEBJEpz3dwbzG9m7b6NWVogxnYgnbJ/2` dẫn đến siêu dữ liệu của NFT thứ 3:
 
 ```bash
 > curl https://ipfs.io/ipfs/QmaTXEGJQe5ZLg9TVEBJEpz3dwbzG9m7b6NWVogxnYgnbJ/2 | jq
@@ -205,8 +165,7 @@ points to the metadata of the 3rd NFT:
 }
 ```
 
-You can validate if a `NFTBaseUri` is valid using the following
-command:
+Bạn có thể xác thực xem `NFT BaseUri` có hợp lệ hay không bằng lệnh sau:
 
 ```bash
 > npx @alephium/cli@latest nft validate-enumerable-nft-base-uri --nftBaseUri https://ipfs.io/ipfs/QmbLevU4kVnQCCoYt23mKhdowJ7TnNNT9dRyVw9AyQDJty/ --maxSupply 5
@@ -220,47 +179,32 @@ Token Metadataz:
 ]
 ```
 
-After `NFTBaseUri` is created, we are ready to launch the `Flow` on `AlephiumNFT` Marketplace:
+Sau khi `NFTBaseUri` được tạo, chúng ta đã sẵn sàng để khởi chạy `Flow` trên sàn `AlephiumNFT`:
 
 <img src={require("./media/create-flow-page.png").default} alt="Create FLow Page"/>
 
-As illustrated above, you can put in the collection image, the max
-batch mint size, the mint price, the name and description of the
-collection, and most importantly the NFT base URI that we created in
-the last step. After you click the `Create NFT Collection` button and
-sign the transaction, you will successfully create your first `Flow`,
-share the link and start to launch the public sale of your NFT
-collection!
+Như đã trình bày ở trên, bạn có thể gán cho hình ảnh trong bộ sưu tập: the max batch mint size, the mint price, tên và mô tả của bộ sưu tập, và quan trọng nhất là NFT base URI that we created in the last step. After you click the `Create NFT Collection` button and sign the transaction, you will successfully create your first `Flow`, share the link and start to launch the public sale of your NFT collection!
 
 <img src={require("./media/flow-page.png").default} alt="FLow Page"/>
 
-### Wallet Support
+### Hỗ trợ ví
 
-Both [Desktop Wallet](/wallet/desktop-wallet/overview) and [Extension
-Wallet](/wallet/extension-wallet/overview) have native support for
-non-fungible tokens.
+Cả [Ví Desktop](/wallet/desktop-wallet/overview) và [Ví mở rộng](/wallet/extension-wallet/overview) có hỗ trợ riêng cho non-fungible tokens.
 
-Following is an example of displaying and transfering a NFT in the
-`Imagine Collection` in the extension wallet:
+Sau đây là ví dụ về cách hiển thị và di chuyển NFT trong `Bộ sưu tập hình ảnh` trong ví mở rộng:
 
 <img
 src={require("./media/show-nft-collection-extension-wallet.png").default} alt="Show collection" width="250"/>
 &nbsp;&nbsp;&nbsp;&nbsp;
 <img src={require("./media/transfer-nft-collection-extension-wallet.png").default} alt="Transfer NFT" width="250" />
 
-### Token List
+### Danh sách Token 
 
-It is not too difficult to fake other NFT collections and scam
-users. [Token list](https://github.com/alephium/token-list) allows
-well known NFT collections in the Alephium ecosystem to be
-whitelisted, so that dApps and wallets can warn users for unverified
-NFT collections. Here is how extension wallet displays a NFT
-collection before and after it is added into the token list.
+Hiện nay, việc làm giả các bộ sưu tập NFT và lừa đảo người dùng không quá khó. Vì vậy [Danh sách Token](https://github.com/alephium/token-list) cho phép các bộ sưu tập NFT nổi tiếng trong hệ sinh thái Alephium được đưa vào danh sách trắng, để các dApp và ví lưu trữ có thể cảnh báo người dùng về các bộ sưu tập NFT chưa được xác minh. Dưới đây là cách ví mở rộng hiển thị bộ sưu tập NFT truớc và sau khi nó được thêm vào danh sách token. 
 
 <img src={require("./media/unverified-nft-collection.png").default} alt="Unverified" width="250"/>
 &nbsp;&nbsp;&nbsp;&nbsp;
 <img src={require("./media/verified-nft-collection.png").default} alt="Verified" width="250"/>
 
-Currently, a pull request is needed to add the NFT collection to token
-list.
+Hiện tại, bạn cần pull request để thêm bộ sưu tập NFT vào danh sách token. 
 
