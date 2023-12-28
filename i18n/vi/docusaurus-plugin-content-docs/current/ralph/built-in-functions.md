@@ -1,14 +1,14 @@
 ---
 sidebar_position: 20
-title: Built-in Functions
-sidebar_label: Built-in functions
+title: Những chức năng tích hợp sẳn
+sidebar_label: Những chức năng tích hợp sẳn
 ---
 
 <!---
 This file is auto-generated with "scripts/generate-builtin-functions.js"
 -->
 
-The built-in functions are divided into several categories:
+Những chức năng được tích hợp sẳn được chia ra làm nhiều loại:
 [Contract](#contract-functions),
 [SubContract](#subcontract-functions),
 [Asset](#asset-functions),
@@ -17,8 +17,8 @@ The built-in functions are divided into several categories:
 [Conversion](#conversion-functions),
 [ByteVec](#bytevec-functions),
 [Cryptography](#cryptography-functions).
-All built-in functions are suffixed with `!`.
-All of the byte encoding use Big Endian byte order.
+Tất cả những chức năng được tích hợp sẳn đều có hậu tố với `!`.
+Tất cả các byte encoding đều sử dụng thứ tự Big Endian byte.
 
 ## Contract Functions
 ---
