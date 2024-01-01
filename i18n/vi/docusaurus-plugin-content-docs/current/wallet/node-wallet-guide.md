@@ -4,15 +4,11 @@ title: Node Wallet
 sidebar_label: Node wallet
 ---
 
-import UntranslatedPageText from "@site/src/components/UntranslatedPageText";
+Wallet API có thể được call bằng cách sử dụng Swagger UI tại [http://127.0.0.1:12973/docs](http://127.0.0.1:12973/docs) hoặc sử dụng `curl`. Hãy chắc chắn rằng full node của bạn đang chạy is để có thể truy cập vào Swagger UI.
 
-<UntranslatedPageText />
+## Tạo một wallet mới
 
-The wallet API can be called using our Swagger UI at [http://127.0.0.1:12973/docs](http://127.0.0.1:12973/docs) or by using `curl`. Make sure that your full node is running so you could access the Swagger UI.
-
-## Create a new wallet
-
-You can create a new wallet by doing a POST with the following data on `/wallets`.
+Bạn có thể tạo một wallet mới bằng một POST với dữ liệu trong `/wallets`.
 
 ```json
 {
@@ -21,7 +17,7 @@ You can create a new wallet by doing a POST with the following data on `/wallets
 }
 ```
 
-The server must response successfully giving you our new wallet mnemonic.
+Server sẽ phản hồi và sẽ cho bạn thông tin của wallet mnemonic.
 
 ```json
 {
@@ -30,7 +26,7 @@ The server must response successfully giving you our new wallet mnemonic.
 }
 ```
 
-Fetch your new wallet address by `GET /wallets/{wallet_name}/addresses`
+Fetch địa chỉ của wallet bằng `GET /wallets/{wallet_name}/addresses`
 
 ```json
 {
@@ -39,7 +35,7 @@ Fetch your new wallet address by `GET /wallets/{wallet_name}/addresses`
 }
 ```
 
-If you already created a wallet once but it got deleted or you don't remember your password, you can restore your wallet with your `mnemonic` using:
+Nếu bạn đã tạo một wallet rồi nhưng nó đã bị xóa hoặc bạn không nhớ mật khẩu, bạn có thể khôi phục wallet đó bằng `mnemonic`:
 
 ```
 PUT /wallets
@@ -52,7 +48,7 @@ PUT /wallets
 
 ## Lock/Unlock
 
-You wallet will automatically be locked after some time, you'll need to unlock it if you want to use it:
+Wallet của bạn sẽ tự động được khóa bảo vệ lại trong một khoảng thời gian, bạn sẽ cần phải mở khóa nó để có thể sử dụng:
 
 ```
 POST /wallets/{wallet_name}/unlock
@@ -61,7 +57,7 @@ POST /wallets/{wallet_name}/unlock
 }
 ```
 
-You can also manually lock it:
+Bạn cũng có thể khóa ví thủ công bằng cách:
 
 ```
 POST /wallets/{wallet_name}/lock
@@ -69,8 +65,8 @@ POST /wallets/{wallet_name}/lock
 
 ## Query for balance
 
-You can check the current balance with `GET /wallets/{wallet_name}/balances`
-response:
+Bạn có thể kiểm tra số dư hiện tại bằng `GET /wallets/{wallet_name}/balances`
+:
 
 ```json
 {
@@ -86,7 +82,7 @@ response:
 
 ## Transfering funds
 
-You can submit a transaction from a wallet to an address by doing:
+Bạn có thể thực hiện một giao dịch từ một wallet đến một địa chỉ bằng cách:
 
 ```
 POST /wallets/{wallet_name}/transfer
@@ -98,7 +94,7 @@ POST /wallets/{wallet_name}/transfer
 }
 ```
 
-The server must response succussfully with the transaction id and the group information.
+Server sẽ phản hồi với thông tin transaction id và thông tin của group.
 
 ```json
 {
