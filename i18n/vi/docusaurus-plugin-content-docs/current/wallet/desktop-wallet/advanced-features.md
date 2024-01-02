@@ -1,66 +1,66 @@
 ---
 sidebar_position: 40
-title: Advanced Features
-sidebar_label: Advanced Features
+title: Tính năng nâng cao
+sidebar_label: Tính năng nâng cao
 ---
 
-# Advanced Features
+# Tính năng nâng cao
 
-## 1. UTXO consolidation
+## 1. Hợp nhất UTXO
 
 :::info
 
-Due to the nature of UTXO, every time a transaction is made, a couple of new Unspent Transaction Outputs are created, each containing various amounts of ALPH. If these UTXOs aren't consolidated every now and then, a UTXO can reach a point where it becomes so-called "dust". Meaning that if the amount in a UTXO is smaller than the cost of GAS to send the ALPHs it contains, these ALPHs cannot be moved anymore.
+Do tính chất của UTXO, mỗi khi một giao dịch được thực hiện, một vài Unspent Transaction Outputs được tạo ra, mỗi output chứa số lượng ALPH khác nhau. Nếu thỉnh thoảng các UTXO không được hợp nhất thì một UTXO có thể đạt đến mức được gọi là "dust". Có nghĩa là nếu số lượng trong UTXO nhỏ hơn phí GAS để gửi ALPH mà nó có, thì những ALPH này sẽ không thể được di chuyển nữa. 
 
-To make sure this doesn't happen, the wallet allows you to easily consolidate your UTXOs with the click of a button.
+Để đảm bảo điều này không xảy ra, ví cho phép bạn dễ dàng hợp nhất các UTXO của mình chỉ bằng một nút bấm. 
 
 :::
 
-In the `Addresses` tab, click on the `Advanced operations` icon and choose `Consolidate UTXOs`.
+Trong mục `Địa chỉ ví`, nhấp vào biểu tượng `Tính năng nâng cao` và chọn `Hợp nhất UTXOs`.
 
 <img src={require("./media/af1.png").default} alt="UTXO consolidation" width="auto" style={{ height: '200px' }} />
 
 <img src={require("./media/af4.png").default} alt="UTXO consolidation" width="auto" style={{ height: '200px' }} />
 
-Select the address from which you want to consolidate the UTXOs and select the destination address (it can be the same address). Click on `Consolidate` and your UTXOs will be consolidated.
+Chọn địa chỉ ví mà bạn muốn hợp nhất các UTXO và chọn địa chỉ ví nhận (có thể cùng một địa chỉ). Chọn `Hợp nhất` và các UTXO của bạn sẽ được hợp nhất.
 
 <img src={require("./media/af2.png").default} alt="Landing page" width="auto" style={{ height: '200px' }} />
 
-## 2. Passphrase (ADVANCED SECURITY FEATURE)
+## 2. Cụm từ khôi phục (Tính năng bảo mật nâng cao)
 
-Introduced in version 1.3.0
+Được giới thiệu trong phiên bản 1.3.0
 
 :::caution
-Please, read the following documentation and this [article](https://medium.com/@alephium/bip39-passphrase-implementation-f87adecd6f59) before deciding to use this feature.
+Vui lòng đọc tài liệu sau và [bài viết](https://medium.com/@alephium/bip39-passphrase-implementation-f87adecd6f59) trước khi quyết định sử dụng tính năng này.
 :::
 
-### 1. Important Takeaways
+### 1. Lưu ý quan trọng
 
-- The Passphrase is an advanced security feature that adds an additional word that you choose to your existing Secret Recovery Phrase.
-- Using a Passphrase will cause an entirely new wallet to be created which cannot be accessed via the Secret Recovery Phrase alone.
-- The desktop wallet password is different from the Passphrase. The password is only used on your computer to encrypt and store the Secret Recovery Phrase. The Passphrase is an additional word to that Secret Recovery Phrase and is not stored in the wallet.
-- Apart from adding another layer of security, the Passphrase grants you plausible deniability when under duress.
-- **If you decide to use a Passphrase, it is vital to store it and back it up securely in a different physical location than the Secret Recovery Phrase. You must remember your Passphrase perfectly. Changing a single character (even, for example, from lower to upper-case), will result in the generation of a completely new wallet. **
+- Cụm từ khôi phục (Passphrase) là một tính năng bảo mật nâng cao, nó bổ sung thêm một từ mà bạn chọn vào Cụm từ khôi phục bí mật (Secret Recovery Phrase) hiện có của mình. 
+- Việc sử dụng Cụm từ khôi phục sẽ tạo ra một ví hoàn toàn mới, mà nó không thể được truy cập chỉ bằng Cụm từ khôi phục bí mật. 
+- Mật khẩu ví desktop khác với Cụm từ khôi phục. Mật khẩu chỉ được sử dụng trên máy tính của bạn để mã hoá và lưu trữ Cụm từ khôi phục bí mật. Cụm từ khôi phục là một từ bổ sung cho Cụm từ khôi phục bí mật đó và không được lưu trữ trong ví. 
+- Ngoài việc bổ sung thêm một lớp bảo mật, Cụm từ khôi phục còn cho bạn sự từ chối hợp lý khi bị cưỡng chế. 
+- **Nếu bạn quyết định sử dụng Cụm từ khôi phục, điều quan trọng là bạn phải lưu trữ và sao lưu nó một cách an toàn ở một vị trí thực tế khác với nơi của Cụm từ khôi phục bí mật. Bạn phải nhớ Cụm từ khôi phục của mình một cách hoàn hảo. Việc thay đổi một ký tự đơn lẻ (thậm chí từ chữ thường sang chữ hoa) sẽ dẫn đến việc tạo ra một chiếc ví hoàn toàn mới.**
 
-Assuming you have created a wallet using the desktop wallet app, you have a list of 24 words referred to as your Secret Recovery Phrase. This phrase can be used to restore your wallet and access your funds. If this 24-word Secret Recovery Phrase gets stolen, the attacker will be able to steal your funds. To enhance the security of our desktop wallet users and to prevent loss of funds due to theft of the 24-word Secret Recovery Phrase, we implemented the [BIP39 passphrase](https://github.com/bitcoin/bips/blob/master/bip-0039.mediawiki#from-mnemonic-to-seed) feature.
+Giả sử bạn đã tạo ví bằng ví desktop, bạn có một danh sách gồm 24 từ được gọi là Cụm từ khôi phục bí mật. Cụm từ này có thể được sử dụng để khôi phục ví và truy cập vào số dư của bạn. Nếu Cụm từ khôi phục bí mật gồm 24 từ này bị đánh cắp, kẻ tấn công có thể lấy cắp tiền của bạn. Để tăng cường tính bảo mật cho người dùng ví desktop, và để tránh mất tiền do bị đánh cắp Cụm từ khôi phục bí mật, chúng tôi đã triển khai tính năng [BIP39 passphrase](https://github.com/bitcoin/bips/blob/master/bip-0039.mediawiki#from-mnemonic-to-seed).
 
-The Passphrase is an additional optional 25th word that you are free to choose for yourself. It can be composed of any lower/upper-case character, number, and/or signs and be as long as you want.
+Passphrase là từ thứ 25 được tuỳ chọn bổ sung mà bạn có thể tự do lựa chọn cho mình. Nó có thể bao gồm bất kỳ ký tự chữ thường/chữ hoa, số và/hoặc biểu tượng nào và có độ dài tuỳ ý bạn. 
 
-### 2. How to use a passphrase
+### 2. Cách sử dụng Cụm từ khôi phục
 
 :::warning
 
-It is important to remember that any unique Passphrase will generate and give access to a completely new wallet. It is vital to store and back up the Passphrase securely in a different physical location than the Secret Recovery Phrase. **You must remember your Passphrase perfectly. Changing a single character (even, for example, from lower to upper-case), will result in the generation of a completely new wallet.**
+Điều quan trọng cần nhớ: bất kỳ cụm từ khôi phục duy nhất nào cũng sẽ tạo và cấp quyền truy cậo vào một ví hoàn toàn mới. Bạn phải lưu trữ và sao lưu Passphrase một cách an toàn ở một vị trí thực tế khác với nơi của Cụm từ khôi phục bí mật. **Bạn phải nhớ rõ cụm từ khôi phục của mình. Việc thay đổi một ký tự (thậm chí từ chữ thường sang chữ hoa) sẽ tạo ra một ví hoàn toàn mới.**
 
 :::
 
-To use a Passphrase, simply tick the `Use optional passphrase (advanced)` and enter the optional Passphrase of your choice.
+Để sử dụng cụm từ khôi phục, đơn giản chỉ cần chọn `Sử dụng cụm từ khôi phục tuỳ chỉnh (tính năng nâng cao)` và nhập vào cụm từ khôi phục mà bạn chọn.
 
 <img src={require("./media/af5.png").default} alt="Landing page" width="auto" style={{ height: '200px' }} />
 
-### 3. Limitations of Passphrase-enabled wallets
+### 3. Những hạn chế của ví có sử dụng cụm từ khôi phục 
 
-1. You cannot (yet) use colored labels for your generated addresses.
-2. Any additionally generated addresses will need to be re-generated after every login.
+1. Bạn không (chưa) thể sử dụng nhãn màu cho địa chỉ ví đã tạo của mình. 
+2. Mọi địa chỉ ví được tạo bổ sung sẽ cần được tạo lại sau mỗi lần đăng nhậpp. 
 
-This may change in the future.
+Điều này có thể được thay đổi trong tương lai. 
