@@ -1,20 +1,11 @@
 ---
 sidebar_position: 10
-title: Overview
-sidebar_label: Overview
+title: Tổng quan
+sidebar_label: Tổng quan
 ---
 
-Alephium extension wallet helps users to store and manage their assets
-such as the native `ALPH` token, other fungible tokens as well as NFTs
-on the Alephium blockchain.  It also enables dApps to securely
-interact with the wallets, allowing dApp users to sign transactions,
-interact with the smart contracts, etc right from the browser.
+Ví Mở rộng của Alephium giúp người dùng lưu trữ và quản lý tài sản của họ như token `ALPH`, các fungible token khác, cũng như NFT trên blockchain Alephium. Nó cũng cho phép các dApp tương tác an toàn với ví lưu trữ, cho phép người dùng dApp ký giao dịch, tương tác với smart contract, v.v. ngay từ trình duyệt. 
 
 <img src={require("./media/landing.png").default} alt="Execute Transction Script" />
 
-In the [Getting Started](/wallet/extension-wallet/getting-started)
-page, you can find out the installation guide as well as some common
-usage scenarios for the extension wallet such as managing accounts,
-transferring tokens, displaying NFTs, etc. For more information on
-dApps integration, please check out the
-[dApps Integration](/wallet/extension-wallet/dapp) page.
+Trong phần [Bắt đầu](/wallet/extension-wallet/getting-started), bạn có thể tìm thấy hướng dẫn cài đặt, cũng như một số trường hợp phổ biến cho ví mở rộng như quản lý tài sản, di chuyển token, hiển thị NFT, v.v. Để biết thêm thông tin về tích hợp dApp, vui lòng xem trang [Tích hợp dApp](/wallet/extension-wallet/dapp).
